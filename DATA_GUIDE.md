@@ -5,16 +5,16 @@ How to collect, store and index data. Everyone collecting data follows this exac
 ## Principles
 - Local files in `local_database/data/` are the source of truth. Pinecone is a derived index and can be rebuilt any time.
 - One file = one unit of ingestion (one page, policy, guide, or one batch of records).
-- Structured facts (rent, prerequisites, times, eligibility) are read from the local JSON by code. Pinecone is only used to find the right records or passages.
-- Synthetic and replicated data must be labeled (`data_origin`). No scraping at runtime; collect by hand or with one-off scripts.
+- Exact facts (rent, prerequisites, times, eligibility) are read from local JSON by code. Pinecone only finds the right records or passages.
+- Label synthetic data (`data_origin`). No runtime scraping: collect by hand or with one-off scripts.
 
 ## Folder structure
 ```
 local_database/
 ├── DATA_GUIDE.md
 ├── registry/
-│   ├── categories.json          # every category: domain, file_type, schema, search_fields, owner
-│   └── sources.json             # every website we replicate: url, owner, status
+│   ├── categories.json          # per category: domain, file_type, schema, id_field, search_template, filter_fields
+│   └── sources.json             # per website: url, owner, authority, status
 ├── schemas/                     # one JSON schema per record type + meta_common.json
 ├── data/
 │   ├── academic/                # owner: person_1
@@ -22,7 +22,7 @@ local_database/
 │   │   ├── course_sections/     # records
 │   │   ├── academic_calendar/   # records (deadlines)
 │   │   ├── bulletin/            # documents
-│   │   └── registration_policies/
+│   │   └── registration_policies/   # documents
 │   ├── housing/                 # owner: person_2
 │   │   ├── listings/            # records
 │   │   └── housing_guides/      # documents
@@ -34,43 +34,46 @@ local_database/
 │       ├── international_students/   # documents
 │       └── student_policies/    # documents
 ├── student_profiles/            # synthetic profiles, JSON, never embedded
-├── raw/                         # optional original saved pages/PDFs (gitignored)
-├── processed/                   # generated: chunks.jsonl, manifest.json (gitignored)
+├── raw/                         # optional original pages/PDFs (gitignored)
+├── processed/                   # generated, gitignored (see "Generated files")
 └── scripts/
-    ├── validate_data.py         # checks meta, schema, ids, dates
-    ├── build_chunks.py          # files -> chunks, skips unchanged files by hash
-    └── push_to_pinecone.py      # embeds new/changed chunks, upserts, deletes stale ids
+    ├── validate_data.py
+    ├── build_chunks.py
+    └── push_to_pinecone.py
 ```
-New category: create the folder, add it to `registry/categories.json`, and add a schema if it holds records. No code change needed.
+New category: add the folder, a `categories.json` entry and (for records) a schema. No code change.
 
 ## File naming
 - snake_case, lowercase: `{source_name}__{topic}.md` or `.json`, e.g. `usc_iss__f1_arrival_checklist.md`.
 - `doc_id` is generated from the path: `{domain}.{category}.{file_stem}`. Never write it by hand.
-- Keep each document file to one topic (roughly under 3,000 words). Split large handbooks by chapter into separate files.
+- Each record also gets an auto-generated `record_slug` (id lowercased, spaces to underscores: `CSCI 567` -> `csci_567`) used in vector ids.
+- One topic per document file (under ~3,000 words). Split big handbooks by chapter.
 
 ## Required meta (every file)
 | Field | Type | Notes |
 |---|---|---|
 | title | string | |
-| source_name | string | must exist in `registry/sources.json` |
+| summary | string | 1-2 sentences on what this file answers (required for documents, optional for records). It is added to every chunk's embedded text. |
+| source_name | string | must exist in `sources.json` |
 | source_url | string | page the content came from |
 | collected_by | string | your name |
 | collected_date, last_verified_date | `YYYY-MM-DD` | update verified date on every re-check |
 | academic_year | string | e.g. `2026-2027`, omit if not applicable |
 | version | int | start at 1, bump on every content change |
-| status | `draft` / `verified` / `deprecated` | only `verified` files are pushed |
+| status | `draft` / `verified` / `deprecated` | only `verified` is indexed |
 | data_origin | `public_copy` / `synthetic` | |
 | access_level | `public` / `synthetic_private` | default `public` |
 | audience | list | `all`, `international`, `undergraduate`, `graduate` |
 | tags | list | 3-8 lowercase keywords |
 
-Omit any field with no value. Never use `null` or empty strings (Pinecone rejects null metadata).
+Omit fields with no value. Never use `null` or empty strings (Pinecone rejects null metadata).
 
 ## File type 1: documents (`.md` with front matter)
-Used for pages, policies, guides, FAQs. Headings define the hierarchy, so keep them clean.
+Headings define the hierarchy, so keep them clean and descriptive ("F-1 work authorization", not "Overview").
 ```markdown
 ---
 title: F-1 Arrival Checklist
+summary: Steps an incoming F-1 student must complete before and after arriving at USC.
 source_name: usc_iss
 source_url: https://iss.usc.edu/
 collected_by: person_4
@@ -90,10 +93,9 @@ Text...
 ### Check in with ISS
 Text...
 ```
-Copy only meaningful content. Drop navigation, footers, cookie banners and duplicate text.
+Copy only meaningful content. Drop navigation, footers, banners and repeated text. Write dates, deadlines and amounts in the text itself, never as "see table above".
 
 ## File type 2: records (`.json`)
-Used for courses, sections, housing, jobs, deadlines, services. One file holds many records from one source.
 ```json
 {
   "meta": { "title": "CSCI courses fall 2026", "source_name": "usc_schedule_of_classes", "...": "same fields as above" },
@@ -111,9 +113,8 @@ Used for courses, sections, housing, jobs, deadlines, services. One file holds m
   ]
 }
 ```
-Rules: numbers stay numbers (`1200`, not `"$1,200"`), booleans stay booleans, dates are ISO, lists are lists, keys are snake_case, and the id field is unique and stable across versions.
+Numbers stay numbers (`1200`, not `"$1,200"`), booleans stay booleans, dates are ISO, lists are lists, keys are snake_case, and the id field is unique and stable across versions.
 
-## Record schemas (required fields)
 | Category | Id field | Required fields |
 |---|---|---|
 | courses | course_id | title, units, level, description, prerequisites, terms_offered |
@@ -124,23 +125,65 @@ Rules: numbers stay numbers (`1200`, not `"$1,200"`), booleans stay booleans, da
 | service_directory | service_id | name, purpose, official_url, login_required, replicated, common_tasks |
 | student_profiles | student_id | fake name, program, level, country, interests, completed_courses, housing_budget_usd, job_interests |
 
-- `job_listings.international_eligibility` is `yes`, `no` or `unverified`. Never guess.
-- `search_text` is built automatically from the category's `search_fields` in `categories.json` (for example title + description + tags for courses). Do not write it by hand.
+`international_eligibility` is `yes`, `no` or `unverified`. Never guess.
 
-## Pinecone mapping
-- One index `trojan_compass`: serverless, dimension 384 (BGE-small), metric cosine. If the embedding model changes, recreate the index and re-push everything.
-- **Namespace = domain** (`academic`, `housing`, `career`, `student_services`). Agents query their own namespace and filter by `category`, `audience`, `academic_year`.
-- **Vector id** = `{doc_id}#{chunk_no}` for documents and `{doc_id}#{record_id}` for records.
-- **Chunking:** documents are split by heading. Each chunk is prefixed with `title > heading path` and capped at 512 tokens (64 overlap only for oversized sections). Records get one vector each, from `search_text`.
-- **Vector metadata** (flat, no nulls, under 40 KB): `doc_id`, `record_id` (records only), `domain`, `category`, `title`, `section_path`, `chunk_no`, `source_name`, `source_url`, `academic_year`, `version`, `verified_date_num` (int, `YYYYMMDD`, used for freshness filters), `audience`, `tags`, `data_origin`, `embed_model`, `text` (the chunk text, short).
-- **Hierarchy:** `processed/chunks.jsonl` keeps parent and neighbor links, so "expand to the full section" is answered locally with no extra Pinecone call.
+## Registry
+`registry/categories.json` drives ingestion. The `search_template` turns a record into a natural sentence for embedding. `filter_fields` are copied into vector metadata so Pinecone can pre-filter on them.
+```json
+{
+  "listings": {
+    "domain": "housing", "file_type": "records", "schema": "housing_listing", "id_field": "listing_id",
+    "search_template": "{name}, {housing_type} in {neighborhood}. ${monthly_rent_usd}/month, {bedrooms} bed, {distance_to_campus_miles} miles from {campus}. Amenities: {amenities}.",
+    "filter_fields": ["monthly_rent_usd", "bedrooms", "distance_to_campus_miles", "campus", "furnished"]
+  },
+  "bulletin": { "domain": "academic", "file_type": "document" }
+}
+```
+`registry/sources.json`: `{ "usc_iss": { "url": "https://iss.usc.edu/", "owner": "person_4", "authority": "official", "status": "in_progress" } }`. `authority` is `official`, `third_party` or `synthetic`, and is used to rank and de-duplicate results.
+
+## Retrieval-ready indexing
+Each file produces these vector types, all with a dense and a sparse part:
+| chunk_type | One per | Embedded text | Purpose |
+|---|---|---|---|
+| outline | document file | title + summary + list of headings | coarse routing to the right document |
+| chunk | heading section | breadcrumb (`title > h2 > h3`) + summary + section text | passage retrieval |
+| record | record | `search_template` output (starts with the id and title) | semantic search over records |
+
+Ids: `{doc_id}#outline`, `{doc_id}#{chunk_no:03d}`, `{doc_id}#{record_slug}`.
+
+- **Chunking:** split by heading. Target ~350 tokens, hard cap 450 including breadcrumb and summary (BGE-small reads 512). Split oversized sections on paragraph breaks with 50 tokens overlap. Never split tables or numbered lists. Values to be tuned with the golden queries.
+- **Dense:** BGE-small, 384 dims, L2-normalized. Passages are embedded without any prefix.
+- **Sparse:** BM25 over the same embedded text, so exact terms (course codes, "CPT", "I-20") match. Fitted once on the full corpus (`processed/bm25_params.json`) and refitted (with a full re-upsert) only when the corpus has grown by about 25% or with `--refit`. Rule of thumb, tune later.
+- **Embedding cache:** dense vectors are cached by `chunk_hash` + model name, so re-pushes never re-embed unchanged text.
+- **Dedup:** identical `chunk_hash` in two files keeps the one from the higher-`authority` source and drops the other.
+- **Vector metadata** (flat, no nulls, under 40 KB): `doc_id`, `record_slug`, `chunk_type`, `domain`, `category`, `title`, `section_path`, `chunk_no`, `source_name`, `source_url`, `authority`, `academic_year`, `version`, `verified_date_num` (int `YYYYMMDD`), `audience`, `tags`, `data_origin`, `embed_model`, `text` (raw chunk, shown and cited), plus the category's `filter_fields`.
 - Student profiles are never embedded. They are loaded by code for the logged-in user only.
 
+## Pinecone config
+- One serverless index `trojan_compass`: dimension 384, **metric `dotproduct`** (required for dense+sparse in one index). Changing the embedding model means recreating the index and re-pushing.
+- **Namespace = domain** (`academic`, `housing`, `career`, `student_services`). Agents query their own namespace; `student_services` may query several.
+
+## Query-time contract (for the retrieval code)
+- Embed the query **with** the prefix `Represent this sentence for searching relevant passages: `. Passages never get it.
+- Alpha (dense weight) 0.75 by default, 0.25 when the query contains an id or code (e.g. `CSCI 567`). Tune on golden queries.
+- Pre-filter with metadata the agent already knows (`category`, `audience`, `academic_year`, plus numeric filters such as rent or units).
+- Retrieve top 20, rerank to 5. For long documents, optionally query `outline` vectors first, then search chunks with `doc_id` filter.
+- Expand a hit to its neighbors or full section from `processed/chunks.jsonl`. Use `records_index.json` to load the full record from local JSON.
+- Rank `official` above `third_party` when scores are close. Show `verified_date` with every citation.
+
+## Generated files (`processed/`)
+`chunks.jsonl` (text, hashes, prev/next ids, section path), `outlines.json` (heading tree per document), `records_index.json` (record_slug -> file + position), `embedding_cache/`, `bm25_params.json`, and `manifest.json` (file hashes, vector ids per file, embed model, chunker settings, pipeline version). Any change to chunk settings or templates bumps the pipeline version and rebuilds everything.
+
 ## Ingestion flow (run after any data change)
-1. `validate_data.py` checks every file against meta and schemas and fails on the first error.
-2. `build_chunks.py` hashes each file, compares with `processed/manifest.json`, and rebuilds chunks only for new or changed files.
-3. `push_to_pinecone.py` embeds those chunks, upserts in batches of 100 into the domain namespace, and deletes ids listed in the manifest that no longer exist. Re-running is always safe.
-4. Removing a file or setting `status: deprecated` removes its vectors on the next push.
+1. `validate_data.py`: meta, schemas, unique ids, valid dates, chunk-size limits, and referential integrity (every `prerequisites` id exists in courses, every section's `course_id` exists, every `source_name` is registered).
+2. `build_chunks.py`: hash each file, rebuild chunks only for new or changed files, write the generated files.
+3. `push_to_pinecone.py`: embed uncached chunks, compute sparse vectors, upsert in batches of 100 into the domain namespace, delete vector ids in the manifest that no longer exist.
+4. Removing a file or setting `status: deprecated` removes its vectors on the next push. Only the latest version is indexed (older versions live in git history).
+
+## Evaluation (how we know retrieval is good)
+Each collector adds at least 15 queries for their domain to `evaluation/golden_queries.jsonl`, one JSON per line:
+`{"query": "...", "domain": "housing", "type": "semantic|exact|filter|negative", "expected_doc_ids": ["..."]}`
+Use empty `expected_doc_ids` for `negative` queries whose answer is not in our data. We report recall@5 and MRR, and compare dense-only vs hybrid vs hybrid + outline routing to choose alpha, chunk size and top-k.
 
 ## Collection workflow (4 people)
 | Person | Domain | Owns |
@@ -150,7 +193,7 @@ Rules: numbers stay numbers (`1200`, not `"$1,200"`), booleans stay booleans, da
 | person_3 | career | job listings, career guides |
 | person_4 | student_services | service directory, international student docs, student policies, `student_profiles/` |
 
-1. Add your websites to `registry/sources.json` (`url`, `owner`, `status`: `todo` / `in_progress` / `done`).
-2. Work only inside your own domain folder. Never edit another person's files, and ask before changing a schema or the registry.
-3. Create a branch (`feat/data_<domain>_<topic>`), add files, run `validate_data.py`, then open a PR.
-4. When updating a file, bump `version` and `last_verified_date`. Never delete history by overwriting without a version bump.
+1. Add your websites to `registry/sources.json` first.
+2. Work only inside your own domain folder. Ask before changing a schema or the registry.
+3. Branch `feat/data_<domain>_<topic>`, add files, run `validate_data.py`, open a PR.
+4. When updating a file, bump `version` and `last_verified_date`.
