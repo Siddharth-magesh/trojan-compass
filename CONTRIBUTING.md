@@ -1,0 +1,61 @@
+# CONTRIBUTING.md
+
+Where everything lives. Update this file whenever the structure changes.
+
+## Folder structure
+```
+trojan_compass/
+├── AGENTS.md / CONTRIBUTING.md / PROJECT_DETAILS.md / TASKS.md / README.md
+├── docs/
+│   ├── configurations/          # shared config notes and presets
+│   ├── system_architecture/     # architecture diagram (v2) and notes
+│   └── large_scale_design/      # how we would build this at production scale (later)
+├── backend/
+│   ├── main.py                  # FastAPI entry point
+│   └── app/
+│       ├── api/                 # routes: chat stream, session, health
+│       ├── security/            # auth (JWT), rate_limit, input_guard, output_guard
+│       ├── orchestration/       # LangGraph flow (see below)
+│       ├── agents/              # domain agents (see below)
+│       ├── tools/               # tool registry, structured data tools, knowledge retrieval tool
+│       ├── retrieval/           # ingest, chunker, embedder, pinecone_store, retriever, reranker
+│       ├── llm_gateway/         # provider routing, timeouts, fallback (Gemini, Groq, etc.)
+│       ├── session_store/       # conversation state and task status
+│       ├── observability/       # logs, latency and token usage
+│       ├── schemas/             # Pydantic models shared across the backend
+│       └── config/              # settings loaded from .env and project values
+├── frontend/
+│   └── src/
+│       ├── app/                 # Next.js pages and layout
+│       ├── components/          # chat, cards, comparison tables, checklist
+│       └── lib/                 # API client and SSE streaming helpers
+├── local_database/
+│   ├── structured/              # json: courses, sections, housing, jobs, services, deadlines, student_profiles
+│   ├── documents/               # source PDFs and text: handbooks, policies, guides
+│   └── scripts/                 # build_synthetic_data.py, push_to_pinecone.py
+└── evaluation/                  # benchmark questions, reference answers, comparison vs general AI
+```
+
+## Where to look
+| I need to... | Go to |
+|---|---|
+| Change the request flow (plan, dispatch, verify, synthesize) | `backend/app/orchestration/` |
+| Edit one domain agent | `backend/app/agents/<name>_agent.py` |
+| Add or change a tool an agent can call | `backend/app/tools/` |
+| Change chunking, embeddings, top-k or reranking | `backend/app/retrieval/` |
+| Add or fix synthetic data | `local_database/structured/` |
+| Add source documents for RAG | `local_database/documents/` |
+| Change auth, guards or rate limits | `backend/app/security/` |
+| Swap or add an LLM provider | `backend/app/llm_gateway/` |
+| Change a UI component | `frontend/src/components/` |
+
+## Orchestration files (`backend/app/orchestration/`)
+`graph.py` (LangGraph wiring), `supervisor.py` (understand query, plan, clarify), `task_dispatcher.py`, `result_normalizer.py`, `result_aggregator.py`, `verifier.py` (data, maths, sources, freshness), `recovery.py` (one targeted retry, partial results), `synthesizer.py`, `fallback.py`.
+
+## Agent files (`backend/app/agents/`)
+- `base_agent.py`: shared agent interface and tool-call loop.
+- `academic_agent.py`: courses, prerequisites, schedule conflicts, deadlines.
+- `housing_agent.py`: listings, rent, distance, amenities, budget maths.
+- `career_agent.py`: campus jobs, internships, eligibility, deadlines.
+- `student_services_agent.py`: USC services directory, international student onboarding, policies.
+- New agents follow the same pattern: one file, one tool allow-list registered in `tools/tool_registry.py`.
