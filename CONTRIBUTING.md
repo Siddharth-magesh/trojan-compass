@@ -30,9 +30,35 @@ trojan_compass/
 │       ├── components/          # chat, cards, comparison tables, checklist
 │       └── lib/                 # API client and SSE streaming helpers
 ├── local_database/
-│   ├── structured/              # json: courses, sections, housing, jobs, services, deadlines, student_profiles
-│   ├── documents/               # source PDFs and text: handbooks, policies, guides
-│   └── scripts/                 # build_synthetic_data.py, push_to_pinecone.py
+│   ├── DATA_GUIDE.md
+│   ├── registry/
+│   │   ├── categories.json      # every category: domain, file_type, schema, search_fields, owner
+│   │   └── sources.json         # every website we replicate: url, owner, status
+│   ├── schemas/                 # one JSON schema per record type + meta_common.json
+│   ├── data/
+│   │   ├── academic/            # owner: person_1
+│   │   │   ├── courses/         # records
+│   │   │   ├── course_sections/ # records
+│   │   │   ├── academic_calendar/ # records (deadlines)
+│   │   │   ├── bulletin/        # documents
+│   │   │   └── registration_policies/
+│   │   ├── housing/             # owner: person_2
+│   │   │   ├── listings/        # records
+│   │   │   └── housing_guides/  # documents
+│   │   ├── career/              # owner: person_3
+│   │   │   ├── job_listings/    # records
+│   │   │   └── career_guides/   # documents
+│   │   └── student_services/    # owner: person_4
+│   │       ├── service_directory/ # records
+│   │       ├── international_students/ # documents
+│   │       └── student_policies/ # documents
+│   ├── student_profiles/        # synthetic profiles, JSON, never embedded
+│   ├── raw/                     # optional original saved pages/PDFs (gitignored)
+│   ├── processed/               # generated: chunks.jsonl, manifest.json (gitignored)
+│   └── scripts/
+│       ├── validate_data.py     # checks meta, schema, ids, dates
+│       ├── build_chunks.py      # files -> chunks, skips unchanged files by hash
+│       └── push_to_pinecone.py  # embeds new/changed chunks, upserts, deletes stale ids
 └── evaluation/                  # benchmark questions, reference answers, comparison vs general AI
 ```
 
@@ -44,6 +70,7 @@ trojan_compass/
 | Add or change a tool an agent can call | `backend/app/tools/` |
 | Change chunking, embeddings, top-k or reranking | `backend/app/retrieval/` |
 | Add or fix synthetic data | `local_database/structured/` |
+| Add or change data | `local_database/DATA_GUIDE.md` |
 | Add source documents for RAG | `local_database/documents/` |
 | Change auth, guards or rate limits | `backend/app/security/` |
 | Swap or add an LLM provider | `backend/app/llm_gateway/` |
