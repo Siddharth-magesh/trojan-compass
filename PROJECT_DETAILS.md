@@ -99,7 +99,7 @@ The Pinecone Codex plugin `1.1.0` was installed locally from `pinecone-io/pineco
 - Domain agents run in parallel. Max 3 tool calls per agent per request, one LLM round per agent; agents whose data is empty (housing) skip the LLM.
 - Recovery: retry a failed agent once, then route it with keywords (no LLM) and mark it partial.
 - Planner failure: keyword routing; nothing routable -> safe fallback.
-- Synthesizer: 1 formatting retry, then a code-built answer from verified facts; numbers not in the facts are rejected. It reports `answered`; when false, retrieval citations that back no card are dropped and the status becomes partial.
+- Synthesizer: writes short Markdown (### per domain, bullets) citing numbered sources as [n]; 1,800 max tokens; 1 formatting retry, then a code-built Markdown answer. Numbers not in the facts are rejected, invalid markers removed, and uncited bullets get the source of the best-matching verified fact. `answered=false` (nothing answered and no citations) drops unrelated citations and marks the answer partial. It also returns up to 3 follow-ups.
 - Per-agent tool allow-list enforced in `backend/app/tools/tool_registry.py`. Cards and citations are built in code, never by the LLM.
 - Expected LLM calls: clarification 1; single domain 3; four domains 6 (cap 8).
 
@@ -113,7 +113,11 @@ The Pinecone Codex plugin `1.1.0` was installed locally from `pinecone-io/pineco
 | GET | `/api/health` | Liveness check |
 
 Run: `uvicorn backend.main:app --port 8000` from the repo root. Auth: `POST /api/login {"student_id": "synthetic_student_001"}` returns a bearer token; all other routes except health need `Authorization: Bearer <token>`.
-`/api/chat_stream` body `{"message": "...", "session_id": optional}` streams SSE events: `session` (`session_id`, `request_id`), one `status` per graph node (`node`, `ms`, `status`), then `final` with the `StructuredResponse` (contract documented in `backend/app/schemas/response.py`, `schema_version` 1.0).
+The API contract is the frontend's `Trojan-Compass/artifacts/trojan-compass/src/lib/api_types.ts`; `backend/app/api/presenter.py` is the only place that maps internal results to it.
+- `POST /api/login` returns `{access_token, student}` (student_profile: display_name, program, level, international, interests, budget, job_interests).
+- `POST /api/chat_stream` body `{"message": "...", "session_id": optional}` streams SSE: `session` -> `status` (`{node, state: started|done|failed, label, elapsed_ms}` per step: input_guard, supervisor, <domain>_agent, verifier, synthesizer, output_guard) -> either `answer_delta` chunks + `final` (`{answer (Markdown with [n] citations), cards, citations [{id, source_name, title, url, verified_date, authority}], freshness_notes, partial_status {status, missing[]}, follow_ups}`), or `clarification` (`{question, options}`), or `error` (`{code: guard_blocked|upstream_failed, message}`). 429 for the rate limit.
+- `GET /api/session/{id}` returns `{session_id, messages: [{role, content, final?}]}` (owner only).
+- Frontend dev: `uvicorn backend.main:app --port 8000`, then in `Trojan-Compass/artifacts/trojan-compass`: `PORT=5173 BASE_PATH=/ ./node_modules/.bin/vite --config vite.config.ts` (Vite proxies `/api` to `BACKEND_URL`, default `http://localhost:8000`). `VITE_USE_MOCK=true` switches back to the in-browser mock.
 
 ## Security settings
 - Rate limit: 20 chat requests/min per student (in-memory sliding window).

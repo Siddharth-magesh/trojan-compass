@@ -54,11 +54,13 @@ class DataStore:
         return self.citations.get((category, record_id))
 
 
-def _record_citation(record: dict[str, Any], meta: Any) -> Citation:
+def _record_citation(record: dict[str, Any], meta: Any, authorities: dict[str, str]) -> Citation:
     # Prefer per-record provenance (career records carry their own) over the file-level meta.
-    return Citation(source_name=str(record.get("source_name", meta.source_name)),
-                    url=str(record.get("source_url", meta.source_url)),
-                    verified_date=str(record.get("last_verified_date", meta.last_verified_date)))
+    source_name = str(record.get("source_name", meta.source_name))
+    title = str(record.get("title", meta.title)) if "source_url" in record else meta.title
+    return Citation(source_name=source_name, url=str(record.get("source_url", meta.source_url)),
+                    verified_date=str(record.get("last_verified_date", meta.last_verified_date)),
+                    title=title, authority=authorities.get(source_name, ""))
 
 
 def load_store() -> DataStore:
@@ -66,6 +68,8 @@ def load_store() -> DataStore:
     categories = {name: Category.model_validate(value) for name, value in
                   read_json(root / "registry/categories.json").items() if name != "_comment"}
     store = DataStore(categories=categories)
+    authorities = {name: str(entry.get("authority", "")) for name, entry in
+                   read_json(root / "registry/sources.json").items() if isinstance(entry, dict)}
     for path in sorted((root / "data").rglob("*")):
         if path.suffix not in {".json", ".md"}:
             continue
@@ -86,14 +90,15 @@ def load_store() -> DataStore:
             for record in source.records:
                 rid = str(record[category.id_field])
                 bucket[rid] = record
-                store.citations[(source.category, rid)] = _record_citation(record, source.meta)
+                store.citations[(source.category, rid)] = _record_citation(record, source.meta, authorities)
         else:
             store.documents.append(DocSummary(
                 doc_id=source.doc_id, domain=source.domain, category=source.category, title=source.meta.title,
                 summary=source.meta.summary, headings=re.findall(r"^##\s+(.+)$", source.body, flags=re.M),
                 tags=source.meta.tags,
                 citation=Citation(source_name=source.meta.source_name, url=source.meta.source_url,
-                                  verified_date=source.meta.last_verified_date)))
+                                  verified_date=source.meta.last_verified_date, title=source.meta.title,
+                                  authority=authorities.get(source.meta.source_name, ""))))
     log.info("data store loaded: %s records, %s documents, %s skipped",
              {c: len(v) for c, v in store.by_id.items()}, len(store.documents), len(store.skipped))
     return store

@@ -57,7 +57,7 @@ def search_housing(args: SearchHousingInput, ctx: ToolContext) -> ToolOutput:
         out.cards.append(card.model_dump())
         out.records.append(RecordRef(category="listings", record_id=rid))
         out.citations.append(citation)
-        out.facts.append(f"{card.name}: ${card.monthly_rent_usd}/month, {card.bedrooms} bedrooms, {card.distance_to_campus_miles} miles.")
+        out.add_fact(f"{card.name}: ${card.monthly_rent_usd}/month, {card.bedrooms} bedrooms, {card.distance_to_campus_miles} miles.")
     if not matches:
         out.unknowns.append("No collected listings match these filters.")
     return out

@@ -58,7 +58,7 @@ def _call_live(messages: list[dict[str, Any]], tools: list[dict[str, Any]] | Non
             budget.charge()
             start = time.perf_counter()
             try:
-                kwargs: dict[str, Any] = {"model": model, "messages": messages, "max_tokens": settings.llm_max_tokens,
+                kwargs: dict[str, Any] = {"model": model, "messages": messages, "max_tokens": options["max_tokens"],
                                           "temperature": options["temperature"]}
                 if tools:
                     kwargs.update(tools=tools, tool_choice="auto")
@@ -83,7 +83,8 @@ def _call_live(messages: list[dict[str, Any]], tools: list[dict[str, Any]] | Non
 
 
 def complete(task: str, messages: list[dict[str, Any]], budget: RequestBudget, *,
-             tools: list[dict[str, Any]] | None = None, json_mode: bool = False, temperature: float = 0.0) -> LLMResult:
+             tools: list[dict[str, Any]] | None = None, json_mode: bool = False, temperature: float = 0.0,
+             max_tokens: int | None = None) -> LLMResult:
     """One logical LLM call. task names the node (used for mocks and logs)."""
     if settings.llm_mode == "mock":
         budget.charge()
@@ -93,7 +94,7 @@ def complete(task: str, messages: list[dict[str, Any]], budget: RequestBudget, *
                  for i, c in enumerate(out.get("tool_calls", []))]
         return LLMResult(content=out.get("content"), tool_calls=calls, model="mock")
 
-    options = {"temperature": temperature, "json": json_mode, "max_tokens": settings.llm_max_tokens}
+    options = {"temperature": temperature, "json": json_mode, "max_tokens": max_tokens or settings.llm_max_tokens}
     key = llm_cache.cache_key(settings.primary_model, messages, tools, options)
     if settings.llm_mode == "cache" and (hit := llm_cache.get(key)):
         budget.record({"task": task, "model": hit.get("model", ""), "ok": True, "cached": True})
@@ -104,9 +105,9 @@ def complete(task: str, messages: list[dict[str, Any]], budget: RequestBudget, *
 
 
 def call_json(task: str, messages: list[dict[str, Any]], model_cls: type[T], budget: RequestBudget,
-              temperature: float = 0.0) -> T:
+              temperature: float = 0.0, max_tokens: int | None = None) -> T:
     """LLM call whose content must be JSON matching model_cls; raises LLMFormatError otherwise."""
-    result = complete(task, messages, budget, json_mode=True, temperature=temperature)
+    result = complete(task, messages, budget, json_mode=True, temperature=temperature, max_tokens=max_tokens)
     try:
         return model_cls.model_validate_json(_strip_fences(result.content or ""))
     except ValidationError as exc:

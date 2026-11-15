@@ -25,7 +25,10 @@ def aggregate(results: list[AgentResult]) -> dict[str, Any]:
     for res in sorted(results, key=lambda r: r.agent):
         reason = res.error or (res.unknowns[0] if res.unknowns else "")
         partial.agents[res.agent] = AgentStatus(status=res.status, reason=reason[:200])
-        facts += [f"[{res.agent}] {f.text}" for f in res.facts]
+        facts += [{"agent": res.agent, "text": f.text, "url": f.citation.url if f.citation else ""} for f in res.facts]
+        for f in res.facts:
+            if f.citation:
+                citations.setdefault(f.citation.url, f.citation.model_dump())
         unknowns += [f"[{res.agent}] {u}" for u in res.unknowns]
         for out in res.tool_outputs:
             for card in out["cards"]:

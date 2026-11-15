@@ -26,11 +26,16 @@ class ToolOutput(BaseModel):
     tool: str
     status: str = "ok"  # ok | no_data | not_found | error
     facts: list[str] = []
+    fact_citations: list[Citation | None] = []  # parallel to facts; filled by add_fact()
     cards: list[dict[str, Any]] = []
     checklist: list[dict[str, Any]] = []
     records: list[RecordRef] = []
     citations: list[Citation] = []
     unknowns: list[str] = []
+
+    def add_fact(self, text: str, citation: Citation | None = None) -> None:
+        self.facts.append(text)
+        self.fact_citations.append(citation)
 
 
 @dataclass

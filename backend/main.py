@@ -6,6 +6,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from backend.app.api.routes import router
+from backend.app.config.settings import settings
 from backend.app.data_store.loader import get_store
 from backend.app.orchestration.graph import build_graph
 from backend.app.tools.profile_tools import load_profiles
@@ -20,6 +21,6 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Trojan Compass API", version="1.0", lifespan=lifespan)
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:3000"], allow_methods=["GET", "POST"],
+app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origins, allow_methods=["GET", "POST"],
                    allow_headers=["Authorization", "Content-Type"])
 app.include_router(router)

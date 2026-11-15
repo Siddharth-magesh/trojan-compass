@@ -54,9 +54,9 @@ def search_opportunities(args: OpportunityInput, ctx: ToolContext) -> ToolOutput
         out.cards.append(card.model_dump())
         out.records.append(RecordRef(category="opportunities", record_id=rid))
         out.citations.append(citation)
-        out.facts.append(f"{card.title} ({card.organization}): pay {card.hourly_pay_usd} USD/hour, {card.hours_per_week} "
+        out.add_fact(f"{card.title} ({card.organization}): pay {card.hourly_pay_usd} USD/hour, {card.hours_per_week} "
                          f"hours/week, recruitment {card.recruitment_status}, international eligibility "
-                         f"'{card.international_eligibility}' as listed.")
+                         f"'{card.international_eligibility}' as listed.", citation)
         if card.international_eligibility != "yes":
             out.unknowns.append(f"{card.title}: work eligibility for international students is '{card.international_eligibility}'; "
                                 "confirm with the Office of International Services before applying.")
@@ -72,9 +72,10 @@ def search_research_labs(args: KeywordInput, ctx: ToolContext) -> ToolOutput:
     for r in top:
         rid = str(r["lab_id"])
         out.records.append(RecordRef(category="research_labs", record_id=rid))
-        out.citations.append(ctx.store.citation("research_labs", rid))
-        out.facts.append(f"Lab {r.get('title')} (PI {r.get('principal_investigator', 'not_listed')}): recruitment "
-                         f"{r.get('recruitment_status', 'unverified')}, funding {r.get('compensation_status', 'unverified')}.")
+        lab_citation = ctx.store.citation("research_labs", rid)
+        out.citations.append(lab_citation)
+        out.add_fact(f"Lab {r.get('title')} (PI {r.get('principal_investigator', 'not_listed')}): recruitment "
+                         f"{r.get('recruitment_status', 'unverified')}, funding {r.get('compensation_status', 'unverified')}.", lab_citation)
     return out
 
 
@@ -87,5 +88,5 @@ def list_career_resources(args: KeywordInput, ctx: ToolContext) -> ToolOutput:
         citation = ctx.store.citation("career_resources", rid)
         out.records.append(RecordRef(category="career_resources", record_id=rid))
         out.citations.append(citation)
-        out.facts.append(f"{r.get('title')}: {str(r.get('description', ''))[:200]}")
+        out.add_fact(f"{r.get('title')}: {str(r.get('description', ''))[:200]}", citation)
     return out

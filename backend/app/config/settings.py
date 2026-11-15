@@ -23,12 +23,14 @@ class Settings(BaseSettings):
     fallback_model: str = "gemini-3.8-flash"
     llm_timeout_s: float = 20.0
     llm_max_tokens: int = 900
+    llm_synth_max_tokens: int = 1800  # Markdown answer + follow-ups + the reasoning model's own thinking tokens
     max_llm_calls_per_request: int = 8
     max_llm_calls_per_process: int = 300
 
     jwt_secret: SecretStr = SecretStr("")
     jwt_ttl_minutes: int = 120
     rate_limit_per_minute: int = 20
+    cors_origins: list[str] = ["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:5173"]
     session_history_turns: int = 6
     max_message_chars: int = 2000
     freshness_days: int = 120

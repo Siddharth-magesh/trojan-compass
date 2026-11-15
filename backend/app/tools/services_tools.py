@@ -42,7 +42,7 @@ def list_services(args: ServicesInput, ctx: ToolContext) -> ToolOutput:
         out.cards.append(card.model_dump())
         out.records.append(RecordRef(category="service_directory", record_id=rid))
         out.citations.append(citation)
-        out.facts.append(f"{card.name}: {card.purpose}")
+        out.add_fact(f"{card.name}: {card.purpose}", citation)
     return out
 
 
@@ -56,9 +56,8 @@ def list_guides(args: GuidesInput, ctx: ToolContext) -> ToolOutput:
     out = ToolOutput(tool="list_guides", status="ok" if top else "not_found")
     for d in top:
         out.citations.append(d.citation)
-        out.facts.append(f"Guide '{d.title}': {d.summary} Sections: {'; '.join(d.headings[:6])}")
-        first_sentence = d.summary.split(". ")[0].rstrip(".")
-        out.checklist.append({"text": f"{d.title}: {first_sentence}.", "domain": ctx.agent, "source": d.citation.model_dump()})
+        out.add_fact(f"Guide '{d.title}': {d.summary} Sections: {'; '.join(d.headings[:6])}", d.citation)
+        out.checklist.append({"text": f"Review: {d.title}", "domain": ctx.agent, "source": d.citation.model_dump()})
     if not top:
         out.unknowns.append("No verified guide matches these keywords.")
     return out

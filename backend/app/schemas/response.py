@@ -1,6 +1,9 @@
-"""Structured response contract for the frontend (schema_version 1.0). Cards and citations are built in code, never by the LLM.
+"""Internal structured response produced by the graph. Cards and citations are built in code, never by the LLM.
+The HTTP API does not send this directly: api/presenter.py maps it to the frontend contract (Trojan-Compass
+src/lib/api_types.ts: numbered citations, citation_ids on cards, checklist groups, partial_status {status, missing}).
 
-Shape: {schema_version, request_id, response_type, answer, cards[], citations[], freshness_notes[], partial_status}.
+Shape: {schema_version, request_id, response_type, answer, cards[], citations[], freshness_notes[], partial_status,
+follow_ups[], clarification_options[], error_code}.
 response_type: "answer" | "clarification" (answer holds the question) | "fallback" (minimal safe answer).
 cards[].type: "course" | "housing" | "job" | "service" | "checklist". Unknown facts stay as the strings
 "TBA", "unverified", "not_listed" or "unknown"; the frontend should show them, not hide them.
@@ -18,6 +21,8 @@ class Citation(BaseModel):
     source_name: str
     url: str
     verified_date: str
+    title: str = ""          # file or guide title (shown in the UI's source list)
+    authority: str = ""      # official | third_party (from registry/sources.json)
 
 
 class SectionSummary(BaseModel):
@@ -39,6 +44,9 @@ class CourseCard(BaseModel):
     units: Unknownable
     prerequisite_text: str
     prerequisite_status: Literal["met", "missing", "unknown", "none"]
+    prerequisite_courses: list[dict[str, str]] = Field(default_factory=list)  # [{course_id, status: met|missing|unknown}]
+    level: str = ""
+    terms_offered: list[str] = Field(default_factory=list)
     missing_prerequisites: list[str] = Field(default_factory=list)
     unknown_prerequisites: list[str] = Field(default_factory=list)
     sections: list[SectionSummary] = Field(default_factory=list)
@@ -117,3 +125,6 @@ class StructuredResponse(BaseModel):
     citations: list[Citation] = Field(default_factory=list)
     freshness_notes: list[str] = Field(default_factory=list)
     partial_status: PartialStatus = Field(default_factory=PartialStatus)
+    follow_ups: list[str] = Field(default_factory=list)
+    clarification_options: list[str] = Field(default_factory=list)
+    error_code: Literal["guard_blocked", "upstream_failed"] | None = None

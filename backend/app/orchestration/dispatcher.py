@@ -8,6 +8,7 @@ from langgraph.types import Send
 
 from backend.app.agents import academic_agent, career_agent, housing_agent, student_services_agent
 from backend.app.agents.base_agent import run_agent
+from backend.app.orchestration.progress import emit
 from backend.app.llm_gateway.budget import BudgetExceeded, RequestBudget
 from backend.app.schemas.agent_result import AgentResult, AgentTask
 from backend.app.schemas.state import GraphState
@@ -29,6 +30,8 @@ def agent_node(payload: dict[str, Any], config: RunnableConfig) -> dict[str, Any
     budget: RequestBudget = cfg["budget"]
     spec = AGENTS[task.agent]
     start = time.perf_counter()
+    ui_node = f"{task.agent}_agent"
+    emit(ui_node, "started")
     errors = []
     result: AgentResult | None = None
     for attempt in (1, 2):  # first try + one retry
@@ -49,6 +52,7 @@ def agent_node(payload: dict[str, Any], config: RunnableConfig) -> dict[str, Any
         result.status = "partial" if result.status != "failed" else "failed"
         result.error = f"agent LLM unavailable ({'; '.join(errors)}); used keyword routing"
         result.attempts = 2
+    emit(ui_node, "failed" if result.status == "failed" else "done", round((time.perf_counter() - start) * 1000))
     event = {"node": f"agent:{task.agent}", "status": result.status, "ms": round((time.perf_counter() - start) * 1000),
              "tool_calls": [c.name for c in result.tool_calls]}
     return {"agent_results": [result], "events": [event]}

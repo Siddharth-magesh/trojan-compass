@@ -59,6 +59,20 @@ def prerequisite_status(course: dict[str, Any], completed: set[str], store: Data
     return ("missing" if missing else "unknown" if unknown else "met"), missing, sorted(set(unknown))
 
 
+def prerequisite_courses(course: dict[str, Any], completed: set[str], store: DataStore) -> list[dict[str, str]]:
+    """Per-course view for the UI: a satisfied group lists what the student completed (met); an unsatisfied group lists
+    every option as missing, or unknown when the course is absent from verified data."""
+    out: dict[str, str] = {}
+    for group in course.get("prerequisite_groups") or []:
+        options = group.get("one_of", [])
+        done = [o for o in options if o in completed]
+        if len(done) >= group.get("required_count", 1):
+            out.update({o: "met" for o in done})
+        else:
+            out.update({o: ("unknown" if store.get("courses", o) is None else "missing") for o in options if o not in done})
+    return [{"course_id": cid, "status": status} for cid, status in out.items()]
+
+
 def _sections(store: DataStore, course_id: str, term: str) -> list[dict[str, Any]]:
     rows = [s for s in store.records("course_sections") if s.get("course_id") == course_id and s.get("term") == term]
     return sorted(rows, key=lambda s: (s.get("section_type") != "lecture", s.get("start_time", "")))
@@ -87,21 +101,23 @@ def _course_output(ctx: ToolContext, course_ids: list[str], term: str | None, wi
         card = CourseCard(course_id=cid, title=str(course.get("title", cid)), units=course.get("units", "unknown"),
                           prerequisite_text=str(course.get("prerequisite_text", "unknown")),
                           prerequisite_status=status, missing_prerequisites=missing, unknown_prerequisites=unknown,
+                          prerequisite_courses=prerequisite_courses(course, completed, ctx.store),
+                          level=str(course.get("level", "")), terms_offered=[str(t) for t in course.get("terms_offered", [])],
                           sections=sections, d_clearance_note=str(course.get("d_clearance_note", "unknown")),
                           source=citation)
         out.cards.append(card.model_dump())
         out.records.append(RecordRef(category="courses", record_id=cid))
         out.citations.append(citation)
-        out.facts.append(f"{cid} {card.title}: {card.units} units. {card.prerequisite_text} Prerequisite status for "
-                         f"this student: {status}. {card.d_clearance_note}")
+        out.add_fact(f"{cid} {card.title}: {card.units} units. {card.prerequisite_text} Prerequisite status for "
+                         f"this student: {status}. {card.d_clearance_note}", citation)
         if unknown:
             out.unknowns.append(f"{cid}: prerequisite(s) {', '.join(unknown)} are not in our verified data, so status is unknown.")
         if with_sections:
             if not sections:
                 out.unknowns.append(f"No {term} sections found for {cid}.")
             for s in sections:
-                out.facts.append(f"{cid} {s.section_type} {s.section_id}: {'/'.join(s.days) or 'TBA'} "
-                                 f"{s.start_time}-{s.end_time}, {s.instructor}")
+                out.add_fact(f"{cid} {s.section_type} {s.section_id}: {'/'.join(s.days) or 'TBA'} "
+                             f"{s.start_time}-{s.end_time}, {s.instructor}", ctx.store.citation("course_sections", s.section_id))
         if course.get("d_clearance_required"):
             out.checklist.append({"text": f"Request D-clearance for {cid} before registering.", "domain": "academic",
                                   "source": citation.model_dump()})
@@ -156,6 +172,8 @@ def check_schedule_conflicts(args: TermCoursesInput, ctx: ToolContext) -> ToolOu
     lectures = {cid: [s for s in _sections(ctx.store, cid, args.term) if s.get("section_type") == "lecture"]
                 for cid in args.course_ids if ctx.store.get("courses", cid)}
     ids = list(lectures)
+    sections_citation = next((ctx.store.citation("course_sections", str(s["section_id"]))
+                              for rows in lectures.values() for s in rows), None)
     conflicts: dict[str, list[str]] = {cid: [] for cid in ids}
     for i, a_id in enumerate(ids):
         for b_id in ids[i + 1:]:
@@ -164,14 +182,14 @@ def check_schedule_conflicts(args: TermCoursesInput, ctx: ToolContext) -> ToolOu
             if not pairs:
                 out.unknowns.append(f"{a_id} / {b_id}: no {args.term} lectures listed for both, conflict unknown.")
             elif any(r is False for r in results):
-                out.facts.append(f"{a_id} and {b_id} have at least one conflict-free lecture combination in {args.term}.")
+                out.add_fact(f"{a_id} and {b_id} have at least one conflict-free lecture combination in {args.term}.", sections_citation)
             elif all(r is True for r in results):
-                out.facts.append(f"Every {args.term} lecture of {a_id} conflicts with every lecture of {b_id}.")
+                out.add_fact(f"Every {args.term} lecture of {a_id} conflicts with every lecture of {b_id}.", sections_citation)
                 conflicts[a_id].append(f"All lectures conflict with {b_id}")
                 conflicts[b_id].append(f"All lectures conflict with {a_id}")
             else:
                 out.unknowns.append(f"{a_id} / {b_id}: some lecture times are TBA, so a conflict cannot be ruled out.")
     for card in out.cards:
         card["schedule_conflicts"] = conflicts.get(card["course_id"], [])
-    out.facts.append("Conflicts were checked for lectures only; labs, discussions and quizzes were not checked.")
+    out.add_fact("Conflicts were checked for lectures only; labs, discussions and quizzes were not checked.")
     return out

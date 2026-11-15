@@ -41,8 +41,8 @@ def _supervisor(messages: list[dict[str, Any]], tools: list[dict[str, Any]] | No
     text = last_user_text(messages).lower()
     agents = [name for name, pattern in DOMAIN_KEYWORDS.items() if re.search(pattern, text)]
     if not agents or len(text.split()) < 4:
-        plan = {"clarify": True, "question": "Could you tell me what you need help with: courses, housing, jobs, or "
-                                             "USC services and onboarding?", "tasks": []}
+        plan = {"clarify": True, "question": "What would you like help with first?", "tasks": [],
+                "options": ["Courses and registration", "Housing", "Jobs and research", "USC services and onboarding"]}
     else:
         plan = {"clarify": False, "tasks": [{"agent": a, "sub_query": text[:300]} for a in agents]}
     return {"content": json.dumps(plan), "tool_calls": []}

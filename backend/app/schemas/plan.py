@@ -15,6 +15,7 @@ class SubTask(BaseModel):
 class Plan(BaseModel):
     clarify: bool = False
     question: str | None = Field(default=None, max_length=300)
+    options: list[str] = Field(default_factory=list, max_length=4)  # short answer chips shown with the question
     tasks: list[SubTask] = Field(default_factory=list, max_length=4)
 
     @model_validator(mode="after")

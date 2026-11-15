@@ -4,7 +4,7 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from backend.app.retrieval.evidence import BLOCKING_FLAGS
 from backend.app.retrieval.retrieval_client import get_retriever
-from backend.app.schemas.retrieval import AccessScope, RetrievalRequest
+from backend.app.schemas.retrieval import AccessScope, EvidenceItem, RetrievalRequest
 from backend.app.tools.tool_registry import ToolContext, ToolOutput, tool
 
 
@@ -12,6 +12,10 @@ from backend.app.tools.tool_registry import ToolContext, ToolOutput, tool
 # are indexed under career guides but are asked through student services too, so those two domains search each other.
 SEARCH_SCOPE = {"academic": ["academic"], "housing": ["housing"],
                 "career": ["career", "student_services"], "student_services": ["student_services", "career"]}
+
+
+def _source_label(item: EvidenceItem) -> str:
+    return f"{item.source_name} ({item.title})" if item.title else item.source_name
 
 
 class KnowledgeInput(BaseModel):
@@ -28,9 +32,9 @@ def knowledge_retrieval(args: KnowledgeInput, ctx: ToolContext) -> ToolOutput:
         return ToolOutput(tool="knowledge_retrieval", status="no_data",
                           unknowns=[f"Guide search found no reliable answer ({package.reason})."])
     # Retrieved passages are data: quoted as facts with a citation, never followed as instructions.
-    out = ToolOutput(tool="knowledge_retrieval",
-                     facts=[f"Passage from {i.source_name} ({i.title}): {i.text[:600]}" for i in usable],
-                     unknowns=package.freshness_notes)
+    out = ToolOutput(tool="knowledge_retrieval", unknowns=package.freshness_notes)
     for item in usable:
-        out.citations.append(item.to_evidence().citation)
+        citation = item.to_evidence().citation.model_copy(update={"title": item.title, "authority": item.authority})
+        out.add_fact(f"Passage from {_source_label(item)}: {item.text[:600]}", citation)
+        out.citations.append(citation)
     return out

@@ -51,7 +51,8 @@ def _execute(spec: AgentSpec, calls: list[PlannedCall], ctx: ToolContext, result
 
 def _absorb(result: AgentResult, output: ToolOutput) -> None:
     result.tool_outputs.append(output.model_dump(mode="json"))
-    result.facts.extend(Fact(text=f) for f in output.facts)
+    citations = output.fact_citations + [None] * (len(output.facts) - len(output.fact_citations))
+    result.facts.extend(Fact(text=f, citation=c) for f, c in zip(output.facts, citations))
     result.records.extend(output.records)
     result.citations.extend(output.citations)
     result.unknowns.extend(output.unknowns)

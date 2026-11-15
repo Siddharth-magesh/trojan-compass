@@ -23,6 +23,7 @@ class RecordRef(BaseModel):
 class Fact(BaseModel):
     text: str
     record: RecordRef | None = None
+    citation: Citation | None = None  # the source this fact came from, so the answer can cite it as [n]
 
 
 class ToolCallRecord(BaseModel):
