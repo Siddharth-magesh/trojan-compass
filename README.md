@@ -22,3 +22,6 @@ An international student arrives at USC and, in one conversation, learns the key
 
 ## What makes it different
 USC-specific knowledge, cross-service answers in one place, personalized context, multi-agent collaboration, source-grounded responses, and security built into the architecture.
+## Local knowledge dataset
+
+All collected branch data is consolidated under [local_database](local_database/README.md). See the [consolidation report](local_database/consolidation_report.md) for complete preservation checks, eligible input files and draft data issues. The current tool prepares source data offline; Pinecone ingestion is future work under [DATA_GUIDE](DATA_GUIDE.md).

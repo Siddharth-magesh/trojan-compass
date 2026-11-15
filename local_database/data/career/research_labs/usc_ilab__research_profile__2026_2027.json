@@ -1,0 +1,68 @@
+{
+  "purpose": "Public research profile and separately qualified recruitment evidence.",
+  "meta": {
+    "title": "iLab",
+    "summary": "Computational neuroscience, neuromorphic engineering, and vision research.",
+    "source_name": "usc_ilab",
+    "source_url": "https://ilab.usc.edu/opportunities/",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "graduate",
+      "undergraduate"
+    ],
+    "tags": [
+      "neuroscience",
+      "vision",
+      "directed_research"
+    ]
+  },
+  "records": [
+    {
+      "lab_id": "ilab",
+      "title": "iLab",
+      "principal_investigator": "Laurent Itti",
+      "official_url": "https://ilab.usc.edu/opportunities/",
+      "research_areas": [
+        "neuroscience",
+        "vision",
+        "directed_research"
+      ],
+      "description": "Computational neuroscience, neuromorphic engineering, and vision research.",
+      "recruitment_status": "no_opening_verified",
+      "opportunity_types": [
+        "directed_research"
+      ],
+      "invited_levels": [
+        "masters"
+      ],
+      "compensation_status": "not_stated",
+      "application_instructions": "Historical MS directed-research instructions request CV, research statement, schedule, and C++ examples. Reconfirm before applying.",
+      "required_skills": [],
+      "verification_notes": "Application guidance includes a December 2011 update; its funding policy and availability are not treated as current.",
+      "source_name": "usc_ilab",
+      "source_url": "https://ilab.usc.edu/opportunities/",
+      "last_verified_date": "2026-11-14",
+      "tags": [
+        "neuroscience",
+        "vision",
+        "directed_research"
+      ],
+      "evidence": [
+        {
+          "source_name": "usc_ilab",
+          "source_url": "https://ilab.usc.edu/opportunities/",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Application guidance includes a December 2011 update; its funding policy and availability are not treated as current."
+        }
+      ]
+    }
+  ]
+}

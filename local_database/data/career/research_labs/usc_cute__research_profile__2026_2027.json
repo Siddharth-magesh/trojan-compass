@@ -1,0 +1,75 @@
+{
+  "purpose": "Public research profile and separately qualified recruitment evidence.",
+  "meta": {
+    "title": "CUTE LAB NAME",
+    "summary": "NLP and computational linguistics, including translation, extraction, understanding, and generation.",
+    "source_name": "usc_cute",
+    "source_url": "https://cutelab.name/",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "graduate",
+      "undergraduate"
+    ],
+    "tags": [
+      "nlp",
+      "translation",
+      "language_generation"
+    ]
+  },
+  "records": [
+    {
+      "lab_id": "cute",
+      "title": "CUTE LAB NAME",
+      "principal_investigator": "Jonathan May",
+      "official_url": "https://cutelab.name/",
+      "research_areas": [
+        "nlp",
+        "translation",
+        "language_generation"
+      ],
+      "description": "NLP and computational linguistics, including translation, extraction, understanding, and generation.",
+      "recruitment_status": "no_opening_verified",
+      "opportunity_types": [
+        "unspecified"
+      ],
+      "invited_levels": [
+        "unverified"
+      ],
+      "compensation_status": "not_stated",
+      "application_instructions": "Review current projects and the faculty page; no public MS application route was verified.",
+      "required_skills": [],
+      "verification_notes": "Lab description alone does not establish hiring.",
+      "source_name": "usc_cute",
+      "source_url": "https://cutelab.name/",
+      "last_verified_date": "2026-11-14",
+      "tags": [
+        "nlp",
+        "translation",
+        "language_generation"
+      ],
+      "evidence": [
+        {
+          "source_name": "usc_cute",
+          "source_url": "https://cutelab.name/",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Lab description alone does not establish hiring."
+        },
+        {
+          "source_name": "usc_cute",
+          "source_url": "https://jonmay.github.io/webpage/",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Faculty page identifies Jonathan May as the center director."
+        }
+      ]
+    }
+  ]
+}

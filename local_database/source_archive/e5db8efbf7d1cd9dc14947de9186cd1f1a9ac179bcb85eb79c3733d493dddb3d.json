@@ -1,0 +1,60 @@
+{
+  "purpose": "Public resource instructions; not a claim of a current vacancy.",
+  "meta": {
+    "title": "USC Hospitality student jobs",
+    "summary": "As-needed intake for culinary, office, marketing/design, and event technology work.",
+    "source_name": "usc_hospitality",
+    "source_url": "https://hospitality.usc.edu/student-jobs/",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all"
+    ],
+    "tags": [
+      "campus_employer",
+      "career",
+      "usc"
+    ]
+  },
+  "records": [
+    {
+      "resource_id": "hospitality",
+      "title": "USC Hospitality student jobs",
+      "description": "As-needed intake for culinary, office, marketing/design, and event technology work.",
+      "source_name": "usc_hospitality",
+      "source_url": "https://hospitality.usc.edu/student-jobs/",
+      "last_verified_date": "2026-11-14",
+      "evidence": [
+        {
+          "source_name": "usc_hospitality",
+          "source_url": "https://hospitality.usc.edu/student-jobs/",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Public description checked; private contents and individual availability are not verified."
+        }
+      ],
+      "verification_notes": "Public description checked; private contents and individual availability are not verified.",
+      "tags": [
+        "campus_employer",
+        "career",
+        "usc"
+      ],
+      "resource_type": "campus_employer",
+      "official_url": "https://hospitality.usc.edu/student-jobs/",
+      "account_requirements": "Public interest form",
+      "access_status": "public",
+      "search_functionality": "Interest areas on form",
+      "usage_steps": [
+        "Review the listed job areas; submit interest through the official form if suitable."
+      ],
+      "recruitment_status": "no_opening_verified",
+      "eligibility_notes": "No pay, hours, or current vacancy confirmed."
+    }
+  ]
+}

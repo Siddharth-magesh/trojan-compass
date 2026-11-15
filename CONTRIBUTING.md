@@ -30,43 +30,28 @@ trojan_compass/
 │       ├── components/          # chat, cards, comparison tables, checklist
 │       └── lib/                 # API client and SSE streaming helpers
 ├── local_database/
-│   ├── DATA_GUIDE.md
-│   ├── registry/
-│   │   ├── categories.json      # every category: domain, file_type, schema, search_fields, owner
-│   │   └── sources.json         # every website we replicate: url, owner, status
-│   ├── schemas/                 # one JSON schema per record type + meta_common.json
+│   ├── README.md / consolidation_report.md  # commands, readiness and remaining data issues
+│   ├── career_collection_report.md         # historical career-collection findings
+│   ├── registry/                           # categories, sources, source_checks, provenance,
+│   │                                       # readiness_manifest, data_quality, ingestion_contract
+│   ├── schemas/                            # shared metadata and one schema per record type
 │   ├── data/
-│   │   ├── academic/            # owner: person_1
-│   │   │   ├── courses/         # records
-│   │   │   ├── course_sections/ # records
-│   │   │   ├── degree_requirements/ # records (BS/MS/PhD requirements per program)
-│   │   │   ├── academic_calendar/ # records (deadlines)
-│   │   │   ├── bulletin/        # documents
-│   │   │   └── registration_policies/
-│   │   ├── housing/             # owner: person_2
-│   │   │   ├── listings/        # records
-│   │   │   └── housing_guides/  # documents
-│   │   ├── career/              # owner: person_3
-│   │   │   ├── job_listings/    # records
-│   │   │   └── career_guides/   # documents
-│   │   └── student_services/    # owner: person_4
-│   │       ├── service_directory/ # records
-│   │       ├── international_students/ # documents
-│   │       └── student_policies/ # documents
-│   ├── student_profiles/        # synthetic profiles, JSON, never embedded
-│   ├── raw/                     # optional original saved pages/PDFs (gitignored)
-│   ├── processed/               # generated: chunks.jsonl, manifest.json (gitignored)
-│   ├── requirements.txt         # Python deps for the data pipeline
+│   │   ├── academic/                       # courses, course_sections, degree_requirements,
+│   │   │                                   # academic_calendar, bulletin, registration_policies
+│   │   ├── housing/                        # listings, housing_guides (uncollected)
+│   │   ├── career/                         # job_listings, career_guides, research_labs,
+│   │   │                                   # opportunities, career_resources
+│   │   └── student_services/               # service_directory, international_students,
+│   │                                       # student_policies, event_listings, support_resources
+│   ├── student_profiles/                   # synthetic only, never embedded
+│   ├── source_archive/                     # immutable branch data/config snapshots; not ingested
+│   ├── legacy_code/                        # inactive code snapshots; not executed or ingested
+│   ├── raw/                                # optional originals and one-off tools; gitignored
+│   ├── processed/                          # preparation/ outputs and legacy_output/; gitignored
 │   └── scripts/
-│       ├── data_common.py       # shared paths, parsing, ids, token counting, sectioning
-│       ├── embedding.py         # BGE-small dense (cached) and BM25 sparse encoders
-│       ├── validate_data.py     # checks meta, schema, ids, dates
-│       ├── build_chunks.py      # files -> chunks, skips unchanged files by hash
-│       ├── push_to_pinecone.py  # embeds new/changed chunks, upserts, deletes stale ids (--dry-run)
-│       ├── eval_retrieval.py    # recall@5 / MRR on golden queries, dense vs hybrid (--local)
-│       └── scrape_public_pages.py # one-off crawler for public USC help pages -> raw/
-└── evaluation/
-    └── golden_queries.jsonl     # retrieval benchmark queries, one JSON per line
+│       ├── audit_dataset.py                # offline schemas, preservation and input manifest
+│       └── requirements.txt                # dependencies for that audit only
+└── evaluation/                  # benchmark questions, reference answers, comparison vs general AI
 ```
 
 ## Where to look
@@ -76,12 +61,20 @@ trojan_compass/
 | Edit one domain agent | `backend/app/agents/<name>_agent.py` |
 | Add or change a tool an agent can call | `backend/app/tools/` |
 | Change chunking, embeddings, top-k or reranking | `backend/app/retrieval/` |
-| Add or fix synthetic data | `local_database/structured/` |
-| Add or change data | `local_database/DATA_GUIDE.md` |
-| Add source documents for RAG | `local_database/documents/` |
+| Add or fix structured data | `local_database/data/<domain>/<category>/` |
+| Add or change data | Root `DATA_GUIDE.md`; local commands in `local_database/README.md` |
+| Add source documents for RAG | `local_database/data/<domain>/<document_category>/` |
 | Change auth, guards or rate limits | `backend/app/security/` |
 | Swap or add an LLM provider | `backend/app/llm_gateway/` |
 | Change a UI component | `frontend/src/components/` |
+
+## Implemented local collection
+
+The application folders above remain the intended layout. Collected knowledge is implemented under `local_database/`; root `DATA_GUIDE.md` is authoritative. Student-life JSON formerly under `Docs/Student Life/` has moved into `data/student_services/`. Canonical filenames include the registered source name and academic year. Historical years retain separate files.
+
+Schemas cover courses, sections, degree requirements, academic calendar, housing listings, job listings, research labs, career opportunities/resources, service directory, events and support resources, plus metadata, source checks and synthetic profiles. JSON records preserve richer nested fields. Drafts remain in canonical data but are excluded by `registry/readiness_manifest.json`. Registry explanatory keys (`_comment`) are not categories or sources.
+
+`source_archive/README.md` and `legacy_code/README.md` document the immutable originals and inactive old pipeline. The only supported local tool is `scripts/audit_dataset.py`. It produces a data-input manifest and an exact-record lookup index, not chunks, embeddings or a Pinecone upload. See `local_database/README.md` for its command and `consolidation_report.md` for readiness. `evaluation/` owns all 79 golden queries.
 
 ## Orchestration files (`backend/app/orchestration/`)
 `graph.py` (LangGraph wiring), `supervisor.py` (understand query, plan, clarify), `task_dispatcher.py`, `result_normalizer.py`, `result_aggregator.py`, `verifier.py` (data, maths, sources, freshness), `recovery.py` (one targeted retry, partial results), `synthesizer.py`, `fallback.py`.

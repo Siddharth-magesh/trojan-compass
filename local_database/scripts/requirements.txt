@@ -1,0 +1,4 @@
+# Offline data audit only; legacy ingestion dependencies are archived.
+pydantic>=2.10,<3
+jsonschema>=4.23,<5
+PyYAML>=6,<7

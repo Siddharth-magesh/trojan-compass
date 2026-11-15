@@ -1,0 +1,189 @@
+{
+  "purpose": "Complete collected records; file metadata controls indexing eligibility.",
+  "meta": {
+    "title": "Computer Science (MS)",
+    "summary": "Collected requirements for Computer Science (MS) from catalogue year 2018-2019; review historical requirements and department-site notes before indexing.",
+    "source_name": "usc_catalogue",
+    "source_url": "https://catalogue.usc.edu/preview_program.php?catoid=8&poid=7765",
+    "collected_by": "person_1",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2018-2019",
+    "version": 2,
+    "status": "draft",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all",
+      "undergraduate",
+      "graduate"
+    ],
+    "tags": [
+      "csci",
+      "degree_requirements",
+      "bs",
+      "ms",
+      "phd"
+    ]
+  },
+  "records": [
+    {
+      "program_id": "ms_computer_science",
+      "title": "Computer Science (MS)",
+      "degree": "Master of Science in Computer Science",
+      "degree_type": "MS",
+      "level": "graduate",
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "catalogue_year": "2018-2019",
+      "source_url": "https://catalogue.usc.edu/preview_program.php?catoid=8&poid=7765",
+      "total_units": 28,
+      "total_units_with_thesis": 32,
+      "description": "Master of Science in Computer Science (general program). Total units required for the degree is 28 (32 with the thesis option). One required course (CSCI 570), two of CSCI 561, CSCI 571 and CSCI 585, and additional 500-level CSCI electives. No examination is required for the degree.",
+      "gpa_requirements": [
+        "A minimum grade point average of 3.0 must be earned on all course work applied toward the master's degree in computer science.",
+        "This average must also be earned on all graduate courses completed at USC (400-level and above).",
+        "Transfer units count as credit (CR) toward the master's degree and are not computed in the grade point average."
+      ],
+      "exam_required": false,
+      "requirement_groups": [
+        {
+          "group_id": "required_course",
+          "name": "Required course",
+          "units_required": 4,
+          "selection": "all",
+          "slots": [
+            {
+              "one_of": [
+                {
+                  "course_id": "CSCI 570",
+                  "catalogue_label": "CSCI 570",
+                  "title": "Analysis of Algorithms",
+                  "units": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "core_choice",
+          "name": "Choose two of the following courses",
+          "units_required": 8,
+          "selection": "choose",
+          "min_courses": 2,
+          "min_units": 8,
+          "options": [
+            {
+              "course_id": "CSCI 561",
+              "catalogue_label": "CSCI 561",
+              "title": "Foundations of Artificial Intelligence",
+              "units": 4
+            },
+            {
+              "course_id": "CSCI 571",
+              "catalogue_label": "CSCI 571",
+              "title": "Web Technologies",
+              "units": 4
+            },
+            {
+              "course_id": "CSCI 585",
+              "catalogue_label": "CSCI 585",
+              "title": "Database Systems",
+              "units": 4
+            }
+          ]
+        },
+        {
+          "group_id": "additional_course_work",
+          "name": "Additional Course Work",
+          "units_required": 16,
+          "selection": "open",
+          "notes": [
+            "The remaining elective units necessary to earn the degree are completed by selecting additional 500-level CSCI courses."
+          ]
+        }
+      ],
+      "limits": [
+        {
+          "rule": "max_400_level_units",
+          "value": 4,
+          "text": "A maximum of 4 units may be taken at the 400 level from approved courses in either electrical engineering or computer science; the remaining units must be approved courses at the 500 or 600 level. Only one course may be 400-level."
+        },
+        {
+          "rule": "max_600_level_units",
+          "value": 8,
+          "text": "MS students may complete a maximum of 8 units of 600-level courses (up to two courses). Approval for enrollment in 600-level courses must come from the faculty instructor and department adviser."
+        },
+        {
+          "rule": "max_directed_research_units",
+          "course_id": "CSCI 590",
+          "value": 2,
+          "text": "A maximum of 2 units of CSCI 590 may be applied."
+        },
+        {
+          "rule": "max_colloquium_units",
+          "course_id": "CSCI 591",
+          "value": 2,
+          "text": "A maximum of 2 units of CSCI 591 may be applied."
+        },
+        {
+          "rule": "max_non_cs_courses",
+          "value": 1,
+          "text": "With adviser approval, one non Computer Science course may be selected from the approved list."
+        },
+        {
+          "rule": "not_elective_credit",
+          "courses": [
+            "CSCI 594A",
+            "CSCI 594B",
+            "CSCI 594Z",
+            "ENGR 595A",
+            "ENGR 595B",
+            "ENGR 595Z"
+          ],
+          "text": "Thesis courses (CSCI 594a, 594b, 594z) and Internship courses (ENGR 595a, 595b, 595z) are not eligible for elective credit."
+        }
+      ],
+      "thesis_option": {
+        "available": true,
+        "total_units": 32,
+        "courses": [
+          "CSCI 594A",
+          "CSCI 594B",
+          "CSCI 594Z"
+        ],
+        "max_thesis_units": 4,
+        "text": "With the approval of a supervising professor, qualified students may be allowed to pursue a thesis option. Students must satisfy all of the policies and course requirements for the master's degree and, in addition, must enroll in a minimum of two semesters of CSCI 594a, 594b, 594z for a maximum of 4 units. Total units required for the degree with thesis is 32. The thesis must comply with all requirements set by the Graduate School. Students interested in a thesis while enrolled in a CS specialization should consult with their department adviser."
+      },
+      "other_requirements": "Other requirements are the same as set forth in the general requirements for Viterbi School of Engineering master's degrees.",
+      "department_site_notes": {
+        "source_url": "https://www.cs.usc.edu/academic-programs/masters/computer-science-general/",
+        "page_last_updated": "2026-08-08",
+        "notes": [
+          "The department page states 32 units for students who began in Fall 2024 or later; students who began in Summer 2024 or earlier are held to the prior requirement of 28 units.",
+          "The department page lists CSCI 570 as the only core course, with the remaining units from additional 500-level CSCI courses.",
+          "Thesis track: 36 units for students starting Fall 2024 or later (32 for Summer 2024 or earlier).",
+          "Even if a prerequisite is waived, you may not take the prerequisite course after taking the advanced course.",
+          "MS CS specializations listed on the department site: Artificial Intelligence, Data Science, Game Development, Computer Security, Computer Networks, Software Engineering, Intelligent Robotics, Multimedia and Creative Technologies, High Performance Computing and Simulations, Scientists and Engineers."
+        ]
+      },
+      "audience": [
+        "graduate"
+      ],
+      "tags": [
+        "computer_science",
+        "ms",
+        "masters",
+        "degree_requirements",
+        "csci"
+      ],
+      "related_courses": [
+        "CSCI 561",
+        "CSCI 570",
+        "CSCI 571",
+        "CSCI 585"
+      ]
+    }
+  ]
+}

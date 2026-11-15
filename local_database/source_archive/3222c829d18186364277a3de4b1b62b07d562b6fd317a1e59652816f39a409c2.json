@@ -1,0 +1,20 @@
+{
+  "service_directory": {
+    "domain": "student_services",
+    "file_type": "records",
+    "schema": "service_directory",
+    "id_field": "service_id",
+    "search_template": "{service_id}: {name}. {purpose} Common tasks: {common_tasks}.",
+    "filter_fields": [
+      "login_required"
+    ]
+  },
+  "international_students": {
+    "domain": "student_services",
+    "file_type": "document"
+  },
+  "student_policies": {
+    "domain": "student_services",
+    "file_type": "document"
+  }
+}

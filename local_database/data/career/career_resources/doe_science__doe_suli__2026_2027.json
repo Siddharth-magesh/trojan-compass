@@ -1,0 +1,64 @@
+{
+  "purpose": "Public resource instructions; not a claim of a current vacancy.",
+  "meta": {
+    "title": "DOE SULI recent-graduate eligibility",
+    "summary": "Some graduate enrollees qualify through SULI's recent-undergraduate-graduate route.",
+    "source_name": "doe_science",
+    "source_url": "https://science.osti.gov/wdts/suli/Eligibility",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all"
+    ],
+    "tags": [
+      "research_program",
+      "career",
+      "usc"
+    ]
+  },
+  "records": [
+    {
+      "resource_id": "doe_suli",
+      "title": "DOE SULI recent-graduate eligibility",
+      "description": "Some graduate enrollees qualify through SULI's recent-undergraduate-graduate route.",
+      "source_name": "doe_science",
+      "source_url": "https://science.osti.gov/wdts/suli/Eligibility",
+      "last_verified_date": "2026-11-14",
+      "evidence": [
+        {
+          "source_name": "doe_science",
+          "source_url": "https://science.osti.gov/wdts/suli/Eligibility",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Public description checked; private contents and individual availability are not verified."
+        }
+      ],
+      "verification_notes": "Public description checked; private contents and individual availability are not verified.",
+      "tags": [
+        "research_program",
+        "career",
+        "usc"
+      ],
+      "resource_type": "research_program",
+      "official_url": "https://science.osti.gov/wdts/suli/Eligibility",
+      "account_requirements": "Program application account",
+      "access_status": "public",
+      "search_functionality": "Eligibility and application pages",
+      "usage_steps": [
+        "Check the undergraduate degree date and all program criteria before applying."
+      ],
+      "recruitment_status": "no_opening_verified",
+      "eligibility_notes": "US citizen or lawful permanent resident; qualifying recent degree within two years of program start.",
+      "numerical_facts": {
+        "maximum_years_since_undergraduate_degree": 2,
+        "minimum_age_years": 18
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "purpose": "Source-backed announcement with separate availability and verification states.",
+  "meta": {
+    "title": "Amazon SDE intern ML/automated reasoning summer 2027",
+    "summary": "Software engineering internship with ML, automated reasoning, query optimization, and distributed-systems matching.",
+    "source_name": "amazon_jobs",
+    "source_url": "https://amazon.jobs/en/jobs/10593521/software-development-engineer-intern-machine-learning-automated-reasoning-summer-2027",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "graduate",
+      "undergraduate"
+    ],
+    "tags": [
+      "internship",
+      "career",
+      "opportunity"
+    ]
+  },
+  "records": [
+    {
+      "opportunity_id": "amazon_sde_ml_10593521",
+      "title": "Amazon SDE intern ML/automated reasoning summer 2027",
+      "organization": "Amazon.com Services LLC",
+      "opportunity_type": "internship",
+      "description": "Software engineering internship with ML, automated reasoning, query optimization, and distributed-systems matching.",
+      "compensation_status": "paid",
+      "recruitment_status": "active",
+      "status_reason": "Original employer requisition displayed Apply now at collection; hiring can close without notice.",
+      "student_eligibility": [
+        "Age 18 or older",
+        "Bachelor's degree or higher in CS or related STEM",
+        "Expected graduation October 2027 through September 2029",
+        "At least one academic term remaining after internship"
+      ],
+      "required_skills": [
+        "General-purpose programming",
+        "Data structures, algorithms or object-oriented design",
+        "AI-assisted development tools"
+      ],
+      "application_instructions": "Apply through the employer requisition and confirm schedule and location. Annual pay is source-stated, not converted to an hourly rate or guaranteed internship earnings.",
+      "apply_url": "https://amazon.jobs/en/jobs/10593521/software-development-engineer-intern-machine-learning-automated-reasoning-summer-2027",
+      "hours_per_week": 40,
+      "duration_weeks": 12,
+      "location": "Multiple US sites; placement subject to business need",
+      "annual_pay_by_location_usd": {
+        "arlington_va": 109650,
+        "austin_tx": 109650,
+        "bellevue_wa": 109650,
+        "boston_ma": 109650,
+        "irvine_ca": 125100,
+        "new_york_ny": 120615,
+        "san_diego_ca": 125100,
+        "seattle_wa": 109650,
+        "sunnyvale_ca": 126140
+      },
+      "international_eligibility": "unverified",
+      "source_name": "amazon_jobs",
+      "source_url": "https://amazon.jobs/en/jobs/10593521/software-development-engineer-intern-machine-learning-automated-reasoning-summer-2027",
+      "last_verified_date": "2026-11-14",
+      "tags": [
+        "internship",
+        "career",
+        "opportunity"
+      ],
+      "verification_notes": "Original employer requisition displayed Apply now at collection; hiring can close without notice.",
+      "evidence": [
+        {
+          "source_name": "amazon_jobs",
+          "source_url": "https://amazon.jobs/en/jobs/10593521/software-development-engineer-intern-machine-learning-automated-reasoning-summer-2027",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Original employer requisition displayed Apply now at collection; hiring can close without notice."
+        }
+      ]
+    }
+  ]
+}

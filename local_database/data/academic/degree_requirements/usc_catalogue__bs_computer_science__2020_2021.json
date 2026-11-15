@@ -1,0 +1,796 @@
+{
+  "purpose": "Complete collected records; file metadata controls indexing eligibility.",
+  "meta": {
+    "title": "Computer Science (BS)",
+    "summary": "Collected requirements for Computer Science (BS) from catalogue year 2020-2021; review historical requirements and department-site notes before indexing.",
+    "source_name": "usc_catalogue",
+    "source_url": "https://catalogue.usc.edu/preview_program.php?catoid=12&poid=12999",
+    "collected_by": "person_1",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2020-2021",
+    "version": 2,
+    "status": "draft",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all",
+      "undergraduate",
+      "graduate"
+    ],
+    "tags": [
+      "csci",
+      "degree_requirements",
+      "bs",
+      "ms",
+      "phd"
+    ]
+  },
+  "records": [
+    {
+      "program_id": "bs_computer_science",
+      "title": "Computer Science (BS)",
+      "degree": "Bachelor of Science in Computer Science",
+      "degree_type": "BS",
+      "level": "undergraduate",
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "catalogue_year": "2020-2021",
+      "source_url": "https://catalogue.usc.edu/preview_program.php?catoid=12&poid=12999",
+      "total_units": 128,
+      "description": "The undergraduate program in computer science is an interdisciplinary program leading to the Bachelor of Science in Computer Science. The program is designed to provide both an academic and professional orientation. The minimum requirement for the degree is 128 units.",
+      "admission_requirements": "General admission requirements for the undergraduate program are the same as those of the university and the USC Viterbi School of Engineering and include 3 to 5 units of mathematics and one unit of science (biology, chemistry or physics) together with satisfactory scores on the Scholastic Aptitude Test and Achievement Tests.",
+      "gpa_requirements": [
+        "A cumulative grade point average of C (2.0) is required for all courses taken at USC as well as all upper division courses applied toward the major, regardless of the department in which the courses are taken."
+      ],
+      "grade_rules": [
+        "A grade of C (2.0) or better is required for each of the core courses CSCI 102L, CSCI 103, CSCI 170, CSCI 104 and CSCI 201.",
+        "Courses with a grade of C- or below must be repeated; courses may only be retaken once.",
+        "Departmental approval is required in order to retake a course.",
+        "Students who do not satisfy the degree requirement after repeating a class will be disqualified from the program."
+      ],
+      "minimum_grade_courses": {
+        "minimum_grade": "C",
+        "courses": [
+          "CSCI 102",
+          "CSCI 103",
+          "CSCI 170",
+          "CSCI 104",
+          "CSCI 201"
+        ]
+      },
+      "requirement_groups": [
+        {
+          "group_id": "composition_writing",
+          "name": "Composition/Writing Requirements",
+          "units_required": 7,
+          "selection": "all",
+          "slots": [
+            {
+              "one_of": [
+                {
+                  "course_id": "WRIT 150",
+                  "catalogue_label": "WRIT 150",
+                  "title": "Writing and Critical Reasoning–Thematic Approaches",
+                  "units": 4
+                }
+              ]
+            },
+            {
+              "one_of": [
+                {
+                  "course_id": "WRIT 340",
+                  "catalogue_label": "WRIT 340",
+                  "title": "Advanced Writing",
+                  "units": 4,
+                  "units_text": "3, 4"
+                }
+              ]
+            }
+          ],
+          "notes": [
+            "WRIT 340 Advanced Writing (Communication for Engineers) is strongly recommended for CSCI majors."
+          ]
+        },
+        {
+          "group_id": "general_education",
+          "name": "General Education",
+          "units_required": 24,
+          "selection": "open",
+          "notes": [
+            "Candidates must complete general education requirements; see the General Education Program.",
+            "MATH 125 satisfies a General Education requirement."
+          ]
+        },
+        {
+          "group_id": "pre_major",
+          "name": "Pre-Major Requirements",
+          "units_required": 30,
+          "selection": "all",
+          "subgroups": [
+            {
+              "group_id": "engineering",
+              "name": "Engineering",
+              "units_required": 2,
+              "selection": "all",
+              "slots": [
+                {
+                  "one_of": [
+                    {
+                      "course_id": "ENGR 102",
+                      "catalogue_label": "ENGR 102",
+                      "title": "Engineering Freshman Academy",
+                      "units": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "mathematics",
+              "name": "Mathematics",
+              "units_required": 16,
+              "selection": "all",
+              "slots": [
+                {
+                  "one_of": [
+                    {
+                      "course_id": "MATH 125",
+                      "catalogue_label": "MATH 125g",
+                      "title": "Calculus I",
+                      "units": 4
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "MATH 126",
+                      "catalogue_label": "MATH 126g",
+                      "title": "Calculus II",
+                      "units": 4
+                    },
+                    {
+                      "course_id": "MATH 129",
+                      "catalogue_label": "MATH 129",
+                      "title": "Calculus II for Engineers and Scientists",
+                      "units": 4
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "MATH 225",
+                      "catalogue_label": "MATH 225",
+                      "title": "Linear Algebra and Linear Differential Equations",
+                      "units": 4
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "MATH 226",
+                      "catalogue_label": "MATH 226g",
+                      "title": "Calculus III",
+                      "units": 4
+                    },
+                    {
+                      "course_id": "MATH 229",
+                      "catalogue_label": "MATH 229",
+                      "title": "Calculus III for Engineers and Scientists",
+                      "units": 4
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "statistics_probability",
+              "name": "Statistics and Probability",
+              "units_required": 4,
+              "selection": "all",
+              "slots": [
+                {
+                  "one_of": [
+                    {
+                      "course_id": "EE 364",
+                      "catalogue_label": "EE 364",
+                      "title": "Introduction to Probability and Statistics for Electrical Engineering and Computer Science",
+                      "units": 4
+                    },
+                    {
+                      "course_id": "MATH 407",
+                      "catalogue_label": "MATH 407",
+                      "title": "Probability Theory",
+                      "units": 4
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "basic_science",
+              "name": "Basic Science",
+              "units_required": 8,
+              "selection": "all",
+              "slots": [
+                {
+                  "one_of": [
+                    {
+                      "all_of": [
+                        {
+                          "course_id": "BISC 120",
+                          "catalogue_label": "BISC 120Lg",
+                          "title": "General Biology: Organismal Biology and Evolution",
+                          "units": 4
+                        },
+                        {
+                          "course_id": "BISC 220",
+                          "catalogue_label": "BISC 220Lg",
+                          "title": "General Biology: Cell Biology and Physiology",
+                          "units": 4
+                        }
+                      ]
+                    },
+                    {
+                      "all_of": [
+                        {
+                          "course_id": "BISC 121",
+                          "catalogue_label": "BISC 121Lg",
+                          "title": "Advanced General Biology: Organismal Biology and Evolution",
+                          "units": 4
+                        },
+                        {
+                          "course_id": "BISC 221",
+                          "catalogue_label": "BISC 221Lg",
+                          "title": "Advanced General Biology: Cell Biology and Physiology",
+                          "units": 4
+                        }
+                      ]
+                    },
+                    {
+                      "all_of": [
+                        {
+                          "course_id": "CHEM 105A",
+                          "catalogue_label": "CHEM 105aLg",
+                          "title": "General Chemistry",
+                          "units": 4
+                        },
+                        {
+                          "course_id": "CHEM 105B",
+                          "catalogue_label": "CHEM 105bL",
+                          "title": "General Chemistry",
+                          "units": 4
+                        }
+                      ]
+                    },
+                    {
+                      "all_of": [
+                        {
+                          "course_id": "CHEM 115A",
+                          "catalogue_label": "CHEM 115aLg",
+                          "title": "Advanced General Chemistry",
+                          "units": 4
+                        },
+                        {
+                          "course_id": "CHEM 115B",
+                          "catalogue_label": "CHEM 115bL",
+                          "title": "Advanced General Chemistry",
+                          "units": 4
+                        }
+                      ]
+                    },
+                    {
+                      "all_of": [
+                        {
+                          "course_id": "PHYS 151",
+                          "catalogue_label": "PHYS 151Lg",
+                          "title": "Fundamentals of Physics I: Mechanics and Thermodynamics",
+                          "units": 4
+                        },
+                        {
+                          "course_id": "PHYS 152",
+                          "catalogue_label": "PHYS 152L",
+                          "title": "Fundamentals of Physics II: Electricity and Magnetism",
+                          "units": 4
+                        }
+                      ]
+                    },
+                    {
+                      "all_of": [
+                        {
+                          "course_id": "PHYS 161",
+                          "catalogue_label": "PHYS 161Lg",
+                          "title": "Advanced Principles of Physics I",
+                          "units": 4
+                        },
+                        {
+                          "course_id": "PHYS 162",
+                          "catalogue_label": "PHYS 162L",
+                          "title": "Advanced Principles of Physics II",
+                          "units": 4
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "notes": [
+                "One of the following science area course sequences: biology, chemistry or physics.",
+                "Courses selected to meet the general education life science and physical science requirements must be approved by the CSCI department to ensure that students achieve the required level of basic science content in their programs."
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "major",
+          "name": "Major Requirements",
+          "units_required": 62,
+          "selection": "all",
+          "subgroups": [
+            {
+              "group_id": "computer_science",
+              "name": "Computer Science",
+              "units_required": 46,
+              "selection": "all",
+              "slots": [
+                {
+                  "one_of": [
+                    {
+                      "course_id": "CSCI 102",
+                      "catalogue_label": "CSCI 102L",
+                      "title": "Fundamentals of Computation",
+                      "units": 2
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "CSCI 103",
+                      "catalogue_label": "CSCI 103L",
+                      "title": "Introduction to Programming",
+                      "units": 4
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "CSCI 104",
+                      "catalogue_label": "CSCI 104L",
+                      "title": "Data Structures and Object Oriented Design",
+                      "units": 4
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "CSCI 170",
+                      "catalogue_label": "CSCI 170",
+                      "title": "Discrete Methods in Computer Science",
+                      "units": 4
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "CSCI 201",
+                      "catalogue_label": "CSCI 201L",
+                      "title": "Principles of Software Development",
+                      "units": 4
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "CSCI 270",
+                      "catalogue_label": "CSCI 270",
+                      "title": "Introduction to Algorithms and Theory of Computing",
+                      "units": 4
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "CSCI 310",
+                      "catalogue_label": "CSCI 310",
+                      "title": "Software Engineering",
+                      "units": 4
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "CSCI 350",
+                      "catalogue_label": "CSCI 350",
+                      "title": "Introduction to Operating Systems",
+                      "units": 4
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "CSCI 353",
+                      "catalogue_label": "CSCI 353",
+                      "title": "Introduction to Internetworking",
+                      "units": 4
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "CSCI 356",
+                      "catalogue_label": "CSCI 356",
+                      "title": "Introduction to Computer Systems",
+                      "units": 4
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "CSCI 360",
+                      "catalogue_label": "CSCI 360",
+                      "title": "Introduction to Artificial Intelligence",
+                      "units": 4
+                    }
+                  ]
+                },
+                {
+                  "one_of": [
+                    {
+                      "course_id": "CSCI 401",
+                      "catalogue_label": "CSCI 401",
+                      "title": "Capstone: Design and Construction of Large Software Systems",
+                      "units": 4
+                    },
+                    {
+                      "course_id": "CSCI 404",
+                      "catalogue_label": "CSCI 404",
+                      "title": "Capstone: Creating Your High-Tech Startup",
+                      "units": 4
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "electrical_engineering",
+              "name": "Electrical Engineering",
+              "units_required": 4,
+              "selection": "all",
+              "slots": [
+                {
+                  "one_of": [
+                    {
+                      "course_id": "EE 109",
+                      "catalogue_label": "EE 109L",
+                      "title": "Introduction to Embedded Systems",
+                      "units": 4
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "technical_electives",
+              "name": "Technical Electives",
+              "units_required": 12,
+              "selection": "choose",
+              "min_units": 12,
+              "min_courses": 3,
+              "options": [
+                {
+                  "course_id": "CSCI 401",
+                  "catalogue_label": "CSCI 401",
+                  "title": "Capstone: Design and Construction of Large Software Systems",
+                  "units": 4
+                },
+                {
+                  "course_id": "CSCI 404",
+                  "catalogue_label": "CSCI 404",
+                  "title": "Capstone: Creating Your High-Tech Startup",
+                  "units": 4
+                },
+                {
+                  "course_id": "CSCI 420",
+                  "catalogue_label": "CSCI 420",
+                  "title": "Computer Graphics",
+                  "units": 4
+                },
+                {
+                  "course_id": "CSCI 423",
+                  "catalogue_label": "CSCI 423",
+                  "title": "Native Console Multiplayer Game Development",
+                  "units": 4
+                },
+                {
+                  "course_id": "CSCI 430",
+                  "catalogue_label": "CSCI 430",
+                  "title": "Introduction to Computer and Network Security",
+                  "units": 4
+                },
+                {
+                  "course_id": "CSCI 445",
+                  "catalogue_label": "CSCI 445L",
+                  "title": "Introduction to Robotics",
+                  "units": 4
+                },
+                {
+                  "course_id": "CSCI 459",
+                  "catalogue_label": "CSCI 459",
+                  "title": "Computer Systems and Applications Modeling Fundamentals",
+                  "units": 3
+                },
+                {
+                  "course_id": "CSCI 467",
+                  "catalogue_label": "CSCI 467",
+                  "title": "Introduction to Machine Learning",
+                  "units": 4
+                },
+                {
+                  "course_id": "CSCI 476",
+                  "catalogue_label": "CSCI 476",
+                  "title": "Cryptography: Secure Communication and Computation",
+                  "units": 4
+                },
+                {
+                  "course_id": "CSCI 485",
+                  "catalogue_label": "CSCI 485",
+                  "title": "File and Database Management",
+                  "units": 4
+                },
+                {
+                  "course_id": "CSCI 490",
+                  "catalogue_label": "CSCI 490x",
+                  "title": "Directed Research",
+                  "units": 8,
+                  "units_text": "1, 2, 3, 4, 5, 6, 7, 8"
+                },
+                {
+                  "course_id": "CSCI 491A",
+                  "catalogue_label": "CSCI 491aL",
+                  "title": "Final Game Project",
+                  "units": 4
+                },
+                {
+                  "course_id": "CSCI 491B",
+                  "catalogue_label": "CSCI 491bL",
+                  "title": "Final Game Project",
+                  "units": 2
+                },
+                {
+                  "course_id": "CSCI 499",
+                  "catalogue_label": "CSCI 499",
+                  "title": "Special Topics",
+                  "units": 4,
+                  "units_text": "2, 3, 4"
+                },
+                {
+                  "course_id": "EE 354",
+                  "catalogue_label": "EE 354L",
+                  "title": "Introduction to Digital Circuits",
+                  "units": 4
+                },
+                {
+                  "course_id": "EE 450",
+                  "catalogue_label": "EE 450",
+                  "title": "Introduction to Computer Networks",
+                  "units": 4
+                },
+                {
+                  "course_id": "EE 451",
+                  "catalogue_label": "EE 451",
+                  "title": "Parallel and Distributed Computation",
+                  "units": 4
+                },
+                {
+                  "course_id": "EE 454",
+                  "catalogue_label": "EE 454L",
+                  "title": "Introduction to System-on-Chip",
+                  "units": 4
+                },
+                {
+                  "course_id": "EE 457",
+                  "catalogue_label": "EE 457",
+                  "title": "Computer Systems Organization",
+                  "units": 4
+                },
+                {
+                  "course_id": "EE 459",
+                  "catalogue_label": "EE 459Lx",
+                  "title": "Embedded Systems Design Laboratory",
+                  "units": 4
+                },
+                {
+                  "course_id": "EE 477",
+                  "catalogue_label": "EE 477L",
+                  "title": "MOS VLSI Circuit Design",
+                  "units": 4
+                },
+                {
+                  "course_id": "EE 490",
+                  "catalogue_label": "EE 490x",
+                  "title": "Directed Research",
+                  "units": 8,
+                  "units_text": "1, 2, 3, 4, 5, 6, 7, 8"
+                },
+                {
+                  "course_id": "EE 499",
+                  "catalogue_label": "EE 499",
+                  "title": "Special Topics",
+                  "units": 4,
+                  "units_text": "2, 3, 4"
+                },
+                {
+                  "course_id": "ENGR 395A",
+                  "catalogue_label": "ENGR 395ax",
+                  "title": "Cooperative Education Work Experience",
+                  "units": 2,
+                  "units_text": "1 or 2"
+                },
+                {
+                  "course_id": "ENGR 395B",
+                  "catalogue_label": "ENGR 395bx",
+                  "title": "Cooperative Education Work Experience",
+                  "units": 2,
+                  "units_text": "1 or 2"
+                },
+                {
+                  "course_id": "ENGR 395C",
+                  "catalogue_label": "ENGR 395cx",
+                  "title": "Cooperative Education Work Experience",
+                  "units": 2,
+                  "units_text": "1 or 2"
+                },
+                {
+                  "course_id": "ITP 368",
+                  "catalogue_label": "ITP 368",
+                  "title": "Programming Graphical User Interfaces",
+                  "units": 4
+                },
+                {
+                  "course_id": "ITP 380",
+                  "catalogue_label": "ITP 380",
+                  "title": "Video Game Programming",
+                  "units": 4
+                },
+                {
+                  "course_id": "ITP 435",
+                  "catalogue_label": "ITP 435",
+                  "title": "Professional C++",
+                  "units": 4
+                },
+                {
+                  "course_id": "ITP 439",
+                  "catalogue_label": "ITP 439",
+                  "title": "Compiler Development",
+                  "units": 4
+                },
+                {
+                  "course_id": "ITP 466",
+                  "catalogue_label": "ITP 466",
+                  "title": "Building the High Tech Startup",
+                  "units": 4
+                },
+                {
+                  "course_id": "ITP 485",
+                  "catalogue_label": "ITP 485",
+                  "title": "Programming Game Engines",
+                  "units": 4
+                },
+                {
+                  "course_id": "MATH 458",
+                  "catalogue_label": "MATH 458",
+                  "title": "Numerical Methods",
+                  "units": 4
+                }
+              ],
+              "notes": [
+                "At least three courses for a minimum of 12 units.",
+                "Students may also choose one adviser-approved course from the 300- and 400-level ITP offerings. Other courses may be applicable; please see an adviser for approval."
+              ]
+            }
+          ]
+        },
+        {
+          "group_id": "free_electives",
+          "name": "Free Electives",
+          "units_required": 5,
+          "selection": "open"
+        }
+      ],
+      "audience": [
+        "undergraduate"
+      ],
+      "tags": [
+        "computer_science",
+        "bs",
+        "undergraduate",
+        "degree_requirements",
+        "csci"
+      ],
+      "related_courses": [
+        "BISC 120",
+        "BISC 121",
+        "BISC 220",
+        "BISC 221",
+        "CHEM 105A",
+        "CHEM 105B",
+        "CHEM 115A",
+        "CHEM 115B",
+        "CSCI 102",
+        "CSCI 103",
+        "CSCI 104",
+        "CSCI 170",
+        "CSCI 201",
+        "CSCI 270",
+        "CSCI 310",
+        "CSCI 350",
+        "CSCI 353",
+        "CSCI 356",
+        "CSCI 360",
+        "CSCI 401",
+        "CSCI 404",
+        "CSCI 420",
+        "CSCI 423",
+        "CSCI 430",
+        "CSCI 445",
+        "CSCI 459",
+        "CSCI 467",
+        "CSCI 476",
+        "CSCI 485",
+        "CSCI 490",
+        "CSCI 491A",
+        "CSCI 491B",
+        "CSCI 499",
+        "EE 109",
+        "EE 354",
+        "EE 364",
+        "EE 450",
+        "EE 451",
+        "EE 454",
+        "EE 457",
+        "EE 459",
+        "EE 477",
+        "EE 490",
+        "EE 499",
+        "ENGR 102",
+        "ENGR 395A",
+        "ENGR 395B",
+        "ENGR 395C",
+        "ITP 368",
+        "ITP 380",
+        "ITP 435",
+        "ITP 439",
+        "ITP 466",
+        "ITP 485",
+        "MATH 125",
+        "MATH 126",
+        "MATH 129",
+        "MATH 225",
+        "MATH 226",
+        "MATH 229",
+        "MATH 407",
+        "MATH 458",
+        "PHYS 151",
+        "PHYS 152",
+        "PHYS 161",
+        "PHYS 162",
+        "WRIT 150",
+        "WRIT 340"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1291 @@
+{
+  "purpose": "Complete collected records; file metadata controls indexing eligibility.",
+  "meta": {
+    "title": "CSCI courses (Computer Science) 2026-2027",
+    "summary": "13 collected CSCI course records, including all original descriptions and nested academic details. Some prerequisite records are absent from the local collection.",
+    "source_name": "usc_schedule_of_classes",
+    "source_url": "https://classes.usc.edu/term-20263/classes/csci/",
+    "collected_by": "person_1",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 2,
+    "status": "draft",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all",
+      "undergraduate",
+      "graduate"
+    ],
+    "tags": [
+      "csci",
+      "courses",
+      "prerequisites",
+      "d_clearance",
+      "viterbi"
+    ]
+  },
+  "records": [
+    {
+      "course_id": "CSCI 114",
+      "title": "Programming for Applications of Computing",
+      "department_prefix": "CSCI",
+      "course_number": 114,
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "units": 4,
+      "units_min": 4,
+      "units_max": 4,
+      "variable_units": false,
+      "level": "undergraduate",
+      "target_student_level": "undergraduate",
+      "description": "Solutions to computational science problems using Python and C++; data structures; searching and sorting algorithms; computational efficiency.",
+      "prerequisites": [
+        "CSCI 103",
+        "CSCI 113",
+        "ITP 216",
+        "ITP 265",
+        "TAC 216",
+        "TAC 265"
+      ],
+      "prerequisite_groups": [
+        {
+          "required_count": 1,
+          "one_of": [
+            "CSCI 103",
+            "CSCI 113",
+            "TAC 216",
+            "TAC 265",
+            "ITP 216",
+            "ITP 265"
+          ]
+        }
+      ],
+      "prerequisite_text": "Requires (CSCI 103 or CSCI 113 or TAC 216 or TAC 265 or ITP 216 or ITP 265).",
+      "restrictions": [
+        "Not open to these majors: Computer Engineering & Computer Science, Computer Science/Business Administration, Computer Science, Computer Science Games."
+      ],
+      "terms_offered": [
+        "spring",
+        "fall"
+      ],
+      "recent_terms_offered": [
+        "Fall 2025",
+        "Spring 2026",
+        "Fall 2026",
+        "Spring 2027"
+      ],
+      "d_clearance_required": false,
+      "d_clearance_scope": "none",
+      "d_clearance_note": "No section requires departmental clearance (D-clearance).",
+      "d_clearance_term": "Fall 2026",
+      "instructor": "Andrew Goodney",
+      "instructor_term": "Fall 2026",
+      "next_term_instructor": "Carter Slocum",
+      "next_term": "Spring 2027",
+      "instructors": [
+        "Andrew Goodney"
+      ],
+      "instructors_basis": "Lecture instructors who taught this course in at least 2 terms across 12 spring/fall terms of the USC Schedule of Classes (Fall 2021 to Spring 2027), most frequent first.",
+      "instructor_history": [
+        {
+          "name": "Andrew Goodney",
+          "terms_taught": 3,
+          "last_taught": "Fall 2026"
+        },
+        {
+          "name": "Carter Slocum",
+          "terms_taught": 1,
+          "last_taught": "Spring 2027"
+        }
+      ],
+      "section_types": [
+        "lecture"
+      ],
+      "lecture_section_count": 1,
+      "total_seats": 35,
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/114/30168",
+      "audience": [
+        "undergraduate"
+      ],
+      "tags": [
+        "algorithms",
+        "programming",
+        "programming_applications_computing",
+        "csci",
+        "undergraduate"
+      ],
+      "leads_to": [
+        "CSCI 201",
+        "CSCI 270",
+        "CSCI 360",
+        "CSCI 444",
+        "CSCI 445",
+        "CSCI 452",
+        "CSCI 461",
+        "CSCI 467",
+        "EE 445",
+        "EE 451"
+      ]
+    },
+    {
+      "course_id": "CSCI 368",
+      "title": "Cross-Platform App Development with Flutter",
+      "department_prefix": "CSCI",
+      "course_number": 368,
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "units": 4,
+      "units_min": 4,
+      "units_max": 4,
+      "variable_units": false,
+      "level": "undergraduate",
+      "target_student_level": "undergraduate",
+      "description": "Programming applications with dynamic graphical user interfaces. Topics include events, controls, resources, data bindings, styles and user experience.",
+      "prerequisites": [
+        "CSCI 103",
+        "ITP 265",
+        "TAC 265"
+      ],
+      "prerequisite_groups": [
+        {
+          "required_count": 1,
+          "one_of": [
+            "TAC 265",
+            "ITP 265",
+            "CSCI 103"
+          ]
+        }
+      ],
+      "prerequisite_text": "Requires (TAC 265 or ITP 265 or CSCI 103).",
+      "duplicate_credit": "former ITP 368",
+      "terms_offered": [
+        "spring",
+        "fall"
+      ],
+      "recent_terms_offered": [
+        "Fall 2023",
+        "Spring 2024",
+        "Fall 2024",
+        "Spring 2025",
+        "Fall 2025",
+        "Spring 2026",
+        "Fall 2026",
+        "Spring 2027"
+      ],
+      "d_clearance_required": false,
+      "d_clearance_scope": "none",
+      "d_clearance_note": "No section requires departmental clearance (D-clearance).",
+      "d_clearance_term": "Fall 2026",
+      "instructor": "Allen Almasi",
+      "instructor_term": "Fall 2026",
+      "next_term_instructor": "Barrett Koster",
+      "next_term": "Spring 2027",
+      "instructors": [
+        "Allen Almasi",
+        "Barrett Koster"
+      ],
+      "instructors_basis": "Lecture instructors who taught this course in at least 2 terms across 12 spring/fall terms of the USC Schedule of Classes (Fall 2021 to Spring 2027), most frequent first.",
+      "instructor_history": [
+        {
+          "name": "Allen Almasi",
+          "terms_taught": 8,
+          "last_taught": "Fall 2026"
+        },
+        {
+          "name": "Barrett Koster",
+          "terms_taught": 6,
+          "last_taught": "Spring 2027"
+        }
+      ],
+      "section_types": [
+        "lecture"
+      ],
+      "lecture_section_count": 1,
+      "total_seats": 55,
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/TAC/368/31872",
+      "audience": [
+        "undergraduate"
+      ],
+      "tags": [
+        "hci",
+        "programming",
+        "cross_platform_app_development",
+        "csci",
+        "undergraduate"
+      ]
+    },
+    {
+      "course_id": "CSCI 380",
+      "title": "Video Game Programming",
+      "department_prefix": "CSCI",
+      "course_number": 380,
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "units": 4,
+      "units_min": 4,
+      "units_max": 4,
+      "variable_units": false,
+      "level": "undergraduate",
+      "target_student_level": "undergraduate",
+      "description": "Underlying concepts and principles required for programming video games (topics include vectors, transformations, 3-D math, geometric primitives, matrices).",
+      "prerequisites": [
+        "CSCI 104",
+        "ITP 365",
+        "TAC 365"
+      ],
+      "prerequisite_groups": [
+        {
+          "required_count": 1,
+          "one_of": [
+            "CSCI 104",
+            "TAC 365",
+            "ITP 365"
+          ]
+        }
+      ],
+      "prerequisite_text": "Requires (CSCI 104 or TAC 365 or ITP 365).",
+      "duplicate_credit": "former ITP 380",
+      "terms_offered": [
+        "spring",
+        "fall"
+      ],
+      "recent_terms_offered": [
+        "Fall 2023",
+        "Spring 2024",
+        "Fall 2024",
+        "Spring 2025",
+        "Fall 2025",
+        "Spring 2026",
+        "Fall 2026",
+        "Spring 2027"
+      ],
+      "d_clearance_required": false,
+      "d_clearance_scope": "none",
+      "d_clearance_note": "No section requires departmental clearance (D-clearance).",
+      "d_clearance_term": "Fall 2026",
+      "instructor": "not_listed",
+      "instructor_term": "Fall 2026",
+      "section_types": [
+        "lecture/lab"
+      ],
+      "lecture_section_count": 0,
+      "total_seats": 0,
+      "audience": [
+        "undergraduate"
+      ],
+      "tags": [
+        "game_development",
+        "programming",
+        "linear_algebra"
+      ]
+    },
+    {
+      "course_id": "CSCI 420",
+      "title": "Computer Graphics",
+      "department_prefix": "CSCI",
+      "course_number": 420,
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "units": 4,
+      "units_min": 4,
+      "units_max": 4,
+      "variable_units": false,
+      "level": "undergraduate",
+      "target_student_level": "undergraduate",
+      "description": "Computer graphics, OpenGL, 2D and 3D transformations, Bzier splines, computer animation, rendering including ray tracing, shading and lighting, artistic rendering, virtual reality, visualization.",
+      "prerequisites": [
+        "CSCI 104",
+        "EE 141",
+        "MATH 225"
+      ],
+      "prerequisite_groups": [
+        {
+          "required_count": 1,
+          "one_of": [
+            "CSCI 104"
+          ]
+        },
+        {
+          "required_count": 1,
+          "one_of": [
+            "MATH 225",
+            "EE 141",
+            "EE 141",
+            "EE 141"
+          ]
+        }
+      ],
+      "prerequisite_text": "Requires CSCI 104 and (MATH 225 or EE 141 or EE 141 or EE 141).",
+      "restrictions": [
+        "Not open to these class levels: Freshman, Sophomore."
+      ],
+      "terms_offered": [
+        "spring",
+        "fall"
+      ],
+      "recent_terms_offered": [
+        "Spring 2024",
+        "Fall 2024",
+        "Spring 2025",
+        "Fall 2025",
+        "Fall 2026",
+        "Spring 2027"
+      ],
+      "d_clearance_required": false,
+      "d_clearance_scope": "none",
+      "d_clearance_note": "No section requires departmental clearance (D-clearance).",
+      "d_clearance_term": "Fall 2026",
+      "instructor": "Carter Slocum",
+      "instructor_term": "Fall 2026",
+      "next_term_instructor": "Jernej Barbic",
+      "next_term": "Spring 2027",
+      "instructors": [
+        "Jernej Barbic",
+        "Oded Stein",
+        "Andrew Nealen"
+      ],
+      "instructors_basis": "Lecture instructors who taught this course in at least 2 terms across 12 spring/fall terms of the USC Schedule of Classes (Fall 2021 to Spring 2027), most frequent first.",
+      "instructor_history": [
+        {
+          "name": "Jernej Barbic",
+          "terms_taught": 5,
+          "last_taught": "Spring 2027"
+        },
+        {
+          "name": "Oded Stein",
+          "terms_taught": 2,
+          "last_taught": "Fall 2025"
+        },
+        {
+          "name": "Andrew Nealen",
+          "terms_taught": 2,
+          "last_taught": "Fall 2022"
+        },
+        {
+          "name": "Carter Slocum",
+          "terms_taught": 1,
+          "last_taught": "Fall 2026"
+        }
+      ],
+      "section_types": [
+        "discussion",
+        "lecture"
+      ],
+      "lecture_section_count": 1,
+      "total_seats": 40,
+      "registration_notes": [
+        "Enroll in discussion section 30372R."
+      ],
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/420/30230",
+      "audience": [
+        "undergraduate",
+        "graduate"
+      ],
+      "tags": [
+        "computer_graphics",
+        "csci",
+        "undergraduate"
+      ],
+      "leads_to": [
+        "CSCI 520"
+      ]
+    },
+    {
+      "course_id": "CSCI 435",
+      "title": "Professional C++",
+      "department_prefix": "CSCI",
+      "course_number": 435,
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "units": 4,
+      "units_min": 4,
+      "units_max": 4,
+      "variable_units": false,
+      "level": "undergraduate",
+      "target_student_level": "undergraduate",
+      "description": "Applications of advanced concepts in C++ including lambda expressions, templates, secure coding, parallel programming, writing performant code, CMake and continuous integration.",
+      "prerequisites": [
+        "CSCI 104",
+        "ITP 365",
+        "TAC 365"
+      ],
+      "prerequisite_groups": [
+        {
+          "required_count": 1,
+          "one_of": [
+            "CSCI 104",
+            "TAC 365",
+            "ITP 365"
+          ]
+        }
+      ],
+      "prerequisite_text": "Requires (CSCI 104 or TAC 365 or ITP 365).",
+      "duplicate_credit": "former ITP 435",
+      "terms_offered": [
+        "spring",
+        "fall"
+      ],
+      "recent_terms_offered": [
+        "Fall 2023",
+        "Spring 2024",
+        "Fall 2024",
+        "Spring 2025",
+        "Fall 2025",
+        "Spring 2026",
+        "Fall 2026",
+        "Spring 2027"
+      ],
+      "d_clearance_required": true,
+      "d_clearance_scope": "some_sections",
+      "d_clearance_sections": [
+        "31889"
+      ],
+      "d_clearance_note": "D-clearance is required only for section(s) 31889; the other sections can be registered without it.",
+      "d_clearance_term": "Fall 2026",
+      "instructor": "Hannah Nguyen, Sanjay Madhav",
+      "instructor_term": "Fall 2026",
+      "next_term_instructor": "Sanjay Madhav",
+      "next_term": "Spring 2027",
+      "instructors": [
+        "Sanjay Madhav",
+        "Hannah Nguyen",
+        "Zachary Metcalf"
+      ],
+      "instructors_basis": "Lecture instructors who taught this course in at least 2 terms across 12 spring/fall terms of the USC Schedule of Classes (Fall 2021 to Spring 2027), most frequent first.",
+      "instructor_history": [
+        {
+          "name": "Sanjay Madhav",
+          "terms_taught": 12,
+          "last_taught": "Spring 2027"
+        },
+        {
+          "name": "Hannah Nguyen",
+          "terms_taught": 2,
+          "last_taught": "Fall 2026"
+        },
+        {
+          "name": "Zachary Metcalf",
+          "terms_taught": 2,
+          "last_taught": "Spring 2023"
+        }
+      ],
+      "section_types": [
+        "lecture"
+      ],
+      "lecture_section_count": 2,
+      "total_seats": 92,
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/TAC/435/31889",
+      "audience": [
+        "undergraduate",
+        "graduate"
+      ],
+      "tags": [
+        "distributed_systems",
+        "programming",
+        "professional_c",
+        "csci",
+        "undergraduate"
+      ]
+    },
+    {
+      "course_id": "CSCI 444",
+      "title": "Language Models in Natural Language Processing",
+      "department_prefix": "CSCI",
+      "course_number": 444,
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "units": 4,
+      "units_min": 4,
+      "units_max": 4,
+      "variable_units": false,
+      "level": "undergraduate",
+      "target_student_level": "undergraduate",
+      "description": "Natural language processing; language modeling; deep neural networks for language processing; language technologies and their socioeconomic and societal impacts.",
+      "prerequisites": [
+        "BUAD 310",
+        "BUAD 312",
+        "CSCI 104",
+        "CSCI 114",
+        "CSCI 170",
+        "EE 141",
+        "EE 364",
+        "ISE 225",
+        "MATH 225",
+        "MATH 407"
+      ],
+      "prerequisite_groups": [
+        {
+          "required_count": 1,
+          "one_of": [
+            "CSCI 170"
+          ]
+        },
+        {
+          "required_count": 1,
+          "one_of": [
+            "CSCI 104",
+            "CSCI 114"
+          ]
+        },
+        {
+          "required_count": 1,
+          "one_of": [
+            "MATH 225",
+            "EE 141"
+          ]
+        },
+        {
+          "required_count": 1,
+          "one_of": [
+            "EE 364",
+            "MATH 407",
+            "BUAD 310",
+            "BUAD 312",
+            "ISE 225"
+          ]
+        }
+      ],
+      "prerequisite_text": "Requires CSCI 170 and (CSCI 104 or CSCI 114) and (MATH 225 or EE 141) and (EE 364 or MATH 407 or BUAD 310 or BUAD 312 or ISE 225).",
+      "recommended_preparation": "Fluency with Python programming on the level of ITP 216 or TAC 216",
+      "terms_offered": [
+        "spring",
+        "fall"
+      ],
+      "recent_terms_offered": [
+        "Fall 2024",
+        "Fall 2025",
+        "Spring 2026",
+        "Spring 2027"
+      ],
+      "d_clearance_required": true,
+      "d_clearance_scope": "all_sections",
+      "d_clearance_sections": [
+        "30131"
+      ],
+      "d_clearance_note": "D-clearance from the department is required to register for this course.",
+      "d_clearance_term": "Spring 2027",
+      "instructor": "not_listed",
+      "instructor_term": "Spring 2027",
+      "instructors": [
+        "Xiang Ren",
+        "Swabha Swayamdipta",
+        "Jesse Thomason"
+      ],
+      "instructors_basis": "Lecture instructors who taught this course in at least 2 terms across 12 spring/fall terms of the USC Schedule of Classes (Fall 2021 to Spring 2027), most frequent first.",
+      "instructor_history": [
+        {
+          "name": "Xiang Ren",
+          "terms_taught": 1,
+          "last_taught": "Spring 2026"
+        },
+        {
+          "name": "Swabha Swayamdipta",
+          "terms_taught": 1,
+          "last_taught": "Fall 2025"
+        },
+        {
+          "name": "Jesse Thomason",
+          "terms_taught": 1,
+          "last_taught": "Fall 2024"
+        }
+      ],
+      "section_types": [
+        "lecture"
+      ],
+      "lecture_section_count": 1,
+      "total_seats": 35,
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Spring%202027/CSCI/444/30131",
+      "audience": [
+        "undergraduate",
+        "graduate"
+      ],
+      "tags": [
+        "deep_learning",
+        "nlp",
+        "language_models_natural_language",
+        "csci",
+        "undergraduate"
+      ]
+    },
+    {
+      "course_id": "CSCI 458",
+      "title": "Numerical Methods",
+      "department_prefix": "CSCI",
+      "course_number": 458,
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "units": 4,
+      "units_min": 4,
+      "units_max": 4,
+      "variable_units": false,
+      "level": "undergraduate",
+      "target_student_level": "undergraduate",
+      "description": "Rounding errors in digital computation; solution of linear algebraic systems; Newton's method for nonlinear systems; matrix eigenvalues; polynomial approximation; numerical integration; numerical solution of ordinary differential equations.",
+      "prerequisites": [
+        "MATH 225",
+        "MATH 235",
+        "MATH 245"
+      ],
+      "prerequisite_groups": [
+        {
+          "required_count": 1,
+          "one_of": [
+            "MATH 225",
+            "MATH 235",
+            "MATH 245"
+          ]
+        }
+      ],
+      "prerequisite_text": "Requires (MATH 225 or MATH 235 or MATH 245).",
+      "recommended_preparation": "MATH 226 or MATH 227 or MATH 229",
+      "terms_offered": [
+        "spring",
+        "fall"
+      ],
+      "recent_terms_offered": [
+        "Fall 2023",
+        "Spring 2024",
+        "Fall 2024",
+        "Spring 2025",
+        "Fall 2025",
+        "Spring 2026",
+        "Fall 2026",
+        "Spring 2027"
+      ],
+      "d_clearance_required": true,
+      "d_clearance_scope": "all_sections",
+      "d_clearance_sections": [
+        "39679",
+        "39680",
+        "39681",
+        "39682",
+        "39683",
+        "39684"
+      ],
+      "d_clearance_note": "D-clearance from the department is required to register for this course.",
+      "d_clearance_term": "Fall 2026",
+      "instructor": "Xihao He",
+      "instructor_term": "Fall 2026",
+      "instructors": [
+        "Cymra Haskell",
+        "Ricardo Mancera"
+      ],
+      "instructors_basis": "Lecture instructors who taught this course in at least 2 terms across 12 spring/fall terms of the USC Schedule of Classes (Fall 2021 to Spring 2027), most frequent first.",
+      "instructor_history": [
+        {
+          "name": "Cymra Haskell",
+          "terms_taught": 6,
+          "last_taught": "Spring 2026"
+        },
+        {
+          "name": "Ricardo Mancera",
+          "terms_taught": 3,
+          "last_taught": "Spring 2025"
+        },
+        {
+          "name": "Xihao He",
+          "terms_taught": 1,
+          "last_taught": "Fall 2026"
+        },
+        {
+          "name": "Aykut Arslan",
+          "terms_taught": 1,
+          "last_taught": "Spring 2024"
+        },
+        {
+          "name": "Steven Heilman",
+          "terms_taught": 1,
+          "last_taught": "Fall 2022"
+        }
+      ],
+      "section_types": [
+        "discussion",
+        "lecture"
+      ],
+      "lecture_section_count": 2,
+      "total_seats": 80,
+      "registration_notes": [
+        "Register for 1 lec & 1 dis listed immediately following that lec"
+      ],
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/MATH/458/39679",
+      "audience": [
+        "undergraduate",
+        "graduate"
+      ],
+      "tags": [
+        "linear_algebra",
+        "numerical_methods",
+        "control_systems"
+      ]
+    },
+    {
+      "course_id": "CSCI 467",
+      "title": "Foundations of Machine Learning",
+      "department_prefix": "CSCI",
+      "course_number": 467,
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "units": 4,
+      "units_min": 4,
+      "units_max": 4,
+      "variable_units": false,
+      "level": "undergraduate",
+      "target_student_level": "undergraduate",
+      "description": "Algorithms for learning behavior from data, including both mathematical underpinnings and practical techniques. Covers supervised learning, deep learning, unsupervised learning and reinforcement learning.",
+      "prerequisites": [
+        "BUAD 310",
+        "BUAD 312",
+        "CSCI 104",
+        "CSCI 114",
+        "CSCI 170",
+        "EE 141",
+        "EE 364",
+        "ISE 225",
+        "MATH 225",
+        "MATH 407"
+      ],
+      "prerequisite_groups": [
+        {
+          "required_count": 1,
+          "one_of": [
+            "CSCI 170"
+          ]
+        },
+        {
+          "required_count": 1,
+          "one_of": [
+            "CSCI 104",
+            "CSCI 114"
+          ]
+        },
+        {
+          "required_count": 1,
+          "one_of": [
+            "MATH 225",
+            "EE 141"
+          ]
+        },
+        {
+          "required_count": 1,
+          "one_of": [
+            "EE 364",
+            "MATH 407",
+            "BUAD 310",
+            "BUAD 312",
+            "ISE 225"
+          ]
+        }
+      ],
+      "prerequisite_text": "Requires CSCI 170 and (CSCI 104 or CSCI 114) and (MATH 225 or EE 141) and (EE 364 or MATH 407 or BUAD 310 or BUAD 312 or ISE 225).",
+      "recommended_preparation": "CSCI 360, comfortable with mathematical derivations, such as those in MATH 225; comfortable with manipulating vectors and matrices",
+      "duplicate_credit": "EE 460",
+      "terms_offered": [
+        "spring",
+        "fall"
+      ],
+      "recent_terms_offered": [
+        "Fall 2023",
+        "Spring 2024",
+        "Fall 2024",
+        "Spring 2025",
+        "Fall 2025",
+        "Spring 2026",
+        "Fall 2026",
+        "Spring 2027"
+      ],
+      "d_clearance_required": false,
+      "d_clearance_scope": "none",
+      "d_clearance_note": "No section requires departmental clearance (D-clearance).",
+      "d_clearance_term": "Fall 2026",
+      "instructor": "Robin Jia",
+      "instructor_term": "Fall 2026",
+      "next_term_instructor": "Vatsal Sharan",
+      "next_term": "Spring 2027",
+      "instructors": [
+        "Robin Jia",
+        "Victor Adamchik",
+        "Mohammad Reza Rajati"
+      ],
+      "instructors_basis": "Lecture instructors who taught this course in at least 2 terms across 12 spring/fall terms of the USC Schedule of Classes (Fall 2021 to Spring 2027), most frequent first.",
+      "instructor_history": [
+        {
+          "name": "Robin Jia",
+          "terms_taught": 5,
+          "last_taught": "Fall 2026"
+        },
+        {
+          "name": "Victor Adamchik",
+          "terms_taught": 3,
+          "last_taught": "Spring 2026"
+        },
+        {
+          "name": "Mohammad Reza Rajati",
+          "terms_taught": 2,
+          "last_taught": "Fall 2022"
+        },
+        {
+          "name": "Vatsal Sharan",
+          "terms_taught": 1,
+          "last_taught": "Spring 2027"
+        },
+        {
+          "name": "Jieyu Zhao",
+          "terms_taught": 1,
+          "last_taught": "Fall 2024"
+        }
+      ],
+      "section_types": [
+        "discussion",
+        "lecture"
+      ],
+      "lecture_section_count": 1,
+      "total_seats": 70,
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/467/30277",
+      "audience": [
+        "undergraduate",
+        "graduate"
+      ],
+      "tags": [
+        "machine_learning",
+        "deep_learning",
+        "algorithms"
+      ],
+      "leads_to": [
+        "CSCI 623"
+      ]
+    },
+    {
+      "course_id": "CSCI 502A",
+      "title": "Numerical Analysis",
+      "department_prefix": "CSCI",
+      "course_number": 502,
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "units": 3,
+      "units_min": 3,
+      "units_max": 3,
+      "variable_units": false,
+      "level": "graduate",
+      "target_student_level": "masters",
+      "description": "Computational linear algebra; solution of general nonlinear systems of equations; approximation theory using functional analysis; numerical solution of ordinary and partial differential equations.",
+      "prerequisites": [
+        "MATH 425A",
+        "MATH 471"
+      ],
+      "prerequisite_groups": [
+        {
+          "required_count": 2,
+          "one_of": [
+            "MATH 425A",
+            "MATH 471"
+          ]
+        }
+      ],
+      "prerequisite_text": "Requires (MATH 425A or MATH 471).",
+      "terms_offered": [
+        "spring",
+        "fall"
+      ],
+      "recent_terms_offered": [
+        "Spring 2024",
+        "Fall 2024",
+        "Fall 2025",
+        "Fall 2026"
+      ],
+      "d_clearance_required": false,
+      "d_clearance_scope": "none",
+      "d_clearance_note": "No section requires departmental clearance (D-clearance).",
+      "d_clearance_term": "Fall 2026",
+      "instructor": "Cymra Haskell",
+      "instructor_term": "Fall 2026",
+      "instructors": [
+        "Cymra Haskell",
+        "Gary Rosen"
+      ],
+      "instructors_basis": "Lecture instructors who taught this course in at least 2 terms across 12 spring/fall terms of the USC Schedule of Classes (Fall 2021 to Spring 2027), most frequent first.",
+      "instructor_history": [
+        {
+          "name": "Cymra Haskell",
+          "terms_taught": 3,
+          "last_taught": "Fall 2026"
+        },
+        {
+          "name": "Gary Rosen",
+          "terms_taught": 2,
+          "last_taught": "Fall 2024"
+        },
+        {
+          "name": "Chunming Wang",
+          "terms_taught": 1,
+          "last_taught": "Spring 2023"
+        }
+      ],
+      "section_types": [
+        "lecture"
+      ],
+      "lecture_section_count": 1,
+      "total_seats": 25,
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/MATH/502A/39700",
+      "audience": [
+        "graduate"
+      ],
+      "tags": [
+        "linear_algebra",
+        "numerical_methods",
+        "control_systems"
+      ]
+    },
+    {
+      "course_id": "CSCI 505A",
+      "title": "Applied Probability",
+      "department_prefix": "CSCI",
+      "course_number": 505,
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "units": 3,
+      "units_min": 3,
+      "units_max": 3,
+      "variable_units": false,
+      "level": "graduate",
+      "target_student_level": "masters",
+      "description": "Probability spaces; properties of probability and expectation; discrete and continuous random variables; indicator method; conditioning; transformations; laws of large numbers; Central Limit Theorem without measure theory",
+      "prerequisites": [
+        "MATH 407"
+      ],
+      "prerequisite_groups": [
+        {
+          "required_count": 1,
+          "one_of": [
+            "MATH 407"
+          ]
+        }
+      ],
+      "prerequisite_text": "Requires MATH 407.",
+      "terms_offered": [
+        "fall"
+      ],
+      "recent_terms_offered": [
+        "Fall 2023",
+        "Fall 2024",
+        "Fall 2025",
+        "Fall 2026"
+      ],
+      "d_clearance_required": false,
+      "d_clearance_scope": "none",
+      "d_clearance_note": "No section requires departmental clearance (D-clearance).",
+      "d_clearance_term": "Fall 2026",
+      "instructor": "Sergey Lototsky",
+      "instructor_term": "Fall 2026",
+      "instructors": [
+        "Sergey Lototsky",
+        "Remigijus Mikulevicius"
+      ],
+      "instructors_basis": "Lecture instructors who taught this course in at least 2 terms across 12 spring/fall terms of the USC Schedule of Classes (Fall 2021 to Spring 2027), most frequent first.",
+      "instructor_history": [
+        {
+          "name": "Sergey Lototsky",
+          "terms_taught": 2,
+          "last_taught": "Fall 2026"
+        },
+        {
+          "name": "Remigijus Mikulevicius",
+          "terms_taught": 2,
+          "last_taught": "Fall 2022"
+        },
+        {
+          "name": "Joshua Swanson",
+          "terms_taught": 1,
+          "last_taught": "Fall 2024"
+        },
+        {
+          "name": "Xiaohui Chen",
+          "terms_taught": 1,
+          "last_taught": "Fall 2023"
+        }
+      ],
+      "section_types": [
+        "lecture"
+      ],
+      "lecture_section_count": 1,
+      "total_seats": 35,
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/MATH/505A/39710",
+      "audience": [
+        "graduate"
+      ],
+      "tags": [
+        "probability",
+        "applied_probability",
+        "csci",
+        "graduate"
+      ]
+    },
+    {
+      "course_id": "CSCI 505B",
+      "title": "Applied Probability",
+      "department_prefix": "CSCI",
+      "course_number": 505,
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "units": 3,
+      "units_min": 3,
+      "units_max": 3,
+      "variable_units": false,
+      "level": "graduate",
+      "target_student_level": "masters",
+      "description": "Markov processes in discrete or continuous time; renewal processes; martingales; brownian motion and diffusion theory; random walks, inventory models, population growth, queuing models, shot noise.",
+      "prerequisites": [
+        "MATH 505A"
+      ],
+      "prerequisite_groups": [
+        {
+          "required_count": 1,
+          "one_of": [
+            "MATH 505A"
+          ]
+        }
+      ],
+      "prerequisite_text": "Requires MATH 505A.",
+      "terms_offered": [
+        "spring"
+      ],
+      "recent_terms_offered": [
+        "Spring 2024",
+        "Spring 2025",
+        "Spring 2026",
+        "Spring 2027"
+      ],
+      "d_clearance_required": false,
+      "d_clearance_scope": "none",
+      "d_clearance_note": "No section requires departmental clearance (D-clearance).",
+      "d_clearance_term": "Spring 2027",
+      "instructor": "not_listed",
+      "instructor_term": "Spring 2027",
+      "instructors": [
+        "Jianfeng Zhang"
+      ],
+      "instructors_basis": "Lecture instructors who taught this course in at least 2 terms across 12 spring/fall terms of the USC Schedule of Classes (Fall 2021 to Spring 2027), most frequent first.",
+      "instructor_history": [
+        {
+          "name": "Jianfeng Zhang",
+          "terms_taught": 3,
+          "last_taught": "Spring 2026"
+        },
+        {
+          "name": "Ken Alexander",
+          "terms_taught": 1,
+          "last_taught": "Spring 2024"
+        },
+        {
+          "name": "Richard Arratia",
+          "terms_taught": 1,
+          "last_taught": "Spring 2023"
+        }
+      ],
+      "section_types": [
+        "lecture"
+      ],
+      "lecture_section_count": 1,
+      "total_seats": 20,
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Spring%202027/MATH/505B/39708",
+      "audience": [
+        "graduate"
+      ],
+      "tags": [
+        "probability",
+        "applied_probability",
+        "csci",
+        "graduate"
+      ]
+    },
+    {
+      "course_id": "CSCI 533",
+      "title": "Algebraic Combinatorics",
+      "department_prefix": "CSCI",
+      "course_number": 533,
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "units": 3,
+      "units_min": 3,
+      "units_max": 3,
+      "variable_units": false,
+      "level": "graduate",
+      "target_student_level": "masters",
+      "description": "Combinatorics motivated by Representation Theory and Algebraic Geometry. Topics may include: representations of the symmetric group, symmetric functions, Young tableaux and plane partitions, permutation enumeration.",
+      "prerequisites": [
+        "MATH 410",
+        "MATH 532"
+      ],
+      "prerequisite_groups": [
+        {
+          "required_count": 1,
+          "one_of": [
+            "MATH 410"
+          ]
+        },
+        {
+          "required_count": 1,
+          "one_of": [
+            "MATH 532"
+          ]
+        }
+      ],
+      "prerequisite_text": "Requires MATH 410 and MATH 532.",
+      "terms_offered": [
+        "spring"
+      ],
+      "recent_terms_offered": [
+        "Spring 2024",
+        "Spring 2025",
+        "Spring 2026",
+        "Spring 2027"
+      ],
+      "d_clearance_required": false,
+      "d_clearance_scope": "none",
+      "d_clearance_note": "No section requires departmental clearance (D-clearance).",
+      "d_clearance_term": "Spring 2027",
+      "instructor": "not_listed",
+      "instructor_term": "Spring 2027",
+      "instructors": [
+        "Greta Panova",
+        "Sami Assaf"
+      ],
+      "instructors_basis": "Lecture instructors who taught this course in at least 2 terms across 12 spring/fall terms of the USC Schedule of Classes (Fall 2021 to Spring 2027), most frequent first.",
+      "instructor_history": [
+        {
+          "name": "Greta Panova",
+          "terms_taught": 2,
+          "last_taught": "Spring 2026"
+        },
+        {
+          "name": "Sami Assaf",
+          "terms_taught": 2,
+          "last_taught": "Spring 2024"
+        },
+        {
+          "name": "Joshua Swanson",
+          "terms_taught": 1,
+          "last_taught": "Spring 2025"
+        }
+      ],
+      "section_types": [
+        "lecture"
+      ],
+      "lecture_section_count": 1,
+      "total_seats": 30,
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Spring%202027/MATH/533/39757",
+      "audience": [
+        "graduate"
+      ],
+      "tags": [
+        "algebraic_combinatorics",
+        "csci",
+        "graduate"
+      ]
+    },
+    {
+      "course_id": "CSCI 623",
+      "title": "Analytics for Social Impact",
+      "department_prefix": "CSCI",
+      "course_number": 625,
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "units": 4,
+      "units_min": 4,
+      "units_max": 4,
+      "variable_units": false,
+      "level": "graduate",
+      "target_student_level": "phd",
+      "description": "Use of analytics to address societal challenges arising in public health, social services and conservation; fairness, interpretability, robustness, optimization, machine learning and causal inference.",
+      "prerequisites": [
+        "CSCI 467",
+        "CSCI 567",
+        "EE 559",
+        "ISE 529",
+        "ISE 530",
+        "ISE 533",
+        "ISE 630",
+        "ISE 631"
+      ],
+      "prerequisite_groups": [
+        {
+          "required_count": 1,
+          "one_of": [
+            "ISE 630",
+            "ISE 631"
+          ]
+        },
+        {
+          "required_count": 1,
+          "one_of": [
+            "ISE 529",
+            "ISE 530",
+            "ISE 533",
+            "CSCI 467",
+            "CSCI 567",
+            "EE 559"
+          ]
+        }
+      ],
+      "prerequisite_text": "Requires (ISE 630 or ISE 631) and (ISE 529 or ISE 530 or ISE 533 or CSCI 467 or CSCI 567 or EE 559).",
+      "recommended_preparation": "Familiarity with modeling using integer optimization (e.g., at the level taught in ISE 631) and experience with ML using Python.",
+      "restrictions": [
+        "Registration open only to these class levels: Doctoral Student, Master Student."
+      ],
+      "terms_offered": [
+        "fall"
+      ],
+      "recent_terms_offered": [
+        "Fall 2026"
+      ],
+      "d_clearance_required": true,
+      "d_clearance_scope": "all_sections",
+      "d_clearance_sections": [
+        "31716"
+      ],
+      "d_clearance_note": "D-clearance from the department is required to register for this course.",
+      "d_clearance_term": "Fall 2026",
+      "instructor": "Phebe Vayanos",
+      "instructor_term": "Fall 2026",
+      "instructors": [
+        "Phebe Vayanos"
+      ],
+      "instructors_basis": "Lecture instructors who taught this course in at least 2 terms across 12 spring/fall terms of the USC Schedule of Classes (Fall 2021 to Spring 2027), most frequent first.",
+      "instructor_history": [
+        {
+          "name": "Phebe Vayanos",
+          "terms_taught": 1,
+          "last_taught": "Fall 2026"
+        }
+      ],
+      "section_types": [
+        "lecture"
+      ],
+      "lecture_section_count": 1,
+      "total_seats": 30,
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/ISE/625/31716",
+      "audience": [
+        "graduate"
+      ],
+      "tags": [
+        "machine_learning",
+        "data_science",
+        "optimization"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "purpose": "Complete collected records; file metadata controls indexing eligibility.",
+  "meta": {
+    "title": "Computer Science (PhD)",
+    "summary": "Collected requirements for Computer Science (PhD) from catalogue year 2022-2023; review historical requirements and department-site notes before indexing.",
+    "source_name": "usc_catalogue",
+    "source_url": "https://catalogue.usc.edu/preview_program.php?catoid=16&poid=21311",
+    "collected_by": "person_1",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2022-2023",
+    "version": 2,
+    "status": "draft",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all",
+      "undergraduate",
+      "graduate"
+    ],
+    "tags": [
+      "csci",
+      "degree_requirements",
+      "bs",
+      "ms",
+      "phd"
+    ]
+  },
+  "records": [
+    {
+      "program_id": "phd_computer_science",
+      "title": "Computer Science (PhD)",
+      "degree": "Doctor of Philosophy in Computer Science",
+      "degree_type": "PhD",
+      "level": "graduate",
+      "program": "Computer Science",
+      "department": "Thomas Lord Department of Computer Science",
+      "school": "USC Viterbi School of Engineering",
+      "catalogue_year": "2022-2023",
+      "source_url": "https://catalogue.usc.edu/preview_program.php?catoid=16&poid=21311",
+      "total_units": 60,
+      "total_units_source": "department_site",
+      "description": "The Doctor of Philosophy with a major in computer science is awarded in strict conformity with the general requirements of the USC Graduate School. Departmental requirements consist of a concentrated program of study and research and a dissertation: CSCI 670, two semesters of CSCI 697, two semesters of CSCI 698 (teaching requirement) and five CSCI elective courses at the 500 level and above.",
+      "requirement_groups": [
+        {
+          "group_id": "required_courses",
+          "name": "Required courses",
+          "units_required": 6,
+          "selection": "all",
+          "slots": [
+            {
+              "one_of": [
+                {
+                  "course_id": "CSCI 670",
+                  "catalogue_label": "CSCI 670",
+                  "title": "Advanced Analysis of Algorithms",
+                  "units": 4
+                }
+              ]
+            },
+            {
+              "one_of": [
+                {
+                  "course_id": "CSCI 697",
+                  "catalogue_label": "CSCI 697",
+                  "title": "Seminar in Computer Science Research",
+                  "units": 2,
+                  "units_text": "1 unit each, 2 maximum"
+                }
+              ]
+            }
+          ],
+          "notes": [
+            "Each student is required to complete two semesters of CSCI 697 (1 unit each, 2 maximum) and CSCI 670 (4 units).",
+            "The CSCI 670 course requirement may be waived by examination only. The owner of CSCI 670 is in charge of creating and grading the waiver examination.",
+            "CSCI 697 and CSCI 698 may not be waived."
+          ]
+        },
+        {
+          "group_id": "teaching_requirement",
+          "name": "Teaching requirement",
+          "selection": "all",
+          "slots": [
+            {
+              "one_of": [
+                {
+                  "course_id": "CSCI 698",
+                  "catalogue_label": "CSCI 698",
+                  "title": "Teaching Practicum",
+                  "units": 2,
+                  "units_text": "1-2 units each, no maximum"
+                }
+              ]
+            }
+          ],
+          "notes": [
+            "Students are required to pass two semesters of CSCI 698 (1-2 units each, no maximum) as part of a teaching requirement."
+          ]
+        },
+        {
+          "group_id": "electives",
+          "name": "Elective courses",
+          "units_required": 20,
+          "selection": "choose",
+          "min_courses": 5,
+          "min_units": 20,
+          "options_rule": "CSCI courses at the 500 level and above, 4 units each; no more than two (8 units) at the 500 level, the rest at the 600 level.",
+          "notes": [
+            "Each student must complete five CSCI courses at the 500 level and above, 4 units each.",
+            "No more than two of these courses (8 units total) may be at the 500 level; the remaining must be CSCI courses at the 600 level.",
+            "Directed Research units or thesis credits do not satisfy this requirement.",
+            "Students are strongly advised to take at least one of their elective courses in an area of computer science that is different from their proposed area of research."
+          ]
+        }
+      ],
+      "limits": [
+        {
+          "rule": "max_500_level_elective_courses",
+          "value": 2,
+          "text": "No more than two elective courses (8 units total) may be at the 500 level."
+        }
+      ],
+      "other_requirements": "Consult the department's separately published guide for the screening procedure, the teaching requirement, the qualifying examination, the thesis proposal and other requirements.",
+      "department_site_notes": {
+        "source_url": "https://www.cs.usc.edu/academic-programs/phd/",
+        "page_last_updated": "2026-06-12",
+        "applies_to": "Students admitted Fall 2023 or later",
+        "notes": [
+          "At least 60 units, at least 40 of which must be at the 500 level or above.",
+          "Students must maintain a 3.0 GPA to remain in good academic standing.",
+          "A master's degree is not required for entry; a four-year bachelor's degree in a relevant field is.",
+          "Up to 8 units of CSCI 699 may be applied to course requirements.",
+          "Every student must TA for two semesters, including at least one undergraduate class.",
+          "Attend four department seminars and/or PhD thesis proposals each semester.",
+          "Biannual review each fall and spring; two consecutive 'Below expectations' ratings may be grounds for removal.",
+          "Qualifying exam: written paper (at least 15 pages, ACM style, at least 30 references) and oral presentation within 60 days; each part may be retaken once. Should be taken in the 4th semester and passed within four years of admission.",
+          "Thesis proposal must be made by the end of the 5th year (end of 4th year strongly recommended).",
+          "Dissertation defense within seven years of admission (six with a relevant master's).",
+          "After passing the qualifying exam, enroll in CSCI 794A and register continuously in 794 each fall and spring; CSCI 794A and 794B are the minimum before the degree.",
+          "Students can petition for the MS in Computer Science en route to the PhD."
+        ]
+      },
+      "audience": [
+        "graduate"
+      ],
+      "tags": [
+        "computer_science",
+        "phd",
+        "doctoral",
+        "degree_requirements",
+        "csci"
+      ],
+      "related_courses": [
+        "CSCI 670",
+        "CSCI 697",
+        "CSCI 698"
+      ]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 {
+  "purpose": "Complete collected records; file metadata controls indexing eligibility.",
   "meta": {
     "title": "EE course sections Fall 2026",
     "summary": "Every Fall 2026 section of USC EE courses: type, instructor, days, times, seats and D-clearance.",
@@ -8,7 +9,7 @@
     "collected_date": "2026-11-14",
     "last_verified_date": "2026-11-14",
     "academic_year": "2026-2027",
-    "version": 1,
+    "version": 2,
     "status": "verified",
     "data_origin": "public_copy",
     "access_level": "public",
@@ -27,7 +28,7 @@
   },
   "records": [
     {
-      "section_id": "20263_30884",
+      "section_id": "20263_30884_ee_105",
       "sis_section_id": "30884",
       "course_id": "EE 105",
       "term": "Fall 2026",
@@ -53,10 +54,11 @@
       "notes": [
         "This section is only open to first time declared ECE majors"
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/105/30884"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/105/30884",
+      "source_section_id": "20263_30884"
     },
     {
-      "section_id": "20263_30882",
+      "section_id": "20263_30882_ee_105",
       "sis_section_id": "30882",
       "course_id": "EE 105",
       "term": "Fall 2026",
@@ -79,10 +81,11 @@
       "seats_available": 2,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/105/30882"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/105/30882",
+      "source_section_id": "20263_30882"
     },
     {
-      "section_id": "20263_31009",
+      "section_id": "20263_31009_ee_109",
       "sis_section_id": "31009",
       "course_id": "EE 109",
       "term": "Fall 2026",
@@ -105,10 +108,11 @@
       "seats_available": 2,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/31009"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/31009",
+      "source_section_id": "20263_31009"
     },
     {
-      "section_id": "20263_30777",
+      "section_id": "20263_30777_ee_109",
       "sis_section_id": "30777",
       "course_id": "EE 109",
       "term": "Fall 2026",
@@ -131,10 +135,11 @@
       "seats_available": 0,
       "is_full": true,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/30777"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/30777",
+      "source_section_id": "20263_30777"
     },
     {
-      "section_id": "20263_30997",
+      "section_id": "20263_30997_ee_109",
       "sis_section_id": "30997",
       "course_id": "EE 109",
       "term": "Fall 2026",
@@ -156,10 +161,11 @@
       "seats_available": 90,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/30997"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/30997",
+      "source_section_id": "20263_30997"
     },
     {
-      "section_id": "20263_30745",
+      "section_id": "20263_30745_ee_109",
       "sis_section_id": "30745",
       "course_id": "EE 109",
       "term": "Fall 2026",
@@ -181,10 +187,11 @@
       "seats_available": 1,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/30745"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/30745",
+      "source_section_id": "20263_30745"
     },
     {
-      "section_id": "20263_31292",
+      "section_id": "20263_31292_ee_109",
       "sis_section_id": "31292",
       "course_id": "EE 109",
       "term": "Fall 2026",
@@ -206,10 +213,11 @@
       "seats_available": 1,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/31292"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/31292",
+      "source_section_id": "20263_31292"
     },
     {
-      "section_id": "20263_31396",
+      "section_id": "20263_31396_ee_109",
       "sis_section_id": "31396",
       "course_id": "EE 109",
       "term": "Fall 2026",
@@ -231,10 +239,11 @@
       "seats_available": 1,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/31396"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/31396",
+      "source_section_id": "20263_31396"
     },
     {
-      "section_id": "20263_30746",
+      "section_id": "20263_30746_ee_109",
       "sis_section_id": "30746",
       "course_id": "EE 109",
       "term": "Fall 2026",
@@ -256,10 +265,11 @@
       "seats_available": 2,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/30746"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/30746",
+      "source_section_id": "20263_30746"
     },
     {
-      "section_id": "20263_30744",
+      "section_id": "20263_30744_ee_109",
       "sis_section_id": "30744",
       "course_id": "EE 109",
       "term": "Fall 2026",
@@ -281,10 +291,11 @@
       "seats_available": 1,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/30744"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/109/30744",
+      "source_section_id": "20263_30744"
     },
     {
-      "section_id": "20263_30418",
+      "section_id": "20263_30418_ee_141",
       "sis_section_id": "30418",
       "course_id": "EE 141",
       "term": "Fall 2026",
@@ -310,10 +321,11 @@
       "notes": [
         "Register for lec, dis and 1 lab"
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/141/30418"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/141/30418",
+      "source_section_id": "20263_30418"
     },
     {
-      "section_id": "20263_31225",
+      "section_id": "20263_31225_ee_141",
       "sis_section_id": "31225",
       "course_id": "EE 141",
       "term": "Fall 2026",
@@ -336,10 +348,11 @@
       "seats_available": 6,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/141/31225"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/141/31225",
+      "source_section_id": "20263_31225"
     },
     {
-      "section_id": "20263_30755",
+      "section_id": "20263_30755_ee_141",
       "sis_section_id": "30755",
       "course_id": "EE 141",
       "term": "Fall 2026",
@@ -361,10 +374,11 @@
       "seats_available": 5,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/141/30755"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/141/30755",
+      "source_section_id": "20263_30755"
     },
     {
-      "section_id": "20263_30756",
+      "section_id": "20263_30756_ee_141",
       "sis_section_id": "30756",
       "course_id": "EE 141",
       "term": "Fall 2026",
@@ -386,10 +400,11 @@
       "seats_available": 3,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/141/30756"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/141/30756",
+      "source_section_id": "20263_30756"
     },
     {
-      "section_id": "20263_30822",
+      "section_id": "20263_30822_ee_141",
       "sis_section_id": "30822",
       "course_id": "EE 141",
       "term": "Fall 2026",
@@ -411,10 +426,11 @@
       "seats_available": 0,
       "is_full": true,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/141/30822"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/141/30822",
+      "source_section_id": "20263_30822"
     },
     {
-      "section_id": "20263_30898",
+      "section_id": "20263_30898_ee_155",
       "sis_section_id": "30898",
       "course_id": "EE 155",
       "term": "Fall 2026",
@@ -437,10 +453,11 @@
       "seats_available": 8,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/155/30898"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/155/30898",
+      "source_section_id": "20263_30898"
     },
     {
-      "section_id": "20263_30899",
+      "section_id": "20263_30899_ee_155",
       "sis_section_id": "30899",
       "course_id": "EE 155",
       "term": "Fall 2026",
@@ -463,10 +480,11 @@
       "seats_available": 8,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/155/30899"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/155/30899",
+      "source_section_id": "20263_30899"
     },
     {
-      "section_id": "20263_30433",
+      "section_id": "20263_30433_ee_202",
       "sis_section_id": "30433",
       "course_id": "EE 202",
       "term": "Fall 2026",
@@ -492,10 +510,11 @@
       "notes": [
         "Register for 1 lecture, 1 discussion, and 1 lab."
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/202/30433"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/202/30433",
+      "source_section_id": "20263_30433"
     },
     {
-      "section_id": "20263_30432",
+      "section_id": "20263_30432_ee_202",
       "sis_section_id": "30432",
       "course_id": "EE 202",
       "term": "Fall 2026",
@@ -521,10 +540,11 @@
       "notes": [
         "Register for 1 lec & 1 lab"
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/202/30432"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/202/30432",
+      "source_section_id": "20263_30432"
     },
     {
-      "section_id": "20263_30436",
+      "section_id": "20263_30436_ee_202",
       "sis_section_id": "30436",
       "course_id": "EE 202",
       "term": "Fall 2026",
@@ -546,10 +566,11 @@
       "seats_available": 14,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/202/30436"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/202/30436",
+      "source_section_id": "20263_30436"
     },
     {
-      "section_id": "20263_30434",
+      "section_id": "20263_30434_ee_202",
       "sis_section_id": "30434",
       "course_id": "EE 202",
       "term": "Fall 2026",
@@ -571,10 +592,11 @@
       "seats_available": 0,
       "is_full": true,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/202/30434"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/202/30434",
+      "source_section_id": "20263_30434"
     },
     {
-      "section_id": "20263_30435",
+      "section_id": "20263_30435_ee_202",
       "sis_section_id": "30435",
       "course_id": "EE 202",
       "term": "Fall 2026",
@@ -596,10 +618,11 @@
       "seats_available": 12,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/202/30435"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/202/30435",
+      "source_section_id": "20263_30435"
     },
     {
-      "section_id": "20263_30402",
+      "section_id": "20263_30402_ee_250",
       "sis_section_id": "30402",
       "course_id": "EE 250",
       "term": "Fall 2026",
@@ -622,10 +645,11 @@
       "seats_available": 9,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/250/30402"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/250/30402",
+      "source_section_id": "20263_30402"
     },
     {
-      "section_id": "20263_30403",
+      "section_id": "20263_30403_ee_250",
       "sis_section_id": "30403",
       "course_id": "EE 250",
       "term": "Fall 2026",
@@ -647,10 +671,11 @@
       "seats_available": 0,
       "is_full": true,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/250/30403"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/250/30403",
+      "source_section_id": "20263_30403"
     },
     {
-      "section_id": "20263_30420",
+      "section_id": "20263_30420_ee_250",
       "sis_section_id": "30420",
       "course_id": "EE 250",
       "term": "Fall 2026",
@@ -672,10 +697,11 @@
       "seats_available": 1,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/250/30420"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/250/30420",
+      "source_section_id": "20263_30420"
     },
     {
-      "section_id": "20263_30421",
+      "section_id": "20263_30421_ee_250",
       "sis_section_id": "30421",
       "course_id": "EE 250",
       "term": "Fall 2026",
@@ -697,10 +723,11 @@
       "seats_available": 10,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/250/30421"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/250/30421",
+      "source_section_id": "20263_30421"
     },
     {
-      "section_id": "20263_30444",
+      "section_id": "20263_30444_ee_301",
       "sis_section_id": "30444",
       "course_id": "EE 301",
       "term": "Fall 2026",
@@ -724,10 +751,11 @@
       "seats_available": 4,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/301/30444"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/301/30444",
+      "source_section_id": "20263_30444"
     },
     {
-      "section_id": "20263_30459",
+      "section_id": "20263_30459_ee_301",
       "sis_section_id": "30459",
       "course_id": "EE 301",
       "term": "Fall 2026",
@@ -752,10 +780,11 @@
       "notes": [
         "Register for lec & lab"
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/301/30459"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/301/30459",
+      "source_section_id": "20263_30459"
     },
     {
-      "section_id": "20263_30467",
+      "section_id": "20263_30467_ee_338",
       "sis_section_id": "30467",
       "course_id": "EE 338",
       "term": "Fall 2026",
@@ -781,10 +810,11 @@
       "notes": [
         "Register for lec & 1 dis"
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/338/30467"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/338/30467",
+      "source_section_id": "20263_30467"
     },
     {
-      "section_id": "20263_30468",
+      "section_id": "20263_30468_ee_338",
       "sis_section_id": "30468",
       "course_id": "EE 338",
       "term": "Fall 2026",
@@ -806,10 +836,11 @@
       "seats_available": 0,
       "is_full": true,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/338/30468"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/338/30468",
+      "source_section_id": "20263_30468"
     },
     {
-      "section_id": "20263_30469",
+      "section_id": "20263_30469_ee_338",
       "sis_section_id": "30469",
       "course_id": "EE 338",
       "term": "Fall 2026",
@@ -831,10 +862,11 @@
       "seats_available": 0,
       "is_full": true,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/338/30469"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/338/30469",
+      "source_section_id": "20263_30469"
     },
     {
-      "section_id": "20263_30470",
+      "section_id": "20263_30470_ee_348",
       "sis_section_id": "30470",
       "course_id": "EE 348",
       "term": "Fall 2026",
@@ -858,10 +890,11 @@
       "seats_available": 9,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/348/30470"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/348/30470",
+      "source_section_id": "20263_30470"
     },
     {
-      "section_id": "20263_31111",
+      "section_id": "20263_31111_ee_354",
       "sis_section_id": "31111",
       "course_id": "EE 354",
       "term": "Fall 2026",
@@ -883,10 +916,11 @@
       "seats_available": 28,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/354/31111"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/354/31111",
+      "source_section_id": "20263_31111"
     },
     {
-      "section_id": "20263_31307",
+      "section_id": "20263_31307_ee_354",
       "sis_section_id": "31307",
       "course_id": "EE 354",
       "term": "Fall 2026",
@@ -910,10 +944,11 @@
       "seats_available": 0,
       "is_full": true,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/354/31307"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/354/31307",
+      "source_section_id": "20263_31307"
     },
     {
-      "section_id": "20263_31309",
+      "section_id": "20263_31309_ee_354",
       "sis_section_id": "31309",
       "course_id": "EE 354",
       "term": "Fall 2026",
@@ -936,10 +971,11 @@
       "seats_available": 2,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/354/31309"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/354/31309",
+      "source_section_id": "20263_31309"
     },
     {
-      "section_id": "20263_30855",
+      "section_id": "20263_30855_ee_354",
       "sis_section_id": "30855",
       "course_id": "EE 354",
       "term": "Fall 2026",
@@ -962,10 +998,11 @@
       "seats_available": 3,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/354/30855"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/354/30855",
+      "source_section_id": "20263_30855"
     },
     {
-      "section_id": "20263_31308",
+      "section_id": "20263_31308_ee_354",
       "sis_section_id": "31308",
       "course_id": "EE 354",
       "term": "Fall 2026",
@@ -987,10 +1024,11 @@
       "seats_available": 5,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/354/31308"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/354/31308",
+      "source_section_id": "20263_31308"
     },
     {
-      "section_id": "20263_30480",
+      "section_id": "20263_30480_ee_364",
       "sis_section_id": "30480",
       "course_id": "EE 364",
       "term": "Fall 2026",
@@ -1013,10 +1051,11 @@
       "seats_available": 14,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/364/30480"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/364/30480",
+      "source_section_id": "20263_30480"
     },
     {
-      "section_id": "20263_30779",
+      "section_id": "20263_30779_ee_364",
       "sis_section_id": "30779",
       "course_id": "EE 364",
       "term": "Fall 2026",
@@ -1038,10 +1077,11 @@
       "seats_available": 14,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/364/30779"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/364/30779",
+      "source_section_id": "20263_30779"
     },
     {
-      "section_id": "20263_31015",
+      "section_id": "20263_31015_ee_370",
       "sis_section_id": "31015",
       "course_id": "EE 370",
       "term": "Fall 2026",
@@ -1064,10 +1104,11 @@
       "seats_available": 0,
       "is_full": true,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/370/31015"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/370/31015",
+      "source_section_id": "20263_31015"
     },
     {
-      "section_id": "20263_31010",
+      "section_id": "20263_31010_ee_370",
       "sis_section_id": "31010",
       "course_id": "EE 370",
       "term": "Fall 2026",
@@ -1090,10 +1131,11 @@
       "seats_available": 10,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/370/31010"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/370/31010",
+      "source_section_id": "20263_31010"
     },
     {
-      "section_id": "20263_31011",
+      "section_id": "20263_31011_ee_370",
       "sis_section_id": "31011",
       "course_id": "EE 370",
       "term": "Fall 2026",
@@ -1115,10 +1157,11 @@
       "seats_available": 9,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/370/31011"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/370/31011",
+      "source_section_id": "20263_31011"
     },
     {
-      "section_id": "20263_31012",
+      "section_id": "20263_31012_ee_370",
       "sis_section_id": "31012",
       "course_id": "EE 370",
       "term": "Fall 2026",
@@ -1140,10 +1183,11 @@
       "seats_available": 1,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/370/31012"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/370/31012",
+      "source_section_id": "20263_31012"
     },
     {
-      "section_id": "20263_50514",
+      "section_id": "20263_50514_ee_436",
       "sis_section_id": "50514",
       "course_id": "EE 436",
       "term": "Fall 2026",
@@ -1166,10 +1210,11 @@
       "seats_available": 1,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/PHYS/440/50514"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/PHYS/440/50514",
+      "source_section_id": "20263_50514"
     },
     {
-      "section_id": "20263_30496",
+      "section_id": "20263_30496_ee_443",
       "sis_section_id": "30496",
       "course_id": "EE 443",
       "term": "Fall 2026",
@@ -1191,10 +1236,11 @@
       "seats_available": 67,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/443/30496"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/443/30496",
+      "source_section_id": "20263_30496"
     },
     {
-      "section_id": "20263_30497",
+      "section_id": "20263_30497_ee_443",
       "sis_section_id": "30497",
       "course_id": "EE 443",
       "term": "Fall 2026",
@@ -1216,10 +1262,11 @@
       "seats_available": 11,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/443/30497"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/443/30497",
+      "source_section_id": "20263_30497"
     },
     {
-      "section_id": "20263_30964",
+      "section_id": "20263_30964_ee_444",
       "sis_section_id": "30964",
       "course_id": "EE 444",
       "term": "Fall 2026",
@@ -1244,10 +1291,11 @@
       "notes": [
         "Register for lec & dis. Lecture will be webcast and students will be sent the url upon registration. Discussion will be held in room assigned."
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/444/30964"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/444/30964",
+      "source_section_id": "20263_30964"
     },
     {
-      "section_id": "20263_30962",
+      "section_id": "20263_30962_ee_444",
       "sis_section_id": "30962",
       "course_id": "EE 444",
       "term": "Fall 2026",
@@ -1269,10 +1317,11 @@
       "seats_available": 28,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/444/30962"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/444/30962",
+      "source_section_id": "20263_30962"
     },
     {
-      "section_id": "20263_31282",
+      "section_id": "20263_31282_ee_444",
       "sis_section_id": "31282",
       "course_id": "EE 444",
       "term": "Fall 2026",
@@ -1295,10 +1344,11 @@
       "seats_available": 8,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/444/31282"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/444/31282",
+      "source_section_id": "20263_31282"
     },
     {
-      "section_id": "20263_30963",
+      "section_id": "20263_30963_ee_444",
       "sis_section_id": "30963",
       "course_id": "EE 444",
       "term": "Fall 2026",
@@ -1321,10 +1371,11 @@
       "seats_available": 9,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/444/30963"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/444/30963",
+      "source_section_id": "20263_30963"
     },
     {
-      "section_id": "20263_30500",
+      "section_id": "20263_30500_ee_450",
       "sis_section_id": "30500",
       "course_id": "EE 450",
       "term": "Fall 2026",
@@ -1350,10 +1401,11 @@
       "notes": [
         "Register for 1 lec, 1 dis & quiz"
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/450/30500"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/450/30500",
+      "source_section_id": "20263_30500"
     },
     {
-      "section_id": "20263_30504",
+      "section_id": "20263_30504_ee_450",
       "sis_section_id": "30504",
       "course_id": "EE 450",
       "term": "Fall 2026",
@@ -1375,10 +1427,11 @@
       "seats_available": 16,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/450/30504"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/450/30504",
+      "source_section_id": "20263_30504"
     },
     {
-      "section_id": "20263_30684",
+      "section_id": "20263_30684_ee_450",
       "sis_section_id": "30684",
       "course_id": "EE 450",
       "term": "Fall 2026",
@@ -1400,10 +1453,11 @@
       "seats_available": 16,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/450/30684"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/450/30684",
+      "source_section_id": "20263_30684"
     },
     {
-      "section_id": "20263_30545",
+      "section_id": "20263_30545_ee_450",
       "sis_section_id": "30545",
       "course_id": "EE 450",
       "term": "Fall 2026",
@@ -1427,10 +1481,11 @@
       "seats_available": 20,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/450/30545"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/450/30545",
+      "source_section_id": "20263_30545"
     },
     {
-      "section_id": "20263_30546",
+      "section_id": "20263_30546_ee_450",
       "sis_section_id": "30546",
       "course_id": "EE 450",
       "term": "Fall 2026",
@@ -1453,10 +1508,11 @@
       "seats_available": 20,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/450/30546"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/450/30546",
+      "source_section_id": "20263_30546"
     },
     {
-      "section_id": "20263_31186",
+      "section_id": "20263_31186_ee_450",
       "sis_section_id": "31186",
       "course_id": "EE 450",
       "term": "Fall 2026",
@@ -1479,10 +1535,11 @@
       "seats_available": 20,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/450/31186"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/450/31186",
+      "source_section_id": "20263_31186"
     },
     {
-      "section_id": "20263_30408",
+      "section_id": "20263_30408_ee_451",
       "sis_section_id": "30408",
       "course_id": "EE 451",
       "term": "Fall 2026",
@@ -1505,10 +1562,11 @@
       "seats_available": 2,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/451/30408"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/451/30408",
+      "source_section_id": "20263_30408"
     },
     {
-      "section_id": "20263_30409",
+      "section_id": "20263_30409_ee_451",
       "sis_section_id": "30409",
       "course_id": "EE 451",
       "term": "Fall 2026",
@@ -1530,10 +1588,11 @@
       "seats_available": 2,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/451/30409"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/451/30409",
+      "source_section_id": "20263_30409"
     },
     {
-      "section_id": "20263_30911",
+      "section_id": "20263_30911_ee_454",
       "sis_section_id": "30911",
       "course_id": "EE 454",
       "term": "Fall 2026",
@@ -1556,10 +1615,11 @@
       "seats_available": 3,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/454/30911"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/454/30911",
+      "source_section_id": "20263_30911"
     },
     {
-      "section_id": "20263_30559",
+      "section_id": "20263_30559_ee_454",
       "sis_section_id": "30559",
       "course_id": "EE 454",
       "term": "Fall 2026",
@@ -1581,10 +1641,11 @@
       "seats_available": 3,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/454/30559"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/454/30559",
+      "source_section_id": "20263_30559"
     },
     {
-      "section_id": "20263_30100",
+      "section_id": "20263_30100_ee_455",
       "sis_section_id": "30100",
       "course_id": "EE 455",
       "term": "Fall 2026",
@@ -1611,10 +1672,11 @@
       "notes": [
         "Register for lecture and lab."
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/455/30100"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/455/30100",
+      "source_section_id": "20263_30100"
     },
     {
-      "section_id": "20263_29950",
+      "section_id": "20263_29950_ee_455",
       "sis_section_id": "29950",
       "course_id": "EE 455",
       "term": "Fall 2026",
@@ -1637,10 +1699,11 @@
       "seats_available": 0,
       "is_full": true,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/455/29950"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/455/29950",
+      "source_section_id": "20263_29950"
     },
     {
-      "section_id": "20263_30205",
+      "section_id": "20263_30205_ee_455",
       "sis_section_id": "30205",
       "course_id": "EE 455",
       "term": "Fall 2026",
@@ -1663,10 +1726,11 @@
       "seats_available": 18,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/455/30205"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/455/30205",
+      "source_section_id": "20263_30205"
     },
     {
-      "section_id": "20263_30192",
+      "section_id": "20263_30192_ee_455",
       "sis_section_id": "30192",
       "course_id": "EE 455",
       "term": "Fall 2026",
@@ -1689,10 +1753,11 @@
       "seats_available": 11,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/455/30192"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/455/30192",
+      "source_section_id": "20263_30192"
     },
     {
-      "section_id": "20263_29963",
+      "section_id": "20263_29963_ee_455",
       "sis_section_id": "29963",
       "course_id": "EE 455",
       "term": "Fall 2026",
@@ -1719,10 +1784,11 @@
       "notes": [
         "Register for lecture and lab."
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/455/29963"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/455/29963",
+      "source_section_id": "20263_29963"
     },
     {
-      "section_id": "20263_29964",
+      "section_id": "20263_29964_ee_455",
       "sis_section_id": "29964",
       "course_id": "EE 455",
       "term": "Fall 2026",
@@ -1745,10 +1811,11 @@
       "seats_available": 19,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/455/29964"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/455/29964",
+      "source_section_id": "20263_29964"
     },
     {
-      "section_id": "20263_30567",
+      "section_id": "20263_30567_ee_457",
       "sis_section_id": "30567",
       "course_id": "EE 457",
       "term": "Fall 2026",
@@ -1771,10 +1838,11 @@
       "seats_available": 10,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/30567"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/30567",
+      "source_section_id": "20263_30567"
     },
     {
-      "section_id": "20263_31338",
+      "section_id": "20263_31338_ee_457",
       "sis_section_id": "31338",
       "course_id": "EE 457",
       "term": "Fall 2026",
@@ -1797,10 +1865,11 @@
       "seats_available": 13,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/31338"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/31338",
+      "source_section_id": "20263_31338"
     },
     {
-      "section_id": "20263_30569",
+      "section_id": "20263_30569_ee_457",
       "sis_section_id": "30569",
       "course_id": "EE 457",
       "term": "Fall 2026",
@@ -1822,10 +1891,11 @@
       "seats_available": 47,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/30569"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/30569",
+      "source_section_id": "20263_30569"
     },
     {
-      "section_id": "20263_30605",
+      "section_id": "20263_30605_ee_457",
       "sis_section_id": "30605",
       "course_id": "EE 457",
       "term": "Fall 2026",
@@ -1847,10 +1917,11 @@
       "seats_available": 18,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/30605"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/30605",
+      "source_section_id": "20263_30605"
     },
     {
-      "section_id": "20263_31337",
+      "section_id": "20263_31337_ee_457",
       "sis_section_id": "31337",
       "course_id": "EE 457",
       "term": "Fall 2026",
@@ -1872,10 +1943,11 @@
       "seats_available": 81,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/31337"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/31337",
+      "source_section_id": "20263_31337"
     },
     {
-      "section_id": "20263_31305",
+      "section_id": "20263_31305_ee_457",
       "sis_section_id": "31305",
       "course_id": "EE 457",
       "term": "Fall 2026",
@@ -1899,10 +1971,11 @@
       "seats_available": 11,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/31305"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/31305",
+      "source_section_id": "20263_31305"
     },
     {
-      "section_id": "20263_31285",
+      "section_id": "20263_31285_ee_457",
       "sis_section_id": "31285",
       "course_id": "EE 457",
       "term": "Fall 2026",
@@ -1925,10 +1998,11 @@
       "seats_available": 11,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/31285"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/31285",
+      "source_section_id": "20263_31285"
     },
     {
-      "section_id": "20263_31336",
+      "section_id": "20263_31336_ee_457",
       "sis_section_id": "31336",
       "course_id": "EE 457",
       "term": "Fall 2026",
@@ -1951,10 +2025,11 @@
       "seats_available": 8,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/31336"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/457/31336",
+      "source_section_id": "20263_31336"
     },
     {
-      "section_id": "20263_31330",
+      "section_id": "20263_31330_ee_460",
       "sis_section_id": "31330",
       "course_id": "EE 460",
       "term": "Fall 2026",
@@ -1977,10 +2052,11 @@
       "seats_available": 16,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/460/31330"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/460/31330",
+      "source_section_id": "20263_31330"
     },
     {
-      "section_id": "20263_31331",
+      "section_id": "20263_31331_ee_460",
       "sis_section_id": "31331",
       "course_id": "EE 460",
       "term": "Fall 2026",
@@ -2002,10 +2078,11 @@
       "seats_available": 16,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/460/31331"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/460/31331",
+      "source_section_id": "20263_31331"
     },
     {
-      "section_id": "20263_30593",
+      "section_id": "20263_30593_ee_477",
       "sis_section_id": "30593",
       "course_id": "EE 477",
       "term": "Fall 2026",
@@ -2032,10 +2109,11 @@
         "The final exam for this course will be held on Wednesday, December 18, 2013 from 4:30 PM to 6:30 PM.",
         "Register for 1 lec & 1 lab"
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30593"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30593",
+      "source_section_id": "20263_30593"
     },
     {
-      "section_id": "20263_30523",
+      "section_id": "20263_30523_ee_477",
       "sis_section_id": "30523",
       "course_id": "EE 477",
       "term": "Fall 2026",
@@ -2058,10 +2136,11 @@
       "seats_available": 11,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30523"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30523",
+      "source_section_id": "20263_30523"
     },
     {
-      "section_id": "20263_30449",
+      "section_id": "20263_30449_ee_477",
       "sis_section_id": "30449",
       "course_id": "EE 477",
       "term": "Fall 2026",
@@ -2083,10 +2162,11 @@
       "seats_available": 43,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30449"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30449",
+      "source_section_id": "20263_30449"
     },
     {
-      "section_id": "20263_30599",
+      "section_id": "20263_30599_ee_477",
       "sis_section_id": "30599",
       "course_id": "EE 477",
       "term": "Fall 2026",
@@ -2110,10 +2190,11 @@
       "seats_available": 8,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30599"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30599",
+      "source_section_id": "20263_30599"
     },
     {
-      "section_id": "20263_30577",
+      "section_id": "20263_30577_ee_477",
       "sis_section_id": "30577",
       "course_id": "EE 477",
       "term": "Fall 2026",
@@ -2136,10 +2217,11 @@
       "seats_available": 7,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30577"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30577",
+      "source_section_id": "20263_30577"
     },
     {
-      "section_id": "20263_30598",
+      "section_id": "20263_30598_ee_477",
       "sis_section_id": "30598",
       "course_id": "EE 477",
       "term": "Fall 2026",
@@ -2161,10 +2243,11 @@
       "seats_available": 6,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30598"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30598",
+      "source_section_id": "20263_30598"
     },
     {
-      "section_id": "20263_30595",
+      "section_id": "20263_30595_ee_477",
       "sis_section_id": "30595",
       "course_id": "EE 477",
       "term": "Fall 2026",
@@ -2186,10 +2269,11 @@
       "seats_available": 7,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30595"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30595",
+      "source_section_id": "20263_30595"
     },
     {
-      "section_id": "20263_30991",
+      "section_id": "20263_30991_ee_477",
       "sis_section_id": "30991",
       "course_id": "EE 477",
       "term": "Fall 2026",
@@ -2211,10 +2295,11 @@
       "seats_available": 20,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30991"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/477/30991",
+      "source_section_id": "20263_30991"
     },
     {
-      "section_id": "20263_30609",
+      "section_id": "20263_30609_ee_483",
       "sis_section_id": "30609",
       "course_id": "EE 483",
       "term": "Fall 2026",
@@ -2240,10 +2325,11 @@
       "notes": [
         "Register for lec & 1 dis"
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/483/30609"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/483/30609",
+      "source_section_id": "20263_30609"
     },
     {
-      "section_id": "20263_30613",
+      "section_id": "20263_30613_ee_483",
       "sis_section_id": "30613",
       "course_id": "EE 483",
       "term": "Fall 2026",
@@ -2267,10 +2353,11 @@
       "seats_available": 19,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/483/30613"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/483/30613",
+      "source_section_id": "20263_30613"
     },
     {
-      "section_id": "20263_30561",
+      "section_id": "20263_30561_ee_483",
       "sis_section_id": "30561",
       "course_id": "EE 483",
       "term": "Fall 2026",
@@ -2293,10 +2380,11 @@
       "seats_available": 19,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/483/30561"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/483/30561",
+      "source_section_id": "20263_30561"
     },
     {
-      "section_id": "20263_30612",
+      "section_id": "20263_30612_ee_483",
       "sis_section_id": "30612",
       "course_id": "EE 483",
       "term": "Fall 2026",
@@ -2319,10 +2407,11 @@
       "seats_available": 19,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/483/30612"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/483/30612",
+      "source_section_id": "20263_30612"
     },
     {
-      "section_id": "20263_30611",
+      "section_id": "20263_30611_ee_490",
       "sis_section_id": "30611",
       "course_id": "EE 490",
       "term": "Fall 2026",
@@ -2344,10 +2433,11 @@
       "seats_available": 15,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/490/30611"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/490/30611",
+      "source_section_id": "20263_30611"
     },
     {
-      "section_id": "20263_31188",
+      "section_id": "20263_31188_ee_494a",
       "sis_section_id": "31188",
       "course_id": "EE 494A",
       "term": "Fall 2026",
@@ -2369,10 +2459,11 @@
       "seats_available": 2,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/494A/31188"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/494A/31188",
+      "source_section_id": "20263_31188"
     },
     {
-      "section_id": "20263_31187",
+      "section_id": "20263_31187_ee_494b",
       "sis_section_id": "31187",
       "course_id": "EE 494B",
       "term": "Fall 2026",
@@ -2394,10 +2485,11 @@
       "seats_available": 9,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/494B/31187"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/494B/31187",
+      "source_section_id": "20263_31187"
     },
     {
-      "section_id": "20263_30789",
+      "section_id": "20263_30789_ee_503",
       "sis_section_id": "30789",
       "course_id": "EE 503",
       "term": "Fall 2026",
@@ -2421,10 +2513,11 @@
       "seats_available": 13,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/503/30789"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/503/30789",
+      "source_section_id": "20263_30789"
     },
     {
-      "section_id": "20263_31399",
+      "section_id": "20263_31399_ee_503",
       "sis_section_id": "31399",
       "course_id": "EE 503",
       "term": "Fall 2026",
@@ -2447,10 +2540,11 @@
       "seats_available": 13,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/503/31399"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/503/31399",
+      "source_section_id": "20263_31399"
     },
     {
-      "section_id": "20263_30587",
+      "section_id": "20263_30587_ee_503",
       "sis_section_id": "30587",
       "course_id": "EE 503",
       "term": "Fall 2026",
@@ -2476,10 +2570,11 @@
       "notes": [
         "Recommended for PhD students"
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/503/30587"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/503/30587",
+      "source_section_id": "20263_30587"
     },
     {
-      "section_id": "20263_30588",
+      "section_id": "20263_30588_ee_503",
       "sis_section_id": "30588",
       "course_id": "EE 503",
       "term": "Fall 2026",
@@ -2502,10 +2597,11 @@
       "seats_available": 27,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/503/30588"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/503/30588",
+      "source_section_id": "20263_30588"
     },
     {
-      "section_id": "20263_30689",
+      "section_id": "20263_30689_ee_503",
       "sis_section_id": "30689",
       "course_id": "EE 503",
       "term": "Fall 2026",
@@ -2529,10 +2625,11 @@
       "seats_available": 5,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/503/30689"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/503/30689",
+      "source_section_id": "20263_30689"
     },
     {
-      "section_id": "20263_30699",
+      "section_id": "20263_30699_ee_503",
       "sis_section_id": "30699",
       "course_id": "EE 503",
       "term": "Fall 2026",
@@ -2555,10 +2652,11 @@
       "seats_available": 5,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/503/30699"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/503/30699",
+      "source_section_id": "20263_30699"
     },
     {
-      "section_id": "20263_30773",
+      "section_id": "20263_30773_ee_507",
       "sis_section_id": "30773",
       "course_id": "EE 507",
       "term": "Fall 2026",
@@ -2581,10 +2679,11 @@
       "seats_available": 4,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/507/30773"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/507/30773",
+      "source_section_id": "20263_30773"
     },
     {
-      "section_id": "20263_30476",
+      "section_id": "20263_30476_ee_510",
       "sis_section_id": "30476",
       "course_id": "EE 510",
       "term": "Fall 2026",
@@ -2606,10 +2705,11 @@
       "seats_available": 11,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/510/30476"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/510/30476",
+      "source_section_id": "20263_30476"
     },
     {
-      "section_id": "20263_30479",
+      "section_id": "20263_30479_ee_510",
       "sis_section_id": "30479",
       "course_id": "EE 510",
       "term": "Fall 2026",
@@ -2633,10 +2733,11 @@
       "seats_available": 7,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/510/30479"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/510/30479",
+      "source_section_id": "20263_30479"
     },
     {
-      "section_id": "20263_30483",
+      "section_id": "20263_30483_ee_510",
       "sis_section_id": "30483",
       "course_id": "EE 510",
       "term": "Fall 2026",
@@ -2659,10 +2760,11 @@
       "seats_available": 7,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/510/30483"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/510/30483",
+      "source_section_id": "20263_30483"
     },
     {
-      "section_id": "20263_30477",
+      "section_id": "20263_30477_ee_510",
       "sis_section_id": "30477",
       "course_id": "EE 510",
       "term": "Fall 2026",
@@ -2686,10 +2788,11 @@
       "seats_available": 13,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/510/30477"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/510/30477",
+      "source_section_id": "20263_30477"
     },
     {
-      "section_id": "20263_30478",
+      "section_id": "20263_30478_ee_510",
       "sis_section_id": "30478",
       "course_id": "EE 510",
       "term": "Fall 2026",
@@ -2712,10 +2815,11 @@
       "seats_available": 2,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/510/30478"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/510/30478",
+      "source_section_id": "20263_30478"
     },
     {
-      "section_id": "20263_30572",
+      "section_id": "20263_30572_ee_511",
       "sis_section_id": "30572",
       "course_id": "EE 511",
       "term": "Fall 2026",
@@ -2738,10 +2842,11 @@
       "seats_available": 9,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/511/30572"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/511/30572",
+      "source_section_id": "20263_30572"
     },
     {
-      "section_id": "20263_30573",
+      "section_id": "20263_30573_ee_511",
       "sis_section_id": "30573",
       "course_id": "EE 511",
       "term": "Fall 2026",
@@ -2763,10 +2868,11 @@
       "seats_available": 9,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/511/30573"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/511/30573",
+      "source_section_id": "20263_30573"
     },
     {
-      "section_id": "20263_31190",
+      "section_id": "20263_31190_ee_512",
       "sis_section_id": "31190",
       "course_id": "EE 512",
       "term": "Fall 2026",
@@ -2789,10 +2895,11 @@
       "seats_available": 37,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/512/31190"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/512/31190",
+      "source_section_id": "20263_31190"
     },
     {
-      "section_id": "20263_31193",
+      "section_id": "20263_31193_ee_512",
       "sis_section_id": "31193",
       "course_id": "EE 512",
       "term": "Fall 2026",
@@ -2814,10 +2921,11 @@
       "seats_available": 37,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/512/31193"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/512/31193",
+      "source_section_id": "20263_31193"
     },
     {
-      "section_id": "20263_31298",
+      "section_id": "20263_31298_ee_512",
       "sis_section_id": "31298",
       "course_id": "EE 512",
       "term": "Fall 2026",
@@ -2841,10 +2949,11 @@
       "seats_available": 9,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/512/31298"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/512/31298",
+      "source_section_id": "20263_31298"
     },
     {
-      "section_id": "20263_31299",
+      "section_id": "20263_31299_ee_512",
       "sis_section_id": "31299",
       "course_id": "EE 512",
       "term": "Fall 2026",
@@ -2867,10 +2976,11 @@
       "seats_available": 9,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/512/31299"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/512/31299",
+      "source_section_id": "20263_31299"
     },
     {
-      "section_id": "20263_30888",
+      "section_id": "20263_30888_ee_514",
       "sis_section_id": "30888",
       "course_id": "EE 514",
       "term": "Fall 2026",
@@ -2893,10 +3003,11 @@
       "seats_available": 28,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/514/30888"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/514/30888",
+      "source_section_id": "20263_30888"
     },
     {
-      "section_id": "20263_31322",
+      "section_id": "20263_31322_ee_516",
       "sis_section_id": "31322",
       "course_id": "EE 516",
       "term": "Fall 2026",
@@ -2918,10 +3029,11 @@
       "seats_available": 13,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/516/31322"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/516/31322",
+      "source_section_id": "20263_31322"
     },
     {
-      "section_id": "20263_31398",
+      "section_id": "20263_31398_ee_516",
       "sis_section_id": "31398",
       "course_id": "EE 516",
       "term": "Fall 2026",
@@ -2943,10 +3055,11 @@
       "seats_available": 26,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/516/31398"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/516/31398",
+      "source_section_id": "20263_31398"
     },
     {
-      "section_id": "20263_31303",
+      "section_id": "20263_31303_ee_518",
       "sis_section_id": "31303",
       "course_id": "EE 518",
       "term": "Fall 2026",
@@ -2973,10 +3086,11 @@
       "notes": [
         "Open to MSFINE Majors only."
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/518/31303"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/518/31303",
+      "source_section_id": "20263_31303"
     },
     {
-      "section_id": "20263_31304",
+      "section_id": "20263_31304_ee_518",
       "sis_section_id": "31304",
       "course_id": "EE 518",
       "term": "Fall 2026",
@@ -2999,10 +3113,11 @@
       "seats_available": 18,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/518/31304"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/518/31304",
+      "source_section_id": "20263_31304"
     },
     {
-      "section_id": "20263_31301",
+      "section_id": "20263_31301_ee_518",
       "sis_section_id": "31301",
       "course_id": "EE 518",
       "term": "Fall 2026",
@@ -3029,10 +3144,11 @@
       "notes": [
         "Open to MSFINE Majors only."
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/518/31301"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/518/31301",
+      "source_section_id": "20263_31301"
     },
     {
-      "section_id": "20263_31302",
+      "section_id": "20263_31302_ee_518",
       "sis_section_id": "31302",
       "course_id": "EE 518",
       "term": "Fall 2026",
@@ -3055,10 +3171,11 @@
       "seats_available": 22,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/518/31302"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/518/31302",
+      "source_section_id": "20263_31302"
     },
     {
-      "section_id": "20263_30812",
+      "section_id": "20263_30812_ee_520",
       "sis_section_id": "30812",
       "course_id": "EE 520",
       "term": "Fall 2026",
@@ -3081,10 +3198,11 @@
       "seats_available": 7,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/520/30812"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/520/30812",
+      "source_section_id": "20263_30812"
     },
     {
-      "section_id": "20263_30625",
+      "section_id": "20263_30625_ee_525",
       "sis_section_id": "30625",
       "course_id": "EE 525",
       "term": "Fall 2026",
@@ -3106,10 +3224,11 @@
       "seats_available": 11,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/525/30625"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/525/30625",
+      "source_section_id": "20263_30625"
     },
     {
-      "section_id": "20263_30624",
+      "section_id": "20263_30624_ee_525",
       "sis_section_id": "30624",
       "course_id": "EE 525",
       "term": "Fall 2026",
@@ -3131,10 +3250,11 @@
       "seats_available": 16,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/525/30624"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/525/30624",
+      "source_section_id": "20263_30624"
     },
     {
-      "section_id": "20263_30502",
+      "section_id": "20263_30502_ee_529",
       "sis_section_id": "30502",
       "course_id": "EE 529",
       "term": "Fall 2026",
@@ -3157,10 +3277,11 @@
       "seats_available": 19,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/529/30502"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/529/30502",
+      "source_section_id": "20263_30502"
     },
     {
-      "section_id": "20263_30456",
+      "section_id": "20263_30456_ee_529",
       "sis_section_id": "30456",
       "course_id": "EE 529",
       "term": "Fall 2026",
@@ -3182,10 +3303,11 @@
       "seats_available": 19,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/529/30456"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/529/30456",
+      "source_section_id": "20263_30456"
     },
     {
-      "section_id": "20263_30681",
+      "section_id": "20263_30681_ee_530",
       "sis_section_id": "30681",
       "course_id": "EE 530",
       "term": "Fall 2026",
@@ -3208,10 +3330,11 @@
       "seats_available": 9,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/530/30681"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/530/30681",
+      "source_section_id": "20263_30681"
     },
     {
-      "section_id": "20263_32177",
+      "section_id": "20263_32177_ee_534",
       "sis_section_id": "32177",
       "course_id": "EE 534",
       "term": "Fall 2026",
@@ -3235,10 +3358,11 @@
       "seats_available": 6,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/MASC/534/32177"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/MASC/534/32177",
+      "source_section_id": "20263_32177"
     },
     {
-      "section_id": "20263_30696",
+      "section_id": "20263_30696_ee_536a",
       "sis_section_id": "30696",
       "course_id": "EE 536A",
       "term": "Fall 2026",
@@ -3261,10 +3385,11 @@
       "seats_available": 32,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/536A/30696"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/536A/30696",
+      "source_section_id": "20263_30696"
     },
     {
-      "section_id": "20263_30698",
+      "section_id": "20263_30698_ee_536a",
       "sis_section_id": "30698",
       "course_id": "EE 536A",
       "term": "Fall 2026",
@@ -3286,10 +3411,11 @@
       "seats_available": 33,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/536A/30698"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/536A/30698",
+      "source_section_id": "20263_30698"
     },
     {
-      "section_id": "20263_30695",
+      "section_id": "20263_30695_ee_536a",
       "sis_section_id": "30695",
       "course_id": "EE 536A",
       "term": "Fall 2026",
@@ -3316,10 +3442,11 @@
       "notes": [
         "Register for lec & dis"
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/536A/30695"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/536A/30695",
+      "source_section_id": "20263_30695"
     },
     {
-      "section_id": "20263_30697",
+      "section_id": "20263_30697_ee_536a",
       "sis_section_id": "30697",
       "course_id": "EE 536A",
       "term": "Fall 2026",
@@ -3342,10 +3469,11 @@
       "seats_available": 18,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/536A/30697"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/536A/30697",
+      "source_section_id": "20263_30697"
     },
     {
-      "section_id": "20263_30590",
+      "section_id": "20263_30590_ee_537",
       "sis_section_id": "30590",
       "course_id": "EE 537",
       "term": "Fall 2026",
@@ -3368,10 +3496,11 @@
       "seats_available": 11,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/537/30590"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/537/30590",
+      "source_section_id": "20263_30590"
     },
     {
-      "section_id": "20263_30758",
+      "section_id": "20263_30758_ee_538",
       "sis_section_id": "30758",
       "course_id": "EE 538",
       "term": "Fall 2026",
@@ -3393,10 +3522,11 @@
       "seats_available": 10,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/538/30758"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/538/30758",
+      "source_section_id": "20263_30758"
     },
     {
-      "section_id": "20263_30760",
+      "section_id": "20263_30760_ee_538",
       "sis_section_id": "30760",
       "course_id": "EE 538",
       "term": "Fall 2026",
@@ -3418,10 +3548,11 @@
       "seats_available": 10,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/538/30760"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/538/30760",
+      "source_section_id": "20263_30760"
     },
     {
-      "section_id": "20263_30759",
+      "section_id": "20263_30759_ee_538",
       "sis_section_id": "30759",
       "course_id": "EE 538",
       "term": "Fall 2026",
@@ -3443,10 +3574,11 @@
       "seats_available": 8,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/538/30759"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/538/30759",
+      "source_section_id": "20263_30759"
     },
     {
-      "section_id": "20263_30757",
+      "section_id": "20263_30757_ee_538",
       "sis_section_id": "30757",
       "course_id": "EE 538",
       "term": "Fall 2026",
@@ -3468,10 +3600,11 @@
       "seats_available": 8,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/538/30757"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/538/30757",
+      "source_section_id": "20263_30757"
     },
     {
-      "section_id": "20263_30702",
+      "section_id": "20263_30702_ee_539",
       "sis_section_id": "30702",
       "course_id": "EE 539",
       "term": "Fall 2026",
@@ -3494,10 +3627,11 @@
       "seats_available": 32,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/539/30702"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/539/30702",
+      "source_section_id": "20263_30702"
     },
     {
-      "section_id": "20263_30733",
+      "section_id": "20263_30733_ee_539",
       "sis_section_id": "30733",
       "course_id": "EE 539",
       "term": "Fall 2026",
@@ -3519,10 +3653,11 @@
       "seats_available": 32,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/539/30733"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/539/30733",
+      "source_section_id": "20263_30733"
     },
     {
-      "section_id": "20263_30799",
+      "section_id": "20263_30799_ee_541",
       "sis_section_id": "30799",
       "course_id": "EE 541",
       "term": "Fall 2026",
@@ -3544,10 +3679,11 @@
       "seats_available": 11,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/541/30799"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/541/30799",
+      "source_section_id": "20263_30799"
     },
     {
-      "section_id": "20263_31119",
+      "section_id": "20263_31119_ee_542",
       "sis_section_id": "31119",
       "course_id": "EE 542",
       "term": "Fall 2026",
@@ -3570,10 +3706,11 @@
       "seats_available": 36,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/542/31119"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/542/31119",
+      "source_section_id": "20263_31119"
     },
     {
-      "section_id": "20263_30401",
+      "section_id": "20263_30401_ee_546",
       "sis_section_id": "30401",
       "course_id": "EE 546",
       "term": "Fall 2026",
@@ -3599,10 +3736,11 @@
       "notes": [
         "For PhD students. However, MS students can request a waiver from the instructor in August if there is space available to enroll"
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/546/30401"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/546/30401",
+      "source_section_id": "20263_30401"
     },
     {
-      "section_id": "20263_30897",
+      "section_id": "20263_30897_ee_547",
       "sis_section_id": "30897",
       "course_id": "EE 547",
       "term": "Fall 2026",
@@ -3624,10 +3762,11 @@
       "seats_available": 74,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/547/30897"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/547/30897",
+      "source_section_id": "20263_30897"
     },
     {
-      "section_id": "20263_30979",
+      "section_id": "20263_30979_ee_547",
       "sis_section_id": "30979",
       "course_id": "EE 547",
       "term": "Fall 2026",
@@ -3649,10 +3788,11 @@
       "seats_available": 74,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/547/30979"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/547/30979",
+      "source_section_id": "20263_30979"
     },
     {
-      "section_id": "20263_30630",
+      "section_id": "20263_30630_ee_557",
       "sis_section_id": "30630",
       "course_id": "EE 557",
       "term": "Fall 2026",
@@ -3675,10 +3815,11 @@
       "seats_available": 21,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/557/30630"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/557/30630",
+      "source_section_id": "20263_30630"
     },
     {
-      "section_id": "20263_30631",
+      "section_id": "20263_30631_ee_557",
       "sis_section_id": "30631",
       "course_id": "EE 557",
       "term": "Fall 2026",
@@ -3700,10 +3841,11 @@
       "seats_available": 21,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/557/30631"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/557/30631",
+      "source_section_id": "20263_30631"
     },
     {
-      "section_id": "20263_30628",
+      "section_id": "20263_30628_ee_557",
       "sis_section_id": "30628",
       "course_id": "EE 557",
       "term": "Fall 2026",
@@ -3730,10 +3872,11 @@
       "notes": [
         "Register for lec & dis"
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/557/30628"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/557/30628",
+      "source_section_id": "20263_30628"
     },
     {
-      "section_id": "20263_30629",
+      "section_id": "20263_30629_ee_557",
       "sis_section_id": "30629",
       "course_id": "EE 557",
       "term": "Fall 2026",
@@ -3756,10 +3899,11 @@
       "seats_available": 8,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/557/30629"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/557/30629",
+      "source_section_id": "20263_30629"
     },
     {
-      "section_id": "20263_30202",
+      "section_id": "20263_30202_ee_561",
       "sis_section_id": "30202",
       "course_id": "EE 561",
       "term": "Fall 2026",
@@ -3782,10 +3926,11 @@
       "seats_available": 116,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/561/30202"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/561/30202",
+      "source_section_id": "20263_30202"
     },
     {
-      "section_id": "20263_30295",
+      "section_id": "20263_30295_ee_561",
       "sis_section_id": "30295",
       "course_id": "EE 561",
       "term": "Fall 2026",
@@ -3808,10 +3953,11 @@
       "seats_available": 116,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/561/30295"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/561/30295",
+      "source_section_id": "20263_30295"
     },
     {
-      "section_id": "20263_29981",
+      "section_id": "20263_29981_ee_561",
       "sis_section_id": "29981",
       "course_id": "EE 561",
       "term": "Fall 2026",
@@ -3837,10 +3983,11 @@
       "notes": [
         "On campus students must enroll in this quiz section."
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/561/29981"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/561/29981",
+      "source_section_id": "20263_29981"
     },
     {
-      "section_id": "20263_30079",
+      "section_id": "20263_30079_ee_561",
       "sis_section_id": "30079",
       "course_id": "EE 561",
       "term": "Fall 2026",
@@ -3863,10 +4010,11 @@
       "seats_available": 14,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/561/30079"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/561/30079",
+      "source_section_id": "20263_30079"
     },
     {
-      "section_id": "20263_30305",
+      "section_id": "20263_30305_ee_561",
       "sis_section_id": "30305",
       "course_id": "EE 561",
       "term": "Fall 2026",
@@ -3889,10 +4037,11 @@
       "seats_available": 14,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/561/30305"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/561/30305",
+      "source_section_id": "20263_30305"
     },
     {
-      "section_id": "20263_29982",
+      "section_id": "20263_29982_ee_561",
       "sis_section_id": "29982",
       "course_id": "EE 561",
       "term": "Fall 2026",
@@ -3915,10 +4064,11 @@
       "seats_available": 14,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/561/29982"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/561/29982",
+      "source_section_id": "20263_29982"
     },
     {
-      "section_id": "20263_30654",
+      "section_id": "20263_30654_ee_577a",
       "sis_section_id": "30654",
       "course_id": "EE 577A",
       "term": "Fall 2026",
@@ -3940,10 +4090,11 @@
       "seats_available": 11,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577A/30654"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577A/30654",
+      "source_section_id": "20263_30654"
     },
     {
-      "section_id": "20263_30446",
+      "section_id": "20263_30446_ee_577a",
       "sis_section_id": "30446",
       "course_id": "EE 577A",
       "term": "Fall 2026",
@@ -3965,10 +4116,11 @@
       "seats_available": 22,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577A/30446"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577A/30446",
+      "source_section_id": "20263_30446"
     },
     {
-      "section_id": "20263_30655",
+      "section_id": "20263_30655_ee_577a",
       "sis_section_id": "30655",
       "course_id": "EE 577A",
       "term": "Fall 2026",
@@ -3991,10 +4143,11 @@
       "seats_available": 15,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577A/30655"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577A/30655",
+      "source_section_id": "20263_30655"
     },
     {
-      "section_id": "20263_30657",
+      "section_id": "20263_30657_ee_577a",
       "sis_section_id": "30657",
       "course_id": "EE 577A",
       "term": "Fall 2026",
@@ -4017,10 +4170,11 @@
       "seats_available": 14,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577A/30657"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577A/30657",
+      "source_section_id": "20263_30657"
     },
     {
-      "section_id": "20263_30441",
+      "section_id": "20263_30441_ee_577a",
       "sis_section_id": "30441",
       "course_id": "EE 577A",
       "term": "Fall 2026",
@@ -4043,10 +4197,11 @@
       "seats_available": 51,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577A/30441"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577A/30441",
+      "source_section_id": "20263_30441"
     },
     {
-      "section_id": "20263_30445",
+      "section_id": "20263_30445_ee_577a",
       "sis_section_id": "30445",
       "course_id": "EE 577A",
       "term": "Fall 2026",
@@ -4069,10 +4224,11 @@
       "seats_available": 12,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577A/30445"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577A/30445",
+      "source_section_id": "20263_30445"
     },
     {
-      "section_id": "20263_30653",
+      "section_id": "20263_30653_ee_577b",
       "sis_section_id": "30653",
       "course_id": "EE 577B",
       "term": "Fall 2026",
@@ -4095,10 +4251,11 @@
       "seats_available": 7,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577B/30653"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577B/30653",
+      "source_section_id": "20263_30653"
     },
     {
-      "section_id": "20263_30487",
+      "section_id": "20263_30487_ee_577b",
       "sis_section_id": "30487",
       "course_id": "EE 577B",
       "term": "Fall 2026",
@@ -4121,10 +4278,11 @@
       "seats_available": 7,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577B/30487"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577B/30487",
+      "source_section_id": "20263_30487"
     },
     {
-      "section_id": "20263_30656",
+      "section_id": "20263_30656_ee_577b",
       "sis_section_id": "30656",
       "course_id": "EE 577B",
       "term": "Fall 2026",
@@ -4147,10 +4305,11 @@
       "seats_available": 15,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577B/30656"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577B/30656",
+      "source_section_id": "20263_30656"
     },
     {
-      "section_id": "20263_30846",
+      "section_id": "20263_30846_ee_577b",
       "sis_section_id": "30846",
       "course_id": "EE 577B",
       "term": "Fall 2026",
@@ -4173,10 +4332,11 @@
       "seats_available": 15,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577B/30846"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/577B/30846",
+      "source_section_id": "20263_30846"
     },
     {
-      "section_id": "20263_31044",
+      "section_id": "20263_31044_ee_585",
       "sis_section_id": "31044",
       "course_id": "EE 585",
       "term": "Fall 2026",
@@ -4199,10 +4359,11 @@
       "seats_available": 7,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/585/31044"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/585/31044",
+      "source_section_id": "20263_31044"
     },
     {
-      "section_id": "20263_30987",
+      "section_id": "20263_30987_ee_585",
       "sis_section_id": "30987",
       "course_id": "EE 585",
       "term": "Fall 2026",
@@ -4225,10 +4386,11 @@
       "seats_available": 5,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/585/30987"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/585/30987",
+      "source_section_id": "20263_30987"
     },
     {
-      "section_id": "20263_30999",
+      "section_id": "20263_30999_ee_588",
       "sis_section_id": "30999",
       "course_id": "EE 588",
       "term": "Fall 2026",
@@ -4251,10 +4413,11 @@
       "seats_available": 13,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/588/30999"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/588/30999",
+      "source_section_id": "20263_30999"
     },
     {
-      "section_id": "20263_31002",
+      "section_id": "20263_31002_ee_588",
       "sis_section_id": "31002",
       "course_id": "EE 588",
       "term": "Fall 2026",
@@ -4276,10 +4439,11 @@
       "seats_available": 21,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/588/31002"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/588/31002",
+      "source_section_id": "20263_31002"
     },
     {
-      "section_id": "20263_30663",
+      "section_id": "20263_30663_ee_590",
       "sis_section_id": "30663",
       "course_id": "EE 590",
       "term": "Fall 2026",
@@ -4301,10 +4465,11 @@
       "seats_available": 171,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/590/30663"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/590/30663",
+      "source_section_id": "20263_30663"
     },
     {
-      "section_id": "20263_31008",
+      "section_id": "20263_31008_ee_599",
       "sis_section_id": "31008",
       "course_id": "EE 599",
       "term": "Fall 2026",
@@ -4327,10 +4492,11 @@
       "seats_available": 26,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/599/31008"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/599/31008",
+      "source_section_id": "20263_31008"
     },
     {
-      "section_id": "20263_30791",
+      "section_id": "20263_30791_ee_599",
       "sis_section_id": "30791",
       "course_id": "EE 599",
       "term": "Fall 2026",
@@ -4354,10 +4520,11 @@
       "seats_available": 12,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/599/30791"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/599/30791",
+      "source_section_id": "20263_30791"
     },
     {
-      "section_id": "20263_30406",
+      "section_id": "20263_30406_ee_608",
       "sis_section_id": "30406",
       "course_id": "EE 608",
       "term": "Fall 2026",
@@ -4379,10 +4546,11 @@
       "seats_available": 8,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/608/30406"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/608/30406",
+      "source_section_id": "20263_30406"
     },
     {
-      "section_id": "20263_30404",
+      "section_id": "20263_30404_ee_641",
       "sis_section_id": "30404",
       "course_id": "EE 641",
       "term": "Fall 2026",
@@ -4404,10 +4572,11 @@
       "seats_available": 19,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/641/30404"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/641/30404",
+      "source_section_id": "20263_30404"
     },
     {
-      "section_id": "20263_30787",
+      "section_id": "20263_30787_ee_658",
       "sis_section_id": "30787",
       "course_id": "EE 658",
       "term": "Fall 2026",
@@ -4429,10 +4598,11 @@
       "seats_available": 6,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/658/30787"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/658/30787",
+      "source_section_id": "20263_30787"
     },
     {
-      "section_id": "20263_30460",
+      "section_id": "20263_30460_ee_660",
       "sis_section_id": "30460",
       "course_id": "EE 660",
       "term": "Fall 2026",
@@ -4455,10 +4625,11 @@
       "seats_available": 44,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/660/30460"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/660/30460",
+      "source_section_id": "20263_30460"
     },
     {
-      "section_id": "20263_31100",
+      "section_id": "20263_31100_ee_660",
       "sis_section_id": "31100",
       "course_id": "EE 660",
       "term": "Fall 2026",
@@ -4480,10 +4651,11 @@
       "seats_available": 44,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/660/31100"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/660/31100",
+      "source_section_id": "20263_31100"
     },
     {
-      "section_id": "20263_30889",
+      "section_id": "20263_30889_ee_660",
       "sis_section_id": "30889",
       "course_id": "EE 660",
       "term": "Fall 2026",
@@ -4507,10 +4679,11 @@
       "seats_available": 18,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/660/30889"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/660/30889",
+      "source_section_id": "20263_30889"
     },
     {
-      "section_id": "20263_31101",
+      "section_id": "20263_31101_ee_660",
       "sis_section_id": "31101",
       "course_id": "EE 660",
       "term": "Fall 2026",
@@ -4533,10 +4706,11 @@
       "seats_available": 18,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/660/31101"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/660/31101",
+      "source_section_id": "20263_31101"
     },
     {
-      "section_id": "20263_31324",
+      "section_id": "20263_31324_ee_669",
       "sis_section_id": "31324",
       "course_id": "EE 669",
       "term": "Fall 2026",
@@ -4559,10 +4733,11 @@
       "seats_available": 24,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/669/31324"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/669/31324",
+      "source_section_id": "20263_31324"
     },
     {
-      "section_id": "20263_31326",
+      "section_id": "20263_31326_ee_669",
       "sis_section_id": "31326",
       "course_id": "EE 669",
       "term": "Fall 2026",
@@ -4584,10 +4759,11 @@
       "seats_available": 24,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/669/31326"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/669/31326",
+      "source_section_id": "20263_31326"
     },
     {
-      "section_id": "20263_31328",
+      "section_id": "20263_31328_ee_675",
       "sis_section_id": "31328",
       "course_id": "EE 675",
       "term": "Fall 2026",
@@ -4610,10 +4786,11 @@
       "seats_available": 10,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/675/31328"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/675/31328",
+      "source_section_id": "20263_31328"
     },
     {
-      "section_id": "20263_30228",
+      "section_id": "20263_30228_ee_676",
       "sis_section_id": "30228",
       "course_id": "EE 676",
       "term": "Fall 2026",
@@ -4637,10 +4814,11 @@
       "seats_available": 17,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/677/30228"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/677/30228",
+      "source_section_id": "20263_30228"
     },
     {
-      "section_id": "20263_30229",
+      "section_id": "20263_30229_ee_676",
       "sis_section_id": "30229",
       "course_id": "EE 676",
       "term": "Fall 2026",
@@ -4664,10 +4842,11 @@
       "seats_available": 15,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/677/30229"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/CSCI/677/30229",
+      "source_section_id": "20263_30229"
     },
     {
-      "section_id": "20263_30814",
+      "section_id": "20263_30814_ee_680",
       "sis_section_id": "30814",
       "course_id": "EE 680",
       "term": "Fall 2026",
@@ -4690,10 +4869,11 @@
       "seats_available": 16,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/680/30814"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/680/30814",
+      "source_section_id": "20263_30814"
     },
     {
-      "section_id": "20263_30576",
+      "section_id": "20263_30576_ee_682",
       "sis_section_id": "30576",
       "course_id": "EE 682",
       "term": "Fall 2026",
@@ -4715,10 +4895,11 @@
       "seats_available": 17,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/682/30576"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/682/30576",
+      "source_section_id": "20263_30576"
     },
     {
-      "section_id": "20263_30674",
+      "section_id": "20263_30674_ee_690",
       "sis_section_id": "30674",
       "course_id": "EE 690",
       "term": "Fall 2026",
@@ -4740,10 +4921,11 @@
       "seats_available": 100,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/690/30674"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/690/30674",
+      "source_section_id": "20263_30674"
     },
     {
-      "section_id": "20263_30602",
+      "section_id": "20263_30602_ee_698",
       "sis_section_id": "30602",
       "course_id": "EE 698",
       "term": "Fall 2026",
@@ -4768,10 +4950,11 @@
       "notes": [
         "For ECE PhD students only"
       ],
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/698/30602"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/698/30602",
+      "source_section_id": "20263_30602"
     },
     {
-      "section_id": "20263_30675",
+      "section_id": "20263_30675_ee_790",
       "sis_section_id": "30675",
       "course_id": "EE 790",
       "term": "Fall 2026",
@@ -4793,10 +4976,11 @@
       "seats_available": 70,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/790/30675"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/790/30675",
+      "source_section_id": "20263_30675"
     },
     {
-      "section_id": "20263_30676",
+      "section_id": "20263_30676_ee_794a",
       "sis_section_id": "30676",
       "course_id": "EE 794A",
       "term": "Fall 2026",
@@ -4818,10 +5002,11 @@
       "seats_available": 23,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/794A/30676"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/794A/30676",
+      "source_section_id": "20263_30676"
     },
     {
-      "section_id": "20263_30677",
+      "section_id": "20263_30677_ee_794b",
       "sis_section_id": "30677",
       "course_id": "EE 794B",
       "term": "Fall 2026",
@@ -4843,10 +5028,11 @@
       "seats_available": 19,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/794B/30677"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/794B/30677",
+      "source_section_id": "20263_30677"
     },
     {
-      "section_id": "20263_30678",
+      "section_id": "20263_30678_ee_794c",
       "sis_section_id": "30678",
       "course_id": "EE 794C",
       "term": "Fall 2026",
@@ -4868,10 +5054,11 @@
       "seats_available": 35,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/794C/30678"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/794C/30678",
+      "source_section_id": "20263_30678"
     },
     {
-      "section_id": "20263_30679",
+      "section_id": "20263_30679_ee_794d",
       "sis_section_id": "30679",
       "course_id": "EE 794D",
       "term": "Fall 2026",
@@ -4893,10 +5080,11 @@
       "seats_available": 49,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/794D/30679"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/794D/30679",
+      "source_section_id": "20263_30679"
     },
     {
-      "section_id": "20263_30680",
+      "section_id": "20263_30680_ee_794z",
       "sis_section_id": "30680",
       "course_id": "EE 794Z",
       "term": "Fall 2026",
@@ -4918,7 +5106,8 @@
       "seats_available": 46,
       "is_full": false,
       "seats_snapshot_date": "2026-11-14",
-      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/794Z/30680"
+      "syllabus_url": "https://usc.simplesyllabus.com/en-US/syllabus/Fall%202026/EE/794Z/30680",
+      "source_section_id": "20263_30680"
     }
   ]
 }

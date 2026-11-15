@@ -1,0 +1,60 @@
+{
+  "purpose": "Public resource instructions; not a claim of a current vacancy.",
+  "meta": {
+    "title": "Trojan Network",
+    "summary": "USC alumni and student mentoring through brief conversations or formal programs.",
+    "source_name": "usc_career_center",
+    "source_url": "https://careers.usc.edu/experiences/trojan-network-find-a-mentor/",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all"
+    ],
+    "tags": [
+      "networking",
+      "career",
+      "usc"
+    ]
+  },
+  "records": [
+    {
+      "resource_id": "trojan_network",
+      "title": "Trojan Network",
+      "description": "USC alumni and student mentoring through brief conversations or formal programs.",
+      "source_name": "usc_career_center",
+      "source_url": "https://careers.usc.edu/experiences/trojan-network-find-a-mentor/",
+      "last_verified_date": "2026-11-14",
+      "evidence": [
+        {
+          "source_name": "usc_career_center",
+          "source_url": "https://careers.usc.edu/experiences/trojan-network-find-a-mentor/",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Public description checked; private contents and individual availability are not verified."
+        }
+      ],
+      "verification_notes": "Public description checked; private contents and individual availability are not verified.",
+      "tags": [
+        "networking",
+        "career",
+        "usc"
+      ],
+      "resource_type": "networking",
+      "official_url": "https://careers.usc.edu/experiences/trojan-network-find-a-mentor/",
+      "account_requirements": "Trojan Network profile and authorized login",
+      "access_status": "gated",
+      "search_functionality": "Connect > Network; company, industry, or help-topic filters",
+      "usage_steps": [
+        "Create a profile through USC's link; identify a mentor and request a focused conversation."
+      ],
+      "recruitment_status": "no_opening_verified",
+      "eligibility_notes": "Private profiles and conversations are excluded from this corpus."
+    }
+  ]
+}
