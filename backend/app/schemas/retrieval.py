@@ -37,6 +37,7 @@ class EvidenceItem(BaseModel):
     section_path: str = ""
     text: str
     hybrid_score: float = 0.0
+    dense_score: float = 0.0  # cosine(query, item); alpha-independent confidence used for sufficiency
     rerank_score: float = 0.0
     source_name: str = "unknown"
     source_url: str = ""

@@ -9,7 +9,7 @@ from backend.app.agents.academic_agent import course_ids_in
 from backend.app.config.settings import settings
 
 ACADEMIC_YEAR = re.compile(r"\b(20\d{2})\s*[-–/]\s*(20\d{2})\b")
-TERM = re.compile(r"\b(spring|summer|fall)\s+(20\d{2})\b", re.IGNORECASE)
+TERM = re.compile(r"\b(spring|summer|fall)\b(?:\W+[a-z]+){0,3}?\W+(20\d{2})\b", re.IGNORECASE)
 COMPARISON = re.compile(r"\b(under|below|less than|at most|up to|max(?:imum)?|over|above|more than|at least|min(?:imum)?)\s+"
                         r"\$?\s?(\d[\d,]*(?:\.\d+)?)", re.IGNORECASE)
 RECORD_ID = re.compile(r"\b[a-z0-9]+(?:_[a-z0-9]+){1,}\b")

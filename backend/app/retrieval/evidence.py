@@ -14,6 +14,8 @@ def decide(items: list[EvidenceItem], empty_namespaces: list[str], year: str) ->
         return False, f"no matching verified {year} sources"
     if not usable:
         return False, "only stale, wrong-year or untrusted sources matched"
-    if settings.retrieval_min_score is not None and max(i.hybrid_score for i in usable) < settings.retrieval_min_score:
-        return False, f"low confidence (best score below {settings.retrieval_min_score})"
+    # dense_score is cosine similarity, so one threshold works for every alpha; structured hits are exact (1.0).
+    best = max(i.dense_score for i in usable)
+    if settings.retrieval_min_score is not None and best < settings.retrieval_min_score:
+        return False, f"low confidence (best similarity {best:.3f} below {settings.retrieval_min_score})"
     return True, "ok" if settings.retrieval_min_score is not None else "ok (confidence threshold uncalibrated)"

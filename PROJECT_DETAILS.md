@@ -11,7 +11,7 @@ Technical facts for the prototype. Status: **set** = decided, **tbd** = to tune.
 ## Backend status (implemented in `backend/`)
 - Flow: input guard -> supervisor (1 LLM call: plan or clarification) -> parallel academic / housing / career / student_services agents -> aggregate -> deterministic verify -> synthesizer (1 LLM call) -> output guard -> structured response.
 - Data: verified + public records loaded once from `local_database/data/` (drafts never loaded). Housing, academic calendar and job listings are empty, so those answers report "not collected yet".
-- Retrieval: deterministic section-A pipeline in `backend/app/retrieval/` (zero LLM calls). `RETRIEVAL_BACKEND=auto` (default) uses Pinecone when `processed/` (manifest, BM25, model) and `PINECONE_API_KEY` are present, otherwise a stub whose reason shows in `/api/health`. Build `processed/` locally with `cd local_database/scripts && python push_to_pinecone.py --verify-only` (read-only on Pinecone; also proves vector parity). Measured warm latency ~90-125 ms per query, ~0-1 ms for exact/structured hits.
+- Retrieval: deterministic section-A pipeline in `backend/app/retrieval/` (zero LLM calls). `RETRIEVAL_BACKEND=auto` (default) uses Pinecone when `processed/` (manifest, BM25, model) and `PINECONE_API_KEY` are present, otherwise a stub whose reason shows in `/api/health`. Build `processed/` locally with `cd local_database/scripts && python push_to_pinecone.py --verify-only` (read-only on Pinecone; also proves vector parity). Measured: hybrid query p50 122 ms / p95 204 ms warm, 0-2 ms for structured hits and cache hits; timeout 2.5 s, one retry with jitter, breaker opens after 3 failures for 30 s; 5-minute TTL cache. Eval: `python evaluation/run_retrieval_eval.py` (316 Pinecone queries).
 - Profiles: 2 synthetic students (`synthetic_student_001`, `_002`) for mock login.
 - Try it: `python -m backend.scripts.run_query --mode mock "..."` or `uvicorn backend.main:app`. Default `LLM_MODE=cache` replays from `backend/.llm_cache/`.
 
@@ -60,12 +60,13 @@ Model ids are env-configurable (`PRIMARY_MODEL`, `FALLBACK_MODEL`). Temperature:
 | Setting | Value | Status |
 |---|---|---|
 | Chunk size / overlap | Target 350 / 50 tokens; hard cap 450 including context, per DATA_GUIDE | set |
-| Retrieval | Hybrid (dense alpha 0.75, 0.25 for code/acronym queries) per namespace in parallel; exact ids and numeric comparisons answered from local JSON first; heuristic rerank (score + official + freshness + year) | set |
+| Retrieval | Exact ids/numeric comparisons from local JSON first; otherwise dense (alpha 1.0) per namespace in parallel, score order, top 5; hybrid BM25, heuristic and hosted rerank remain switchable (`RETRIEVAL_ALPHA`, `RETRIEVAL_RERANKER`) | set |
 | Top-k retrieved | 20 | set |
 | Top-k after rerank | 5 (knowledge tool uses 3) | set |
 | Index config | `trojan-compass`, 384 dims, dotproduct, AWS us-east-1 serverless, namespace per domain, batch 100; deletion protection enabled | set |
 | Metadata on every chunk | Full flat metadata contract in DATA_GUIDE; explicit allow-list, no nulls, under 40 KB | set |
-| Retrieval strategy comparison | Basic vs hybrid vs STAIR-inspired hierarchical | tbd |
+| Retrieval strategy comparison | 2026-11-14 eval on 69 golden positives: dense recall@5 0.965 / MRR 0.915; hybrid 0.938 / 0.773 (unnormalized BM25 dominates); outline-first 0.722 / 0.697; hosted rerank +0.014 MRR on 34 semantic queries. Report: `evaluation/retrieval_eval_report.json` | set |
+| Sufficiency threshold | cosine 0.62: answers 97% of positives, abstains on 20% of the 10 negatives (similarity is a weak out-of-scope signal) | set |
 
 Current academic year: `2026-2027`. Use an explicit year for historical or future-cycle queries; retain older academic-year files. DATA_GUIDE remains the authority for data and ingestion settings.
 

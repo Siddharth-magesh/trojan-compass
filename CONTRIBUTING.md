@@ -61,7 +61,7 @@ backend/                          # FastAPI + LangGraph multi-agent API (run fro
     data_store/loader.py          # loads verified+public data once, reusing local_database/scripts/source_data.py
     tools/                        # typed tools + tool_registry.py (per-agent allow-lists)
     retrieval/                    # deterministic retrieval: pipeline, runtime, query_parser, filters, router,
-                                  #   structured_lookup, hybrid_engine, fusion, validation, evidence, retrieval_client
+                                  #   structured_lookup, hybrid_engine, fusion, validation, evidence, reliability, cache, retrieval_client
     agents/                       # base_agent loop, one file per domain agent, prompts/*.md
     orchestration/                # graph, supervisor, dispatcher, aggregator, verifier, synthesizer, fallback
     security/                     # auth (mock JWT), rate_limit, input_guard, output_guard
@@ -72,6 +72,6 @@ backend/                          # FastAPI + LangGraph multi-agent API (run fro
 
 Data filenames contain the registered source name and academic-year suffix. Keep historical years separate. Complete JSON records provide exact facts; Markdown contains source-linked guides. Draft and verified data share the category folders, with indexing eligibility determined by their metadata. Do not silently promote drafts or truncate nested details.
 
-`evaluation/golden_queries.jsonl` contains 79 academic, career and student-service questions; `evaluation/README.md` describes their use. Root `AGENTS.md` contains contributor rules, and `PROJECT_DETAILS.md` contains intended stack/configuration values. The backend is implemented under `backend/`; the frontend remains a planned component. The ingestion pipeline is implemented under `local_database/scripts/` and follows root DATA_GUIDE.
+`evaluation/golden_queries.jsonl` contains 79 academic, career and student-service questions; `evaluation/README.md` describes their use. `evaluation/run_retrieval_eval.py` measures retrieval on them and writes `evaluation/retrieval_eval_report.json`. Root `AGENTS.md` contains contributor rules, and `PROJECT_DETAILS.md` contains intended stack/configuration values. The backend is implemented under `backend/`; the frontend remains a planned component. The ingestion pipeline is implemented under `local_database/scripts/` and follows root DATA_GUIDE.
 
 The former source archives, inactive code, reports and generated audit manifests are recoverable from Git history at `89fadce`. They are intentionally absent from the current data tree. The current uploader is a new implementation; it does not restore the earlier legacy code. Its generated `processed/` output remains ignored.

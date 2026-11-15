@@ -57,3 +57,25 @@ def expand(items: list[EvidenceItem], runtime: Runtime) -> list[EvidenceItem]:
             item.text = f"{item.text}\n{following['text']}"
             item.flags.append("expanded")
     return items
+
+
+def rerank_hosted(items: list[EvidenceItem], query: str, top_n: int) -> list[EvidenceItem]:
+    """Optional Pinecone-hosted bge-reranker-v2-m3 (Starter: 500 requests/month, shared by the team).
+    Enabled only with RETRIEVAL_RERANKER=pinecone; the caller falls back to the heuristic on any error."""
+    from dotenv import dotenv_values
+    from pinecone import Pinecone
+
+    from backend.app.config.settings import REPO_ROOT
+
+    if not items:
+        return []
+    client = Pinecone(api_key=dotenv_values(REPO_ROOT / ".env")["PINECONE_API_KEY"])
+    result = client.inference.rerank(model="bge-reranker-v2-m3", query=query, top_n=min(top_n, len(items)),
+                                     documents=[{"id": i.id, "text": i.text[:2000]} for i in items],
+                                     return_documents=False, parameters={"truncate": "END"})
+    ranked = []
+    for row in result.data:
+        item = items[row.index]
+        item.rerank_score = round(float(row.score), 4)
+        ranked.append(item)
+    return ranked

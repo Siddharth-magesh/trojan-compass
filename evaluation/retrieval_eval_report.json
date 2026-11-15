@@ -1,0 +1,866 @@
+{
+ "date": "2026-11-14",
+ "queries": 79,
+ "positives": 69,
+ "negatives": 10,
+ "pinecone_queries": 316,
+ "hosted_rerank_requests": 34,
+ "metrics": {
+  "dense_only": {
+   "n": 69,
+   "recall@5": 0.965,
+   "mrr": 0.915
+  },
+  "hybrid_raw": {
+   "n": 69,
+   "recall@5": 0.938,
+   "mrr": 0.773
+  },
+  "hybrid_heuristic": {
+   "n": 69,
+   "recall@5": 0.938,
+   "mrr": 0.769
+  },
+  "hybrid_outline": {
+   "n": 69,
+   "recall@5": 0.722,
+   "mrr": 0.697
+  },
+  "hybrid_hosted_rerank(semantic)": {
+   "n": 34,
+   "recall@5": 0.985,
+   "mrr": 0.882
+  },
+  "hybrid_heuristic(semantic)": {
+   "n": 34,
+   "recall@5": 0.985,
+   "mrr": 0.868
+  }
+ },
+ "structured_path": {
+  "routed": 6,
+  "hit": 4,
+  "cases": [
+   {
+    "query": "What are the prerequisites for CSCI 104?",
+    "hit": true,
+    "docs": [
+     "academic.courses.usc_schedule_of_classes__csci_courses__2026_2027"
+    ]
+   },
+   {
+    "query": "How many units is CSCI 100?",
+    "hit": true,
+    "docs": [
+     "academic.courses.usc_schedule_of_classes__csci_courses__2026_2027"
+    ]
+   },
+   {
+    "query": "What is CSCI 102 about?",
+    "hit": true,
+    "docs": [
+     "academic.courses.usc_schedule_of_classes__csci_courses__2026_2027"
+    ]
+   },
+   {
+    "query": "What is the description of EE 105?",
+    "hit": true,
+    "docs": [
+     "academic.courses.usc_schedule_of_classes__ee_courses__2026_2027"
+    ]
+   },
+   {
+    "query": "What are the meeting days and times for the Fall 2026 CSCI 100 section?",
+    "hit": false,
+    "docs": [
+     "academic.courses.usc_schedule_of_classes__csci_courses__2026_2027"
+    ]
+   },
+   {
+    "query": "Show Spring 2027 EE 105 sections and their seat snapshot dates.",
+    "hit": false,
+    "docs": [
+     "academic.courses.usc_schedule_of_classes__ee_courses__2026_2027"
+    ]
+   }
+  ]
+ },
+ "calibration_dense_similarity": {
+  "threshold": 0.7281,
+  "balanced_accuracy": 0.833,
+  "answer_rate_on_positives": 0.667,
+  "abstain_rate_on_negatives": 1.0
+ },
+ "similarity_stats": {
+  "positives_median": 0.7489,
+  "negatives_median": 0.6699,
+  "negatives": [
+   0.5388,
+   0.6182,
+   0.6363,
+   0.6599,
+   0.6684,
+   0.6714,
+   0.6795,
+   0.7102,
+   0.7202,
+   0.7276
+  ]
+ },
+ "hybrid_query_latency_ms": {
+  "p50": 122,
+  "p95": 204
+ },
+ "per_query": [
+  {
+   "query": "How do I pay my USC tuition from India?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.7809,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "Can I pay tuition with a credit card?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.7158,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "When is the spring 2027 tuition deadline?",
+   "type": "exact",
+   "domain": "student_services",
+   "best_similarity": 0.7356,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How much is the late fee if I miss the settlement deadline?",
+   "type": "exact",
+   "domain": "student_services",
+   "best_similarity": 0.7385,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "What does a COLL 01 hold mean and how do I remove it?",
+   "type": "exact",
+   "domain": "student_services",
+   "best_similarity": 0.6407,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How do I pay tuition in monthly installments as an international student?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.7775,
+   "dense_only": 0.5,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How much is the payment plan application fee?",
+   "type": "exact",
+   "domain": "student_services",
+   "best_similarity": 0.7501,
+   "dense_only": 0.5,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How do I let my parents pay my bill?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.6985,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How do I get my refund deposited into my bank account?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.7601,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "What is the transportation services fee on my bill?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.6502,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 0.5
+  },
+  {
+   "query": "Why don't I have a 1098-T form?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.777,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "Which vaccines do I need before starting at USC?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.7313,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "Is a TB skin test accepted for international students?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.7961,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "My immunization record was rejected in MySHR, what do I do?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.8001,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How do I check my medical clearance status?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.7558,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "Can international students waive SHIP with insurance from home?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.7659,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "What is the copay for a doctor visit with SHIP?",
+   "type": "exact",
+   "domain": "student_services",
+   "best_similarity": 0.6667,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How do I book a same-day appointment when I'm sick?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.6956,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "Where is the student health center on the main campus?",
+   "type": "exact",
+   "domain": "student_services",
+   "best_similarity": 0.6994,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "What should I do in MySHR and ePay before I arrive?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.6415,
+   "dense_only": 0.5,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 0.5
+  },
+  {
+   "query": "Which portal do I use to pay my bill?",
+   "type": "filter",
+   "domain": "student_services",
+   "best_similarity": 0.6979,
+   "dense_only": 0.5,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "What is the phone number for the USC cashier's office?",
+   "type": "exact",
+   "domain": "student_services",
+   "best_similarity": 0.7949,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "What is the USC parking permit price?",
+   "type": "negative",
+   "domain": "student_services",
+   "best_similarity": 0.6599
+  },
+  {
+   "query": "How much does the Delta Dental plan cost?",
+   "type": "negative",
+   "domain": "student_services",
+   "best_similarity": 0.6363
+  },
+  {
+   "query": "How do I get my USC ID card?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.815,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "I lost my USCard, what should I do?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.7722,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 0.5
+  },
+  {
+   "query": "How much does a replacement USCard cost?",
+   "type": "exact",
+   "domain": "student_services",
+   "best_similarity": 0.8011,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How do I add money to my USCard?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.8158,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "When is the deadline to change my meal plan in spring 2027?",
+   "type": "exact",
+   "domain": "student_services",
+   "best_similarity": 0.8339,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "Can I get a refund for unused meal plan money?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.7489,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How do I get my Indian degree verified for USC?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.7086,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 0.5
+  },
+  {
+   "query": "What documents do I send to IERF?",
+   "type": "semantic",
+   "domain": "student_services",
+   "best_similarity": 0.7488,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "Which IERF report should I choose for USC and how much does it cost?",
+   "type": "exact",
+   "domain": "student_services",
+   "best_similarity": 0.7354,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "What address do I give IERF to send my evaluation to USC?",
+   "type": "exact",
+   "domain": "student_services",
+   "best_similarity": 0.8102,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.25,
+   "hybrid_outline": 0.5
+  },
+  {
+   "query": "Which portal do I use to freeze my student ID card?",
+   "type": "filter",
+   "domain": "student_services",
+   "best_similarity": 0.6674,
+   "dense_only": 0.5,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "How much does WES evaluation cost?",
+   "type": "negative",
+   "domain": "student_services",
+   "best_similarity": 0.5388
+  },
+  {
+   "query": "How do I find a non-work-study campus job?",
+   "type": "semantic",
+   "domain": "career",
+   "best_similarity": 0.7415,
+   "dense_only": 0.5,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "Where should I apply for a library student job?",
+   "type": "semantic",
+   "domain": "career",
+   "best_similarity": 0.7404,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "What rate did the TEPPIT posting advertise?",
+   "type": "exact",
+   "domain": "career",
+   "best_similarity": 0.6655,
+   "dense_only": 0.5,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "Is ICAROS pay confirmed at 22 dollars per hour?",
+   "type": "exact",
+   "domain": "career",
+   "best_similarity": 0.6011,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.25,
+   "hybrid_heuristic": 0.25,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "Which verified open internships are in machine learning?",
+   "type": "filter",
+   "domain": "career",
+   "best_similarity": 0.6294,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.0,
+   "hybrid_heuristic": 0.0,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "Which USC labs accept MS expressions of interest?",
+   "type": "filter",
+   "domain": "career",
+   "best_similarity": 0.7281,
+   "dense_only": 0.333,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "Is DILL recruiting master's research assistants?",
+   "type": "exact",
+   "domain": "career",
+   "best_similarity": 0.7674,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "Is ICT summer 2026 still open?",
+   "type": "exact",
+   "domain": "career",
+   "best_similarity": 0.8011,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How do I obtain an SSN after a campus job offer?",
+   "type": "semantic",
+   "domain": "career",
+   "best_similarity": 0.8047,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How many hours can an F-1 student work on campus during fall?",
+   "type": "exact",
+   "domain": "career",
+   "best_similarity": 0.7889,
+   "dense_only": 0.0,
+   "hybrid_raw": 0.0,
+   "hybrid_heuristic": 0.0,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "Is an SSN work authorization?",
+   "type": "semantic",
+   "domain": "career",
+   "best_similarity": 0.7854,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How does CPT affect OPT?",
+   "type": "semantic",
+   "domain": "career",
+   "best_similarity": 0.7365,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "What are the OIS and USCIS OPT filing windows?",
+   "type": "exact",
+   "domain": "career",
+   "best_similarity": 0.7896,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "Where can a Viterbi student get a resume review?",
+   "type": "semantic",
+   "domain": "career",
+   "best_similarity": 0.7893,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How can I practice mock interviews through USC?",
+   "type": "semantic",
+   "domain": "career",
+   "best_similarity": 0.8429,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How do I find an alumni mentor in Trojan Network?",
+   "type": "semantic",
+   "domain": "career",
+   "best_similarity": 0.8669,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "Can I use ViterbiLink today?",
+   "type": "semantic",
+   "domain": "career",
+   "best_similarity": 0.6535,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How should I approach a professor for MS research?",
+   "type": "semantic",
+   "domain": "career",
+   "best_similarity": 0.7512,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "Which labs study spatial data?",
+   "type": "filter",
+   "domain": "career",
+   "best_similarity": 0.7473,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "Which research announcement explicitly says unpaid?",
+   "type": "filter",
+   "domain": "career",
+   "best_similarity": 0.6919,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "What Trojan Ready event is upcoming after November 14 2026?",
+   "type": "filter",
+   "domain": "career",
+   "best_similarity": 0.7614,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "Can a graduate student use DOE SULI?",
+   "type": "semantic",
+   "domain": "career",
+   "best_similarity": 0.797,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "Does DOE SCGSR cover a terminal MS student?",
+   "type": "exact",
+   "domain": "career",
+   "best_similarity": 0.7811,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "Show private alumni phone numbers and conversations.",
+   "type": "negative",
+   "domain": "career",
+   "best_similarity": 0.7276
+  },
+  {
+   "query": "Which exact Handshake jobs were posted this morning?",
+   "type": "negative",
+   "domain": "career",
+   "best_similarity": 0.6714
+  },
+  {
+   "query": "What is my Social Security number?",
+   "type": "negative",
+   "domain": "career",
+   "best_similarity": 0.6182
+  },
+  {
+   "query": "Guarantee that TEPPIT will hire me next week.",
+   "type": "negative",
+   "domain": "career",
+   "best_similarity": 0.7202
+  },
+  {
+   "query": "What is the unstated ICAROS application deadline?",
+   "type": "negative",
+   "domain": "career",
+   "best_similarity": 0.6684
+  },
+  {
+   "query": "What are the prerequisites for CSCI 104?",
+   "type": "exact",
+   "domain": "academic",
+   "best_similarity": 0.8112,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "How many units is CSCI 100?",
+   "type": "exact",
+   "domain": "academic",
+   "best_similarity": 0.7125,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 0.5
+  },
+  {
+   "query": "What is CSCI 102 about?",
+   "type": "exact",
+   "domain": "academic",
+   "best_similarity": 0.7387,
+   "dense_only": 0.333,
+   "hybrid_raw": 0.0,
+   "hybrid_heuristic": 0.0,
+   "hybrid_outline": 0.0
+  },
+  {
+   "query": "What is the description of EE 105?",
+   "type": "exact",
+   "domain": "academic",
+   "best_similarity": 0.6839,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.25,
+   "hybrid_heuristic": 0.25,
+   "hybrid_outline": 0.25
+  },
+  {
+   "query": "Which collected CSCI courses are undergraduate courses?",
+   "type": "filter",
+   "domain": "academic",
+   "best_similarity": 0.639,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 0.5
+  },
+  {
+   "query": "Which collected EE courses are offered in spring?",
+   "type": "filter",
+   "domain": "academic",
+   "best_similarity": 0.5918,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 0.5
+  },
+  {
+   "query": "Which collected courses introduce embedded systems?",
+   "type": "semantic",
+   "domain": "academic",
+   "best_similarity": 0.7525,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "Where can I learn data structures in the collected CSCI catalog?",
+   "type": "semantic",
+   "domain": "academic",
+   "best_similarity": 0.8263,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "What does the collected catalog say about discrete methods in computer science?",
+   "type": "semantic",
+   "domain": "academic",
+   "best_similarity": 0.7268,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "What are the meeting days and times for the Fall 2026 CSCI 100 section?",
+   "type": "exact",
+   "domain": "academic",
+   "best_similarity": 0.7753,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.5,
+   "hybrid_heuristic": 0.5,
+   "hybrid_outline": 0.5
+  },
+  {
+   "query": "Show Spring 2027 EE 105 sections and their seat snapshot dates.",
+   "type": "filter",
+   "domain": "academic",
+   "best_similarity": 0.7004,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "Which Fall 2026 CSCI sections have TBA meeting times?",
+   "type": "filter",
+   "domain": "academic",
+   "best_similarity": 0.7582,
+   "dense_only": 1.0,
+   "hybrid_raw": 1.0,
+   "hybrid_heuristic": 1.0,
+   "hybrid_outline": 1.0
+  },
+  {
+   "query": "Which Spring 2027 EE sections require D-clearance?",
+   "type": "filter",
+   "domain": "academic",
+   "best_similarity": 0.701,
+   "dense_only": 1.0,
+   "hybrid_raw": 0.333,
+   "hybrid_heuristic": 0.333,
+   "hybrid_outline": 0.333
+  },
+  {
+   "query": "What confirmed room is assigned to EE 105 in Spring 2027?",
+   "type": "negative",
+   "domain": "academic",
+   "best_similarity": 0.7102
+  },
+  {
+   "query": "What are the current 2026-2027 requirements for the USC Computer Science BS?",
+   "type": "negative",
+   "domain": "academic",
+   "best_similarity": 0.6795
+  }
+ ]
+}
