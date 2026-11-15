@@ -1,0 +1,60 @@
+{
+  "purpose": "Public resource instructions; not a claim of a current vacancy.",
+  "meta": {
+    "title": "Indeed",
+    "summary": "Job search by title, keyword, company, and location.",
+    "source_name": "indeed",
+    "source_url": "https://www.indeed.com/",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all"
+    ],
+    "tags": [
+      "job_platform",
+      "career",
+      "job_search"
+    ]
+  },
+  "records": [
+    {
+      "resource_id": "indeed",
+      "title": "Indeed",
+      "description": "Job search by title, keyword, company, and location.",
+      "source_name": "indeed",
+      "source_url": "https://www.indeed.com/",
+      "last_verified_date": "2026-11-14",
+      "evidence": [
+        {
+          "source_name": "indeed",
+          "source_url": "https://www.indeed.com/",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Public description checked; private contents and individual availability are not verified."
+        }
+      ],
+      "verification_notes": "Public description checked; private contents and individual availability are not verified.",
+      "tags": [
+        "job_platform",
+        "career",
+        "job_search"
+      ],
+      "resource_type": "job_platform",
+      "official_url": "https://www.indeed.com/",
+      "account_requirements": "Account for personalized recommendations",
+      "access_status": "public",
+      "search_functionality": "Keyword and location, including remote",
+      "usage_steps": [
+        "Search a target role and location; compare the result with the employer's original requisition."
+      ],
+      "recruitment_status": "no_opening_verified",
+      "eligibility_notes": "Posting-specific; a search result does not guarantee availability."
+    }
+  ]
+}

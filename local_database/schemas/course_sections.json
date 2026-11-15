@@ -28,11 +28,11 @@
     },
     "start_time": {
       "type": "string",
-      "pattern": "^\\d{2}:\\d{2}$"
+      "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d$|^TBA$"
     },
     "end_time": {
       "type": "string",
-      "pattern": "^\\d{2}:\\d{2}$"
+      "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d$|^TBA$"
     },
     "location": {
       "type": "string",
@@ -42,8 +42,13 @@
       "enum": [
         "in_person",
         "online",
-        "hybrid"
+        "hybrid",
+        "unverified"
       ]
+    },
+    "source_section_id": {
+      "type": "string",
+      "minLength": 1
     }
   },
   "required": [
@@ -56,5 +61,6 @@
     "end_time",
     "location",
     "modality"
-  ]
+  ],
+  "$comment": "Section snapshots preserve explicit TBA times and unverified modality/location. These sentinel strings are unknown facts, never confirmed availability or numeric scheduling inputs."
 }

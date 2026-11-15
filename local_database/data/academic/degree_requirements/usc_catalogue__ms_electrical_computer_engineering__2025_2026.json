@@ -1,0 +1,192 @@
+{
+  "purpose": "Complete collected records; file metadata controls indexing eligibility.",
+  "meta": {
+    "title": "Electrical and Computer Engineering (MS)",
+    "summary": "Collected requirements for Electrical and Computer Engineering (MS) from catalogue year 2025-2026; review historical requirements and department-site notes before indexing.",
+    "source_name": "usc_catalogue",
+    "source_url": "https://catalogue.usc.edu/preview_program.php?catoid=21&poid=31524",
+    "collected_by": "person_1",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2025-2026",
+    "version": 2,
+    "status": "draft",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all",
+      "undergraduate",
+      "graduate"
+    ],
+    "tags": [
+      "ee",
+      "degree_requirements",
+      "bs",
+      "ms",
+      "phd"
+    ]
+  },
+  "records": [
+    {
+      "program_id": "ms_electrical_computer_engineering",
+      "title": "Electrical and Computer Engineering (MS)",
+      "degree": "Master of Science in Electrical and Computer Engineering",
+      "degree_type": "MS",
+      "level": "graduate",
+      "program": "Electrical and Computer Engineering",
+      "department": "Ming Hsieh Department of Electrical and Computer Engineering",
+      "school": "USC Viterbi School of Engineering",
+      "catalogue_year": "2025-2026",
+      "source_url": "https://catalogue.usc.edu/preview_program.php?catoid=21&poid=31524",
+      "total_units": 28,
+      "description": "Master of Science in Electrical and Computer Engineering (MSEE). A total of at least 28 units is required, with at least 20 units in electrical engineering, at least 19 units at the 500 or 600 level and no more than three 400-level courses. A thesis option and an aerospace controls option are available.",
+      "gpa_requirements": [
+        "A minimum grade point average of 3.0 must be earned on all course work applied toward the master's degree in electrical engineering.",
+        "This average must also be achieved on all 400-level and above course work attempted at USC beyond the bachelor's degree and through an accumulation of no more than 12 units beyond the minimum needed for the specific degree program.",
+        "Transfer units count as credit (CR) toward the master's degree and are not computed in the grade point average."
+      ],
+      "requirement_groups": [
+        {
+          "group_id": "adviser_approved_coursework",
+          "name": "Adviser-approved coursework",
+          "units_required": 28,
+          "selection": "open",
+          "notes": [
+            "At least 20 of the 28 units must be taken in electrical engineering; those not in EE require written adviser approval and must be technical in nature.",
+            "At least 19 adviser-approved units must be taken at the 500- or 600-level; no more than three courses (maximum 12 units) may be counted at the 400-level.",
+            "These overlap: one EE 500-level course counts toward both. See `limits` for every rule."
+          ]
+        }
+      ],
+      "limits": [
+        {
+          "rule": "min_total_units",
+          "value": 28,
+          "text": "A total of at least 28 units is required."
+        },
+        {
+          "rule": "non_ee_course_approval",
+          "text": "Every non-EE course for graduate credit requires prior written adviser approval recorded each semester on a special request form in the student's department file."
+        },
+        {
+          "rule": "max_400_level_units",
+          "value": 12,
+          "text": "No more than three courses (maximum 12 units) may be counted at the 400-level."
+        },
+        {
+          "rule": "min_500_600_level_units",
+          "value": 19,
+          "text": "At least 19 adviser-approved units must be taken at the 500- or 600-level."
+        },
+        {
+          "rule": "min_ee_units",
+          "value": 20,
+          "text": "At least 20 units must be taken in electrical engineering."
+        },
+        {
+          "rule": "max_special_topics_units",
+          "course_id": "EE 599",
+          "value": 8,
+          "text": "A maximum of eight units of EE 599 Special Topics courses may be counted toward the MSEE."
+        },
+        {
+          "rule": "max_directed_research_units",
+          "course_id": "EE 590",
+          "value": 4,
+          "text": "At most, 4 units of EE 590 (Directed Research) may be counted toward the program."
+        },
+        {
+          "rule": "max_seminar_units",
+          "course_id": "EE 598",
+          "value": 1,
+          "text": "At most 1 unit of seminar, EE 598 (or other seminar with adviser approval), may be counted."
+        },
+        {
+          "rule": "max_transfer_units",
+          "value": 4,
+          "text": "Units to be transferred (maximum 4 with adviser approval) must have been taken prior to taking classes at USC; interruption of residency is not allowed."
+        },
+        {
+          "rule": "cpt_units_excluded",
+          "text": "Curricular Practical Training units do not count toward the 28 required units."
+        }
+      ],
+      "thesis_option": {
+        "available": true,
+        "courses": [
+          "EE 594A",
+          "EE 594B"
+        ],
+        "min_500_level_units": 16,
+        "max_directed_research_units": 2,
+        "text": "Students following the MS Thesis Option must have at least 16 units at the 500 level and take EE 594a and EE 594b. A maximum of 2 units for EE 590 may be counted in conjunction with EE 594a and EE 594b registrations."
+      },
+      "options": [
+        {
+          "option_id": "aerospace_controls",
+          "name": "Aerospace Controls Option",
+          "text": "Available as an area of emphasis for MSEE students interested in learning to apply innovative control techniques to aerospace control problems. In addition to 20 approved units of electrical engineering courses, students in this option take at least two of the listed aerospace and mechanical engineering courses.",
+          "requirement_groups": [
+            {
+              "group_id": "aerospace_courses",
+              "name": "Aerospace and mechanical engineering courses",
+              "selection": "choose",
+              "min_courses": 2,
+              "options": [
+                {
+                  "course_id": "AME 453",
+                  "catalogue_label": "AME 453",
+                  "title": "Engineering Dynamics",
+                  "units": 3
+                },
+                {
+                  "course_id": "AME 525",
+                  "catalogue_label": "AME 525",
+                  "title": "Linear Algebra in Engineering Science",
+                  "units": 4
+                },
+                {
+                  "course_id": "AME 526",
+                  "catalogue_label": "AME 526",
+                  "title": "Partial Differential Equations for Engineering Applications",
+                  "units": 4
+                },
+                {
+                  "course_id": "ASTE 580",
+                  "catalogue_label": "ASTE 580",
+                  "title": "Orbital Mechanics I",
+                  "units": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "department_site_notes": {
+        "source_url": "https://minghsiehece.usc.edu/academics/ms/",
+        "notes": [
+          "MSEE students should take 20 units (5 courses) from one flowchart.",
+          "A student with a USC master's may apply up to 4 units toward a second master's degree with the permission of the chair of the major department; all credit must be earned within seven calendar years.",
+          "Other MS programs offered by the department: Financial Engineering; Machine Learning & Data Science; Computer Engineering; Computer Architecture; VLSI Design; Quantum Information Science; Electric Power; Applied Physics; ECE/Engineering Management; Analog, Mixed-Signal and Radio-frequency Integrated Circuits; Hardware Systems for Machine Learning."
+        ]
+      },
+      "audience": [
+        "graduate"
+      ],
+      "tags": [
+        "electrical_engineering",
+        "computer_engineering",
+        "ms",
+        "masters",
+        "degree_requirements",
+        "ee"
+      ],
+      "related_courses": [
+        "AME 453",
+        "AME 525",
+        "AME 526",
+        "ASTE 580"
+      ]
+    }
+  ]
+}

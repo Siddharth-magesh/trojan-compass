@@ -1,0 +1,60 @@
+{
+  "purpose": "Public resource instructions; not a claim of a current vacancy.",
+  "meta": {
+    "title": "Quinncia via Viterbi",
+    "summary": "AI resume feedback linked by Viterbi for preparation before resume-review drop-ins.",
+    "source_name": "usc_vcc",
+    "source_url": "https://viterbicareers.usc.edu/students/advising/",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all"
+    ],
+    "tags": [
+      "career_service",
+      "career",
+      "usc"
+    ]
+  },
+  "records": [
+    {
+      "resource_id": "quinncia",
+      "title": "Quinncia via Viterbi",
+      "description": "AI resume feedback linked by Viterbi for preparation before resume-review drop-ins.",
+      "source_name": "usc_vcc",
+      "source_url": "https://viterbicareers.usc.edu/students/advising/",
+      "last_verified_date": "2026-11-14",
+      "evidence": [
+        {
+          "source_name": "usc_vcc",
+          "source_url": "https://viterbicareers.usc.edu/students/advising/",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Public description checked; private contents and individual availability are not verified."
+        }
+      ],
+      "verification_notes": "Public description checked; private contents and individual availability are not verified.",
+      "tags": [
+        "career_service",
+        "career",
+        "usc"
+      ],
+      "resource_type": "career_service",
+      "official_url": "https://viterbicareers.usc.edu/students/advising/",
+      "account_requirements": "Institutional access through the official Viterbi link",
+      "access_status": "gated",
+      "search_functionality": "Resume analysis",
+      "usage_steps": [
+        "Read the resume toolkit, then use the Quinncia link before requesting human review."
+      ],
+      "recruitment_status": "no_opening_verified",
+      "eligibility_notes": "Availability verified through Viterbi; broader USC license coverage not established."
+    }
+  ]
+}

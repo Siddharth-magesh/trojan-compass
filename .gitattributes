@@ -1,0 +1,7 @@
+# Keep archived bytes exact and canonical data hashes stable across platforms.
+local_database/source_archive/* -text
+local_database/legacy_code/*.source -text
+local_database/data/** text eol=lf
+local_database/registry/*.json text eol=lf
+local_database/schemas/*.json text eol=lf
+evaluation/golden_queries.jsonl text eol=lf

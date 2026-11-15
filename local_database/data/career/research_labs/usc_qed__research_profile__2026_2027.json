@@ -1,0 +1,69 @@
+{
+  "purpose": "Public research profile and separately qualified recruitment evidence.",
+  "meta": {
+    "title": "QED Research Group",
+    "summary": "System modeling, performance, reliability, and AI on mobile and distributed systems.",
+    "source_name": "usc_qed",
+    "source_url": "https://qed.usc.edu/",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "graduate",
+      "undergraduate"
+    ],
+    "tags": [
+      "systems",
+      "privacy",
+      "federated_learning"
+    ]
+  },
+  "records": [
+    {
+      "lab_id": "qed",
+      "title": "QED Research Group",
+      "principal_investigator": "Leana Golubchik",
+      "official_url": "https://qed.usc.edu/",
+      "research_areas": [
+        "systems",
+        "privacy",
+        "federated_learning"
+      ],
+      "description": "System modeling, performance, reliability, and AI on mobile and distributed systems.",
+      "recruitment_status": "interest_only",
+      "opportunity_types": [
+        "expression_of_interest"
+      ],
+      "invited_levels": [
+        "unverified"
+      ],
+      "compensation_status": "not_stated",
+      "application_instructions": "Email a description of research interests to the group's published contact.",
+      "required_skills": [],
+      "verification_notes": "General invitation only; MS eligibility, hours, and pay are not stated.",
+      "source_name": "usc_qed",
+      "source_url": "https://qed.usc.edu/",
+      "last_verified_date": "2026-11-14",
+      "tags": [
+        "systems",
+        "privacy",
+        "federated_learning"
+      ],
+      "evidence": [
+        {
+          "source_name": "usc_qed",
+          "source_url": "https://qed.usc.edu/",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "General invitation only; MS eligibility, hours, and pay are not stated."
+        }
+      ],
+      "recruitment_contact": "leana@usc.edu"
+    }
+  ]
+}

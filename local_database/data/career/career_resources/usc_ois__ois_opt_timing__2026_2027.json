@@ -1,0 +1,66 @@
+{
+  "purpose": "Exact policy values with source-specific conditions; not individualized authorization.",
+  "meta": {
+    "title": "USC OPT filing windows",
+    "summary": "Different OIS request and USCIS receipt deadlines apply. Consult full current filing instructions and individual I-20 dates.",
+    "source_name": "usc_ois",
+    "source_url": "https://ois.usc.edu/employment/post-completion-opt/",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "international"
+    ],
+    "tags": [
+      "policy",
+      "international",
+      "employment"
+    ]
+  },
+  "records": [
+    {
+      "resource_id": "ois_opt_timing",
+      "title": "USC OPT filing windows",
+      "description": "Different OIS request and USCIS receipt deadlines apply. Consult full current filing instructions and individual I-20 dates.",
+      "source_name": "usc_ois",
+      "source_url": "https://ois.usc.edu/employment/post-completion-opt/",
+      "last_verified_date": "2026-11-14",
+      "evidence": [
+        {
+          "source_name": "usc_ois",
+          "source_url": "https://ois.usc.edu/employment/post-completion-opt/",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Numeric policy values checked against the named official page; context is mandatory."
+        }
+      ],
+      "verification_notes": "Different OIS request and USCIS receipt deadlines apply. Consult full current filing instructions and individual I-20 dates.",
+      "tags": [
+        "policy",
+        "international",
+        "employment"
+      ],
+      "resource_type": "policy",
+      "official_url": "https://ois.usc.edu/employment/post-completion-opt/",
+      "account_requirements": "Public guidance; personal requests use authorized official channels.",
+      "access_status": "public",
+      "search_functionality": "Policy headings and linked procedures",
+      "usage_steps": [
+        "Read the companion guide and confirm individual eligibility with the responsible office."
+      ],
+      "recruitment_status": "no_opening_verified",
+      "eligibility_notes": "Different OIS request and USCIS receipt deadlines apply. Consult full current filing instructions and individual I-20 dates.",
+      "numerical_facts": {
+        "earliest_filing_days_before_program_end": 90,
+        "uscis_filing_window_days_after_program_end": 60,
+        "latest_ois_request_days_after_program_end": 45,
+        "standard_opt_months_max": 12
+      }
+    }
+  ]
+}

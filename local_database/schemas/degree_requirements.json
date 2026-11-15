@@ -1,0 +1,45 @@
+{
+  "$comment": "Lossless local record schema; additional nested source details remain available to exact lookup.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "program_id",
+    "title",
+    "catalogue_year",
+    "source_url",
+    "description",
+    "requirement_groups"
+  ],
+  "properties": {
+    "program_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "catalogue_year": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{4}$"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "total_units": {
+      "type": "number"
+    },
+    "requirement_groups": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "additionalProperties": true
+}

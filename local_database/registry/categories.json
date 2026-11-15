@@ -1,4 +1,5 @@
 {
+  "_comment": "Merged branch registry; no branch entries discarded.",
   "service_directory": {
     "domain": "student_services",
     "file_type": "records",
@@ -15,6 +16,170 @@
   },
   "student_policies": {
     "domain": "student_services",
+    "file_type": "document"
+  },
+  "career_guides": {
+    "domain": "career",
+    "file_type": "document"
+  },
+  "job_listings": {
+    "domain": "career",
+    "file_type": "records",
+    "schema": "job_listing",
+    "id_field": "job_id",
+    "search_template": "{job_id}: {title}. {description} Recruitment: {recruitment_status}. Eligibility: {international_eligibility}.",
+    "filter_fields": [
+      "job_type",
+      "hourly_pay_usd",
+      "hours_per_week",
+      "international_eligibility",
+      "deadline",
+      "recruitment_status"
+    ]
+  },
+  "research_labs": {
+    "domain": "career",
+    "file_type": "records",
+    "schema": "research_lab",
+    "id_field": "lab_id",
+    "search_template": "{lab_id}: {title}. PI: {principal_investigator}. {description} Areas: {research_areas}. Recruitment: {recruitment_status}. Route: {opportunity_types}. Levels: {invited_levels}. Funding: {compensation_status}. Apply: {application_instructions} Caveat: {verification_notes}",
+    "filter_fields": [
+      "recruitment_status",
+      "invited_levels",
+      "compensation_status",
+      "research_areas",
+      "opportunity_types"
+    ]
+  },
+  "opportunities": {
+    "domain": "career",
+    "file_type": "records",
+    "schema": "career_opportunity",
+    "id_field": "opportunity_id",
+    "search_template": "{opportunity_id}: {title}. {description} Type: {opportunity_type}. Recruitment: {recruitment_status}. {status_reason} Funding: {compensation_status}. Eligibility: {student_eligibility}. International eligibility: {international_eligibility}. Skills: {required_skills}. Apply: {application_instructions}",
+    "filter_fields": [
+      "recruitment_status",
+      "opportunity_type",
+      "compensation_status",
+      "international_eligibility",
+      "hourly_pay_usd",
+      "hours_per_week",
+      "deadline",
+      "start_date",
+      "end_date",
+      "lab_id"
+    ]
+  },
+  "career_resources": {
+    "domain": "career",
+    "file_type": "records",
+    "schema": "career_resource",
+    "id_field": "resource_id",
+    "search_template": "{resource_id}: {title}. {description} Access: {account_requirements}. Search: {search_functionality}. Use: {usage_steps}. Eligibility: {eligibility_notes}. {verification_notes}",
+    "filter_fields": [
+      "resource_type",
+      "access_status",
+      "recruitment_status"
+    ]
+  },
+  "courses": {
+    "domain": "academic",
+    "file_type": "records",
+    "schema": "courses",
+    "id_field": "course_id",
+    "search_template": "{course_id}: {title}. {description} Units: {units}. Prerequisites: {prerequisites}. Terms: {terms_offered}.",
+    "filter_fields": [
+      "units",
+      "level",
+      "terms_offered",
+      "department_prefix"
+    ]
+  },
+  "course_sections": {
+    "domain": "academic",
+    "file_type": "records",
+    "schema": "course_sections",
+    "id_field": "section_id",
+    "search_template": "{section_id}: {course_id}, {term}. Instructor: {instructor}. Days: {days}, {start_time} to {end_time}. Location: {location}. Modality: {modality}.",
+    "filter_fields": [
+      "course_id",
+      "term",
+      "days",
+      "modality",
+      "d_clearance_required"
+    ]
+  },
+  "degree_requirements": {
+    "domain": "academic",
+    "file_type": "records",
+    "schema": "degree_requirements",
+    "id_field": "program_id",
+    "search_template": "{program_id}: {title}. Catalogue: {catalogue_year}. {description}",
+    "filter_fields": [
+      "level",
+      "degree_type",
+      "catalogue_year",
+      "total_units"
+    ]
+  },
+  "academic_calendar": {
+    "domain": "academic",
+    "file_type": "records",
+    "schema": "academic_calendar",
+    "id_field": "deadline_id",
+    "search_template": "{deadline_id}: {title}. {date}, {term}. {description}",
+    "filter_fields": [
+      "date",
+      "term",
+      "applies_to"
+    ]
+  },
+  "listings": {
+    "domain": "housing",
+    "file_type": "records",
+    "schema": "housing_listing",
+    "id_field": "listing_id",
+    "search_template": "{listing_id}: {name}, {housing_type} in {neighborhood}. ${monthly_rent_usd}/month. {bedrooms} bedrooms. {distance_to_campus_miles} miles from {campus}. Amenities: {amenities}.",
+    "filter_fields": [
+      "monthly_rent_usd",
+      "bedrooms",
+      "distance_to_campus_miles",
+      "campus",
+      "furnished"
+    ]
+  },
+  "event_listings": {
+    "domain": "student_services",
+    "file_type": "records",
+    "schema": "event_listing",
+    "id_field": "event_id",
+    "search_template": "{event_id}: {title}. {start_date} {start_time} to {end_date} {end_time}. Time zone as collected: {timezone}.",
+    "filter_fields": [
+      "start_date",
+      "end_date",
+      "timezone",
+      "organizer",
+      "cost"
+    ]
+  },
+  "support_resources": {
+    "domain": "student_services",
+    "file_type": "records",
+    "schema": "support_resource",
+    "id_field": "resource_id",
+    "search_template": "{resource_id}: {title}. {description}",
+    "filter_fields": []
+  },
+  "bulletin": {
+    "domain": "academic",
+    "file_type": "document"
+  },
+  "registration_policies": {
+    "domain": "academic",
+    "file_type": "document"
+  },
+  "housing_guides": {
+    "domain": "housing",
     "file_type": "document"
   }
 }

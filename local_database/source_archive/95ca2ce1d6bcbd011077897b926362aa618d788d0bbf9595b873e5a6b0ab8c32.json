@@ -1,0 +1,60 @@
+{
+  "purpose": "Public resource instructions; not a claim of a current vacancy.",
+  "meta": {
+    "title": "USC Libraries student hiring",
+    "summary": "Libraries moved all student-worker hiring to Handshake on December 1, 2025.",
+    "source_name": "usc_libraries",
+    "source_url": "https://libraries.usc.edu/jobs/library-jobs-students",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all"
+    ],
+    "tags": [
+      "campus_employer",
+      "career",
+      "usc"
+    ]
+  },
+  "records": [
+    {
+      "resource_id": "libraries",
+      "title": "USC Libraries student hiring",
+      "description": "Libraries moved all student-worker hiring to Handshake on December 1, 2025.",
+      "source_name": "usc_libraries",
+      "source_url": "https://libraries.usc.edu/jobs/library-jobs-students",
+      "last_verified_date": "2026-11-14",
+      "evidence": [
+        {
+          "source_name": "usc_libraries",
+          "source_url": "https://libraries.usc.edu/jobs/library-jobs-students",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Public description checked; private contents and individual availability are not verified."
+        }
+      ],
+      "verification_notes": "Public description checked; private contents and individual availability are not verified.",
+      "tags": [
+        "campus_employer",
+        "career",
+        "usc"
+      ],
+      "resource_type": "campus_employer",
+      "official_url": "https://libraries.usc.edu/jobs/library-jobs-students",
+      "account_requirements": "USC Handshake account",
+      "access_status": "gated",
+      "search_functionality": "Library employer and campus-job search",
+      "usage_steps": [
+        "Apply through Handshake; do not contact library employees for vacancies. Hiring managers contact selected applicants."
+      ],
+      "recruitment_status": "no_opening_verified",
+      "eligibility_notes": "Individual job qualifications apply; a library resource is not an open job."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "purpose": "Public research profile and separately qualified recruitment evidence.",
+  "meta": {
+    "title": "Jyotirmoy Deshmukh research group",
+    "summary": "Verification and testing of cyber-physical systems, including systems using machine learning.",
+    "source_name": "usc_jyotirmoy_deshmukh",
+    "source_url": "https://viterbi.usc.edu/directory/faculty/Deshmukh/Jyotirmoy",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "graduate",
+      "undergraduate"
+    ],
+    "tags": [
+      "formal_methods",
+      "autonomous_systems",
+      "verification"
+    ]
+  },
+  "records": [
+    {
+      "lab_id": "jyotirmoy_deshmukh",
+      "title": "Jyotirmoy Deshmukh research group",
+      "principal_investigator": "Jyotirmoy Deshmukh",
+      "official_url": "https://viterbi.usc.edu/directory/faculty/Deshmukh/Jyotirmoy",
+      "research_areas": [
+        "formal_methods",
+        "autonomous_systems",
+        "verification"
+      ],
+      "description": "Verification and testing of cyber-physical systems, including systems using machine learning.",
+      "recruitment_status": "no_opening_verified",
+      "opportunity_types": [
+        "unspecified"
+      ],
+      "invited_levels": [
+        "unverified"
+      ],
+      "compensation_status": "not_stated",
+      "application_instructions": "Follow the faculty directory's research website; no student vacancy was verified.",
+      "required_skills": [],
+      "verification_notes": "Directory establishes research areas, not current recruitment.",
+      "source_name": "usc_jyotirmoy_deshmukh",
+      "source_url": "https://viterbi.usc.edu/directory/faculty/Deshmukh/Jyotirmoy",
+      "last_verified_date": "2026-11-14",
+      "tags": [
+        "formal_methods",
+        "autonomous_systems",
+        "verification"
+      ],
+      "evidence": [
+        {
+          "source_name": "usc_jyotirmoy_deshmukh",
+          "source_url": "https://viterbi.usc.edu/directory/faculty/Deshmukh/Jyotirmoy",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Directory establishes research areas, not current recruitment."
+        }
+      ]
+    }
+  ]
+}
