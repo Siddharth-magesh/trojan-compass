@@ -8,13 +8,20 @@ Technical facts for the prototype. Status: **set** = decided, **tbd** = to tune.
 - Structured data lives in `local_database/data/<domain>/<category>/` as JSON and is queried in code. Record search text and document passages are prepared for derived indexing under DATA_GUIDE.
 - LLM access is through hosted APIs with keys in `.env`.
 
+## Backend status (implemented in `backend/`)
+- Flow: input guard -> supervisor (1 LLM call: plan or clarification) -> parallel academic / housing / career / student_services agents -> aggregate -> deterministic verify -> synthesizer (1 LLM call) -> output guard -> structured response.
+- Data: verified + public records loaded once from `local_database/data/` (drafts never loaded). Housing, academic calendar and job listings are empty, so those answers report "not collected yet".
+- Retrieval: `retrieval_client.py` wraps `query_store.hybrid_query`; off by default (`RETRIEVAL_BACKEND=stub`) until `local_database/processed/` exists locally.
+- Profiles: 2 synthetic students (`synthetic_student_001`, `_002`) for mock login.
+- Try it: `python -m backend.scripts.run_query --mode mock "..."` or `uvicorn backend.main:app`. Default `LLM_MODE=cache` replays from `backend/.llm_cache/`.
+
 ## Stack
 | Layer | Choice | Status |
 |---|---|---|
 | Frontend | Next.js, React, TypeScript, Tailwind, shadcn/ui, SSE streaming | set |
 | Backend | Python, FastAPI, Pydantic | set |
 | Orchestration | LangGraph (supervisor, parallel domain agents) | set |
-| LLM providers | Gemini, Groq (primary), OpenRouter, NVIDIA NIM as fallbacks | set |
+| LLM providers | Groq `openai/gpt-oss-120b` (primary), Gemini `gemini-3.8-flash` (fallback); OpenRouter / NVIDIA NIM not implemented | set |
 | Embeddings | BAAI/bge-small-en-v1.5, pinned ONNX revision `5c38ec7c405ec4b44b94cc5a9bb96e735b38267a`; CLS pooling, 384 dims, L2-normalized | set |
 | Vector store | Pinecone (free tier, one index) | set |
 | Doc parsing | PyMuPDF | set |
