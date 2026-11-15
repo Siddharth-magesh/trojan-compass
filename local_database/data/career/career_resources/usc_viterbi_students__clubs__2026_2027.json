@@ -1,0 +1,60 @@
+{
+  "purpose": "Public resource instructions; not a claim of a current vacancy.",
+  "meta": {
+    "title": "Viterbi student organizations",
+    "summary": "Technical, professional, design, and community organizations for skill building and research connections.",
+    "source_name": "usc_viterbi_students",
+    "source_url": "https://viterbiundergrad.usc.edu/student-organizations/",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all"
+    ],
+    "tags": [
+      "student_organization",
+      "career",
+      "usc"
+    ]
+  },
+  "records": [
+    {
+      "resource_id": "clubs",
+      "title": "Viterbi student organizations",
+      "description": "Technical, professional, design, and community organizations for skill building and research connections.",
+      "source_name": "usc_viterbi_students",
+      "source_url": "https://viterbiundergrad.usc.edu/student-organizations/",
+      "last_verified_date": "2026-11-14",
+      "evidence": [
+        {
+          "source_name": "usc_viterbi_students",
+          "source_url": "https://viterbiundergrad.usc.edu/student-organizations/",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Public description checked; private contents and individual availability are not verified."
+        }
+      ],
+      "verification_notes": "Public description checked; private contents and individual availability are not verified.",
+      "tags": [
+        "student_organization",
+        "career",
+        "usc"
+      ],
+      "resource_type": "student_organization",
+      "official_url": "https://viterbiundergrad.usc.edu/student-organizations/",
+      "account_requirements": "Group-specific membership; public directory",
+      "access_status": "public",
+      "search_functionality": "Organization categories and linked club websites",
+      "usage_steps": [
+        "Select a relevant group and verify current meetings, membership, and projects on its own page."
+      ],
+      "recruitment_status": "no_opening_verified",
+      "eligibility_notes": "Directory includes older academic-year labels; current recruitment is not assumed."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "purpose": "Public resource instructions; not a claim of a current vacancy.",
+  "meta": {
+    "title": "USC on-campus job search",
+    "summary": "Find campus positions across departments using Handshake.",
+    "source_name": "usc_career_center",
+    "source_url": "https://careers.usc.edu/channels/on-campus-jobs/",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all"
+    ],
+    "tags": [
+      "campus_employer",
+      "career",
+      "usc"
+    ]
+  },
+  "records": [
+    {
+      "resource_id": "campus_search",
+      "title": "USC on-campus job search",
+      "description": "Find campus positions across departments using Handshake.",
+      "source_name": "usc_career_center",
+      "source_url": "https://careers.usc.edu/channels/on-campus-jobs/",
+      "last_verified_date": "2026-11-14",
+      "evidence": [
+        {
+          "source_name": "usc_career_center",
+          "source_url": "https://careers.usc.edu/channels/on-campus-jobs/",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Public description checked; private contents and individual availability are not verified."
+        }
+      ],
+      "verification_notes": "Public description checked; private contents and individual availability are not verified.",
+      "tags": [
+        "campus_employer",
+        "career",
+        "usc"
+      ],
+      "resource_type": "campus_employer",
+      "official_url": "https://careers.usc.edu/channels/on-campus-jobs/",
+      "account_requirements": "USC Handshake account",
+      "access_status": "gated",
+      "search_functionality": "Jobs > All filters > Job Type > On Campus Student Employment",
+      "usage_steps": [
+        "Search campus jobs; read each posting's requirements and application instructions."
+      ],
+      "recruitment_status": "no_opening_verified",
+      "eligibility_notes": "International students must seek non-work-study roles."
+    }
+  ]
+}

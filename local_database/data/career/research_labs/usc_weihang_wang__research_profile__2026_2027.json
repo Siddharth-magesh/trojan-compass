@@ -1,0 +1,68 @@
+{
+  "purpose": "Public research profile and separately qualified recruitment evidence.",
+  "meta": {
+    "title": "Weihang Wang research group",
+    "summary": "Reliability, security, and efficiency of complex software systems.",
+    "source_name": "usc_weihang_wang",
+    "source_url": "https://weihang-wang.github.io/",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "graduate",
+      "undergraduate"
+    ],
+    "tags": [
+      "software_engineering",
+      "security",
+      "ai"
+    ]
+  },
+  "records": [
+    {
+      "lab_id": "weihang_wang",
+      "title": "Weihang Wang research group",
+      "principal_investigator": "Weihang Wang",
+      "official_url": "https://weihang-wang.github.io/",
+      "research_areas": [
+        "software_engineering",
+        "security",
+        "ai"
+      ],
+      "description": "Reliability, security, and efficiency of complex software systems.",
+      "recruitment_status": "no_opening_verified",
+      "opportunity_types": [
+        "unspecified"
+      ],
+      "invited_levels": [
+        "unverified"
+      ],
+      "compensation_status": "not_stated",
+      "application_instructions": "Review current projects; no public application procedure was verified.",
+      "required_skills": [],
+      "verification_notes": "Research and past MS participation do not establish a current MS opening.",
+      "source_name": "usc_weihang_wang",
+      "source_url": "https://weihang-wang.github.io/",
+      "last_verified_date": "2026-11-14",
+      "tags": [
+        "software_engineering",
+        "security",
+        "ai"
+      ],
+      "evidence": [
+        {
+          "source_name": "usc_weihang_wang",
+          "source_url": "https://weihang-wang.github.io/",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Research and past MS participation do not establish a current MS opening."
+        }
+      ]
+    }
+  ]
+}

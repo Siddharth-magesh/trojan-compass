@@ -205,6 +205,10 @@ cython_debug/
 # Temporary file for partial code execution
 tempCodeRunnerFile.py
 
+# Local source references, generated retrieval artifacts, and dependency environments.
+local_database/raw/
+local_database/processed/
+
 # Ruff stuff:
 .ruff_cache/
 

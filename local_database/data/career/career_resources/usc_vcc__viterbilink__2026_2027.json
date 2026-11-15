@@ -1,0 +1,60 @@
+{
+  "purpose": "Public resource instructions; not a claim of a current vacancy.",
+  "meta": {
+    "title": "ViterbiLink historical reference",
+    "summary": "Older Viterbi informational-interview guidance references ViterbiLink.",
+    "source_name": "usc_vcc",
+    "source_url": "https://viterbicareers.usc.edu/wp-content/uploads/2021/03/Informational-Interview-Guide-1.pdf",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "draft",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all"
+    ],
+    "tags": [
+      "networking",
+      "career",
+      "usc"
+    ]
+  },
+  "records": [
+    {
+      "resource_id": "viterbilink",
+      "title": "ViterbiLink historical reference",
+      "description": "Older Viterbi informational-interview guidance references ViterbiLink.",
+      "source_name": "usc_vcc",
+      "source_url": "https://viterbicareers.usc.edu/wp-content/uploads/2021/03/Informational-Interview-Guide-1.pdf",
+      "last_verified_date": "2026-11-14",
+      "evidence": [
+        {
+          "source_name": "usc_vcc",
+          "source_url": "https://viterbicareers.usc.edu/wp-content/uploads/2021/03/Informational-Interview-Guide-1.pdf",
+          "checked_date": "2026-11-14",
+          "access_status": "search_only",
+          "observation": "Public historical documentation found; current service could not be verified."
+        }
+      ],
+      "verification_notes": "Public historical documentation found; current service could not be verified.",
+      "tags": [
+        "networking",
+        "career",
+        "usc"
+      ],
+      "resource_type": "networking",
+      "official_url": "https://viterbicareers.usc.edu/wp-content/uploads/2021/03/Informational-Interview-Guide-1.pdf",
+      "account_requirements": "Current login and platform availability unverified",
+      "access_status": "fetch_failed",
+      "search_functionality": "Historical alumni discovery reference",
+      "usage_steps": [
+        "Use current Trojan Network guidance; confirm ViterbiLink availability with VCC before relying on the legacy link."
+      ],
+      "recruitment_status": "unverified",
+      "eligibility_notes": "Historical reference only; endpoint was inaccessible."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "purpose": "Public resource instructions; not a claim of a current vacancy.",
+  "meta": {
+    "title": "USC Recreational Sports jobs",
+    "summary": "Student roles at UPC and HSC fitness facilities; aquatic roles include lifeguards.",
+    "source_name": "usc_recsports",
+    "source_url": "https://recsports.usc.edu/about-us/job-opportunities/",
+    "collected_by": "codex_for_person_3",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "public_copy",
+    "access_level": "public",
+    "audience": [
+      "all"
+    ],
+    "tags": [
+      "campus_employer",
+      "career",
+      "usc"
+    ]
+  },
+  "records": [
+    {
+      "resource_id": "recreation",
+      "title": "USC Recreational Sports jobs",
+      "description": "Student roles at UPC and HSC fitness facilities; aquatic roles include lifeguards.",
+      "source_name": "usc_recsports",
+      "source_url": "https://recsports.usc.edu/about-us/job-opportunities/",
+      "last_verified_date": "2026-11-14",
+      "evidence": [
+        {
+          "source_name": "usc_recsports",
+          "source_url": "https://recsports.usc.edu/about-us/job-opportunities/",
+          "checked_date": "2026-11-14",
+          "access_status": "public",
+          "observation": "Public description checked; private contents and individual availability are not verified."
+        }
+      ],
+      "verification_notes": "Public description checked; private contents and individual availability are not verified.",
+      "tags": [
+        "campus_employer",
+        "career",
+        "usc"
+      ],
+      "resource_type": "campus_employer",
+      "official_url": "https://recsports.usc.edu/about-us/job-opportunities/",
+      "account_requirements": "See official role application instructions",
+      "access_status": "public",
+      "search_functionality": "Job-domain descriptions",
+      "usage_steps": [
+        "Review role-specific requirements and application links. Lifeguard work requires American Red Cross certification."
+      ],
+      "recruitment_status": "no_opening_verified",
+      "eligibility_notes": "Current USC enrollment and role-specific criteria; work-study preference is not universal eligibility."
+    }
+  ]
+}
