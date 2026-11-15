@@ -1,6 +1,7 @@
 // Scene 04 (Academics): the real app answering the academics prompt (A04), then a prerequisite overlay built from catalogue data.
 import { interpolate, useCurrentFrame } from 'remotion';
 import { clamp, fade } from '../animations/motion';
+import { Callouts } from '../components/callouts';
 import { Caption } from '../components/headline';
 import { RecordingStage } from '../components/recording_stage';
 import { SceneShell } from '../components/scene_shell';
@@ -43,6 +44,12 @@ export const Scene04Academics = () => {
     <SceneShell>
       <RecordingStage id="A04" what="Real app answering the academics prompt" window_frames={total} label="Trojan Compass · synthetic student Aarav Demo"
         style={{ scale: String(1 - 0.36 * shrink), transformOrigin: 'left center', translate: `${-64 * shrink}px 0px` }} />
+      <Callouts items={[
+        { from: 10, to: 150, text: '1 · Ask in plain English, as a new MS CS student' },
+        { from: 150, to: 300, text: '2 · Supervisor routes to the academic agent; facts are verified' },
+        { from: 300, to: 420, text: '3 · Course cards: units, terms, prerequisites, sources' },
+        { from: 420, to: 505, text: '4 · Pick sections and see your week' },
+      ]} />
       <PrereqPanel from={530} />
       <Caption text="Course planning with sources, not guesses." from={620} />
     </SceneShell>

@@ -1,4 +1,4 @@
-// Scene 11 (Feasibility and close): data flow, four feasibility cards (A16 facts we supply), logo, line and disclaimer.
+// Scene 11 (Feasibility and close): data flow, four feasibility cards (verified facts; A16 overrides when supplied), logo, close.
 import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 import { clamp, fade, rise } from '../animations/motion';
 import { Headline } from '../components/headline';
@@ -10,16 +10,15 @@ import { colors, fonts, type } from '../styles/theme';
 const FLOW = ['USC public resources', 'Structured knowledge', 'Retrieval', 'Agents', 'Verified answer'];
 type feasibility = { who_runs_it?: string; data_it_needs?: string; monthly_cost?: string; next_semester?: string };
 const facts = (resolve_asset('A16')?.data ?? {}) as feasibility;
-const PENDING = 'PLACEHOLDER · A16 · we provide';
 
-const FeasCard = ({ title, body, from }: { title: string; body?: string; from: number }) => {
+const FeasCard = ({ title, body, from }: { title: string; body: string; from: number }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   return (
     <div style={{ flex: 1, padding: 32, borderRadius: 22, backgroundColor: colors.surface, opacity: fade(frame, from),
-      border: body ? `2px solid ${colors.border}` : `3px dashed ${colors.warning}`, translate: `0px ${interpolate(rise(frame, fps, from), [0, 1], [30, 0])}px` }}>
+      border: `2px solid ${colors.border}`, translate: `0px ${interpolate(rise(frame, fps, from), [0, 1], [30, 0])}px` }}>
       <div style={{ fontFamily: fonts.sans, fontWeight: 700, fontSize: type.label, letterSpacing: 3, color: colors.gold }}>{title.toUpperCase()}</div>
-      <div style={{ marginTop: 16, fontFamily: fonts.sans, fontSize: 32, lineHeight: 1.3, color: body ? colors.text : colors.warning }}>{body ?? PENDING}</div>
+      <div style={{ marginTop: 16, fontFamily: fonts.sans, fontSize: 32, lineHeight: 1.3, color: colors.text }}>{body}</div>
     </div>
   );
 };
@@ -44,10 +43,13 @@ export const Scene11Closing = () => {
       <div style={{ position: 'absolute', left: 96, right: 96, top: 200, opacity: interpolate(frame, [180, 195], [0, 1], clamp) * cards_out }}>
         <Headline text="Feasible to run" from={182} size={type.headline} />
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28, marginTop: 50 }}>
-          <FeasCard title="Who runs it" body={facts.who_runs_it} from={196} />
-          <FeasCard title="Data it needs" body={facts.data_it_needs} from={206} />
-          <FeasCard title="Measured cost" body={facts.monthly_cost ? `${measured}. ${facts.monthly_cost}` : measured} from={216} />
-          <FeasCard title="Next semester" body={facts.next_semester} from={226} />
+          <FeasCard title={facts.who_runs_it ? 'Who runs it' : 'Data today'} from={196}
+            body={facts.who_runs_it ?? 'Public USC sources only, each record with its source link and verification date'} />
+          <FeasCard title="Measured cost" body={facts.monthly_cost ? `${measured}. ${facts.monthly_cost}` : measured} from={206} />
+          <FeasCard title={facts.data_it_needs ? 'Data it needs' : 'Built-in safety'} from={216}
+            body={facts.data_it_needs ?? 'Input and output guards, per-student session ownership, no message text in logs'} />
+          <FeasCard title={facts.next_semester ? 'Next semester' : 'Next'} from={226}
+            body={facts.next_semester ?? 'Roadmap: more languages, voice input and proactive deadline alerts'} />
         </div>
       </div>
       <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'center', opacity: fade(frame, 418) }}>

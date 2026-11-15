@@ -2,6 +2,9 @@
  "A01": {
   "file": "brand/logo.svg"
  },
+ "A02": {
+  "file": "usc_screenshots/usc_resource_directory.png"
+ },
  "A03": {
   "file": "recordings/s03_home_take1.mp4",
   "duration_s": 11.6
@@ -17,6 +20,16 @@
  "A06": {
   "file": "recordings/s06_onboarding_take1.mp4",
   "duration_s": 19.63
+ },
+ "A07": {
+  "file": "chatbot_comparison/chatgpt_take1.mp4",
+  "duration_s": 37.47
+ },
+ "A07M": {
+  "file": "../src/data/chatgpt_recording.json",
+  "data": {
+   "label": "ChatGPT · GPT-5.6 Sol · web search on · recorded 2026-11-15"
+  }
  },
  "A08": {
   "file": "recordings/s07_trojan_compass_take1.mp4",

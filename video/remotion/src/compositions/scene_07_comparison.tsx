@@ -35,10 +35,10 @@ export const Scene07Comparison = () => {
       <div style={{ position: 'absolute', left: 96, right: 96, top: 92, opacity: fade(frame, 4), fontFamily: fonts.serif,
         fontSize: 36, lineHeight: 1.3, color: colors.muted }}>“{PROMPT}”</div>
       <div style={{ position: 'absolute', left: 96, right: 96, top: 250, display: 'flex', justifyContent: 'space-between' }}>
-        <Side title="General-purpose AI" sub={label} tag="General-purpose knowledge" from={470}>
-          <AssetVideo id="A07" what="Our manual ChatGPT recording of the identical prompt (model, mode, date visible)" window_frames={total} trim_before_s={0} />
+        <Side title="General-purpose AI" sub={label} tag="General web search, no student context" from={470}>
+          <AssetVideo id="A07" what="Our manual ChatGPT recording of the identical prompt (model, mode, date visible)" window_frames={total} trim_before_s={0} fit="contain" />
         </Side>
-        <Side title="Trojan Compass" sub="Real app · synthetic student · citations and verification dates" tag="USC-specific, source-grounded information" from={480}>
+        <Side title="Trojan Compass" sub="Real app · synthetic student · same day" tag="Verified USC records, dated sources, your profile" from={480}>
           <AssetVideo id="A08" what="Real Trojan Compass answer to the same prompt" window_frames={total} trim_before_s={1.5} />
         </Side>
       </div>

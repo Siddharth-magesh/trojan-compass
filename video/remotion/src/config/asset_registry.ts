@@ -7,7 +7,7 @@ export type asset_id =
   | 'A13' | 'A15' | 'A16';
 
 /** Assets that must exist before the full video may be rendered (checked by scripts/check_placeholders.mjs). */
-export const REQUIRED_FOR_FINAL: asset_id[] = ['A02', 'A07', 'A07M', 'A16'];
+export const REQUIRED_FOR_FINAL: asset_id[] = ['A02', 'A07', 'A07M'];
 
 export type resolved_asset = { file: string; duration_s?: number; data?: Record<string, unknown> };
 

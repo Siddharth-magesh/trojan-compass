@@ -1,6 +1,7 @@
 // Scene 08 (Security): real injection block (A09), then real captured responses: session ownership, output redaction, log line.
 import { AbsoluteFill, interpolate, Sequence, useCurrentFrame, useVideoConfig } from 'remotion';
 import { clamp, fade, rise } from '../animations/motion';
+import { Callouts } from '../components/callouts';
 import { Caption } from '../components/headline';
 import { RecordingStage } from '../components/recording_stage';
 import { SceneShell } from '../components/scene_shell';
@@ -37,6 +38,7 @@ export const Scene08Security = () => {
       <AbsoluteFill style={{ opacity: rec_out }}>
         <RecordingStage id="A09" what="Real prompt-injection attempt blocked by the input guard" window_frames={165} label="Trojan Compass · synthetic student Bianca Demo" />
       </AbsoluteFill>
+      <Callouts top={110} items={[{ from: 0, to: 148, text: 'A prompt-injection attempt, blocked before any model call' }]} />
       <Sequence from={150} durationInFrames={240} layout="none">
         <AbsoluteFill style={{ opacity: cards_out, padding: '96px 96px 0', display: 'flex', flexDirection: 'column', gap: 14 }}>
           <TerminalCard from={0} width={1728} title="1 · Injection attempt (input guard, verbatim reply)" lines={[

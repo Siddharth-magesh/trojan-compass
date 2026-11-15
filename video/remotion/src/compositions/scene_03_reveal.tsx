@@ -4,7 +4,7 @@ import { clamp, fade, rise } from '../animations/motion';
 import { Headline } from '../components/headline';
 import { RecordingStage } from '../components/recording_stage';
 import { SceneShell } from '../components/scene_shell';
-import platforms from '../data/platforms.json';
+import a02 from '../data/a02_services.json';
 import { colors, type } from '../styles/theme';
 import { PLATFORM_TONES, PlatformWindow, scatter_pos } from './scene_02_fragmented';
 
@@ -16,7 +16,7 @@ export const Scene03Reveal = () => {
   const stage_out = interpolate(frame, [170, 190], [1, 0], clamp);
   return (
     <SceneShell>
-      {frame < 60 && platforms.platforms.map((p, i) => {
+      {frame < 60 && a02.services.map((p, i) => {
         const { x, y } = scatter_pos(i);
         return (
           <div key={p.name} style={{ position: 'absolute', left: interpolate(merge, [0, 1], [x, 825]), top: interpolate(merge, [0, 1], [y, 480]),

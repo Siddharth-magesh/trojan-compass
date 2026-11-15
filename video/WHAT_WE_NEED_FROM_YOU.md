@@ -1,6 +1,13 @@
 <!-- Team to-do before the final silent compile: assets to supply, decisions to make, and known gaps found while building. -->
 # What we need from you
 
+> **Status 2026-11-15:** A02 (screenshots) and A07 (ChatGPT recording) were delivered, and the full silent video is rendered at `video/renders/final/trojan_compass_demo.mp4`.
+> - Screenshots: personal data (name, USC ID, logged-in names) is blurred by `remotion/scripts/sanitize_screenshots.sh`.
+> - ChatGPT clip: the sidebar is cropped and the audio removed.
+> - A16 is now optional: Scene 11 shows verified facts until `feasibility.json` is supplied.
+> - Still optional: voiceover, music, A13, A15.
+
+
 Eleven silent scene segments are rendered in `video/renders/segments/` (01_hook.mp4 … 11_closing.mp4). A one-frame-per-scene overview is at `video/renders/contact_sheet.png`. Eight scenes are complete. Three still show **marked placeholders** and wait for the items below. Once they are in place, we run `npm run render:final` (from `video/remotion/`) to compile the full silent video (about 171 s). That command refuses to run while any placeholder or pending claim remains.
 
 ## Required before the final compile

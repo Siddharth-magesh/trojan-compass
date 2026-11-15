@@ -5,12 +5,9 @@ Each missing asset renders as a marked placeholder until its file exists.
 
 | ID | Scene | Time | Status | Expected file (under video/remotion/public/) | What it must show |
 |---|---|---|---|---|---|
-| A02 | s02 | 0:10-0:14 | we_provide | `usc_screenshots/usc_resource_directory.png` | Screenshot(s) of the real USC student resource directory, showing the platforms a student must use |
-| A07 | s07 | 1:36-1:42 | we_record | `chatbot_comparison/chatgpt_take1.mp4` | Manual ChatGPT recording of the identical comparison prompt, with product, model, mode (search on/off) and date visible. Uniform speed-up only, no edits. |
-| A07M | S07 | 1:32-1:50 | we_provide | `../src/data/chatgpt_recording.json` | Label for the ChatGPT recording, e.g. {"label": "ChatGPT · GPT-5 · search off · recorded 2026-11-20"}; must match what the recording shows |
 | A11 | s10 | 2:30-2:34 | we_record | `recordings/s10_personalization_take1.mp4` | Optional: same question, different answers for the two synthetic students |
 | A13 | s02 | 0:18-0:20 | we_provide | `../src/data/manual_baseline.json` | Optional measured manual run: sites, clicks and minutes to plan one semester by hand |
 | A15 | s02 | 0:18-0:20 | we_provide | `../src/data/impact_stat.json` | Optional source-cited statistic about the affected population (e.g. USC international student count) |
-| A16 | s11 | 2:42-2:50 | we_provide | `../src/data/feasibility.json` | Feasibility facts: who runs it, data it needs, measured monthly cost, next-semester pilot scope |
+| A16 | s11 | 2:42-2:50 | we_provide | `../src/data/feasibility.json` | Feasibility facts: who runs it, data it needs, measured monthly cost, next-semester pilot scope (optional: when absent, Scene 11 shows verified facts only) |
 | A17 | all | 0:00-2:55 | we_record | `audio/voiceover` | Voiceover (not used in this silent version) |
 | A18 | all | 0:00-2:55 | we_provide | `audio/music.mp3` | Background music with license (not used in this silent version) |

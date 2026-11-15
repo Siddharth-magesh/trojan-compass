@@ -1,20 +1,19 @@
 // Scene 05 (Career and research): the real app answering the career prompt (A05) with lab cards and recruitment status.
-import { useCurrentFrame } from 'remotion';
-import { fade } from '../animations/motion';
-import { Badge } from '../components/badge';
+import { Callouts } from '../components/callouts';
 import { Caption } from '../components/headline';
 import { RecordingStage } from '../components/recording_stage';
 import { SceneShell } from '../components/scene_shell';
 import { frames_of } from '../config/timeline';
 
 export const Scene05Career = () => {
-  const frame = useCurrentFrame();
   return (
     <SceneShell>
       <RecordingStage id="A05" what="Real app answering the career prompt" window_frames={frames_of('s05_career')} label="Trojan Compass · synthetic student Aarav Demo" />
-      <div style={{ position: 'absolute', right: 180, top: 120, opacity: fade(frame, 300) }}>
-        <Badge label="RECRUITMENT STATUS AS PUBLISHED" tone="real" />
-      </div>
+      <Callouts items={[
+        { from: 10, to: 150, text: '1 · Ask about research labs and career resources' },
+        { from: 150, to: 330, text: '2 · Labs matched to AI and software engineering' },
+        { from: 330, to: 530, text: '3 · Recruitment status as published, plus how to apply' },
+      ]} />
       <Caption text="Discover opportunities beyond the job boards." from={540} />
     </SceneShell>
   );

@@ -3,11 +3,11 @@ import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from 'remo
 import { clamp, fade, fade_out, rise } from '../animations/motion';
 import { Headline } from '../components/headline';
 import { SceneShell } from '../components/scene_shell';
-import platforms from '../data/platforms.json';
+import a02 from '../data/a02_services.json';
 import { colors, fonts, type } from '../styles/theme';
 
 const TASKS = ['Register for courses', 'Find housing', 'Find a campus job', 'Understand visa rules', 'Track deadlines'];
-const N = platforms.platforms.length;
+const N = a02.services.length; // must equal the Scene 02 count (services in the A02 screenshot)
 
 const Skyline = ({ progress }: { progress: number }) => {
   // Stylized, original skyline blocks (no real buildings) that rise with `progress`.

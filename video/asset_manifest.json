@@ -19,7 +19,7 @@
    "format": "png 1920x1080",
    "file": "usc_screenshots/usc_resource_directory.png",
    "shows": "Screenshot(s) of the real USC student resource directory, showing the platforms a student must use",
-   "status": "we_provide",
+   "status": "available",
    "owner": "team",
    "license": "screenshot of public USC page, used for commentary"
   },
@@ -74,7 +74,7 @@
    "format": "mp4 1920x1080 30fps",
    "file": "chatbot_comparison/chatgpt_take1.mp4",
    "shows": "Manual ChatGPT recording of the identical comparison prompt, with product, model, mode (search on/off) and date visible. Uniform speed-up only, no edits.",
-   "status": "we_record",
+   "status": "available",
    "owner": "team",
    "license": "screen recording of a third-party product, used for comparison"
   },
@@ -85,7 +85,7 @@
    "format": "JSON",
    "file": "../src/data/chatgpt_recording.json",
    "shows": "Label for the ChatGPT recording, e.g. {\"label\": \"ChatGPT · GPT-5 · search off · recorded 2026-11-20\"}; must match what the recording shows",
-   "status": "we_provide",
+   "status": "available",
    "owner": "us",
    "license": "n/a"
   },
@@ -183,7 +183,7 @@
    "time": "2:42-2:50",
    "format": "json",
    "file": "../src/data/feasibility.json",
-   "shows": "Feasibility facts: who runs it, data it needs, measured monthly cost, next-semester pilot scope",
+   "shows": "Feasibility facts: who runs it, data it needs, measured monthly cost, next-semester pilot scope (optional: when absent, Scene 11 shows verified facts only)",
    "status": "we_provide",
    "owner": "team",
    "license": "original"
