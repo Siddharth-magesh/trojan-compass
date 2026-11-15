@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Course record",
+  "type": "object",
+  "properties": {
+    "course_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "units": {
+      "type": "number"
+    },
+    "level": {
+      "enum": [
+        "undergraduate",
+        "graduate"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "terms_offered": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "fall",
+          "spring",
+          "summer"
+        ]
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "course_id",
+    "title",
+    "units",
+    "level",
+    "description",
+    "prerequisites",
+    "terms_offered"
+  ]
+}

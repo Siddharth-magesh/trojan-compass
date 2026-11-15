@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Housing listing record",
+  "type": "object",
+  "properties": {
+    "listing_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "housing_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "address": {
+      "type": "string",
+      "minLength": 1
+    },
+    "neighborhood": {
+      "type": "string",
+      "minLength": 1
+    },
+    "monthly_rent_usd": {
+      "type": "number"
+    },
+    "bedrooms": {
+      "type": "number"
+    },
+    "distance_to_campus_miles": {
+      "type": "number"
+    },
+    "campus": {
+      "type": "string",
+      "minLength": 1
+    },
+    "amenities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "furnished": {
+      "type": "boolean"
+    },
+    "available_from": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    }
+  },
+  "required": [
+    "listing_id",
+    "name",
+    "housing_type",
+    "address",
+    "neighborhood",
+    "monthly_rent_usd",
+    "bedrooms",
+    "distance_to_campus_miles",
+    "campus",
+    "amenities",
+    "furnished",
+    "available_from"
+  ]
+}

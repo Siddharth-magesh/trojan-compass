@@ -55,11 +55,17 @@ trojan_compass/
 │   ├── student_profiles/        # synthetic profiles, JSON, never embedded
 │   ├── raw/                     # optional original saved pages/PDFs (gitignored)
 │   ├── processed/               # generated: chunks.jsonl, manifest.json (gitignored)
+│   ├── requirements.txt         # Python deps for the data pipeline
 │   └── scripts/
+│       ├── data_common.py       # shared paths, parsing, ids, token counting, sectioning
+│       ├── embedding.py         # BGE-small dense (cached) and BM25 sparse encoders
 │       ├── validate_data.py     # checks meta, schema, ids, dates
 │       ├── build_chunks.py      # files -> chunks, skips unchanged files by hash
-│       └── push_to_pinecone.py  # embeds new/changed chunks, upserts, deletes stale ids
-└── evaluation/                  # benchmark questions, reference answers, comparison vs general AI
+│       ├── push_to_pinecone.py  # embeds new/changed chunks, upserts, deletes stale ids (--dry-run)
+│       ├── eval_retrieval.py    # recall@5 / MRR on golden queries, dense vs hybrid (--local)
+│       └── scrape_public_pages.py # one-off crawler for public USC help pages -> raw/
+└── evaluation/
+    └── golden_queries.jsonl     # retrieval benchmark queries, one JSON per line
 ```
 
 ## Where to look
