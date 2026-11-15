@@ -1,5 +1,5 @@
 """Internal structured response produced by the graph. Cards and citations are built in code, never by the LLM.
-The HTTP API does not send this directly: api/presenter.py maps it to the frontend contract (Trojan-Compass
+The HTTP API does not send this directly: api/presenter.py maps it to the frontend contract (frontend/
 src/lib/api_types.ts: numbered citations, citation_ids on cards, checklist groups, partial_status {status, missing}).
 
 Shape: {schema_version, request_id, response_type, answer, cards[], citations[], freshness_notes[], partial_status,

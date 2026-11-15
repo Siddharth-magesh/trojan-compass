@@ -18,7 +18,10 @@ Technical facts for the prototype. Status: **set** = decided, **tbd** = to tune.
 ## Key files
 | Path | Role |
 |---|---|
+| `frontend/src/lib/api_types.ts`, `api_client.ts` | the API contract and the only module that calls the backend |
+| `frontend/src/components/cards/`, `components/chat/` | card renderers (course, housing, job, service, checklist) and chat UI |
 | `backend/main.py`, `backend/app/api/routes.py` | FastAPI app and `/api` endpoints (SSE chat) |
+| `backend/app/api/presenter.py` | maps internal responses to the frontend contract |
 | `backend/app/orchestration/graph.py` | LangGraph flow; `supervisor`, `dispatcher`, `aggregator`, `verifier`, `synthesizer`, `fallback` alongside |
 | `backend/app/agents/base_agent.py` | agent tool loop; `*_agent.py` keyword routing; `prompts/*.md` |
 | `backend/app/tools/tool_registry.py` | typed tools, per-agent allow-lists, ToolContext (identity from JWT) |
@@ -37,7 +40,7 @@ Technical facts for the prototype. Status: **set** = decided, **tbd** = to tune.
 ## Stack
 | Layer | Choice | Status |
 |---|---|---|
-| Frontend | Next.js, React, TypeScript, Tailwind, shadcn/ui, SSE streaming | set |
+| Frontend | React 19 + Vite 7, TypeScript, Tailwind v4, Radix/shadcn primitives, wouter, react-markdown, SSE streaming (`frontend/`, built with Replit then integrated) | set |
 | Backend | Python, FastAPI, Pydantic | set |
 | Orchestration | LangGraph (supervisor, parallel domain agents) | set |
 | LLM providers | Groq `openai/gpt-oss-120b` (primary), Gemini `gemini-3.8-flash` (fallback); OpenRouter / NVIDIA NIM not implemented | set |
@@ -113,11 +116,11 @@ The Pinecone Codex plugin `1.1.0` was installed locally from `pinecone-io/pineco
 | GET | `/api/health` | Liveness check |
 
 Run: `uvicorn backend.main:app --port 8000` from the repo root. Auth: `POST /api/login {"student_id": "synthetic_student_001"}` returns a bearer token; all other routes except health need `Authorization: Bearer <token>`.
-The API contract is the frontend's `Trojan-Compass/artifacts/trojan-compass/src/lib/api_types.ts`; `backend/app/api/presenter.py` is the only place that maps internal results to it.
+The API contract is the frontend's `frontend/src/lib/api_types.ts`; `backend/app/api/presenter.py` is the only place that maps internal results to it.
 - `POST /api/login` returns `{access_token, student}` (student_profile: display_name, program, level, international, interests, budget, job_interests).
 - `POST /api/chat_stream` body `{"message": "...", "session_id": optional}` streams SSE: `session` -> `status` (`{node, state: started|done|failed, label, elapsed_ms}` per step: input_guard, supervisor, <domain>_agent, verifier, synthesizer, output_guard) -> either `answer_delta` chunks + `final` (`{answer (Markdown with [n] citations), cards, citations [{id, source_name, title, url, verified_date, authority}], freshness_notes, partial_status {status, missing[]}, follow_ups}`), or `clarification` (`{question, options}`), or `error` (`{code: guard_blocked|upstream_failed, message}`). 429 for the rate limit.
 - `GET /api/session/{id}` returns `{session_id, messages: [{role, content, final?}]}` (owner only).
-- Frontend dev: `uvicorn backend.main:app --port 8000`, then in `Trojan-Compass/artifacts/trojan-compass`: `PORT=5173 BASE_PATH=/ ./node_modules/.bin/vite --config vite.config.ts` (Vite proxies `/api` to `BACKEND_URL`, default `http://localhost:8000`). `VITE_USE_MOCK=true` switches back to the in-browser mock.
+- Frontend dev: `uvicorn backend.main:app --port 8000`, then `cd frontend && pnpm install && pnpm dev` (http://127.0.0.1:5173; Vite proxies `/api` to `BACKEND_URL`, default `http://localhost:8000`). `VITE_USE_MOCK=true` switches back to the in-browser mock.
 
 ## Security settings
 - Rate limit: 20 chat requests/min per student (in-memory sliding window).

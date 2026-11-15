@@ -1,4 +1,4 @@
-"""Maps the internal StructuredResponse and profiles to the frontend contract (Trojan-Compass src/lib/api_types.ts).
+"""Maps the internal StructuredResponse and profiles to the frontend contract (frontend/src/lib/api_types.ts).
 
 Pure reshaping: every value comes from verified cards and citations; unknown values are omitted (the UI then shows
 "not listed") rather than invented.

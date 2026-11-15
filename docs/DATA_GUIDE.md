@@ -11,7 +11,6 @@ How to collect, store and index data. Everyone collecting data follows this exac
 ## Folder structure
 ```
 local_database/
-├── DATA_GUIDE.md
 ├── registry/
 │   ├── categories.json          # per category: domain, file_type, schema, id_field, search_template, filter_fields
 │   └── sources.json             # per website: url, owner, authority, status

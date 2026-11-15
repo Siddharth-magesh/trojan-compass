@@ -1,0 +1,17 @@
+# pnpm settings for the Trojan Compass frontend (single package).
+
+# Supply-chain defense: only install package versions published at least 1 day ago.
+minimumReleaseAge: 1440
+
+autoInstallPeers: false
+
+# esbuild needs its install script to place its native binary.
+onlyBuiltDependencies:
+  - esbuild
+
+allowBuilds:
+  esbuild: true
+
+overrides:
+  # Pinned esbuild version (carried over from the original Replit workspace's security override).
+  esbuild: "0.28.2"

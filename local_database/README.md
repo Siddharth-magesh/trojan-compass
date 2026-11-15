@@ -1,7 +1,7 @@
 <!-- Entry point to the collected data and its schemas. -->
 # Local database
 
-**The collected files are in [data/](data/).** All 111 source files are retained in full: 1,339 JSON records and 28 Markdown documents. Follow the root [DATA_GUIDE.md](../DATA_GUIDE.md) for formats and Pinecone ingestion.
+**The collected files are in [data/](data/).** All 111 source files are retained in full: 1,339 JSON records and 28 Markdown documents. Follow the [DATA_GUIDE](../docs/DATA_GUIDE.md) for formats and Pinecone ingestion.
 
 | Data | Folder | Contents |
 |---|---|---|

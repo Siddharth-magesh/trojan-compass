@@ -40,7 +40,7 @@ def respond(task: str, messages: list[dict[str, Any]], tools: list[dict[str, Any
 def _supervisor(messages: list[dict[str, Any]], tools: list[dict[str, Any]] | None) -> dict[str, Any]:
     text = last_user_text(messages).lower()
     agents = [name for name, pattern in DOMAIN_KEYWORDS.items() if re.search(pattern, text)]
-    if not agents or len(text.split()) < 4:
+    if not agents:  # short replies such as a clarification chip ("Housing") still route when a domain matches
         plan = {"clarify": True, "question": "What would you like help with first?", "tasks": [],
                 "options": ["Courses and registration", "Housing", "Jobs and research", "USC services and onboarding"]}
     else:

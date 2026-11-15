@@ -1,5 +1,5 @@
-"""HTTP API for the Trojan-Compass frontend: login, SSE chat (status, answer_delta, clarification, final, error), sessions,
-profile, health. Payload shapes follow Trojan-Compass src/lib/api_types.ts (see api/presenter.py)."""
+"""HTTP API for the frontend (frontend/): login, SSE chat (status, answer_delta, clarification, final, error), sessions,
+profile, health. Payload shapes follow frontend/src/lib/api_types.ts (see api/presenter.py)."""
 
 import json
 import re

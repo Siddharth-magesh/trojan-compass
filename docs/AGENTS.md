@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Rules for any AI agent or teammate working in this repo. Read `CONTRIBUTING.md` for where code lives and `PROJECT_DETAILS.md` for stack and config values.
+Rules for any AI agent or teammate working in this repo. These docs live in `docs/`: read `docs/CONTRIBUTING.md` for where code lives and `docs/PROJECT_DETAILS.md` for stack and config values.
 
 ## Code style
 - Use snake_case for files, folders, variables, functions and API routes. Exceptions only where the language or framework forces it (Python class names, React component names, Next.js reserved files like `page.tsx`).
@@ -19,7 +19,7 @@ Rules for any AI agent or teammate working in this repo. Read `CONTRIBUTING.md` 
 
 ## Local data and ingestion
 - The user-authorized ingestion implementation lives in `local_database/scripts/`. Run `push_to_pinecone.py --dry-run` before upload; use `--verify-only` to check the remote store. Keep generated files, model weights, caches and credentials ignored. Never delete or recreate an incompatible index.
-- Root `DATA_GUIDE.md` is authoritative. Canonical datasets live in `local_database/data/<domain>/<category>/`; register each category and source.
+- `docs/DATA_GUIDE.md` is authoritative. Canonical datasets live in `local_database/data/<domain>/<category>/`; register each category and source.
 - Keep `local_database/` focused on data, schemas, source/category registries and synthetic profiles. Do not add duplicate archives, old code snapshots, generated audit manifests or collection reports to the tracked tree. Git history preserves earlier versions.
 - Preserve complete source content, nested fields, numeric types and historical years. Never truncate a record to fit an embedding limit.
 - Only public, verified files may feed future ingestion. Draft files remain complete in their category folders for review. Validate metadata, schemas, IDs and references before indexing.
