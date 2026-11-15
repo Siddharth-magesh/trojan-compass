@@ -59,6 +59,29 @@ class Settings(BaseSettings):
     data_root: Path = REPO_ROOT / "local_database"
     llm_cache_dir: Path = REPO_ROOT / "backend" / ".llm_cache"
 
+    # C4 scalability. Defaults keep single-process behaviour; set STATE_BACKEND=redis to share state across workers/hosts.
+    state_backend: Literal["memory", "redis"] = "memory"
+    redis_url: SecretStr = SecretStr("redis://localhost:6379/0")
+    state_key_prefix: str = "trojan_compass:"
+    state_timeout_s: float = 0.5
+    state_memory_max_entries: int = 50_000
+    session_ttl_hours: int = 24
+    # Quotas per student per UTC day (0 disables): requests to /api/chat_stream and live LLM tokens (cache hits are free).
+    daily_request_quota: int = 300
+    daily_token_budget: int = 300_000
+    # Caching: disk = local files (dev, replayable); shared = the state backend with a TTL (multi-worker).
+    llm_cache_backend: Literal["disk", "shared"] = "disk"
+    llm_cache_ttl_hours: int = 168
+    # student = key also carries the student id and the data version, so personalized answers are never shared between
+    # students and every cached answer is invalidated when verified data changes. shared = dev replay cache.
+    llm_cache_scope: Literal["shared", "student"] = "shared"
+    # Model tiering (empty = primary model): a smaller model for planning and tool selection, the primary for writing.
+    planner_model: str = ""
+    agent_model: str = ""
+    llm_breaker_failures: int = 3
+    llm_breaker_open_s: float = 60.0
+    metrics_token: SecretStr = SecretStr("")  # when set, GET /api/metrics needs "Authorization: Bearer <token>"
+
     @field_validator("jwt_secret")
     @classmethod
     def _strong_secret(cls, value: SecretStr) -> SecretStr:

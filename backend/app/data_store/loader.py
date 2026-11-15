@@ -4,6 +4,7 @@ Reuses the ingestion pipeline's own loader and eligibility rule (local_database/
 backend and the vector index agree on which files count as canonical.
 """
 
+import hashlib
 import logging
 import re
 import sys
@@ -40,6 +41,7 @@ class DataStore:
     citations: dict[tuple[str, str], Citation] = field(default_factory=dict)    # (category, id) -> source
     documents: list[DocSummary] = field(default_factory=list)
     skipped: list[str] = field(default_factory=list)                            # draft/invalid files, for logs
+    version: str = ""  # hash of every loaded file; part of cache keys so a data update invalidates cached answers
 
     def records(self, category: str) -> list[dict[str, Any]]:
         return list(self.by_id.get(category, {}).values())
@@ -68,6 +70,7 @@ def load_store() -> DataStore:
     categories = {name: Category.model_validate(value) for name, value in
                   read_json(root / "registry/categories.json").items() if name != "_comment"}
     store = DataStore(categories=categories)
+    digest = hashlib.sha256()
     authorities = {name: str(entry.get("authority", "")) for name, entry in
                    read_json(root / "registry/sources.json").items() if isinstance(entry, dict)}
     for path in sorted((root / "data").rglob("*")):
@@ -85,6 +88,8 @@ def load_store() -> DataStore:
         if category is None:
             store.skipped.append(f"{path.name}: unregistered category")
             continue
+        digest.update(str(path.relative_to(root)).encode())
+        digest.update(path.read_bytes())
         if category.file_type == "records":
             bucket = store.by_id.setdefault(source.category, {})
             for record in source.records:
@@ -99,8 +104,9 @@ def load_store() -> DataStore:
                 citation=Citation(source_name=source.meta.source_name, url=source.meta.source_url,
                                   verified_date=source.meta.last_verified_date, title=source.meta.title,
                                   authority=authorities.get(source.meta.source_name, ""))))
+    store.version = digest.hexdigest()[:16]
     log.info("data store loaded: %s records, %s documents, %s skipped",
-             {c: len(v) for c, v in store.by_id.items()}, len(store.documents), len(store.skipped))
+             {c: len(v) for c, v in store.by_id.items()}, len(store.documents), len(store.skipped), store.version)
     return store
 
 
