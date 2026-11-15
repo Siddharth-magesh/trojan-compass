@@ -8,6 +8,12 @@ from backend.app.schemas.retrieval import AccessScope, RetrievalRequest
 from backend.app.tools.tool_registry import ToolContext, ToolOutput, tool
 
 
+# Which namespaces each agent may search, decided in code. International-student rules (F-1 work hours, CPT/OPT, SSN)
+# are indexed under career guides but are asked through student services too, so those two domains search each other.
+SEARCH_SCOPE = {"academic": ["academic"], "housing": ["housing"],
+                "career": ["career", "student_services"], "student_services": ["student_services", "career"]}
+
+
 class KnowledgeInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     query: str = Field(min_length=3, max_length=200)
@@ -15,7 +21,7 @@ class KnowledgeInput(BaseModel):
 
 @tool("knowledge_retrieval", "Search verified USC guides and policies for passages answering a question.", KnowledgeInput)
 def knowledge_retrieval(args: KnowledgeInput, ctx: ToolContext) -> ToolOutput:
-    package = get_retriever().retrieve(RetrievalRequest(query=args.query, domains=[ctx.agent],
+    package = get_retriever().retrieve(RetrievalRequest(query=args.query, domains=SEARCH_SCOPE[ctx.agent],
                                                         scope=AccessScope(student_id=ctx.student_id), top_n=3))
     usable = [i for i in package.items if not set(i.flags) & BLOCKING_FLAGS]
     if not package.sufficient or not usable:

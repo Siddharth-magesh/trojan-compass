@@ -18,6 +18,7 @@ NUMBER = re.compile(r"\d+(?:\.\d+)?")
 
 class SynthDraft(BaseModel):
     answer: str = Field(min_length=1, max_length=2500)
+    answered: bool = True  # False when the retrieved facts do not answer the question
 
 
 def _payload(message: str, verified: dict[str, Any]) -> dict[str, Any]:
@@ -53,7 +54,7 @@ def _mock(messages: list[dict[str, Any]], tools: list[dict[str, Any]] | None) ->
 def synthesize(request_id: str, message: str, verified: dict[str, Any], budget: RequestBudget) -> StructuredResponse:
     payload = _payload(message, verified)
     messages = [{"role": "system", "content": PROMPT}, {"role": "user", "content": f"Input: {json.dumps(payload)}"}]
-    answer = None
+    answer, answered = None, True
     for attempt in range(2):  # first try + one formatting retry
         try:
             draft = call_json("synthesizer", messages, SynthDraft, budget, temperature=0.3)
@@ -62,9 +63,16 @@ def synthesize(request_id: str, message: str, verified: dict[str, Any], budget: 
                 continue
             break
         if _grounded(draft.answer, payload):
-            answer = draft.answer
+            answer, answered = draft.answer, draft.answered
             break
         messages = messages + [{"role": "user", "content": "Use only numbers present in the facts and no URLs. Reply with the JSON object only."}]
+    citations, partial = verified["citations"], verified["partial_status"]
+    if not answered:
+        # Keep only citations that back a card; passages that did not answer the question must not look like support.
+        card_urls = {c["source"]["url"] for c in verified["cards"] if "source" in c} | \
+                    {i["source"]["url"] for c in verified["cards"] for i in c.get("items", [])}
+        citations = [c for c in citations if c["url"] in card_urls]
+        partial = {**partial, "overall": "partial"}
     return StructuredResponse(request_id=request_id, response_type="answer", answer=answer or code_answer(verified),
-                              cards=verified["cards"], citations=verified["citations"],
-                              freshness_notes=verified["freshness_notes"], partial_status=verified["partial_status"])
+                              cards=verified["cards"], citations=citations,
+                              freshness_notes=verified["freshness_notes"], partial_status=partial)
