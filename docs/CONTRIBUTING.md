@@ -10,6 +10,7 @@ README.md                         project overview, quick start, team
 docs/                             AGENTS, CONTRIBUTING, PROJECT_DETAILS, DATA_GUIDE, TASKS
   index.html, assets/, .nojekyll  project website (GitHub Pages from /docs): vision, interactive architecture, prototype
   demo/trojan_compass_demo.mp4    final narrated demo video (2:51, 1080p)
+  presentations/                  hackathon presentation decks
   images/system_architecture.png  system architecture diagram (v2)
 frontend/                         React + Vite chat app (the student-facing UI)
 backend/                          FastAPI + LangGraph multi-agent API

@@ -24,7 +24,9 @@
     <br />
     <a href="https://siddharth-magesh.github.io/trojan-compass/"><strong>Project website</strong></a>
     &middot;
-    <a href="docs/demo/trojan_compass_demo.mp4"><strong>Watch the demo video</strong></a>
+    <a href="https://youtu.be/WsJGEmAON8k?si=k99srle5oakn7Qww"><strong>Watch the demo video</strong></a>
+    &middot;
+    <a href="docs/presentations/Trojan_Compass_Hackathon_Deck.pptx"><strong>View the hackathon deck</strong></a>
     &middot;
     <a href="#usage">See what you can ask</a>
     &middot;
@@ -44,8 +46,8 @@
         <li><a href="#demo-video">Demo Video</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#system-architecture">System Architecture</a></li>
-        <li><a href="#whats-inside">What's Inside</a></li>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#data-and-retrieval">Data and Retrieval</a></li>
+        <li><a href="#data-and-retrieval">Data and Retrieval</a></li>
       </ul>
     </li>
     <li>
@@ -57,7 +59,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#project-structure">Project Structure</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#limitations">Limitations</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -68,15 +70,16 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Starting at USC means juggling a dozen disconnected websites: the course catalogue, the schedule of classes, the career center, health and insurance portals, international student services and more. General-purpose chatbots don't fix this. They don't know USC's current rules, they invent details, and they know nothing about the student asking. International students feel this most, because a wrong answer about work hours or insurance has real consequences.
+Starting at USC means juggling a dozen disconnected websites: the course catalogue, the schedule of classes, the career center, health and insurance portals, international student services and more. General-purpose chatbots do not reliably connect those sources to a student's situation. They can miss current USC rules, invent details, and provide answers without a traceable source.
 
-**Trojan Compass** is an AI companion for incoming USC students. You ask one question about courses, jobs, campus services or pre-semester setup. A team of specialist assistants works on it together and returns one clear answer, with every fact linked to the official USC source it came from.
+**Trojan Compass** is a research assistant for incoming USC students. A student asks one question about courses, jobs, campus services, housing or pre-semester setup. A planner routes the request to domain specialists, the specialists use typed tools over local USC data and verified guides, and a verifier checks the result before the synthesizer returns one clear answer with citations.
 
 Why it's different:
-* **Verified USC information.** Answers come from hand-collected, source-linked USC data, not the model's memory.
-* **Personal.** It knows who's asking: completed courses, program, budget and interests.
-* **Honest.** If something isn't in the verified data, it says so and points you to the right office instead of guessing.
-* **Transparent.** You watch the planner and each specialist work in real time, and every claim carries a clickable citation.
+* **Source-grounded.** Answers use hand-collected, source-linked USC data rather than treating model memory as authoritative.
+* **Personalized.** Synthetic demo profiles provide program, completed courses, budget and interests without using real student records.
+* **Multi-domain.** One request can combine academics, careers, housing and student services.
+* **Explicit about uncertainty.** Missing, stale or unavailable information is surfaced instead of being silently invented.
+* **Observable.** The UI streams planning and specialist progress, then renders citations, cards and follow-up actions.
 
 > An independent student project built for the AI USC Hackathon. Not an official USC service.
 
@@ -84,17 +87,21 @@ Why it's different:
 
 ### Demo Video
 
-[**Watch the 3-minute demo**](docs/demo/trojan_compass_demo.mp4) (MP4, 1080p, 2:51, narrated). It shows the real app answering course, research, onboarding and visa questions for synthetic students. It also covers a side-by-side with a general-purpose assistant, live security checks and measured cost. The video is built with Remotion from real recordings; see [video/](video/).
+[**Watch the demo on YouTube**](https://youtu.be/WsJGEmAON8k?si=k99srle5oakn7Qww). A local 1080p copy is also available at [docs/demo/trojan_compass_demo.mp4](docs/demo/trojan_compass_demo.mp4). The repository includes the production notes and Remotion source under [video/](video/).
+
+The accompanying [hackathon presentation deck](docs/presentations/Trojan_Compass_Hackathon_Deck.pptx) summarizes the problem, product design, architecture and demo narrative.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### How It Works
 
-1. **Understand.** A planner reads the message and decides which specialists are needed: courses, housing, jobs or student services. If the request is unclear, it asks one quick question with answer chips.
-2. **Research in parallel.** Each specialist uses precise tools (course records, class schedules, job listings, a search over official USC guides) instead of relying on the AI's memory.
-3. **Check.** Every number, card and link is checked against the source data before it's shown. Stale or unverifiable information is flagged.
-4. **Answer.** A writer turns the verified facts into a short answer with numbered citations and suggested next questions.
-5. **Guard.** Safety checks run on the way in (prompt-injection attempts are blocked) and on the way out (personal data is redacted, and only trusted links are shown).
+1. **Authenticate the demo student.** The app uses mock JWT-style authentication and exposes only the selected synthetic profile.
+2. **Understand and plan.** The supervisor classifies the request, selects domains and asks for clarification when the request is underspecified.
+3. **Research in parallel.** Academic, housing, career and student-services agents use domain-specific allow-listed tools over structured JSON and retrieved guide content.
+4. **Retrieve deterministically.** Retrieval combines local structured data with Pinecone-backed guide search, namespace-scoped by domain, with metadata filters and reranking where configured.
+5. **Verify and recover.** The verifier checks facts, calculations, source coverage and freshness. A failed agent receives one targeted retry; a partial result is marked unverified rather than hidden.
+6. **Synthesize and stream.** The synthesizer turns the verified package into a concise response while the API streams status, answer deltas, citations, cards and checklist data over SSE.
+7. **Guard the boundary.** Input checks, tool schemas, authorization, rate limits, output checks and USC URL allow-listing operate in deterministic code around the model calls.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -110,29 +117,19 @@ Every request is planned, verified and guarded before delivery. The diagram cove
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### What's Inside
+### Data and Retrieval
 
-* **211 courses and 803 class sections** across Computer Science and Electrical and Computer Engineering, for Fall 2026 and Spring 2027
-* **Jobs and research:** on-campus openings, 19 research labs and 38 career resources
-* **28 official guides:** F-1 work rules, CPT, OPT, SSN, tuition payments, health insurance, immunizations and the USCard
-* **65 registered sources:** every fact keeps its source link and the date it was last verified
-* **2 demo students:** synthetic profiles (not real people) so answers can be personalized
+The local database is the source of truth; Pinecone is a derived index for document retrieval. Structured records remain local and are queried by code. Documents and searchable records are normalized into chunks or vectors with source, domain, category, audience, academic year and verification metadata.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+The current retrieval contract is:
 
-### Built With
+* One Pinecone index named `trojan_compass`, using 384-dimensional BGE-small embeddings and cosine similarity.
+* One namespace per domain (`academic`, `housing`, `career` and `student_services`).
+* Hybrid retrieval followed by reranking, with top-k 20 reduced to 5 results for synthesis.
+* Upserts in batches of 100; student profiles are never embedded.
+* Ingestion scripts validate files, build changed chunks, update the index and remove stale vectors.
 
-* [![React][React.js]][React-url]
-* [![TypeScript][TypeScript]][TypeScript-url]
-* [![Vite][Vite]][Vite-url]
-* [![Tailwind CSS][Tailwind]][Tailwind-url]
-* [![Python][Python]][Python-url]
-* [![FastAPI][FastAPI]][FastAPI-url]
-* [![LangGraph][LangGraph]][LangGraph-url]
-* [![Pydantic][Pydantic]][Pydantic-url]
-* [![Groq][Groq]][Groq-url]
-* [![Google Gemini][Gemini]][Gemini-url]
-* [![Pinecone][Pinecone]][Pinecone-url]
+The data rules, schemas, registry and ingestion flow are documented in [docs/DATA_GUIDE.md](docs/DATA_GUIDE.md). The prototype includes course and class-section data, career and research resources, student-service guides and synthetic student profiles. Dataset counts and coverage are maintained in the registry and evaluation fixtures rather than duplicated here.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,8 +145,8 @@ Run the AI backend and the chat app on your own computer in a few minutes.
   ```sh
   npm install -g pnpm
   ```
-* API keys: [Groq](https://console.groq.com/keys) (AI model) and [Pinecone](https://app.pinecone.io) (guide search). A [Gemini](https://aistudio.google.com/apikey) key is optional, as a fallback.
-  No keys yet? Set `LLM_MODE=mock` to run the whole app with sample AI output.
+* API keys: [Groq](https://console.groq.com/keys) for the primary model and [Pinecone](https://app.pinecone.io) for guide search. A [Gemini](https://aistudio.google.com/apikey) key is optional as a fallback.
+* For an offline run, set `LLM_MODE=mock`; `LLM_MODE=cache` replays cached responses and calls live providers only on a cache miss.
 
 ### Installation
 
@@ -174,7 +171,7 @@ Run the AI backend and the chat app on your own computer in a few minutes.
    pnpm install
    pnpm dev
    ```
-5. Optional, one time: build the local files for guide search. This only reads from Pinecone, never changes it.
+5. Optional: verify the local retrieval assets and Pinecone parity.
    ```sh
    cd local_database/scripts && python push_to_pinecone.py --verify-only
    ```
@@ -184,7 +181,7 @@ Run the AI backend and the chat app on your own computer in a few minutes.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Open **http://127.0.0.1:5173**, choose a demo student (**Aarav**, MS Computer Science, or **Bianca**, BS Electrical and Computer Engineering) and start asking:
+Open **http://127.0.0.1:5173**, choose one of the synthetic demo students, and start asking:
 
 * *"Can I take CSCI 104 and EE 250 next spring? Do the lectures clash?"*
 * *"I'm on an F-1 visa. How many hours a week can I work on campus?"*
@@ -194,9 +191,9 @@ Open **http://127.0.0.1:5173**, choose a demo student (**Aarav**, MS Computer Sc
 * *"Give me a pre-semester checklist."*
 * All at once: *"I'm a new international student. Check two courses for spring, find a campus job, and give me a checklist."*
 
-You get a short answer with clickable citations, cards for courses (prerequisites met or not, weekly schedule), jobs (pay, hours and work eligibility), USC services, and an interactive checklist that remembers your ticks. When something isn't in the verified data, such as housing listings or a parking permit price, it tells you so.
+You get a short answer with citations, course schedule and prerequisite cards, job cards with pay and eligibility, USC service links, and an interactive checklist. When information is not in the verified data, the response says so rather than presenting a guess.
 
-_For the full API contract and settings, see [docs/PROJECT_DETAILS.md](docs/PROJECT_DETAILS.md)._
+The browser UI can run against the FastAPI service or its in-browser mock API. The mock path is useful for demonstrations and does not require provider credentials. For the API contract, environment settings and current architecture decisions, see [docs/PROJECT_DETAILS.md](docs/PROJECT_DETAILS.md).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -206,28 +203,20 @@ _For the full API contract and settings, see [docs/PROJECT_DETAILS.md](docs/PROJ
 ```text
 frontend/          the chat app students use (React + Vite)
 backend/           the AI system: planner, specialist agents, tools, checks and the API (FastAPI + LangGraph)
-local_database/    collected USC data, its sources and the search-index scripts
+local_database/    collected USC data, registry, schemas and ingestion scripts
 evaluation/        79 test questions and the search-quality evaluation
-docs/              architecture details, data format, contribution rules, task list, demo video (docs/demo/) and architecture diagram (docs/images/)
+docs/              architecture details, data format, contribution rules, task list, demo media and architecture diagram
+docs/presentations/ hackathon presentation decks
 video/             how the demo video is made: Remotion scenes, recording scripts, claims and production docs
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ROADMAP -->
-## Roadmap
+## Limitations
 
-- [x] Multi-agent system: planner, parallel specialists, verification and guards
-- [x] Search over official USC guides, measured on 79 test questions
-- [x] Chat app with live progress, citations, cards and conversation history
-- [x] Courses, jobs, research, USC services and international-student rules
-- [ ] Housing listings
-- [ ] Academic calendar and registration deadlines
-- [ ] More programs beyond Computer Science and Electrical and Computer Engineering
-- [ ] Side-by-side comparison with a general-purpose chatbot
-- [ ] Production-scale design (persistent storage, real sign-in)
+This is a hackathon prototype using synthetic student profiles and curated or replicated public USC information. It is not an official USC service, does not replace university advising or immigration advice, and must not be used as the sole basis for a time-sensitive academic, employment or visa decision. Housing data, live scraping, real student records and production identity management are outside the current scope.
 
-See the [task list](docs/TASKS.md) and [open issues](https://github.com/Siddharth-magesh/trojan-compass/issues) for details.
+The [docs/TASKS.md](docs/TASKS.md) file records project work separately from this overview.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
