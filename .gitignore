@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Raw scraped pages and portal captures (may contain personal data)
+local_database/raw/
+local_database/processed/
+.portal_browser_profile/
+.DS_Store

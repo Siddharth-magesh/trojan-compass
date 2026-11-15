@@ -37,7 +37,7 @@ Temperature: 0 for supervisor and agents, 0.3 for synthesizer. Always set `max_t
 | Retrieval | Hybrid (vector + BM25), then rerank | tbd |
 | Top-k retrieved | 20 | tbd |
 | Top-k after rerank | 5 | tbd |
-| Index config | `trojan_compass`, 384 dims, cosine, namespace per domain, upsert batch 100 | set |
+| Index config | `trojan-compass` (Pinecone names cannot contain `_`), 384 dims, dotproduct (dense + sparse hybrid), serverless aws us-east-1, namespace per domain, upsert batch 100 | set |
 | Metadata on every chunk | source, section, collected_date, verified_date | set |
 | Retrieval strategy comparison | Basic vs hybrid vs STAIR-inspired hierarchical | tbd |
 

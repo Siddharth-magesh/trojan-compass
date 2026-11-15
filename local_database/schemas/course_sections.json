@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Course section record",
+  "type": "object",
+  "properties": {
+    "section_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "course_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "term": {
+      "type": "string",
+      "minLength": 1
+    },
+    "instructor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "days": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "start_time": {
+      "type": "string",
+      "pattern": "^\\d{2}:\\d{2}$"
+    },
+    "end_time": {
+      "type": "string",
+      "pattern": "^\\d{2}:\\d{2}$"
+    },
+    "location": {
+      "type": "string",
+      "minLength": 1
+    },
+    "modality": {
+      "enum": [
+        "in_person",
+        "online",
+        "hybrid"
+      ]
+    }
+  },
+  "required": [
+    "section_id",
+    "course_id",
+    "term",
+    "instructor",
+    "days",
+    "start_time",
+    "end_time",
+    "location",
+    "modality"
+  ]
+}
