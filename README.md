@@ -22,6 +22,8 @@
     <a href="docs/PROJECT_DETAILS.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
+    <a href="https://siddharth-magesh.github.io/trojan-compass/"><strong>Project website</strong></a>
+    &middot;
     <a href="docs/demo/trojan_compass_demo.mp4"><strong>Watch the demo video</strong></a>
     &middot;
     <a href="#usage">See what you can ask</a>

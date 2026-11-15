@@ -1,0 +1,373 @@
+<!doctype html>
+<!-- Trojan Compass project site (GitHub Pages, served from /docs): product vision, interactive architecture and what the prototype proves. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trojan Compass · One university. One intelligent companion.</title>
+  <meta name="description" content="Trojan Compass is an AI companion for USC students: one conversation for courses, research, careers, onboarding and campus services, with verified sources, multi-agent orchestration and security built in.">
+  <meta property="og:title" content="Trojan Compass">
+  <meta property="og:description" content="One university. One intelligent companion. Verified, cited answers for every USC student.">
+  <meta property="og:image" content="assets/video_poster.jpg">
+  <meta name="theme-color" content="#0f0d0c">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/logo.svg" alt="">Trojan Compass</a>
+    <div class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#vision">Vision</a>
+      <a href="#journey">Journey</a>
+      <a href="#demo">Demo</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#deep-dive">Deep dive</a>
+      <a href="#prototype">Prototype</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#team">Team</a>
+    </div>
+    <a class="btn small" href="https://github.com/Siddharth-magesh/trojan-compass">GitHub</a>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">AI companion for USC students</div>
+      <h1>One university.<br><em>One intelligent companion.</em></h1>
+      <p class="lead">Trojan Compass turns a dozen disconnected USC systems into one conversation. Students ask about courses, research, careers, visas, payments or campus life and get one clear answer: personal to them, checked against official USC sources, and cited down to the page it came from.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#demo">▶ Watch the 3-minute demo</a>
+        <a class="btn" href="#architecture">Explore the architecture</a>
+      </div>
+      <p class="disclaimer">An independent student project built for the AI USC Hackathon. Not an official USC service.</p>
+    </div>
+    <div class="chat-mock" aria-label="Illustrative example conversation">
+      <div class="bubble me">I'm starting my MS in Computer Science. Find AI courses, show prerequisites, and check which sections fit together.</div>
+      <div class="steps-mini"><span class="ok">Planner</span><span class="ok">Academic agent</span><span class="ok">Verified</span><span class="ok">Guarded</span></div>
+      <div class="bubble bot"><strong>Three AI courses fit your Spring 2027 plan</strong> with no enforced prerequisites<span class="cite">1</span>. The lecture sections you picked have <strong>no time conflicts</strong><span class="cite">2</span>.</div>
+      <div class="mini-card"><b>CSCI 567 · Machine Learning</b><span>4 units · Spring, Fall</span></div>
+      <div class="mini-card"><b>CSCI 559 · Machine Learning I</b><span>no enforced prerequisites</span></div>
+      <div class="mini-card"><b>Sources</b><span>Schedule of Classes · verified Nov 14, 2026</span></div>
+      <p class="mock-note">Illustration based on the prototype's real answer</p>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="wrap">
+    <div class="eyebrow">The problem</div>
+    <h2>The answers exist. They're just scattered.</h2>
+    <p class="lead">A new USC student plans courses in one system, registers in another, pays in a third and finds jobs, health services, events and visa rules somewhere else again. Each portal has its own login, layout and vocabulary. General-purpose chatbots don't solve it: they don't know this term's sections or a lab's current recruitment status, and they know nothing about the student asking. International students feel it most, because a wrong answer about work hours, insurance or registration has real consequences.</p>
+    <div class="stats">
+      <div class="stat"><b>12</b><span>quick links on USC's own "My Favorite Student Resources" page, each opening a different site</span></div>
+      <div class="stat"><b>65</b><span>official USC sources we registered and verified for the prototype alone</span></div>
+      <div class="stat"><b>4+</b><span>domains a first-semester question can span: academics, careers, services, housing</span></div>
+      <div class="stat"><b>1</b><span>conversation is all it should take</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+  <div class="wrap">
+    <div class="eyebrow">The product vision</div>
+    <h2>What Trojan Compass is built to become</h2>
+    <p class="lead">One assistant that knows the university, knows the student and shows its work. Each capability is marked with how far the hackathon prototype has taken it.</p>
+    <div class="legend"><span class="chip live">In the prototype</span><span class="chip partial">Partly built</span><span class="chip planned">Planned</span></div>
+    <div class="grid g3" style="margin-top:28px">
+      <div class="card"><span class="chip live">Prototype</span><div class="icon">📚</div><h3>Academic planning</h3><p>Find courses by interest, see prerequisites and D-clearance, compare sections and build a conflict-free week. Later: degree audits against program requirements and waitlist awareness.</p></div>
+      <div class="card"><span class="chip live">Prototype</span><div class="icon">🔬</div><h3>Research & careers</h3><p>Labs matched to your interests with recruitment status exactly as published, how to apply, career resources and opportunities. Later: application tracking and reviewed faculty-outreach drafts.</p></div>
+      <div class="card"><span class="chip live">Prototype</span><div class="icon">🛂</div><h3>International onboarding</h3><p>A pre-semester checklist built from official guides (payments, insurance, registration, SSN pathway) with saved progress, plus clear answers on F-1 work rules, CPT and OPT.</p></div>
+      <div class="card"><span class="chip partial">Partly built</span><div class="icon">🏛️</div><h3>Campus services</h3><p>USCe.pay, MySHR, USCard, health insurance and more, explained in one place with links to the right portal. Later: every service in the student resource directory.</p></div>
+      <div class="card"><span class="chip partial">Partly built</span><div class="icon">👤</div><h3>Personal by default</h3><p>Answers shaped by program, level, completed courses and interests, with a "what Trojan Compass knows about you" view. Later: USC SSO, so the profile is real and editable by the student.</p></div>
+      <div class="card"><span class="chip planned">Planned</span><div class="icon">🏠</div><h3>Housing</h3><p>On- and off-campus options filtered by budget, commute and move-in date, compared side by side. The agent and cards exist; verified listings are the next data collection.</p></div>
+      <div class="card"><span class="chip planned">Planned</span><div class="icon">⏰</div><h3>Proactive deadlines</h3><p>Registration windows, payment due dates and visa milestones turned into personal reminders before they're missed, with nothing to search for.</p></div>
+      <div class="card"><span class="chip planned">Planned</span><div class="icon">🌐</div><h3>Every language, every device</h3><p>Chinese and Hindi first, then more, plus voice input and a mobile app, so families and students can use their strongest language.</p></div>
+      <div class="card"><span class="chip live">Prototype</span><div class="icon">✅</div><h3>Answers you can trust</h3><p>Every fact links to the official page it came from, with its verification date. Unknowns are shown as unknown and point to the right office, never filled with a guess.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="wrap">
+    <div class="eyebrow">A student's journey</div>
+    <h2>From admission letter to first internship</h2>
+    <p class="lead">Trojan Compass is meant to stay with a student through every stage, not just answer one-off questions.</p>
+    <div class="journey">
+      <div class="stage"><div class="dot">1</div><h3>Admitted</h3><p>Understand what to do first: I-20, payments, insurance waiver, immunizations.</p><q>What should I complete before the semester begins?</q></div>
+      <div class="stage"><div class="dot">2</div><h3>Planning</h3><p>Pick courses that match goals and prerequisites, then build a week without conflicts.</p><q>Which AI sections fit together next spring?</q></div>
+      <div class="stage"><div class="dot">3</div><h3>Arriving</h3><p>Get the USCard, set up health services, learn the SSN pathway and on-campus work rules.</p><q>How many hours can I work on campus on an F-1?</q></div>
+      <div class="stage"><div class="dot">4</div><h3>Settling in</h3><p>Find labs, clubs, events and support services that fit interests and schedule.</p><q>Which research labs work on NLP and take master's students?</q></div>
+      <div class="stage"><div class="dot">5</div><h3>Launching</h3><p>Career resources, internships, CPT and OPT timelines, all checked against current rules.</p><q>When can I apply for CPT for a summer internship?</q></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section id="demo">
+  <div class="wrap center">
+    <div class="eyebrow">Demo</div>
+    <h2>See the prototype in three minutes</h2>
+    <p class="lead">Real recordings of the working app answering exact prompts as synthetic students, a side-by-side with a general-purpose assistant, live security checks and measured cost. Every number on screen is traced to evidence.</p>
+    <div class="video-frame">
+      <video id="demo-video" controls preload="metadata" poster="assets/video_poster.jpg" playsinline>
+        <source src="demo/trojan_compass_demo.mp4" type="video/mp4">
+        Your browser can't play this video. <a href="demo/trojan_compass_demo.mp4">Download it</a>.
+      </video>
+    </div>
+    <div class="chapters" aria-label="Video chapters">
+      <button data-seek="0">Hook</button><button data-seek="9.6">Fragmented USC</button><button data-seek="19.2">Reveal</button>
+      <button data-seek="26.8">Academics</button><button data-seek="50.4">Research & careers</button><button data-seek="72">Onboarding</button>
+      <button data-seek="89.6">Comparison</button><button data-seek="107.2">Security</button><button data-seek="124.8">Cost</button>
+      <button data-seek="142.4">Mobile</button><button data-seek="152">Vision</button>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section id="architecture">
+  <div class="wrap">
+    <div class="eyebrow">System architecture</div>
+    <h2>Every request is planned, verified and guarded</h2>
+    <p class="lead">The complete target architecture, interactive. Switch between the request flow, the knowledge-retrieval service, ingestion and storage, and the cross-cutting security and operations layer. Click any box for what it does, how the prototype implements it today and where it goes in production. Or press <b>Trace a request</b> to follow one question end to end.</p>
+    <div class="legend">
+      <span><span class="swatch" style="border-color:var(--llm);background:var(--llm-bg)"></span>LLM call</span>
+      <span><span class="swatch" style="border-color:var(--guard);background:var(--guard-bg)"></span>Security guard</span>
+      <span><span class="swatch" style="border-color:var(--decision);background:var(--decision-bg)"></span>Decision</span>
+      <span><span class="swatch" style="border-color:var(--code);background:var(--code-bg)"></span>Deterministic code</span>
+      <span><span class="swatch" style="border-color:var(--store);background:var(--store-bg)"></span>Data store</span>
+    </div>
+
+    <div class="arch-tabs" id="arch-tabs" role="tablist"></div>
+    <div class="arch-toolbar">
+      <input id="arch-search" type="search" placeholder="Search components (e.g. cache, JWT, rerank, BM25)…" aria-label="Search components">
+      <div class="filter" id="arch-filter">
+        <button data-f="all" class="on">All</button><button data-f="live">In prototype</button><button data-f="partial">Partly built</button><button data-f="planned">Planned</button>
+      </div>
+    </div>
+    <div class="arch-intro" id="arch-intro"></div>
+    <div class="arch-body">
+      <div>
+        <div class="arch-canvas" id="arch-canvas"></div>
+        <div class="trace-bar" id="trace-bar">
+          <button class="btn small primary" id="trace-play">▶ Trace a request</button>
+          <button class="btn small" id="trace-prev" aria-label="Previous step">←</button>
+          <button class="btn small" id="trace-next" aria-label="Next step">→</button>
+          <button class="btn small" id="trace-reset">Reset</button>
+          <div class="cap" id="trace-cap"></div>
+          <div class="trace-progress" id="trace-progress"><div></div></div>
+        </div>
+      </div>
+      <aside class="panel" id="arch-panel" aria-live="polite"></aside>
+    </div>
+    <div class="extra" id="arch-extra" hidden></div>
+    <p style="margin-top:22px"><a href="images/system_architecture.png">Open the full static diagram (System Architecture v2) →</a></p>
+  </div>
+</section>
+
+<!-- DEEP DIVE -->
+<section id="deep-dive">
+  <div class="wrap">
+    <div class="eyebrow">Technical deep dive</div>
+    <h2>How it works under the hood</h2>
+    <p class="lead">The design principles: models plan and write, while code decides what is true and who can see it. Every layer can be tested, measured and replaced on its own.</p>
+    <div class="grid g2 deep" style="margin-top:32px">
+      <div class="card">
+        <span class="tag">LangGraph · supervisor + parallel agents</span>
+        <h3>Multi-agent orchestration</h3>
+        <p>A supervisor turns each message into a JSON plan that is validated in code, then fans out to domain agents in parallel. Results are normalized, merged and verified before a writer composes the answer.</p>
+        <div class="flowline"><span>Input guard</span><i>→</i><span>Planner</span><i>→</i><span>Agents ∥</span><i>→</i><span>Aggregate</span><i>→</i><span>Verify</span><i>→</i><span>Synthesize</span><i>→</i><span>Output guard</span></div>
+        <ul>
+          <li>Clarification exit: one short question with answer chips instead of a guess.</li>
+          <li>Agents are specs (prompt, allowed tools, categories): new domains plug in without changing the graph.</li>
+          <li>Per-request LLM call caps, at most 3 tool calls per agent, timeouts and a safe fallback path.</li>
+          <li>Progress streams to the UI as Server-Sent Events, so students watch each step.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag">Typed tools · allow-lists · identity from JWT</span>
+        <h3>Controlled tools, deterministic verification</h3>
+        <p>Agents never touch data directly. Every call goes through a registry that checks the agent's allow-list and validates arguments with Pydantic. The student's identity is injected by code, never chosen by the model.</p>
+        <ul>
+          <li>Structured tools: course search with section and conflict checks, prerequisite status, labs, opportunities, services, checklists.</li>
+          <li>The verifier re-reads every card field and number from the source records. Stale or unverifiable facts are flagged or dropped.</li>
+          <li>Unknowns travel to the writer explicitly, so the answer says "not listed" instead of inventing.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag">Pinecone · BGE-small ONNX · BM25 · zero LLM calls</span>
+        <h3>Hybrid, permission-aware retrieval</h3>
+        <p>Guides and policies are searched by a deterministic service that returns an evidence package and decides whether the evidence is sufficient. It makes no LLM calls.</p>
+        <div class="flowline"><span>Parse</span><i>→</i><span>Filters</span><i>→</i><span>Route</span><i>→</i><span>Dense + sparse</span><i>→</i><span>Dedupe</span><i>→</i><span>Rerank</span><i>→</i><span>Validate</span><i>→</i><span>Package</span></div>
+        <ul>
+          <li>Dense BGE-small (384-dim) embeddings plus BM25 sparse vectors. Alpha 0.75 for meaning, 0.25 for code- and acronym-heavy queries (CPT, I-20).</li>
+          <li>Filters are built only in code: public and verified data, the right academic year, the BM25 version hash.</li>
+          <li>Heuristic rerank favours official, fresh and year-matched sources; context expansion adds neighbouring chunks.</li>
+          <li>A calibrated sufficiency threshold abstains instead of answering from weak evidence.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag">Groq · gpt-oss-120b · Gemini fallback · cache</span>
+        <h3>Centralized model gateway</h3>
+        <p>Every model call goes through one gateway: provider choice, timeouts, call caps, a bounded retry on rate limits, JSON validation and usage accounting.</p>
+        <ul>
+          <li>OpenAI-compatible providers: Groq <code>openai/gpt-oss-120b</code> primary, Google Gemini fallback.</li>
+          <li>Mock, cache and live modes. The cache key covers model, messages and tools, so changed facts mean a fresh answer.</li>
+          <li>Vision: sensitivity routing, so student data only goes to approved, contracted models; per-user quotas; model tiering by task.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag">Source-linked · year-versioned · schema-validated</span>
+        <h3>Data that keeps its provenance</h3>
+        <p>USC information is collected from official sources and stored with its source, academic year and verification date. Only verified, public data is ever used.</p>
+        <ul>
+          <li>JSON records for exact facts (courses, sections, labs, services) and source-linked Markdown guides for rules and procedures.</li>
+          <li>A registry of categories, sources and source checks; JSON Schemas for metadata and every record type.</li>
+          <li>Chunks, outlines and a records index are built deterministically and parity-checked against the vectors in Pinecone.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag">Guards · ownership · redaction · logs without content</span>
+        <h3>Security by design</h3>
+        <p>Defense in depth from the edge to the answer, starting with the controls that matter most for student data.</p>
+        <ul>
+          <li>The input guard blocks prompt injection before any model call; blocked requests make zero LLM calls.</li>
+          <li>Session ownership: one student asking for another's session gets 404, which doesn't reveal that it exists.</li>
+          <li>The output guard redacts SSN-like numbers and personal emails, removes non-allow-listed links and keeps official USC links.</li>
+          <li>One JSON log line per request (route, timings, LLM calls, guard events), never the message text.</li>
+          <li>Synthetic students only in the prototype; keys only in an untracked environment file.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROTOTYPE -->
+<section id="prototype">
+  <div class="wrap">
+    <div class="eyebrow">What we built during the hackathon</div>
+    <h2>A working prototype, measured</h2>
+    <p class="lead">The vision above is the destination. This is what already runs end to end today, with numbers from real runs on 2026-11-14 and 2026-11-15.</p>
+    <div class="metrics" style="margin-top:28px">
+      <div class="metric"><b>211</b><span>courses and <b style="display:inline;font-size:1em;font-family:var(--sans)">803</b> class sections (CS and ECE, Fall 2026 and Spring 2027)</span></div>
+      <div class="metric"><b>19 · 38</b><span>research labs · career resources, with recruitment status as published</span></div>
+      <div class="metric"><b>28</b><span>official guides: F-1 work, CPT, OPT, SSN, payments, insurance, immunizations, USCard</span></div>
+      <div class="metric"><b>1,249</b><span>vectors in Pinecone across academic, career and student-services namespaces</span></div>
+      <div class="metric"><b>0.965</b><span>retrieval recall@5 on 79 golden questions (MRR 0.915)</span></div>
+      <div class="metric"><b>100%</b><span>of negative (out-of-scope) questions correctly abstained</span></div>
+      <div class="metric"><b>122 ms</b><span>median hybrid search latency, warm (p95 204 ms)</span></div>
+      <div class="metric"><b>0</b><span>LLM calls for a blocked injection or a cached answer</span></div>
+    </div>
+
+    <div class="grid g2" style="margin-top:28px">
+      <div class="card">
+        <h3>Measured cost per question</h3>
+        <p>Same question ("What is USCe.pay used for?"), same model, real provider usage. Priced at $0.15 per 1M input and $0.60 per 1M output tokens (Groq, checked 2026-11-15).</p>
+        <div class="bars">
+          <div class="bar"><span>Trojan Compass, cache miss</span><div class="track"><div class="fill" style="width:76%;background:var(--cardinal)">$0.000829 · 3 calls</div></div></div>
+          <div class="bar"><span>Trojan Compass, cache hit</span><div class="track"><div class="fill" style="width:2%;background:var(--live);color:var(--text);padding-left:18px">$0 · 0 calls</div></div></div>
+          <div class="bar"><span>Same model + documents pasted</span><div class="track"><div class="fill" style="width:49%;background:#2c5d8a">$0.000539</div></div></div>
+          <div class="bar"><span>Same model, no USC data (ungrounded)</span><div class="track"><div class="fill" style="width:100%;background:#6b625b">$0.001092</div></div></div>
+        </div>
+        <p style="margin-top:14px;font-size:0.88rem">Less than a tenth of a cent for a new question and nothing for a repeat one. The ungrounded answer cost more because the model wrote a long, generic reply.</p>
+      </div>
+      <div class="card">
+        <h3>Shipped in the prototype</h3>
+        <ul class="checklist">
+          <li><b>Multi-agent graph:</b> planner, academic, career, student-services and housing agents, verification, synthesis, guards.</li>
+          <li><b>Chat app:</b> live agent timeline, Markdown answers with numbered citations, course, lab, service and checklist cards, schedule grid, history and a phone layout.</li>
+          <li><b>Retrieval service:</b> hybrid search with routing, year filters, reranking, sufficiency decisions, timeouts, circuit breakers and a scoped cache.</li>
+          <li><b>Evaluation:</b> 79 golden questions with recall@5, MRR and a calibrated abstain threshold.</li>
+          <li><b>Security:</b> JWT auth, rate limits, input and output guards, session ownership, content-free logs.</li>
+          <li><b>Demo video:</b> built in Remotion from real recordings, with every on-screen claim checked against evidence by script.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="eyebrow">Roadmap</div>
+    <h2>From hackathon to campus</h2>
+    <p class="lead">Security and scope grow together: synthetic data now, a guarded pilot next, a hardened service after that.</p>
+    <div class="roadmap" style="margin-top:28px">
+      <div class="card now"><span class="chip live">Now</span><h3>Hackathon prototype</h3><ul>
+        <li>Courses, sections, research labs, career resources and international-student guides</li>
+        <li>Multi-agent orchestration with verification and guards</li>
+        <li>Hybrid retrieval, evaluated on golden questions</li>
+        <li>Synthetic students, DEMO label, measured cost</li></ul></div>
+      <div class="card next"><span class="chip partial">Next · pilot</span><h3>One-semester pilot</h3><ul>
+        <li>USC SSO sign-in and real, student-editable profiles</li>
+        <li>Housing listings and the academic calendar</li>
+        <li>Proactive deadline reminders</li>
+        <li>Chinese and Hindi, plus voice input</li>
+        <li>Penetration test and FERPA review, small student cohort</li></ul></div>
+      <div class="card later"><span class="chip planned">Later · production</span><h3>Campus-wide service</h3><ul>
+        <li>All schools, terms and student services</li>
+        <li>Authorized integrations (registration, billing) behind human approval</li>
+        <li>WAF, MFA, SIEM, SOC 2 controls and an incident plan</li>
+        <li>Postgres with row-level security, autoscaling, per-student caching</li>
+        <li>Continuous evaluation of groundedness in CI</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="stack">
+  <div class="wrap">
+    <div class="eyebrow">Tech stack</div>
+    <h2>Built with</h2>
+    <div class="stack" style="margin-top:24px">
+      <div class="card"><h3>Frontend</h3><div class="pills"><span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span><span>Radix UI</span><span>Framer Motion</span><span>react-markdown</span><span>Server-Sent Events</span></div></div>
+      <div class="card"><h3>Backend</h3><div class="pills"><span>Python</span><span>FastAPI</span><span>Uvicorn</span><span>Pydantic</span><span>PyJWT</span></div></div>
+      <div class="card"><h3>AI orchestration</h3><div class="pills"><span>LangGraph</span><span>Supervisor + domain agents</span><span>Typed tool registry</span><span>Deterministic verifier</span></div></div>
+      <div class="card"><h3>Models</h3><div class="pills"><span>Groq · gpt-oss-120b</span><span>Google Gemini (fallback)</span><span>OpenAI-compatible SDK</span><span>LLM response cache</span></div></div>
+      <div class="card"><h3>Retrieval</h3><div class="pills"><span>Pinecone</span><span>BGE-small embeddings</span><span>ONNX Runtime</span><span>BM25 sparse</span><span>Hybrid search</span></div></div>
+      <div class="card"><h3>Data & quality</h3><div class="pills"><span>Verified USC JSON + Markdown</span><span>JSON Schema</span><span>Source registry</span><span>79 golden queries</span></div></div>
+      <div class="card"><h3>Demo & tooling</h3><div class="pills"><span>Remotion</span><span>Playwright</span><span>FFmpeg</span><span>GitHub Pages</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="wrap center">
+    <div class="eyebrow">Team</div>
+    <h2>Built by Trojans, for Trojans</h2>
+    <div class="team" style="margin-top:32px">
+      <a class="member" href="https://github.com/Siddharth-magesh"><div class="av">SM</div><b>Siddharth Magesh</b><span>@Siddharth-magesh</span></a>
+      <a class="member" href="https://github.com/Harsh-31"><div class="av">HS</div><b>Harsh Sharma</b><span>@Harsh-31</span></a>
+      <a class="member" href="https://github.com/hamsa224"><div class="av">HS</div><b>Hamsashree Srivenkateswaran</b><span>@hamsa224</span></a>
+      <a class="member" href="https://github.com/pkathire-ai"><div class="av">PK</div><b>pkathire-ai</b><span>@pkathire-ai</span></a>
+    </div>
+    <div class="hero-cta" style="justify-content:center;margin-top:40px">
+      <a class="btn primary" href="https://github.com/Siddharth-magesh/trojan-compass">View the code on GitHub</a>
+      <a class="btn" href="https://github.com/Siddharth-magesh/trojan-compass/blob/main/docs/PROJECT_DETAILS.md">Read the project details</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Trojan Compass team · Apache License 2.0</span>
+    <span>An independent student project. Not an official USC service. Course, policy and service information belongs to the University of Southern California.</span>
+  </div>
+</footer>
+
+<script src="assets/arch_data.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
