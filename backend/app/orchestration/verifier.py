@@ -10,6 +10,7 @@ from backend.app.data_store.loader import DataStore
 CHECKS = {"course": ("courses", "course_id", ["units"]),
           "housing": ("listings", "listing_id", ["monthly_rent_usd", "bedrooms"]),
           "job": ("opportunities", "job_id", ["hourly_pay_usd", "hours_per_week"]),
+          "lab": ("research_labs", "lab_id", []),
           "service": ("service_directory", "service_id", [])}
 
 

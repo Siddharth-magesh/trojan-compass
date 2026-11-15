@@ -1,0 +1,120 @@
+{
+ "source": "verified records in local_database/data",
+ "platforms": [
+  {
+   "name": "Schedule of Classes",
+   "kind": "Academics",
+   "url": "https://classes.usc.edu/"
+  },
+  {
+   "name": "USC Catalogue",
+   "kind": "Academics",
+   "url": "https://catalogue.usc.edu/"
+  },
+  {
+   "name": "USCe.pay",
+   "kind": "Student services",
+   "url": "https://sfs.usc.edu/epay/"
+  },
+  {
+   "name": "USCe.pay guest",
+   "kind": "Student services",
+   "url": "https://commerce.cashnet.com/uscpay?LT=P"
+  },
+  {
+   "name": "Flywire International Payment Plan",
+   "kind": "Student services",
+   "url": "https://sfs.usc.edu/payment/plan/"
+  },
+  {
+   "name": "MySHR",
+   "kind": "Student services",
+   "url": "https://usc.edu/myshr"
+  },
+  {
+   "name": "Aetna Student Health",
+   "kind": "Student services",
+   "url": "https://www.aetnastudenthealth.com/en/school/474947/members/get-id-card.html"
+  },
+  {
+   "name": "Experience USC",
+   "kind": "Student services",
+   "url": "https://experience.usc.edu/s/"
+  },
+  {
+   "name": "USCard eAccounts",
+   "kind": "Student services",
+   "url": "https://mycard.usc.edu/login/"
+  },
+  {
+   "name": "IERF credential evaluation",
+   "kind": "Student services",
+   "url": "https://www.ierf.org/"
+  },
+  {
+   "name": "Amazon student engineering programs",
+   "kind": "Job platform",
+   "url": "https://www.amazon.jobs/teams/internships-for-students"
+  },
+  {
+   "name": "Glassdoor",
+   "kind": "Job platform",
+   "url": "https://www.glassdoor.com/Job/index.htm"
+  },
+  {
+   "name": "Indeed",
+   "kind": "Job platform",
+   "url": "https://www.indeed.com/"
+  },
+  {
+   "name": "LinkedIn Jobs",
+   "kind": "Job platform",
+   "url": "https://www.linkedin.com/jobs/"
+  },
+  {
+   "name": "RippleMatch",
+   "kind": "Job platform",
+   "url": "https://ripplematch.com/"
+  },
+  {
+   "name": "Simplify",
+   "kind": "Job platform",
+   "url": "https://simplify.jobs/"
+  },
+  {
+   "name": "Big Interview at USC",
+   "kind": "Career service",
+   "url": "https://careers.usc.edu/resources/big-interview/"
+  },
+  {
+   "name": "Trojan Ready Series",
+   "kind": "Career service",
+   "url": "https://careers.usc.edu/trojan-ready-series/"
+  },
+  {
+   "name": "Quinncia via Viterbi",
+   "kind": "Career service",
+   "url": "https://viterbicareers.usc.edu/students/advising/"
+  },
+  {
+   "name": "Viterbi Job and Internship Toolkit",
+   "kind": "Career service",
+   "url": "https://viterbicareers.usc.edu/toolkit/"
+  },
+  {
+   "name": "Viterbi Career Connections advising",
+   "kind": "Career service",
+   "url": "https://viterbicareers.usc.edu/students/advising/"
+  },
+  {
+   "name": "WayUp",
+   "kind": "Job platform",
+   "url": "https://www.wayup.com/"
+  },
+  {
+   "name": "Wellfound",
+   "kind": "Job platform",
+   "url": "https://wellfound.com/"
+  }
+ ]
+}

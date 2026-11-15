@@ -33,8 +33,8 @@ export function CardGrid({ children }: { children: ReactNode }) {
   const count = Children.count(children);
   if (count <= 1) return <div>{children}</div>;
   return (
-    <div className="-mx-1 flex snap-x snap-mandatory gap-3 overflow-x-auto px-1 pb-2 scrollbar-thin md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0">
-      {Children.map(children, (child) => <div className="w-[84%] shrink-0 snap-start md:w-auto">{child}</div>)}
+    <div className="-mx-1 flex snap-x snap-mandatory gap-3 overflow-x-auto px-1 pb-2 scrollbar-thin md:mx-0 md:grid md:grid-cols-[repeat(2,minmax(0,1fr))] md:overflow-visible md:px-0 md:pb-0">
+      {Children.map(children, (child) => <div className="w-[84%] min-w-0 shrink-0 snap-start md:w-auto">{child}</div>)}
     </div>
   );
 }

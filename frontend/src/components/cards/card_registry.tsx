@@ -3,7 +3,8 @@
 import type { ReactNode } from 'react';
 import type { card } from '@/lib/api_types';
 import type { card_ctx } from '@/components/cards/card_context';
-import { is_checklist, is_course, is_housing, is_job, is_service } from '@/components/cards/card_guards';
+import { is_checklist, is_course, is_housing, is_job, is_lab, is_service } from '@/components/cards/card_guards';
+import { LabCard } from '@/components/cards/lab_card';
 import { CardGrid } from '@/components/cards/card_parts';
 import { ChecklistCard } from '@/components/cards/checklist_card';
 import { CourseGroup } from '@/components/cards/course_group';
@@ -35,6 +36,7 @@ export const card_registry: Record<string, group_renderer> = {
   course: entry(is_course, (cards, ctx) => <CourseGroup cards={cards} ctx={ctx} />),
   housing: entry(is_housing, (cards, ctx) => <HousingGroup cards={cards} ctx={ctx} />),
   job: entry(is_job, (cards, ctx) => <CardGrid>{cards.map((c) => <JobCard key={c.job_id} card={c} ctx={ctx} />)}</CardGrid>),
+  lab: entry(is_lab, (cards, ctx) => <CardGrid>{cards.map((c) => <LabCard key={c.lab_id} card={c} ctx={ctx} />)}</CardGrid>),
   service: entry(is_service, (cards) => <CardGrid>{cards.map((c) => <ServiceCard key={c.service_id} card={c} />)}</CardGrid>),
   checklist: entry(is_checklist, (cards) => <div className="grid gap-3">{cards.map((c) => <ChecklistCard key={c.title} card={c} />)}</div>),
 };

@@ -22,6 +22,8 @@
     <a href="docs/PROJECT_DETAILS.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
+    <a href="docs/demo/trojan_compass_demo.mp4"><strong>Watch the demo video</strong></a>
+    &middot;
     <a href="#usage">See what you can ask</a>
     &middot;
     <a href="https://github.com/Siddharth-magesh/trojan-compass/issues/new?labels=bug">Report Bug</a>
@@ -37,7 +39,9 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#demo-video">Demo Video</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#system-architecture">System Architecture</a></li>
         <li><a href="#whats-inside">What's Inside</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -76,6 +80,12 @@ Why it's different:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Demo Video
+
+[**Watch the 3-minute demo**](docs/demo/trojan_compass_demo.mp4) (MP4, 1080p, 2:51, narrated). It shows the real app answering course, research, onboarding and visa questions for synthetic students. It also covers a side-by-side with a general-purpose assistant, live security checks and measured cost. The video is built with Remotion from real recordings; see [video/](video/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ### How It Works
 
 1. **Understand.** A planner reads the message and decides which specialists are needed: courses, housing, jobs or student services. If the request is unclear, it asks one quick question with answer chips.
@@ -83,6 +93,18 @@ Why it's different:
 3. **Check.** Every number, card and link is checked against the source data before it's shown. Stale or unverifiable information is flagged.
 4. **Answer.** A writer turns the verified facts into a short answer with numbered citations and suggested next questions.
 5. **Guard.** Safety checks run on the way in (prompt-injection attempts are blocked) and on the way out (personal data is redacted, and only trusted links are shown).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### System Architecture
+
+Every request is planned, verified and guarded before delivery. The diagram covers:
+- the request flow (user interface, LangGraph orchestration, controlled tools and the LLM gateway);
+- the knowledge-retrieval service;
+- ingestion and storage;
+- cross-cutting security, scalability and operations.
+
+[![Trojan Compass system architecture](docs/images/system_architecture.png)](docs/images/system_architecture.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -184,7 +206,8 @@ frontend/          the chat app students use (React + Vite)
 backend/           the AI system: planner, specialist agents, tools, checks and the API (FastAPI + LangGraph)
 local_database/    collected USC data, its sources and the search-index scripts
 evaluation/        79 test questions and the search-quality evaluation
-docs/              architecture details, data format, contribution rules and the task list
+docs/              architecture details, data format, contribution rules, task list, demo video (docs/demo/) and architecture diagram (docs/images/)
+video/             how the demo video is made: Remotion scenes, recording scripts, claims and production docs
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

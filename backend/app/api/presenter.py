@@ -65,6 +65,24 @@ def _housing(card: dict[str, Any], ids: dict[str, int]) -> dict[str, Any]:
     })
 
 
+def _readable(code: str) -> str | None:
+    """Record status codes (interest_only, not_stated) as display text; not_listed stays absent."""
+    return None if code in ("not_listed", "") else code.replace("_", " ").capitalize()
+
+
+def _lab(card: dict[str, Any], ids: dict[str, int]) -> dict[str, Any]:
+    return _clean({
+        "type": "lab", "lab_id": card["lab_id"], "title": card["title"],
+        "principal_investigator": None if card["principal_investigator"] == "not_listed" else card["principal_investigator"],
+        "research_areas": [a.replace("_", " ") for a in card["research_areas"]],
+        "recruitment_status": _readable(card["recruitment_status"]), "invited_levels": card["invited_levels"],
+        "compensation_status": _readable(card["compensation_status"]),
+        "application_instructions": None if card["application_instructions"] == "not_listed" else card["application_instructions"],
+        "official_url": card["official_url"] if card["official_url"].startswith("http") else None,
+        "citation_ids": [ids[card["source"]["url"]]] if card["source"]["url"] in ids else [],
+    })
+
+
 def _service(card: dict[str, Any]) -> dict[str, Any]:
     return _clean({"type": "service", "service_id": card["service_id"], "name": card["name"], "purpose": card["purpose"],
                    "official_url": card["official_url"] if card["official_url"].startswith("http") else None,
@@ -95,6 +113,7 @@ def final_payload(response: StructuredResponse) -> dict[str, Any]:
     for card in data["cards"]:
         kind = card["type"]
         cards.append(_course(card, ids) if kind == "course" else _job(card, ids) if kind == "job" else
+                     _lab(card, ids) if kind == "lab" else
                      _housing(card, ids) if kind == "housing" else _service(card) if kind == "service" else _checklist(card))
     missing = [f"{AGENT_NAMES.get(name, name)}: {status['reason']}" for name, status in data["partial_status"]["agents"].items()
                if status["status"] != "ok" and status["reason"]]

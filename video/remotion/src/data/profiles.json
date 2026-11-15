@@ -1,0 +1,48 @@
+{
+ "note": "synthetic profiles, not real students",
+ "profiles": [
+  {
+   "student_id": "synthetic_student_001",
+   "name": "Aarav Demo",
+   "program": "MS Computer Science",
+   "level": "graduate",
+   "country": "India",
+   "interests": [
+    "machine learning",
+    "algorithms"
+   ],
+   "completed_courses": [
+    "CSCI 570"
+   ],
+   "housing_budget_usd": 1200,
+   "job_interests": [
+    "software",
+    "research",
+    "machine learning"
+   ]
+  },
+  {
+   "student_id": "synthetic_student_002",
+   "name": "Bianca Demo",
+   "program": "BS Electrical and Computer Engineering",
+   "level": "undergraduate",
+   "country": "Brazil",
+   "interests": [
+    "embedded systems",
+    "internet of things"
+   ],
+   "completed_courses": [
+    "EE 109",
+    "CSCI 102",
+    "MATH 125",
+    "MATH 126"
+   ],
+   "housing_budget_usd": 950,
+   "job_interests": [
+    "technical",
+    "engineering",
+    "student worker"
+   ]
+  }
+ ]
+}

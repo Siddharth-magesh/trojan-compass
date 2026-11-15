@@ -1,0 +1,18 @@
+{
+ "source": "experience.usc.edu 'My Favorite Student Resources' quick links (team screenshot A02, 2026-11-15)",
+ "services": [
+  {"name": "Advise USC", "kind": "Academic advising"},
+  {"name": "Brightspace", "kind": "Courses and teaching"},
+  {"name": "Career Center", "kind": "Careers"},
+  {"name": "EngageSC", "kind": "Student organizations"},
+  {"name": "Gmail", "kind": "USC email"},
+  {"name": "Handshake", "kind": "Jobs and events"},
+  {"name": "MySHR", "kind": "Student health"},
+  {"name": "Pay My Bill", "kind": "Billing and payments"},
+  {"name": "Schedule of Classes", "kind": "Courses, times"},
+  {"name": "USC Libraries", "kind": "Libraries"},
+  {"name": "USC Maps", "kind": "Campus maps"},
+  {"name": "Web Registration", "kind": "Course registration"}
+ ],
+ "other_pages": ["finances_billing.png", "events.png", "organizations.png", "offsite_opportunities.png", "student_health.png", "web_registration.png", "libraries.png"]
+}

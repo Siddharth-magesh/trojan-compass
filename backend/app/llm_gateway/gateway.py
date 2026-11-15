@@ -4,7 +4,7 @@ import json
 import time
 from typing import Any, TypeVar
 
-from openai import OpenAI
+from openai import OpenAI, RateLimitError
 from pydantic import BaseModel, ValidationError
 
 from backend.app.config.settings import settings
@@ -12,6 +12,7 @@ from backend.app.llm_gateway import llm_cache, mock_llm
 from backend.app.llm_gateway.budget import RequestBudget
 
 T = TypeVar("T", bound=BaseModel)
+MAX_RATE_LIMIT_WAIT_S = 10.0
 
 
 class LLMUnavailable(RuntimeError):
@@ -45,6 +46,14 @@ def _providers() -> list[tuple[str, str, str]]:
     return out
 
 
+def _retry_after(exc: RateLimitError) -> float:
+    """Seconds the provider asked us to wait (Retry-After header), capped so a request never stalls for long."""
+    try:
+        return min(float(exc.response.headers.get("retry-after", "2")), MAX_RATE_LIMIT_WAIT_S)
+    except (TypeError, ValueError, AttributeError):
+        return 2.0
+
+
 def _client(provider: str, base_url: str) -> OpenAI:
     key = settings.groq_api_key if provider == "groq" else settings.gemini_api_key
     return OpenAI(api_key=key.get_secret_value(), base_url=base_url, timeout=settings.llm_timeout_s, max_retries=0)
@@ -69,6 +78,8 @@ def _call_live(messages: list[dict[str, Any]], tools: list[dict[str, Any]] | Non
                 errors.append(f"{provider}: {type(exc).__name__}")
                 budget.record({"task": task, "model": model, "ok": False, "error": type(exc).__name__,
                                "latency_ms": round((time.perf_counter() - start) * 1000)})
+                if isinstance(exc, RateLimitError) and _attempt == 0:
+                    time.sleep(_retry_after(exc))  # an immediate retry would hit the same per-minute limit
                 continue
             msg = resp.choices[0].message
             usage = resp.usage

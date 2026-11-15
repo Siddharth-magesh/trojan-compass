@@ -10,7 +10,7 @@ function group_by_type(cards: card[]): [string, card[]][] {
 
 export default function CardsSection({ cards, citations, message_id }: { cards: card[]; citations: citation[]; message_id: string }) {
   return (
-    <div className="mt-6 grid gap-6">
+    <div className="mt-6 grid grid-cols-[minmax(0,1fr)] gap-6">
       {group_by_type(cards).map(([type, group]) => (
         <section key={type} aria-label={type + ' results'}>{render_card_group(type, group, { citations, message_id })}</section>
       ))}

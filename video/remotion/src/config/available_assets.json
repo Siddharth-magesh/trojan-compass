@@ -1,0 +1,111 @@
+{
+ "A01": {
+  "file": "brand/logo.svg"
+ },
+ "A02": {
+  "file": "usc_screenshots/usc_resource_directory.png"
+ },
+ "A03": {
+  "file": "recordings/s03_home_take1.mp4",
+  "duration_s": 11.6
+ },
+ "A04": {
+  "file": "recordings/s04_academics_take1.mp4",
+  "duration_s": 23.57
+ },
+ "A05": {
+  "file": "recordings/s05_career_take1.mp4",
+  "duration_s": 22.67
+ },
+ "A06": {
+  "file": "recordings/s06_onboarding_take1.mp4",
+  "duration_s": 19.63
+ },
+ "A07": {
+  "file": "chatbot_comparison/chatgpt_take1.mp4",
+  "duration_s": 37.47
+ },
+ "A07M": {
+  "file": "../src/data/chatgpt_recording.json",
+  "data": {
+   "label": "ChatGPT · GPT-5.6 Sol · web search on · recorded 2026-11-15"
+  }
+ },
+ "A08": {
+  "file": "recordings/s07_trojan_compass_take1.mp4",
+  "duration_s": 19.17
+ },
+ "A09": {
+  "file": "recordings/s08_injection_take1.mp4",
+  "duration_s": 13.57
+ },
+ "A10": {
+  "file": "../src/data/cost_run.json",
+  "data": {
+   "measured": "2026-11-15",
+   "question": "What is USCe.pay used for?",
+   "student_id": "synthetic_student_002",
+   "price": {
+    "model": "openai/gpt-oss-120b",
+    "input_per_million_usd": 0.15,
+    "output_per_million_usd": 0.6,
+    "cached_input_per_million_usd": 0.075,
+    "source": "https://console.groq.com/docs/model/openai/gpt-oss-120b",
+    "checked": "2026-11-15"
+   },
+   "note": "Demo cache is a development cache keyed on model + messages + tools; production caching of personalized answers must be scoped per student.",
+   "run1_cache_miss": {
+    "latency_ms": 4393,
+    "live_llm_calls": 3,
+    "cached_llm_hits": 0,
+    "input_tokens": 1882,
+    "output_tokens": 912,
+    "answer": "USCe.pay is USC's secure online portal for managing your student account and paying your bill.\n\n### student_services\n- **USCe.pay** is a secure system run by Student Financial Services that lets you view your account balance, due date, billing statements and recent activity [1]\n- Through **USCe.pay** you can make ACH or web check payments, set up payment plans, invite parents or sponsors, sign up for direct‑deposit refunds and access tax forms like the 1098‑T [2]",
+    "estimated_cost_usd": 0.000829
+   },
+   "run2_cache_hit": {
+    "latency_ms": 1038,
+    "live_llm_calls": 0,
+    "cached_llm_hits": 3,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "answer": "USCe.pay is USC's secure online portal for managing your student account and paying your bill.\n\n### student_services\n- **USCe.pay** is a secure system run by Student Financial Services that lets you view your account balance, due date, billing statements and recent activity [1]\n- Through **USCe.pay** you can make ACH or web check payments, set up payment plans, invite parents or sponsors, sign up for direct‑deposit refunds and access tax forms like the 1098‑T [2]",
+    "estimated_cost_usd": 0
+   },
+   "run3_after_data_update": {
+    "latency_ms": 1669,
+    "live_llm_calls": 1,
+    "cached_llm_hits": 2,
+    "input_tokens": 504,
+    "output_tokens": 283,
+    "answer": "I could not find it in USC's verified sources.",
+    "estimated_cost_usd": 0.000245,
+    "edit": "usc_epay purpose text changed in a demo copy of the data",
+    "answer_reflects_update": false,
+    "show_in_video": false,
+    "dropped_reason": "The demo data copy lives outside the repo layout, so guide search was unavailable in that run and the answer lost its facts. The cache did refresh (1 live call for the writer, whose key includes the facts), but the answer is not a fair before/after, so Run 3 is not shown."
+   },
+   "baseline_a_no_usc_data": {
+    "latency_ms": 4093,
+    "live_llm_calls": 1,
+    "input_tokens": 79,
+    "output_tokens": 1800,
+    "estimated_cost_usd": 0.001092,
+    "answer_preview": "**Short answer:**  \n`USCe.pay` is a function (or method) that initiates a payment transaction in the **U.S. Commerce‑Engine (USCe)** SDK / library. In practice, you call it when you want to charge a customer, submit a payment request to the configured payment processor, and receive a result indicati"
+   },
+   "baseline_b_documents_pasted": {
+    "latency_ms": 954,
+    "live_llm_calls": 1,
+    "input_tokens": 2476,
+    "output_tokens": 280,
+    "estimated_cost_usd": 0.000539,
+    "answer_preview": "**USCe.pay (Pay My Bill) is the Student Financial Services portal where you manage all of your tuition‑related finances.**  \n\n- **View your account** – see the current balance, due dates and electronic bill (eBill) statements.  \n- **Make payments** – pay tuition and fees by ACH, Flywire (for interna"
+   },
+   "live_calls_total": 6
+  }
+ },
+ "A12": {
+  "file": "recordings/s10_mobile_take1.mp4",
+  "duration_s": 14.67
+ }
+}

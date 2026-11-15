@@ -1,0 +1,225 @@
+{
+ "_comment": "Source of truth for every asset in the demo video. file is relative to video/remotion/public/. status: available | recorded_by_script | we_record | we_provide | original_by_code. missing_assets.md is generated from this file.",
+ "assets": [
+  {
+   "id": "A01",
+   "scene": "s03,s11",
+   "time": "0:26-0:28, 2:50-2:55",
+   "format": "svg",
+   "file": "brand/logo.svg",
+   "shows": "Trojan Compass logo (cardinal shield with compass needle), the app's own favicon",
+   "status": "available",
+   "owner": "team",
+   "license": "original, created for this project"
+  },
+  {
+   "id": "A02",
+   "scene": "s02",
+   "time": "0:10-0:14",
+   "format": "png 1920x1080",
+   "file": "usc_screenshots/usc_resource_directory.png",
+   "shows": "Screenshot(s) of the real USC student resource directory, showing the platforms a student must use",
+   "status": "available",
+   "owner": "team",
+   "license": "screenshot of public USC page, used for commentary"
+  },
+  {
+   "id": "A03",
+   "scene": "s03",
+   "time": "0:23-0:26",
+   "format": "mp4 1920x1080 30fps",
+   "file": "recordings/s03_home_take1.mp4",
+   "shows": "Real home screen: greeting and starter cards, logged in as a synthetic student",
+   "status": "recorded_by_script",
+   "owner": "scripts/record_app.mjs",
+   "license": "original"
+  },
+  {
+   "id": "A04",
+   "scene": "s04",
+   "time": "0:28-0:52",
+   "format": "mp4 1920x1080 30fps",
+   "file": "recordings/s04_academics_take1.mp4",
+   "shows": "Real app answering the academics prompt: agent timeline, course cards, sections, schedule",
+   "status": "recorded_by_script",
+   "owner": "scripts/record_app.mjs",
+   "license": "original"
+  },
+  {
+   "id": "A05",
+   "scene": "s05",
+   "time": "0:52-1:14",
+   "format": "mp4 1920x1080 30fps",
+   "file": "recordings/s05_career_take1.mp4",
+   "shows": "Real app answering the career prompt: lab cards with recruitment status and how to apply",
+   "status": "recorded_by_script",
+   "owner": "scripts/record_app.mjs",
+   "license": "original"
+  },
+  {
+   "id": "A06",
+   "scene": "s06",
+   "time": "1:14-1:32",
+   "format": "mp4 1920x1080 30fps",
+   "file": "recordings/s06_onboarding_take1.mp4",
+   "shows": "Real app answering the onboarding prompt: checklist card, three items ticked",
+   "status": "recorded_by_script",
+   "owner": "scripts/record_app.mjs",
+   "license": "original"
+  },
+  {
+   "id": "A07",
+   "scene": "s07",
+   "time": "1:36-1:42",
+   "format": "mp4 1920x1080 30fps",
+   "file": "chatbot_comparison/chatgpt_take1.mp4",
+   "shows": "Manual ChatGPT recording of the identical comparison prompt, with product, model, mode (search on/off) and date visible. Uniform speed-up only, no edits.",
+   "status": "available",
+   "owner": "team",
+   "license": "screen recording of a third-party product, used for comparison"
+  },
+  {
+   "id": "A07M",
+   "scene": "S07",
+   "time": "1:32-1:50",
+   "format": "JSON",
+   "file": "../src/data/chatgpt_recording.json",
+   "shows": "Label for the ChatGPT recording, e.g. {\"label\": \"ChatGPT · GPT-5 · search off · recorded 2026-11-20\"}; must match what the recording shows",
+   "status": "available",
+   "owner": "us",
+   "license": "n/a"
+  },
+  {
+   "id": "A08",
+   "scene": "s07",
+   "time": "1:42-1:48",
+   "format": "mp4 1920x1080 30fps",
+   "file": "recordings/s07_trojan_compass_take1.mp4",
+   "shows": "Real Trojan Compass answering the identical comparison prompt",
+   "status": "recorded_by_script",
+   "owner": "scripts/record_app.mjs",
+   "license": "original"
+  },
+  {
+   "id": "A09",
+   "scene": "s08",
+   "time": "1:50-1:54",
+   "format": "mp4 1920x1080 30fps",
+   "file": "recordings/s08_injection_take1.mp4",
+   "shows": "Real prompt-injection attempt blocked by the input guard",
+   "status": "recorded_by_script",
+   "owner": "scripts/record_app.mjs",
+   "license": "original"
+  },
+  {
+   "id": "A10",
+   "scene": "s09",
+   "time": "2:08-2:26",
+   "format": "json",
+   "file": "../src/data/cost_run.json",
+   "shows": "Measured cost run: cache miss, cache hit, data update, baselines (real provider usage)",
+   "status": "recorded_by_script",
+   "owner": "scripts/measure_cost.py",
+   "license": "original"
+  },
+  {
+   "id": "A11",
+   "scene": "s10",
+   "time": "2:30-2:34",
+   "format": "mp4",
+   "file": "recordings/s10_personalization_take1.mp4",
+   "shows": "Optional: same question, different answers for the two synthetic students",
+   "status": "we_record",
+   "owner": "team",
+   "license": "original"
+  },
+  {
+   "id": "A12",
+   "scene": "s10",
+   "time": "2:26-2:30",
+   "format": "mp4 430x932 30fps",
+   "file": "recordings/s10_mobile_take1.mp4",
+   "shows": "Real responsive UI at phone size answering a short question",
+   "status": "recorded_by_script",
+   "owner": "scripts/record_app.mjs",
+   "license": "original"
+  },
+  {
+   "id": "A13",
+   "scene": "s02",
+   "time": "0:18-0:20",
+   "format": "json",
+   "file": "../src/data/manual_baseline.json",
+   "shows": "Optional measured manual run: sites, clicks and minutes to plan one semester by hand",
+   "status": "we_provide",
+   "owner": "team",
+   "license": "original"
+  },
+  {
+   "id": "A14",
+   "scene": "s10",
+   "time": "2:34-2:36",
+   "format": "decision",
+   "file": "",
+   "shows": "Status of multilingual, voice input and proactive alerts (all ROADMAP today)",
+   "status": "available",
+   "owner": "team",
+   "license": "n/a"
+  },
+  {
+   "id": "A15",
+   "scene": "s02",
+   "time": "0:18-0:20",
+   "format": "text + source URL",
+   "file": "../src/data/impact_stat.json",
+   "shows": "Optional source-cited statistic about the affected population (e.g. USC international student count)",
+   "status": "we_provide",
+   "owner": "team",
+   "license": "cited source"
+  },
+  {
+   "id": "A16",
+   "scene": "s11",
+   "time": "2:42-2:50",
+   "format": "json",
+   "file": "../src/data/feasibility.json",
+   "shows": "Feasibility facts: who runs it, data it needs, measured monthly cost, next-semester pilot scope (optional: when absent, Scene 11 shows verified facts only)",
+   "status": "we_provide",
+   "owner": "team",
+   "license": "original"
+  },
+  {
+   "id": "A17",
+   "scene": "all",
+   "time": "0:00-2:55",
+   "format": "wav/mp3",
+   "file": "audio/voiceover",
+   "shows": "Voiceover (not used in this silent version)",
+   "status": "we_record",
+   "owner": "team",
+   "license": "original"
+  },
+  {
+   "id": "A18",
+   "scene": "all",
+   "time": "0:00-2:55",
+   "format": "mp3",
+   "file": "audio/music.mp3",
+   "shows": "Background music with license (not used in this silent version)",
+   "status": "we_provide",
+   "owner": "team",
+   "license": "must be recorded here"
+  },
+  {
+   "id": "F01",
+   "scene": "all",
+   "time": "all",
+   "format": "font",
+   "file": "",
+   "shows": "Inter and Newsreader via @remotion/google-fonts",
+   "status": "available",
+   "owner": "Google Fonts",
+   "license": "SIL Open Font License 1.1"
+  }
+ ]
+}

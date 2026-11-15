@@ -8,10 +8,13 @@ Read [AGENTS.md](AGENTS.md) (rules), [PROJECT_DETAILS.md](PROJECT_DETAILS.md) (s
 README.md                         project overview, quick start, team
 .env.example                      every backend setting (copy to .env)
 docs/                             AGENTS, CONTRIBUTING, PROJECT_DETAILS, DATA_GUIDE, TASKS
+  demo/trojan_compass_demo.mp4    final narrated demo video (2:51, 1080p)
+  images/system_architecture.png  system architecture diagram (v2)
 frontend/                         React + Vite chat app (the student-facing UI)
 backend/                          FastAPI + LangGraph multi-agent API
 local_database/                   collected USC data, registry, schemas, ingestion scripts
 evaluation/                       golden queries and the retrieval evaluation
+video/                            3-minute demo video (Remotion), assets manifest, claims and production docs
 ```
 
 ### frontend/
@@ -26,7 +29,7 @@ frontend/
     lib/chat_provider.tsx         turns stream events into messages; lib/auth_provider.tsx demo login
     lib/demo_students.ts          the two synthetic demo students
     components/chat/              home view, composer, activity timeline, Markdown answers, citations
-    components/cards/             course (schedule grid), housing (compare), job, service, checklist
+    components/cards/             course (schedule grid), housing (compare), job, lab, service, checklist
     components/layout/            shell, sidebar, top bar, right panel, login dialog
     app/                          pages: chat, conversations, checklists, shortcuts
     mock_api/                     in-browser mock backend (VITE_USE_MOCK=true) for offline demos
@@ -66,6 +69,27 @@ local_database/
   scripts/                        ingestion: validate, chunk, embed (BGE), BM25, push/verify Pinecone, query helper
   processed/                      generated; gitignored (build with push_to_pinecone.py --verify-only)
 ```
+
+### video/
+```text
+video/
+  production_brief.md             the original demo-video brief (scenes, honesty rules)
+  WHAT_WE_NEED_FROM_YOU.md        team to-do before the final compile
+  DEMO_NOTES.md                   differences from the brief, open issues, app changes made for the demo
+  asset_manifest.json             source of truth for every asset (A01-A18); missing_assets.md is generated from it
+  claims.json                     every on-screen claim with evidence; checked by remotion/scripts/check_claims.mjs
+  storyboard.md, voiceover_script.md, recording_checklist.md, render_instructions.md
+  demo/                           demo_prompts.json (exact prompts), demo_run_sheet.md, security_demo_script.md
+  remotion/                       Remotion project
+    src/config/                   timeline.ts (scene order and frames), asset_registry.ts, available_assets.json (generated)
+    src/compositions/             scene_01_hook.tsx ... scene_11_closing.tsx; root.tsx registers them and FullVideo
+    src/components/, animations/, styles/   shared UI pieces, motion helpers, theme tokens
+    src/data/                     JSON the scenes read (built by scripts from real data and real runs)
+    scripts/                      record_app, sync_assets, build_data, security_capture, measure_cost, check_*, render_segments
+    public/                       logo; recordings/ and team assets (gitignored media)
+  renders/                        segments/, previews/, final/ (gitignored)
+```
+Large media (recordings, screenshots, audio, renders) is gitignored; only code, JSON and docs are committed.
 
 ## Running locally
 ```bash
