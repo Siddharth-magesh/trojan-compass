@@ -24,11 +24,11 @@ Technical facts for the prototype. Status: **set** = decided, **tbd** = to tune.
 ## Models
 | Role | Model | Status |
 |---|---|---|
-| Supervisor, domain agents | Groq tool-capable model (e.g. Llama 3.3 70B) | tbd |
-| Synthesizer | Gemini Flash | tbd |
-| Fallback | OpenRouter / NVIDIA NIM model | tbd |
+| Primary (supervisor, agents, synthesizer) | Groq `openai/gpt-oss-120b` (Llama 3.3 70B was shut down 2026-08-16) | set |
+| Fallback | Gemini `gemini-3.8-flash` via the OpenAI-compatible endpoint | set |
+| Further fallbacks | OpenRouter / NVIDIA NIM | not implemented |
 
-Temperature: 0 for supervisor and agents, 0.3 for synthesizer. Always set `max_tokens`.
+Model ids are env-configurable (`PRIMARY_MODEL`, `FALLBACK_MODEL`). Temperature: 0 for supervisor and agents, 0.3 for synthesizer. `max_tokens` 900 on every call. `LLM_MODE` = `live` | `mock` | `cache` (default `cache`: replay from `backend/.llm_cache/`, call live only on a miss). Caps: 8 LLM calls per request, 300 per process.
 
 ## RAG settings
 | Setting | Value | Status |

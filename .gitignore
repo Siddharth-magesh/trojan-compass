@@ -228,3 +228,6 @@ local_database/raw/
 local_database/processed/
 .portal_browser_profile/
 .DS_Store
+
+# Backend LLM response cache (LLM_MODE=cache)
+backend/.llm_cache/
