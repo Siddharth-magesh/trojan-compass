@@ -8,6 +8,8 @@ Read [AGENTS.md](AGENTS.md) (rules), [PROJECT_DETAILS.md](PROJECT_DETAILS.md) (s
 README.md                         project overview, quick start, team
 .env.example                      every backend setting (copy to .env)
 docs/                             AGENTS, CONTRIBUTING, PROJECT_DETAILS, DATA_GUIDE, TASKS
+  demo/trojan_compass_demo.mp4    final narrated demo video (2:51, 1080p)
+  images/system_architecture.png  system architecture diagram (v2)
 frontend/                         React + Vite chat app (the student-facing UI)
 backend/                          FastAPI + LangGraph multi-agent API
 local_database/                   collected USC data, registry, schemas, ingestion scripts
@@ -71,6 +73,7 @@ local_database/
 ### video/
 ```text
 video/
+  production_brief.md             the original demo-video brief (scenes, honesty rules)
   WHAT_WE_NEED_FROM_YOU.md        team to-do before the final compile
   DEMO_NOTES.md                   differences from the brief, open issues, app changes made for the demo
   asset_manifest.json             source of truth for every asset (A01-A18); missing_assets.md is generated from it

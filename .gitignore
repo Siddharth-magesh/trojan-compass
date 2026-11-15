@@ -242,4 +242,4 @@ video/renders/
 video/demo/data/demo_copy/
 
 # Raw team screenshots/recordings (contain personal data; sanitized copies live in video/remotion/public/, also ignored)
-Images/
+/Images/
