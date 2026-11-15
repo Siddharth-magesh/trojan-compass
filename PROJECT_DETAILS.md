@@ -45,7 +45,7 @@ Current academic year: `2026-2027`. Use an explicit year for historical or futur
 
 ## Consolidated data status
 
-All collected knowledge is under `local_database/data/`. Consolidation includes `main`, `Harsh`, `feat/data_career_knowledge`, `feat/data_student_services_portals`, and the already-contained `docs/mvp-plan` branch. Branch tips and original hashes are in `registry/consolidation_provenance.json`.
+All collected knowledge is under `local_database/data/`. Consolidation includes `main`, `Harsh`, `feat/data_career_knowledge`, `feat/data_student_services_portals`, and the already-contained `docs/mvp-plan` branch. The merged source history and earlier preservation records remain available at Git commit `89fadce`.
 
 - 111 canonical files: 1,339 JSON records and 28 Markdown documents; 99 files / 1,086 records are eligible input, 12 files / 253 records remain draft.
 - Academic: 231 courses, 803 section listings and six historical degree programs. Twenty courses reference 38 absent course IDs. Degree files use their actual catalogue years (2018-2019 through 2025-2026), remain draft, and must not answer current-year requirements.
@@ -54,9 +54,9 @@ All collected knowledge is under `local_database/data/`. Consolidation includes 
 - Housing, academic-calendar records and synthetic student profiles remain uncollected; no data was fabricated.
 - All 803 section listings retain unknown modality/location; TBA times and absent instructors remain explicit unknowns. Cross-listed section IDs are disambiguated by course code; original IDs remain in `source_section_id`.
 
-`source_archive/` preserves original content and metadata. `legacy_code/` preserves old pipeline variants as inactive `.source` snapshots. The only supported data tool is `scripts/audit_dataset.py`; it validates canonical files and lossless preservation, writes `registry/readiness_manifest.json`, and prepares an exact-record index under ignored `processed/preparation/`. Its manifest describes source-input eligibility, not vectors. No source was reverified merely by normalizing its file.
+The tracked `local_database/` layout contains source data, schemas, registries, a short navigation README and the reserved synthetic-profile folder. All 111 data files are unchanged by the cleanup. Source archive duplicates, legacy code, reports, generated manifests and audit tooling were removed from the current tree and remain recoverable at Git commit `89fadce`.
 
-Pinecone, dense embeddings, BM25 fitting, heading-aware chunk generation and remote upload remain future implementation work under DATA_GUIDE. The legacy scripts must not be used as that implementation. `registry/ingestion_contract.json` records the intended settings. No API endpoints or LLM choices changed, and no API key is required for the offline audit.
+Pinecone, dense embeddings, BM25 fitting, heading-aware chunk generation and remote upload remain future implementation work under root DATA_GUIDE. No active pipeline scripts are supplied. Index only public files whose metadata status is verified. No API endpoints or LLM choices changed, and no API key is needed to read the local data.
 
 ## Agent and verification settings
 - Domain agents run in parallel. Max 5 tool calls per agent per request.

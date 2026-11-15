@@ -1,7 +1,0 @@
-pyyaml
-jsonschema
-sentence-transformers
-transformers
-pinecone
-pinecone-text
-python-dotenv

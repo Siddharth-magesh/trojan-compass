@@ -1,5 +1,0 @@
-# Offline career data validation and retrieval preparation dependencies.
-pydantic>=2.10,<3
-jsonschema>=4.23,<5
-PyYAML>=6,<7
-tokenizers>=0.21,<1

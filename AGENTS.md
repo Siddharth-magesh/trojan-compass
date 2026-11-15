@@ -18,14 +18,13 @@ Rules for any AI agent or teammate working in this repo. Read `CONTRIBUTING.md` 
 - Use synthetic student profiles only; no real student records. Manually collected public knowledge is allowed with `data_origin: public_copy`. No runtime scraping.
 
 ## Local data and ingestion
-- Root `DATA_GUIDE.md` is authoritative. Keep canonical datasets under `local_database/data/<domain>/<category>/`; register each category and source.
-- Preserve complete source content, nested fields, numeric types, and historical years. Never truncate a record to fit an embedding limit.
-- `local_database/source_archive/` contains immutable branch originals. `registry/consolidation_provenance.json` maps branch commits, hashes and transformations. Do not ingest these archives.
-- `local_database/legacy_code/` holds inactive code snapshots for provenance only. Do not restore or run the old scraping, embedding or Pinecone scripts as the current pipeline.
-- Run `python local_database/scripts/audit_dataset.py` after data edits. `registry/readiness_manifest.json` is a data-input manifest, not an upsert payload. Only its eligible public, verified files may feed future chunking; draft files stay local for review.
-- Keep last verification dates unless the source was actually checked. Normalization bumps the version but never promotes draft data or invents missing facts.
-- Preserve unknown section values (`TBA`, `unverified`, `not_listed`) as explicit unknowns. Never treat them as times, confirmed locations or confirmed instructors. Section aliases live in `source_section_id`; canonical `section_id` includes the course code to distinguish cross-listings.
-- Student profiles, archives, registries and legacy code are never embedded. Credentials stay in `.env`. The current consolidation scope prepares data only; future chunking, embedding and upload must follow DATA_GUIDE.
+- Root `DATA_GUIDE.md` is authoritative. Canonical datasets live in `local_database/data/<domain>/<category>/`; register each category and source.
+- Keep `local_database/` focused on data, schemas, source/category registries and synthetic profiles. Do not add duplicate archives, old code snapshots, generated audit manifests or collection reports to the tracked tree. Git history preserves earlier versions.
+- Preserve complete source content, nested fields, numeric types and historical years. Never truncate a record to fit an embedding limit.
+- Only public, verified files may feed future ingestion. Draft files remain complete in their category folders for review. Validate metadata, schemas, IDs and references before indexing.
+- Keep verification dates unless the source was actually checked. Normalization never promotes drafts or invents missing facts.
+- Preserve `TBA`, `unverified` and `not_listed` as unknown values. Section aliases live in `source_section_id`; canonical `section_id` includes the course code to distinguish cross-listings.
+- Student profiles and registries are never embedded. Credentials stay in `.env`. Future chunking, embedding and upload must follow DATA_GUIDE.
 
 ## Testing
 - Do not write unit tests, syntax checks or GitHub Actions workflows unless the task explicitly asks for them.
