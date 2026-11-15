@@ -8,7 +8,7 @@ Status as of 2026-11-15. Ticked items are implemented and verified; notes say wh
 
 - [~] **Build and collect the data.** Done: courses, sections, opportunities, research labs, career resources, services, international-student and policy guides, 2 synthetic profiles. *Open:* housing listings and the academic calendar are not collected; degree requirements, events and support resources are still drafts.
 
-- [~] **Research and implement security and scalability.** Done: mock JWT auth, per-student isolation (profiles, sessions), tool allow-lists, deterministic input/output guards, retrieved text treated as data, rate limiting. *Open:* write the scaling design in `docs/large_scale_design/`.
+- [~] **Research and implement security and scalability.** Done: mock JWT auth, per-student isolation (profiles, sessions), tool allow-lists, deterministic input/output guards, retrieved text treated as data, rate limiting. Scalability (C4, 2026-11-15): shared state backend (memory or Redis) for sessions, limits, caches and counters; daily request quota and token budget per student; student- and data-version-scoped caching; model tiering; LLM provider circuit breakers; `/api/ready` and `/api/metrics`. *Open:* write the scaling design in `docs/large_scale_design/`; run Redis-backed multi-worker load test.
 
 - [x] **Integrate the final application.** The React chat UI (`frontend/`) streams from the FastAPI backend: live agent timeline, Markdown answers with citation pills, course cards with schedule grid, job, service and checklist cards, clarification chips, partial-data banner, conversation restore.
 

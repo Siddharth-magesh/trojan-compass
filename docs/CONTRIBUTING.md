@@ -52,11 +52,13 @@ backend/
     agents/                       base_agent loop, one file per domain agent, prompts/*.md
     tools/                        typed tools + tool_registry.py (per-agent allow-lists)
     retrieval/                    deterministic retrieval over Pinecone + local JSON (zero LLM calls)
-    llm_gateway/                  Groq -> Gemini gateway, call caps, disk cache, mock outputs
+    llm_gateway/                  Groq -> Gemini gateway, model tiering, call caps, daily token budget, cache, mock outputs
     data_store/loader.py          verified + public data loaded once
-    security/                     mock JWT auth, rate limit, input and output guards
-    session_store/memory_store.py in-memory conversations
-    observability/request_log.py  JSON request and retrieval logs
+    security/                     mock JWT auth, per-minute rate limit + daily quota, input and output guards
+    session_store/sessions.py     owner-only conversations on the shared state backend (TTL)
+    shared_state/kv_store.py      memory or Redis key-value state shared by sessions, limits, caches, metrics
+    resilience/circuit_breaker.py breakers for Pinecone and each LLM provider
+    observability/                request_log.py (JSON request and retrieval logs), metrics.py (/api/metrics counters)
 ```
 
 ### local_database/

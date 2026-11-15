@@ -113,7 +113,9 @@ The Pinecone Codex plugin `1.1.0` was installed locally from `pinecone-io/pineco
 | GET | `/api/session/{session_id}` | Load conversation and task state |
 | GET | `/api/student_profile` | Return the synthetic profile for the logged-in user |
 | POST | `/api/login` | Issue mock JWT for a synthetic student |
-| GET | `/api/health` | Liveness check |
+| GET | `/api/health` | Liveness check (adds state backend, data version) |
+| GET | `/api/ready` | Readiness for load balancers: data loaded and state backend reachable (503 otherwise) |
+| GET | `/api/metrics` | Aggregate counters, cache hit rates, latency p50/p95, breaker states, limits (Bearer `METRICS_TOKEN` when set) |
 
 Run: `uvicorn backend.main:app --port 8000` from the repo root. Auth: `POST /api/login {"student_id": "synthetic_student_001"}` returns a bearer token; all other routes except health need `Authorization: Bearer <token>`.
 The API contract is the frontend's `frontend/src/lib/api_types.ts`; `backend/app/api/presenter.py` is the only place that maps internal results to it.
@@ -123,10 +125,22 @@ The API contract is the frontend's `frontend/src/lib/api_types.ts`; `backend/app
 - Frontend dev: `uvicorn backend.main:app --port 8000`, then `cd frontend && pnpm install && pnpm dev` (http://127.0.0.1:5173; Vite proxies `/api` to `BACKEND_URL`, default `http://localhost:8000`). `VITE_USE_MOCK=true` switches back to the in-browser mock.
 
 ## Security settings
-- Rate limit: 20 chat requests/min per student (in-memory sliding window).
+- Rate limit: 20 chat requests/min per student plus a daily quota of 300 requests (fixed windows on the shared state backend); 429 with a clear message.
 - Input guard (deterministic): length, control characters, repeated characters, prompt-injection patterns.
 - Output guard (deterministic): SSN/card-number and non-usc.edu email redaction; URLs allowed only for usc.edu or URLs present in verified data.
 - Student identity comes only from the JWT; tools never accept a student_id argument. Sessions and profiles are owner-only.
+
+## Scalability (C4 of the architecture)
+| Control | Implementation | Default |
+|---|---|---|
+| Shared state | `shared_state/kv_store.py`: one key-value contract, in-process memory or Redis (`STATE_BACKEND`); sessions, rate limits, quotas, retrieval cache and metrics counters all use it, so the API is stateless and can run `uvicorn backend.main:app --workers N` behind a load balancer. Redis fails open (reads miss, writes skipped, logged); an unreachable Redis at startup falls back to memory and `/api/health` says why | memory |
+| Rate limits & quotas | per-minute limit and daily request quota per student (`security/rate_limit.py`); daily live-token budget per student checked before every live LLM call (`RequestBudget.student_id`), cache hits free; over budget, agents fall back to keyword routing and the answer is marked partial | 20/min, 300/day, 300k tokens/day |
+| Caching | LLM cache backend `disk` (replayable) or `shared` (TTL); `LLM_CACHE_SCOPE=student` adds the student id and the data version (`DataStore.version`, a hash of every loaded file) to the key, so personalized answers are never shared and a data update invalidates them. Retrieval cache keys always include the data version | disk, shared scope (keys unchanged) |
+| Index partitioning | namespace per domain, academic-year filter (unchanged) | on |
+| Cost control | per-request and per-process call caps, daily token budget, model tiering (`PLANNER_MODEL`, `AGENT_MODEL`; the synthesizer always uses `PRIMARY_MODEL`), circuit breaker per LLM provider (opens after 3 failed calls for 60 s, then the next provider is used immediately) | tiering off |
+| Observability | `/api/ready`, `/api/metrics` (counters shared through the state backend, latency per worker) | on |
+
+Verified 2026-11-15 through the real app (TestClient): cached F-1 question still replays with 0 live calls (keys unchanged); 429 on the 4th request/min and the 3rd request/day with test limits; over-budget student gets a partial answer while another student is unaffected; unreachable provider opens the breaker and later requests skip it in about 0.3 s; Redis requested but down falls back to memory; Redis path (fakeredis) stores sessions and counters with prefixed keys and TTLs. Not yet load-tested with a real Redis and several workers.
 
 ## Large-scale design
 Production-scale design (managed databases, real integrations, scaling, secure multi-agent patterns) goes in `docs/large_scale_design/`, not here.

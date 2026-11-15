@@ -1,4 +1,5 @@
-"""Single entry point for LLM calls: mock/cache/live modes, Groq primary with Gemini fallback, timeouts, one retry, Pydantic-validated JSON."""
+"""Single entry point for LLM calls: mock/cache/live modes, Groq primary with Gemini fallback, model tiering by task,
+a circuit breaker per provider, timeouts, one retry and Pydantic-validated JSON."""
 
 import json
 import time
@@ -10,6 +11,8 @@ from pydantic import BaseModel, ValidationError
 from backend.app.config.settings import settings
 from backend.app.llm_gateway import llm_cache, mock_llm
 from backend.app.llm_gateway.budget import RequestBudget
+from backend.app.observability import metrics
+from backend.app.resilience.circuit_breaker import breaker
 
 T = TypeVar("T", bound=BaseModel)
 MAX_RATE_LIMIT_WAIT_S = 10.0
@@ -36,11 +39,20 @@ class LLMResult(BaseModel):
     cached: bool = False
 
 
-def _providers() -> list[tuple[str, str, str]]:
+def tier_model(task: str) -> str:
+    """Model tiering: planning and tool selection may use a smaller model; writing the answer always uses the primary."""
+    if task == "supervisor" and settings.planner_model:
+        return settings.planner_model
+    if task.startswith("agent_") and settings.agent_model:
+        return settings.agent_model
+    return settings.primary_model
+
+
+def _providers(task: str) -> list[tuple[str, str, str]]:
     """(name, model, base_url) for each provider that has a key, primary first."""
     out = []
     if settings.groq_api_key:
-        out.append(("groq", settings.primary_model, settings.groq_base_url))
+        out.append(("groq", tier_model(task), settings.groq_base_url))
     if settings.gemini_api_key:
         out.append(("gemini", settings.fallback_model, settings.gemini_base_url))
     return out
@@ -62,7 +74,12 @@ def _client(provider: str, base_url: str) -> OpenAI:
 def _call_live(messages: list[dict[str, Any]], tools: list[dict[str, Any]] | None, options: dict[str, Any],
                task: str, budget: RequestBudget) -> LLMResult:
     errors = []
-    for provider, model, base_url in _providers():
+    for provider, model, base_url in _providers(task):
+        guard = breaker(f"llm:{provider}", settings.llm_breaker_failures, settings.llm_breaker_open_s)
+        if not guard.allow():  # provider failing repeatedly: go straight to the next one instead of waiting on timeouts
+            errors.append(f"{provider}: circuit open")
+            metrics.count("llm_breaker_skips")
+            continue
         for _attempt in range(2):  # first try + one retry per provider
             budget.charge()
             start = time.perf_counter()
@@ -80,7 +97,10 @@ def _call_live(messages: list[dict[str, Any]], tools: list[dict[str, Any]] | Non
                                "latency_ms": round((time.perf_counter() - start) * 1000)})
                 if isinstance(exc, RateLimitError) and _attempt == 0:
                     time.sleep(_retry_after(exc))  # an immediate retry would hit the same per-minute limit
+                if _attempt == 1:
+                    guard.record(False)
                 continue
+            guard.record(True)
             msg = resp.choices[0].message
             usage = resp.usage
             budget.record({"task": task, "model": model, "ok": True, "cached": False,
@@ -106,7 +126,7 @@ def complete(task: str, messages: list[dict[str, Any]], budget: RequestBudget, *
         return LLMResult(content=out.get("content"), tool_calls=calls, model="mock")
 
     options = {"temperature": temperature, "json": json_mode, "max_tokens": max_tokens or settings.llm_max_tokens}
-    key = llm_cache.cache_key(settings.primary_model, messages, tools, options)
+    key = llm_cache.cache_key(tier_model(task), messages, tools, options, budget.student_id)
     if settings.llm_mode == "cache" and (hit := llm_cache.get(key)):
         budget.record({"task": task, "model": hit.get("model", ""), "ok": True, "cached": True})
         return LLMResult.model_validate({**hit, "cached": True})

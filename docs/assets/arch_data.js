@@ -203,7 +203,7 @@ window.ARCH = {
         ] },
         { id: 'a10', n: 'A10', title: 'Control plane (shared with 1, 7, 8)', nodes: [
           { id: 'a_kms', t: 'Encryption & key management', s: 'KMS', kind: 'guard', status: 'planned', d: 'Managed keys for data at rest and in transit.', p: 'Secrets in .env only, never committed.', v: 'KMS with rotation.', to: [] },
-          { id: 'a_mon', t: 'Monitoring', s: 'latency · quality · index health', kind: 'code', status: 'partial', d: 'Tracks retrieval latency and quality.', p: 'Measured warm hybrid latency p50 122 ms, p95 204 ms.', v: 'Live dashboards and alerts.', to: [] },
+          { id: 'a_mon', t: 'Monitoring', s: 'latency · quality · index health', kind: 'code', status: 'partial', d: 'Tracks retrieval latency and quality.', p: '/api/metrics: request counts, cache hit rates, latency p50/p95, breaker states. Measured warm hybrid latency p50 122 ms, p95 204 ms.', v: 'Live dashboards and alerts.', to: [] },
           { id: 'a_audit', t: 'Audit logs', s: 'user · query hash · sources · decisions', kind: 'code', status: 'partial', d: 'Who searched for what, which sources were returned and why.', p: 'One retrieval log line per request with a hash of the query, never the raw query.', v: 'Tamper-evident audit store.', to: [] },
         ] },
       ],
@@ -287,11 +287,11 @@ window.ARCH = {
           { id: 'c_vault', t: 'Secrets vault', s: 'fetched at runtime · none in code', kind: 'guard', status: 'partial', d: 'No keys in code or images.', p: 'Keys only in an untracked .env.', v: 'Runtime secrets vault.', to: [] },
         ] },
         { id: 'c4', n: 'C4', title: 'Scalability & optimization', nodes: [
-          { id: 'c_rate', t: 'Rate limits & quotas', s: 'per user and per day', kind: 'guard', status: 'live', d: 'Fair use and cost safety.', p: 'Sliding-window limit: 20 requests per minute per student.', v: 'At the WAF and the LLM gateway.', to: [] },
-          { id: 'c_scale', t: 'Autoscaling', s: 'stateless API and agent workers', kind: 'code', status: 'planned', d: 'Scale with demand.', p: 'Stateless API design.', v: 'Autoscaled workers across zones.', to: [] },
-          { id: 'c_cache', t: 'Caching', s: 'user-scoped keys · invalidate on update', kind: 'code', status: 'partial', d: 'Avoid repeating work without leaking data.', p: 'LLM response cache keyed on the facts (a changed record means a fresh answer) and a retrieval cache. Measured: cache hit = 0 live calls.', v: 'Per-student cache scope for personalized answers.', to: [] },
+          { id: 'c_rate', t: 'Rate limits & quotas', s: 'per user and per day', kind: 'guard', status: 'live', d: 'Fair use and cost safety.', p: '20 requests per minute and 300 per day per student, plus a daily live-token budget; cache hits are free.', v: 'At the WAF and the LLM gateway.', to: [] },
+          { id: 'c_scale', t: 'Autoscaling', s: 'stateless API and agent workers', kind: 'code', status: 'partial', d: 'Scale with demand.', p: 'Sessions, limits, caches and counters live in a shared state backend (memory or Redis), so the API runs as several workers; /api/ready for load balancers.', v: 'Autoscaled workers across zones.', to: [] },
+          { id: 'c_cache', t: 'Caching', s: 'user-scoped keys · invalidate on update', kind: 'code', status: 'live', d: 'Avoid repeating work without leaking data.', p: 'LLM cache can be scoped per student and keyed on the data version, so updates invalidate it; retrieval cache keyed on the data version. Measured: cache hit = 0 live calls.', v: 'Same, on a managed Redis cluster.', to: [] },
           { id: 'c_part', t: 'Index partitioning', s: 'by domain and year · hot/warm/cold', kind: 'code', status: 'partial', d: 'Smaller, faster indexes.', p: 'Namespaces per domain, filtered by academic year.', v: 'Hot, warm and cold tiers.', to: [] },
-          { id: 'c_cost', t: 'Cost control', s: 'token budgets · model tiering · breakers', kind: 'code', status: 'partial', d: 'Predictable cost per question.', p: 'Measured: $0.000829 for an uncached question, $0 on a cache hit.', v: 'Model tiering by task.', to: [] },
+          { id: 'c_cost', t: 'Cost control', s: 'token budgets · model tiering · breakers', kind: 'code', status: 'live', d: 'Predictable cost per question.', p: 'Daily token budgets, model tiering (smaller planner/agent models), a circuit breaker per LLM provider. Measured: $0.000829 for an uncached question, $0 on a cache hit.', v: 'Model tiering by task.', to: [] },
         ] },
       ],
       threats: [
