@@ -16,6 +16,8 @@ from backend.app.orchestration.supervisor import plan_request
 from backend.app.orchestration.synthesizer import synthesize
 from backend.app.schemas.plan import Plan, SubTask
 from backend.app.schemas.state import GraphState
+from backend.app.security.input_guard import check_input
+from backend.app.security.output_guard import check_output
 
 
 def _event(node: str, start: float, **extra: Any) -> list[dict[str, Any]]:
@@ -80,18 +82,34 @@ def fallback_node(state: GraphState) -> dict[str, Any]:
     return {"response": fallback_response(state["request_id"], reason), "events": [{"node": "fallback", "ms": 0}]}
 
 
+def input_guard_node(state: GraphState) -> dict[str, Any]:
+    result = check_input(state["message"])
+    event = {"node": "input_guard", "ms": 0, "guard_events": [] if result.ok else [f"input_blocked:{result.reason}"]}
+    if not result.ok:
+        return {"guard_ok": False, "guard_reason": result.reason, "events": [event]}
+    return {"guard_ok": True, "message": result.sanitized, "events": [event]}
+
+
+def output_guard_node(state: GraphState, config: RunnableConfig) -> dict[str, Any]:
+    response, events = check_output(state["response"], config["configurable"]["store"])
+    return {"response": response, "events": [{"node": "output_guard", "ms": 0, "guard_events": events}]}
+
+
 @lru_cache(maxsize=1)
 def build_graph() -> Any:
     g = StateGraph(GraphState)
-    for name, fn in [("supervisor", supervisor_node), ("agent", agent_node), ("aggregate", aggregate_node),
-                     ("verify", verify_node), ("synthesize", synthesize_node), ("clarify", clarify_node),
-                     ("fallback", fallback_node)]:
+    for name, fn in [("input_guard", input_guard_node), ("supervisor", supervisor_node), ("agent", agent_node),
+                     ("aggregate", aggregate_node), ("verify", verify_node), ("synthesize", synthesize_node),
+                     ("clarify", clarify_node), ("fallback", fallback_node), ("output_guard", output_guard_node)]:
         g.add_node(name, fn)
-    g.add_edge(START, "supervisor")
+    g.add_edge(START, "input_guard")
+    g.add_conditional_edges("input_guard", lambda s: "supervisor" if s.get("guard_ok") else "fallback",
+                            ["supervisor", "fallback"])
     g.add_conditional_edges("supervisor", route_after_plan, ["agent", "clarify", "fallback"])
     g.add_edge("agent", "aggregate")
     g.add_edge("aggregate", "verify")
     g.add_edge("verify", "synthesize")
     for name in ("synthesize", "clarify", "fallback"):
-        g.add_edge(name, END)
+        g.add_edge(name, "output_guard")
+    g.add_edge("output_guard", END)
     return g.compile()

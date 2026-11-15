@@ -69,10 +69,12 @@ Read-back verification checks all vector IDs, dense/sparse values, metadata and 
 The Pinecone Codex plugin `1.1.0` was installed locally from `pinecone-io/pinecone-codex-plugin`. The reproducible ingestion path uses the SDK because the dataset requires external BGE embeddings. Plugin MCP tools are not loaded into this existing chat; any new plugin session must receive the key through its environment. Do not commit it into plugin configuration.
 
 ## Agent and verification settings
-- Domain agents run in parallel. Max 5 tool calls per agent per request.
-- Recovery: retry a failed agent once, then return a partial result marked unverified.
-- Formatting retry: once, then safe fallback.
-- Per-agent tool allow-list enforced in `tool_registry.py`.
+- Domain agents run in parallel. Max 3 tool calls per agent per request, one LLM round per agent; agents whose data is empty (housing) skip the LLM.
+- Recovery: retry a failed agent once, then route it with keywords (no LLM) and mark it partial.
+- Planner failure: keyword routing; nothing routable -> safe fallback.
+- Synthesizer: 1 formatting retry, then a code-built answer from verified facts; numbers not in the facts are rejected.
+- Per-agent tool allow-list enforced in `backend/app/tools/tool_registry.py`. Cards and citations are built in code, never by the LLM.
+- Expected LLM calls: clarification 1; single domain 3; four domains 6 (cap 8).
 
 ## API endpoints
 | Method | Route | Purpose |
@@ -83,11 +85,14 @@ The Pinecone Codex plugin `1.1.0` was installed locally from `pinecone-io/pineco
 | POST | `/api/login` | Issue mock JWT for a synthetic student |
 | GET | `/api/health` | Liveness check |
 
+Run: `uvicorn backend.main:app --port 8000` from the repo root. Auth: `POST /api/login {"student_id": "synthetic_student_001"}` returns a bearer token; all other routes except health need `Authorization: Bearer <token>`.
+`/api/chat_stream` body `{"message": "...", "session_id": optional}` streams SSE events: `session` (`session_id`, `request_id`), one `status` per graph node (`node`, `ms`, `status`), then `final` with the `StructuredResponse` (contract documented in `backend/app/schemas/response.py`, `schema_version` 1.0).
+
 ## Security settings
-- Rate limit: 20 requests/min per user (tbd).
-- Input guard: validation and prompt-injection checks before the supervisor.
-- Output guard: PII scan, URL allow-list (usc.edu domains), safe render.
-- Each student can only load their own profile (checked in code).
+- Rate limit: 20 chat requests/min per student (in-memory sliding window).
+- Input guard (deterministic): length, control characters, repeated characters, prompt-injection patterns.
+- Output guard (deterministic): SSN/card-number and non-usc.edu email redaction; URLs allowed only for usc.edu or URLs present in verified data.
+- Student identity comes only from the JWT; tools never accept a student_id argument. Sessions and profiles are owner-only.
 
 ## Large-scale design
 Production-scale design (managed databases, real integrations, scaling, secure multi-agent patterns) goes in `docs/large_scale_design/`, not here.

@@ -1,9 +1,10 @@
 """Runtime settings loaded from environment variables and the repo-root .env file (keys are never logged)."""
 
+import secrets
 from pathlib import Path
 from typing import Literal
 
-from pydantic import SecretStr
+from pydantic import SecretStr, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -25,7 +26,7 @@ class Settings(BaseSettings):
     max_llm_calls_per_request: int = 8
     max_llm_calls_per_process: int = 300
 
-    jwt_secret: SecretStr = SecretStr("dev-only-not-a-secret")
+    jwt_secret: SecretStr = SecretStr("")
     jwt_ttl_minutes: int = 120
     rate_limit_per_minute: int = 20
     session_history_turns: int = 6
@@ -39,6 +40,17 @@ class Settings(BaseSettings):
     max_cards: int = 10
     data_root: Path = REPO_ROOT / "local_database"
     llm_cache_dir: Path = REPO_ROOT / "backend" / ".llm_cache"
+
+    @field_validator("jwt_secret")
+    @classmethod
+    def _strong_secret(cls, value: SecretStr) -> SecretStr:
+        # HS256 needs >= 32 bytes; without a configured secret, use a random per-process one (mock auth only).
+        return value if len(value.get_secret_value()) >= 32 else SecretStr(secrets.token_urlsafe(48))
+
+    @field_validator("groq_api_key", "gemini_api_key")
+    @classmethod
+    def _empty_is_none(cls, value: SecretStr | None) -> SecretStr | None:
+        return value if value and value.get_secret_value().strip() else None
 
 
 settings = Settings()
