@@ -1,46 +1,27 @@
-<!-- Describes the consolidated dataset and future ingestion boundary. -->
+<!-- Entry point to the collected data and its schemas. -->
 # Local database
 
-Root `../DATA_GUIDE.md` is authoritative. All collected knowledge lives in `data/<domain>/<category>/`. Complete local JSON provides exact facts; future Pinecone retrieval will locate records and document passages.
+**The collected files are in [data/](data/).** All 111 source files are retained in full: 1,339 JSON records and 28 Markdown documents. Follow the root [DATA_GUIDE.md](../DATA_GUIDE.md) for formats and future Pinecone ingestion.
 
-| Location | Purpose |
-|---|---|
-| `data/academic/` | Courses, sections and historical degree requirements |
-| `data/career/` | Research labs, opportunities, resources and guides |
-| `data/student_services/` | Portal directory, policies, international-student guides, events and basic needs |
-| `data/housing/` | Reserved collection folders; no listings found in the inspected branches |
-| `student_profiles/` | Synthetic profiles only; never embedded; currently empty |
-| `registry/categories.json`, `sources.json` | Category schemas, search templates, filters and source identities |
-| `registry/readiness_manifest.json` | Every canonical file, hash, generated doc ID, year and input eligibility |
-| `registry/data_quality.json` | Blockers, unknown values and preservation results |
-| `registry/consolidation_provenance.json` | Branch tips, original paths, hashes and transformations |
-| `registry/ingestion_contract.json` | Settings and obligations for the future uploader |
-| `schemas/` | Metadata and record schemas; nested source details retained |
-| `source_archive/` | Immutable branch originals; never ingested |
-| `legacy_code/` | Inactive old pipeline code; never executed or ingested |
-| `scripts/audit_dataset.py` | Offline audit and data manifest generator |
-| `processed/preparation/` | Generated audit report and full-record lookup index; gitignored |
-| `processed/legacy_output/` | Isolated older generated artifacts; obsolete and gitignored |
-| `raw/` | Optional original captures and one-off collection tools; gitignored |
+| Data | Folder | Contents |
+|---|---|---|
+| Academic courses | [courses](data/academic/courses/) | 231 records in 4 batches |
+| Academic sections | [course_sections](data/academic/course_sections/) | 803 section records in 4 batches |
+| Degree requirements | [degree_requirements](data/academic/degree_requirements/) | 6 historical program records |
+| Research labs | [research_labs](data/career/research_labs/) | 19 records |
+| Career opportunities | [opportunities](data/career/opportunities/) | 7 records |
+| Career resources | [career_resources](data/career/career_resources/) | 40 records |
+| Career guides | [career_guides](data/career/career_guides/) | 13 documents |
+| USC services | [service_directory](data/student_services/service_directory/) | 8 portal records |
+| International students | [international_students](data/student_services/international_students/) | 7 documents |
+| Student policies | [student_policies](data/student_services/student_policies/) | 8 documents |
+| Student-life events | [event_listings](data/student_services/event_listings/) | 215 records |
+| Basic needs | [support_resources](data/student_services/support_resources/) | 10 complete topic records |
 
-## Reproduce the audit
+[registry/categories.json](registry/categories.json) defines the categories; [registry/sources.json](registry/sources.json) identifies their sources. [registry/source_checks.json](registry/source_checks.json) retains collection access observations. [schemas/](schemas/) contains their validation schemas. [student_profiles/](student_profiles/) is reserved for synthetic profiles and is currently empty. Housing and other reserved categories have no collected records yet.
 
-Run from the repository root using the existing environment:
+Only public files with `meta.status: verified` may be indexed. There are 99 such files (1,086 records plus 28 documents). Twelve files remain draft: 20 courses referencing 38 absent prerequisite IDs, six historical degree programs, two career resources, 215 transcribed events and ten basic-needs topics. They remain in the same category folders with their full content and draft metadata.
 
-```powershell
-.venv\Scripts\python.exe local_database/scripts/audit_dataset.py
-```
+All 803 section listings retain explicitly unknown modality/location; 96 have TBA times and 359 have no listed instructor. Treat these values as unknown. Canonical section IDs include the course code; `source_section_id` retains the original alias. Degree filenames use their actual historical catalogue years.
 
-For a fresh environment, install `local_database/scripts/requirements.txt` first. The audit needs no API key or internet. It checks all files, including drafts, against schemas; checks IDs, dates, filenames, source registrations, prerequisite references and golden-query document IDs; verifies archived hashes; and compares complete original records and Markdown text. Missing prerequisite records are explicit draft blockers. Structural or preservation errors return a nonzero exit status; the readiness manifest is published only after those checks pass.
-
-`processed/preparation/records_index.json` maps `{doc_id}#{record_slug}` to the complete local JSON file and array position. It includes review entries, so consumers must enforce `eligible_input` and authenticated access in code. Exact answers come from the full record, never shortened search text. Section IDs include the course code; `source_section_id` and `sis_section_id` retain original aliases.
-
-## Current preparation status
-
-There are **111 files, 1,339 records and 28 Markdown documents**. The input manifest permits **99 files / 1,086 records** and holds **12 files / 253 records**. Held data includes 20 courses with absent prerequisite records, six historical degree programs, two career resources, 215 events and ten basic-needs topics. Every held record remains complete in `data/`.
-
-The user supplied the Engage calendar URL for the events. This establishes attribution, not event-status verification. Existing verified statuses elsewhere are inherited from collectors, not fresh live-source checks. All 803 sections have explicitly unverified modality/location; 96 have TBA times and 359 have no listed instructor. These values must not be used as confirmed schedule facts. See `consolidation_report.md` for the full handoff.
-
-## Future Pinecone preparation
-
-This is a prepared source dataset, not a vector upload package. No embeddings, BM25 fit, Pinecone index or upserts were produced. The old upload code is inactive. Future implementation must consume eligible files, apply DATA_GUIDE's heading-aware 350/450-token chunking with 50-token overlap, preserve tables and numbered lists, build complete manifests and lookup mappings, embed with normalized BGE-small vectors, fit BM25, and upload to domain namespaces. Oversized content must be split losslessly or flagged, never truncated. Providing a key does not by itself implement these remaining pipeline steps.
+This folder contains source data and its schema/registry support only. Old code, duplicate archives, generated manifests and reports have been removed from the current layout; they remain recoverable in Git history at commit `89fadce`. No data file was changed or truncated by this cleanup. Pinecone chunking, embedding and upload remain future work under DATA_GUIDE; no upload has occurred.
