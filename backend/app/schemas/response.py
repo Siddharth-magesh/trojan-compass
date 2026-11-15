@@ -5,7 +5,7 @@ src/lib/api_types.ts: numbered citations, citation_ids on cards, checklist group
 Shape: {schema_version, request_id, response_type, answer, cards[], citations[], freshness_notes[], partial_status,
 follow_ups[], clarification_options[], error_code}.
 response_type: "answer" | "clarification" (answer holds the question) | "fallback" (minimal safe answer).
-cards[].type: "course" | "housing" | "job" | "service" | "checklist". Unknown facts stay as the strings
+cards[].type: "course" | "housing" | "job" | "lab" | "service" | "checklist". Unknown facts stay as the strings
 "TBA", "unverified", "not_listed" or "unknown"; the frontend should show them, not hide them.
 partial_status.overall: "complete" | "partial" (some domain had no data or failed) | "unverified" (checks failed).
 """
@@ -81,6 +81,20 @@ class JobCard(BaseModel):
     source: Citation
 
 
+class LabCard(BaseModel):
+    type: Literal["lab"] = "lab"
+    lab_id: str
+    title: str
+    principal_investigator: str
+    research_areas: list[str] = Field(default_factory=list)
+    recruitment_status: str          # copied from the record (e.g. interest_only, not_stated); never inferred
+    invited_levels: list[str] = Field(default_factory=list)
+    compensation_status: str
+    application_instructions: str
+    official_url: str
+    source: Citation
+
+
 class ServiceCard(BaseModel):
     type: Literal["service"] = "service"
     service_id: str
@@ -103,7 +117,7 @@ class ChecklistCard(BaseModel):
     items: list[ChecklistItem]
 
 
-Card = Annotated[CourseCard | HousingCard | JobCard | ServiceCard | ChecklistCard, Field(discriminator="type")]
+Card = Annotated[CourseCard | HousingCard | JobCard | LabCard | ServiceCard | ChecklistCard, Field(discriminator="type")]
 
 
 class AgentStatus(BaseModel):

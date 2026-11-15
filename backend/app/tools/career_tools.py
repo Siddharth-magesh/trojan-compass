@@ -6,7 +6,7 @@ from typing import Any
 from pydantic import BaseModel, ConfigDict, Field
 
 from backend.app.schemas.agent_result import RecordRef
-from backend.app.schemas.response import JobCard
+from backend.app.schemas.response import JobCard, LabCard
 from backend.app.tools.tool_registry import ToolContext, ToolOutput, tool
 
 
@@ -74,6 +74,14 @@ def search_research_labs(args: KeywordInput, ctx: ToolContext) -> ToolOutput:
         out.records.append(RecordRef(category="research_labs", record_id=rid))
         lab_citation = ctx.store.citation("research_labs", rid)
         out.citations.append(lab_citation)
+        out.cards.append(LabCard(
+            lab_id=rid, title=str(r.get("title", rid)), principal_investigator=str(r.get("principal_investigator", "not_listed")),
+            research_areas=[str(a) for a in r.get("research_areas", [])],
+            recruitment_status=str(r.get("recruitment_status", "not_listed")),
+            invited_levels=[str(level) for level in r.get("invited_levels", [])],
+            compensation_status=str(r.get("compensation_status", "not_listed")),
+            application_instructions=str(r.get("application_instructions", "not_listed")),
+            official_url=str(r.get("official_url", "not_listed")), source=lab_citation).model_dump())
         out.add_fact(f"Lab {r.get('title')} (PI {r.get('principal_investigator', 'not_listed')}): recruitment "
                          f"{r.get('recruitment_status', 'unverified')}, funding {r.get('compensation_status', 'unverified')}.", lab_citation)
     return out

@@ -6,7 +6,7 @@ from backend.app.config.settings import settings
 from backend.app.schemas.agent_result import AgentResult
 from backend.app.schemas.response import AgentStatus, ChecklistCard, ChecklistItem, PartialStatus
 
-CARD_KEYS = {"course": "course_id", "housing": "listing_id", "job": "job_id", "service": "service_id"}
+CARD_KEYS = {"course": "course_id", "housing": "listing_id", "job": "job_id", "lab": "lab_id", "service": "service_id"}
 CHECKLIST_ORDER = ["student_services", "academic", "career", "housing"]
 
 

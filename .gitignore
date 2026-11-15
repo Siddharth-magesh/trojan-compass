@@ -231,3 +231,12 @@ local_database/processed/
 
 # Backend LLM response cache (LLM_MODE=cache)
 backend/.llm_cache/
+
+# Demo video: recordings, renders, generated data copies and caches (track only code, configs, manifests, docs)
+video/remotion/public/recordings/
+video/remotion/public/chatbot_comparison/
+video/remotion/public/usc_screenshots/
+video/remotion/public/audio/
+video/remotion/.recording_tmp/
+video/renders/
+video/demo/data/demo_copy/

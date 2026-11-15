@@ -1,0 +1,40 @@
+{
+ "student_id": "synthetic_student_001",
+ "completed": [
+  "CSCI 570"
+ ],
+ "courses": [
+  {
+   "course_id": "CSCI 559",
+   "title": "Machine Learning I: Supervised Methods",
+   "prerequisite_text": "No enforced course prerequisites.",
+   "prerequisites": []
+  },
+  {
+   "course_id": "CSCI 567",
+   "title": "Machine Learning",
+   "prerequisite_text": "No enforced course prerequisites.",
+   "prerequisites": []
+  },
+  {
+   "course_id": "CSCI 617",
+   "title": "Machine Learning for/with Mixed-Integer Optimization",
+   "prerequisite_text": "No enforced course prerequisites.",
+   "prerequisites": []
+  }
+ ],
+ "completed_unlocks": [
+  {
+   "course_id": "CSCI 670",
+   "title": "Advanced Analysis of Algorithms"
+  },
+  {
+   "course_id": "CSCI 672",
+   "title": "Approximation Algorithms"
+  },
+  {
+   "course_id": "CSCI 675",
+   "title": "Convex and Combinatorial Optimization"
+  }
+ ]
+}

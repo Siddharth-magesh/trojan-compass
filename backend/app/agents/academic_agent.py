@@ -22,7 +22,8 @@ def heuristic(sub_query: str, student_ctx: dict[str, Any]) -> list[PlannedCall]:
     if ids:
         return [("find_sections", {"course_ids": ids, "term": term})]
     topic = re.sub(r"[^a-z ]", " ", sub_query.lower())
-    return [("search_courses", {"query": topic[:80].strip() or "course"})]
+    wants_sections = any(w in sub_query.lower() for w in ("section", "schedule", "fit together", "time", "conflict"))
+    return [("search_courses", {"query": topic[:80].strip() or "course", "with_sections": wants_sections, "term": term})]
 
 
 SPEC = define_agent(AgentSpec(name="academic", categories=["courses", "course_sections"], heuristic=heuristic))

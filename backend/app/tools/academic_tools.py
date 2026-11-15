@@ -39,6 +39,8 @@ class SearchCoursesInput(BaseModel):
     model_config = ConfigDict(extra="forbid")
     query: str = Field(min_length=2, max_length=80, description="Topic keywords, e.g. 'machine learning'")
     level: Literal["undergraduate", "graduate"] | None = None
+    with_sections: bool = Field(default=False, description="Also list sections and check lecture conflicts for the top 3")
+    term: Term = Field(default=settings.default_term)
 
 
 def prerequisite_status(course: dict[str, Any], completed: set[str], store: DataStore) -> tuple[str, list[str], list[str]]:
@@ -140,6 +142,7 @@ def find_sections(args: TermCoursesInput, ctx: ToolContext) -> ToolOutput:
 @tool("search_courses", "Find courses by topic keywords; returns up to 5 matching course ids and titles.", SearchCoursesInput)
 def search_courses(args: SearchCoursesInput, ctx: ToolContext) -> ToolOutput:
     words = [w for w in re.findall(r"[a-z0-9]+", args.query.lower()) if len(w) > 2]
+    student_level = ctx.profile.get("level")
     scored = []
     for course in ctx.store.records("courses"):
         if args.level and course.get("level") != args.level:
@@ -147,8 +150,14 @@ def search_courses(args: SearchCoursesInput, ctx: ToolContext) -> ToolOutput:
         hay = f"{course.get('title', '')} {' '.join(course.get('tags', []))}".lower()
         score = sum(w in hay for w in words)
         if score:
-            scored.append((score, course["course_id"]))
-    top = [cid for _, cid in sorted(scored, key=lambda x: (-x[0], x[1]))[:5]]
+            # Ties: prefer courses with lectures in the requested term, then the student's own level.
+            offered = any(s.get("section_type") == "lecture" for s in _sections(ctx.store, course["course_id"], args.term))
+            scored.append((-score, not offered, course.get("level") != student_level, course["course_id"]))
+    top = [row[-1] for row in sorted(scored)[:5]]
+    if top and args.with_sections:
+        # Topic search + "which sections fit together" in one call: the agent gets a single tool round.
+        out = check_schedule_conflicts(TermCoursesInput(course_ids=top[:3], term=args.term), ctx)
+        return out.model_copy(update={"tool": "search_courses"})
     out = _course_output(ctx, top, None, with_sections=False).model_copy(update={"tool": "search_courses"})
     if not top:
         out.status = "not_found"
