@@ -39,6 +39,7 @@ trojan_compass/
 │   │   ├── academic/            # owner: person_1
 │   │   │   ├── courses/         # records
 │   │   │   ├── course_sections/ # records
+│   │   │   ├── degree_requirements/ # records (BS/MS/PhD requirements per program)
 │   │   │   ├── academic_calendar/ # records (deadlines)
 │   │   │   ├── bulletin/        # documents
 │   │   │   └── registration_policies/
