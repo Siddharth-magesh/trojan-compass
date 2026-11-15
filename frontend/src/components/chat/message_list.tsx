@@ -15,7 +15,7 @@ export function MessageList({ messages }: { messages: chat_message[] }) {
 
   const last_assistant = [...messages].reverse().find((m) => m.role === 'assistant');
   return (
-    <div className="grid gap-9 pb-6 pt-8">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-9 pb-6 pt-8">
       {messages.map((m) => (
         <motion.div
           key={m.id}
