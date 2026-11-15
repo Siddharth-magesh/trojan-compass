@@ -18,6 +18,7 @@ Rules for any AI agent or teammate working in this repo. Read `CONTRIBUTING.md` 
 - Use synthetic student profiles only; no real student records. Manually collected public knowledge is allowed with `data_origin: public_copy`. No runtime scraping.
 
 ## Local data and ingestion
+- The user-authorized ingestion implementation lives in `local_database/scripts/`. Run `push_to_pinecone.py --dry-run` before upload; use `--verify-only` to check the remote store. Keep generated files, model weights, caches and credentials ignored. Never delete or recreate an incompatible index.
 - Root `DATA_GUIDE.md` is authoritative. Canonical datasets live in `local_database/data/<domain>/<category>/`; register each category and source.
 - Keep `local_database/` focused on data, schemas, source/category registries and synthetic profiles. Do not add duplicate archives, old code snapshots, generated audit manifests or collection reports to the tracked tree. Git history preserves earlier versions.
 - Preserve complete source content, nested fields, numeric types and historical years. Never truncate a record to fit an embedding limit.
