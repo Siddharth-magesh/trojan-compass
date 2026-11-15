@@ -11,9 +11,28 @@ Technical facts for the prototype. Status: **set** = decided, **tbd** = to tune.
 ## Backend status (implemented in `backend/`)
 - Flow: input guard -> supervisor (1 LLM call: plan or clarification) -> parallel academic / housing / career / student_services agents -> aggregate -> deterministic verify -> synthesizer (1 LLM call) -> output guard -> structured response.
 - Data: verified + public records loaded once from `local_database/data/` (drafts never loaded). Housing, academic calendar and job listings are empty, so those answers report "not collected yet".
-- Retrieval: `retrieval_client.py` wraps `query_store.hybrid_query`; off by default (`RETRIEVAL_BACKEND=stub`) until `local_database/processed/` exists locally.
+- Retrieval: deterministic section-A pipeline in `backend/app/retrieval/` (zero LLM calls). `RETRIEVAL_BACKEND=auto` (default) uses Pinecone when `processed/` (manifest, BM25, model) and `PINECONE_API_KEY` are present, otherwise a stub whose reason shows in `/api/health`. Build `processed/` locally with `cd local_database/scripts && python push_to_pinecone.py --verify-only` (read-only on Pinecone; also proves vector parity). Measured warm latency ~90-125 ms per query, ~0-1 ms for exact/structured hits.
 - Profiles: 2 synthetic students (`synthetic_student_001`, `_002`) for mock login.
 - Try it: `python -m backend.scripts.run_query --mode mock "..."` or `uvicorn backend.main:app`. Default `LLM_MODE=cache` replays from `backend/.llm_cache/`.
+
+## Key files
+| Path | Role |
+|---|---|
+| `backend/main.py`, `backend/app/api/routes.py` | FastAPI app and `/api` endpoints (SSE chat) |
+| `backend/app/orchestration/graph.py` | LangGraph flow; `supervisor`, `dispatcher`, `aggregator`, `verifier`, `synthesizer`, `fallback` alongside |
+| `backend/app/agents/base_agent.py` | agent tool loop; `*_agent.py` keyword routing; `prompts/*.md` |
+| `backend/app/tools/tool_registry.py` | typed tools, per-agent allow-lists, ToolContext (identity from JWT) |
+| `backend/app/tools/knowledge_tool.py` | agent-facing retrieval tool (domain = calling agent) |
+| `backend/app/retrieval/pipeline.py` | retrieval: parse -> filters -> route -> hybrid/structured -> fusion -> validate -> evidence |
+| `backend/app/retrieval/retrieval_client.py` | Retriever protocol, stub, `stub/pinecone/auto` switch, health status |
+| `backend/app/retrieval/runtime.py` | loads `processed/` (manifest, BM25, BGE encoder, chunks) once; readiness |
+| `backend/app/data_store/loader.py` | verified+public JSON/MD loaded once (reuses `source_data.load_source`) |
+| `backend/app/schemas/` | `plan`, `agent_result` (Evidence), `retrieval` (EvidencePackage), `response` (frontend contract) |
+| `backend/app/llm_gateway/gateway.py` | Groq -> Gemini, budget caps, mock/cache modes |
+| `backend/app/security/`, `observability/request_log.py` | guards, JWT, rate limit; JSON request and retrieval logs |
+| `backend/scripts/run_query.py`, `run_retrieval.py` | CLI: full graph / retrieval only (`--parity`) |
+| `local_database/scripts/push_to_pinecone.py` | ingestion (`--dry-run`, `--verify-only`); `build_chunks.py`, `embedding_runtime.py`, `sparse_encoder.py`, `query_store.py` |
+| `evaluation/golden_queries.jsonl` | 79 queries (recall@5 / MRR / abstention) |
 
 ## Stack
 | Layer | Choice | Status |
@@ -41,9 +60,9 @@ Model ids are env-configurable (`PRIMARY_MODEL`, `FALLBACK_MODEL`). Temperature:
 | Setting | Value | Status |
 |---|---|---|
 | Chunk size / overlap | Target 350 / 50 tokens; hard cap 450 including context, per DATA_GUIDE | set |
-| Retrieval | Hybrid (vector + BM25), then rerank | tbd |
-| Top-k retrieved | 20 | tbd |
-| Top-k after rerank | 5 | tbd |
+| Retrieval | Hybrid (dense alpha 0.75, 0.25 for code/acronym queries) per namespace in parallel; exact ids and numeric comparisons answered from local JSON first; heuristic rerank (score + official + freshness + year) | set |
+| Top-k retrieved | 20 | set |
+| Top-k after rerank | 5 (knowledge tool uses 3) | set |
 | Index config | `trojan-compass`, 384 dims, dotproduct, AWS us-east-1 serverless, namespace per domain, batch 100; deletion protection enabled | set |
 | Metadata on every chunk | Full flat metadata contract in DATA_GUIDE; explicit allow-list, no nulls, under 40 KB | set |
 | Retrieval strategy comparison | Basic vs hybrid vs STAIR-inspired hierarchical | tbd |

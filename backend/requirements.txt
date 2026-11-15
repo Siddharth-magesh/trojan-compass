@@ -9,3 +9,8 @@ PyJWT==2.15.1
 PyYAML==6.0.3
 jsonschema==4.26.0
 python-dotenv==1.2.4
+# Retrieval (same pins as local_database/scripts; numpy 2.4.6 because 2.5.x needs Python 3.12; parity verified)
+pinecone==8.1.2
+onnxruntime==1.32.0
+numpy==2.4.6
+tokenizers==0.23.3

@@ -34,3 +34,13 @@ def log_request(request_id: str, student_id: str, events: list[dict[str, Any]], 
                 "models": sorted({u.get("model", "") for u in usage}),
                 "errors": [u["error"] for u in usage if u.get("error")]},
     }))
+
+
+def log_retrieval(package: Any, domains: list[str]) -> None:
+    """One line per retrieval: route, counts, timings, sufficiency; only a query hash, never the query or student data."""
+    _log.info(json.dumps({
+        "event": "retrieval", "query_hash": package.query_hash, "backend": package.backend, "domains": domains,
+        "route": package.route, "strategy": package.strategy, "alpha": package.alpha, "year": package.academic_year,
+        "items": len(package.items), "sufficient": package.sufficient, "reason": package.reason,
+        "flags": len(package.flags), "cache_hit": package.cache_hit, "timings_ms": package.timings_ms,
+    }))

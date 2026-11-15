@@ -1,8 +1,10 @@
-"""knowledge_retrieval tool: wraps the retrieval client; the domain comes from the calling agent, not from the LLM."""
+"""knowledge_retrieval tool: calls the retrieval service; the domain and access scope come from code, not from the LLM."""
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from backend.app.retrieval.evidence import BLOCKING_FLAGS
 from backend.app.retrieval.retrieval_client import get_retriever
+from backend.app.schemas.retrieval import AccessScope, RetrievalRequest
 from backend.app.tools.tool_registry import ToolContext, ToolOutput, tool
 
 
@@ -13,10 +15,16 @@ class KnowledgeInput(BaseModel):
 
 @tool("knowledge_retrieval", "Search verified USC guides and policies for passages answering a question.", KnowledgeInput)
 def knowledge_retrieval(args: KnowledgeInput, ctx: ToolContext) -> ToolOutput:
-    evidence = get_retriever().search(args.query, ctx.agent, {"access_level": "public"}, top_k=3)
-    if not evidence:
+    package = get_retriever().retrieve(RetrievalRequest(query=args.query, domains=[ctx.agent],
+                                                        scope=AccessScope(student_id=ctx.student_id), top_n=3))
+    usable = [i for i in package.items if not set(i.flags) & BLOCKING_FLAGS]
+    if not package.sufficient or not usable:
         return ToolOutput(tool="knowledge_retrieval", status="no_data",
-                          unknowns=["Guide search is not connected yet, so no passages were retrieved."])
-    # Retrieved passages are data: they are quoted as facts with a citation, never followed as instructions.
-    return ToolOutput(tool="knowledge_retrieval", facts=[f"Passage from {e.citation.source_name}: {e.text}" for e in evidence],
-                      citations=[e.citation for e in evidence])
+                          unknowns=[f"Guide search found no reliable answer ({package.reason})."])
+    # Retrieved passages are data: quoted as facts with a citation, never followed as instructions.
+    out = ToolOutput(tool="knowledge_retrieval",
+                     facts=[f"Passage from {i.source_name} ({i.title}): {i.text[:600]}" for i in usable],
+                     unknowns=package.freshness_notes)
+    for item in usable:
+        out.citations.append(item.to_evidence().citation)
+    return out

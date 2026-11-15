@@ -12,7 +12,8 @@ def heuristic(sub_query: str, student_ctx: dict[str, Any]) -> list[PlannedCall]:
     text = sub_query.lower()
     topics = [w for w in TOPIC_WORDS if w in text]
     guide_keywords = CHECKLIST_KEYWORDS if ("checklist" in text or "arriv" in text or not topics) else topics
-    return [("list_services", {"keywords": topics[:6]}), ("list_guides", {"keywords": guide_keywords[:6]})]
+    return [("list_services", {"keywords": topics[:6]}), ("list_guides", {"keywords": guide_keywords[:6]}),
+            ("knowledge_retrieval", {"query": sub_query[:200]})]
 
 
 SPEC = define_agent(AgentSpec(name="student_services",

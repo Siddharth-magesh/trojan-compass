@@ -14,7 +14,7 @@ INJECTION_PATTERNS = [
     r"\byou are now\b", r"\bdeveloper mode\b", r"\bjailbreak\b", r"\bact as (an? )?(admin|system|developer)\b",
     r"student_id\s*[:=]", r"<\s*/?\s*(system|assistant)\s*>",
 ]
-_INJECTION = re.compile("|".join(INJECTION_PATTERNS), re.IGNORECASE)
+INJECTION_RE = re.compile("|".join(INJECTION_PATTERNS), re.IGNORECASE)
 
 
 class GuardResult(BaseModel):
@@ -31,6 +31,6 @@ def check_input(message: str) -> GuardResult:
         return GuardResult(ok=False, reason="message too long")
     if re.search(r"(.)\1{40,}", text):
         return GuardResult(ok=False, reason="repeated characters")
-    if _INJECTION.search(text):
+    if INJECTION_RE.search(text):
         return GuardResult(ok=False, reason="possible prompt injection")
     return GuardResult(ok=True, sanitized=text)

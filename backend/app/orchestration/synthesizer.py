@@ -44,7 +44,8 @@ def code_answer(verified: dict[str, Any]) -> str:
 
 @mock_llm.register("synthesizer")
 def _mock(messages: list[dict[str, Any]], tools: list[dict[str, Any]] | None) -> dict[str, Any]:
-    payload = json.loads(messages[-1]["content"].split("Input: ", 1)[-1])
+    first_input = next(m["content"] for m in messages if m["role"] == "user" and m["content"].startswith("Input: "))
+    payload = json.loads(first_input.split("Input: ", 1)[1])
     facts = [f.split("] ", 1)[-1] for f in payload["facts"][:4]]
     return {"content": json.dumps({"answer": "Here is a summary of what I found. " + " ".join(facts)}), "tool_calls": []}
 

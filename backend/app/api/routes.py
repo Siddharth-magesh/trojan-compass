@@ -15,6 +15,7 @@ from backend.app.llm_gateway.budget import RequestBudget
 from backend.app.observability.request_log import log_request
 from backend.app.orchestration.fallback import fallback_response
 from backend.app.orchestration.graph import build_graph
+from backend.app.retrieval.retrieval_client import retrieval_status
 from backend.app.schemas.api import ChatRequest, LoginRequest, LoginResponse, SessionTurn, SessionView
 from backend.app.security import rate_limit
 from backend.app.security.auth import current_student, issue_token
@@ -88,5 +89,5 @@ def student_profile(student_id: str = Depends(current_student)) -> dict[str, Any
 @router.get("/health")
 def health() -> dict[str, Any]:
     store = get_store()
-    return {"status": "ok", "llm_mode": settings.llm_mode,
+    return {"status": "ok", "llm_mode": settings.llm_mode, "retrieval": retrieval_status(),
             "records": {c: len(v) for c, v in store.by_id.items()}, "documents": len(store.documents)}

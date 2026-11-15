@@ -53,13 +53,15 @@ backend/                          # FastAPI + LangGraph multi-agent API (run fro
   main.py                         # app entry: uvicorn backend.main:app
   requirements.txt                # pinned backend dependencies
   scripts/run_query.py            # run one query through the graph: python -m backend.scripts.run_query --mode mock "..."
+  scripts/run_retrieval.py        # retrieval only: python -m backend.scripts.run_retrieval "..." --domain career (--parity)
   app/
     config/settings.py            # env settings: LLM_MODE, models, caps, JWT, data paths
     schemas/                      # plan, agent_result, response (frontend contract), state, api
     llm_gateway/                  # gateway (Groq -> Gemini), budget caps, disk cache, mock outputs
     data_store/loader.py          # loads verified+public data once, reusing local_database/scripts/source_data.py
     tools/                        # typed tools + tool_registry.py (per-agent allow-lists)
-    retrieval/retrieval_client.py # Retriever protocol over query_store.hybrid_query, stub fallback
+    retrieval/                    # deterministic retrieval: pipeline, runtime, query_parser, filters, router,
+                                  #   structured_lookup, hybrid_engine, fusion, validation, evidence, retrieval_client
     agents/                       # base_agent loop, one file per domain agent, prompts/*.md
     orchestration/                # graph, supervisor, dispatcher, aggregator, verifier, synthesizer, fallback
     security/                     # auth (mock JWT), rate_limit, input_guard, output_guard

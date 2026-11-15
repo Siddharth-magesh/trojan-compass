@@ -35,7 +35,15 @@ class Settings(BaseSettings):
 
     academic_year: str = "2026-2027"
     default_term: Literal["Fall 2026", "Spring 2027"] = "Spring 2027"  # next registration term on 2026-11-14
-    retrieval_backend: Literal["stub", "pinecone"] = "stub"
+    # auto = pinecone when processed/ artifacts, model and key are present, otherwise stub with a logged reason.
+    retrieval_backend: Literal["stub", "pinecone", "auto"] = "auto"
+    retrieval_strategy: Literal["hybrid", "hybrid_outline"] = "hybrid"
+    retrieval_candidates: int = 20
+    retrieval_top_n: int = 5
+    retrieval_alpha: float = 0.75
+    retrieval_keyword_alpha: float = 0.25
+    retrieval_min_score: float | None = None  # sufficiency threshold; None until calibrated on golden queries
+    retrieval_max_query_chars: int = 500
     max_tool_calls_per_agent: int = 3
     max_cards: int = 10
     data_root: Path = REPO_ROOT / "local_database"
