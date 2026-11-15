@@ -1,0 +1,9 @@
+# Reproducible local BGE embeddings and Pinecone Vectors API ingestion.
+pinecone==8.1.2
+onnxruntime==1.32.0
+numpy==2.5.4
+python-dotenv==1.2.4
+pydantic==2.14.3
+jsonschema==4.26.0
+PyYAML==6.0.3
+tokenizers==0.23.3

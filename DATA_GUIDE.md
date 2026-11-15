@@ -37,9 +37,15 @@ local_database/
 ├── raw/                         # optional original pages/PDFs (gitignored)
 ├── processed/                   # generated, gitignored (see "Generated files")
 └── scripts/
-    ├── validate_data.py
-    ├── build_chunks.py
-    └── push_to_pinecone.py
+    ├── source_data.py           # schema, source and reference validation
+    ├── build_chunks.py          # passages, outlines and record lookup index
+    ├── embedding_runtime.py     # pinned local BGE model and embedding cache
+    ├── sparse_encoder.py        # persisted BM25 vocabulary and weights
+    ├── pinecone_store.py        # guarded upload, cleanup and read-back checks
+    ├── ingestion_models.py      # typed boundaries and shared settings
+    ├── query_store.py           # public hybrid search / exact local lookup
+    ├── requirements.txt
+    └── push_to_pinecone.py      # single end-to-end command
 ```
 New category: add the folder, a `categories.json` entry and (for records) a schema. No code change.
 
@@ -161,7 +167,7 @@ Ids: `{doc_id}#outline`, `{doc_id}#{chunk_no:03d}`, `{doc_id}#{record_slug}`.
 - Student profiles are never embedded. They are loaded by code for the logged-in user only.
 
 ## Pinecone config
-- One serverless index `trojan_compass`: dimension 384, **metric `dotproduct`** (required for dense+sparse in one index). Changing the embedding model means recreating the index and re-pushing.
+- One serverless index `trojan-compass` (Pinecone requires hyphens rather than underscores): dimension 384, **metric `dotproduct`** (required for dense+sparse in one index). Changing the embedding model means recreating the index and re-pushing.
 - **Namespace = domain** (`academic`, `housing`, `career`, `student_services`). Agents query their own namespace; `student_services` may query several.
 
 ## Access control
@@ -180,12 +186,12 @@ Ids: `{doc_id}#outline`, `{doc_id}#{chunk_no:03d}`, `{doc_id}#{record_slug}`.
 - Rank `official` above `third_party` when scores are close. Show `verified_date` with every citation.
 
 ## Generated files (`processed/`)
-`chunks.jsonl` (text, hashes, prev/next ids, section path, all source URLs), `outlines.json` (heading tree per document), `records_index.json` (record_slug -> file + position), `embedding_cache/`, `bm25_params.json`, and `manifest.json` (file hashes, vector ids per file, embed model, chunker settings, pipeline version). Any change to chunk settings or templates bumps the pipeline version and rebuilds everything.
+`chunks.jsonl` (text, hashes, prev/next ids, section path in metadata, all source URLs), `outlines.json` (heading tree per document), `records_index.json` (record_slug -> file + position), `embedding_cache/`, `bm25_params.json`, and `manifest.json` (file hashes, vector ids per file, embed model, chunker settings, pipeline version). Any change to chunk settings or templates bumps the pipeline version and rebuilds everything.
 
 ## Ingestion flow (run after any data change)
-1. `validate_data.py`: meta, schemas, unique ids, valid dates, chunk-size limits, and referential integrity (every `prerequisites` id exists in courses, every section's `course_id` exists, every `source_name` is registered).
-2. `build_chunks.py`: hash each file, rebuild chunks only for new or changed files, write the generated files.
-3. `push_to_pinecone.py`: embed uncached chunks, compute sparse vectors, upsert in batches of 100 into the domain namespace, delete vector ids in the manifest that no longer exist.
+1. `python local_database/scripts/push_to_pinecone.py --dry-run`: validate metadata, schemas, unique IDs, dates, registered sources, token limits, and course references for eligible files. Drafts retain unresolved references and are excluded. This builds local passages and lookup mappings without Pinecone access.
+2. `build_chunks.py` (called by the command): hash each file and reuse prepared chunks only when source content, category configuration, source registry, model pin and chunker code/settings match. Generated files stay ignored under `processed/`.
+3. `python local_database/scripts/push_to_pinecone.py`: embed uncached passages, compute BM25 sparse vectors, upsert changed records in batches of 100, and remove only obsolete vectors marked as owned by this dataset. Verify every uploaded ID, dense/sparse value and metadata field, then run realistic searches before committing the local manifest. `--verify-only` performs read-back checks without remote writes; `--refit` forces a full-corpus BM25 refit and re-upsert.
 4. Removing a file or setting `status: deprecated` (wrong or withdrawn content) removes its vectors on the next push. Older academic years stay indexed as their own files. A same-year correction bumps `version` and replaces the previous vectors (old text stays in git history).
 
 ## Evaluation (how we know retrieval is good)
@@ -203,5 +209,12 @@ Use empty `expected_doc_ids` for `negative` queries whose answer is not in our d
 
 1. Add your websites to `registry/sources.json` first.
 2. Work only inside your own domain folder. Ask before changing a schema or the registry.
-3. Branch `feat/data_<domain>_<topic>`, add files, run `validate_data.py`, open a PR.
+3. Branch `feat/data_<domain>_<topic>`, add files, run the ingestion command with `--dry-run`, open a PR.
 4. When updating a file, bump `version` and `last_verified_date`. For a new academic year, create a new file instead.
+## Implemented ingestion safeguards
+
+The current implementation indexes public, verified files only; private ingestion remains disabled. Embeddings use the pinned official BGE-small ONNX model with CLS pooling and L2 normalization. The Python SDK is pinned to 8.1.2 for the supported Vectors API used by this contract. Index creation uses AWS `us-east-1`, 384 dimensions, dotproduct and deletion protection. It refuses incompatible existing indexes and never deletes an index. API credentials are read only from the ignored root `.env`.
+
+Vectors include `dataset_id`, `chunk_hash`, `payload_hash`, `model_revision`, `pipeline_version` and `bm25_hash` as flat provenance fields. Cleanup is restricted to this dataset's obsolete vectors; unrelated indexes and records are preserved. Deduplication respects domain and academic-year boundaries. A table or numbered list that cannot fit intact under the token cap stops ingestion for review. Empty eligible corpora are rejected instead of silently deleting the index contents.
+
+Public hybrid queries enforce dataset, public-access, academic-year and BM25-version filters in code. The included query utility is a verification/reuse helper, not the full production router or reranker. Numerical/comparison answers still require complete local JSON and deterministic application logic. The index being ready does not mean a student-facing application or reranking evaluation has been implemented.
