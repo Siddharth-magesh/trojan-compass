@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "title": "Synthetic student profile 002",
+    "summary": "Fictional international undergraduate Electrical and Computer Engineering student used for the demo; not a real person.",
+    "source_name": "trojan_compass_synthetic",
+    "source_url": "https://www.usc.edu/",
+    "collected_by": "person_1",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "synthetic",
+    "access_level": "synthetic_private",
+    "owner_student_id": "synthetic_student_002",
+    "audience": ["international", "undergraduate"],
+    "tags": ["synthetic", "student_profile", "demo"]
+  },
+  "records": [
+    {
+      "student_id": "synthetic_student_002",
+      "name": "Bianca Demo",
+      "program": "BS Electrical and Computer Engineering",
+      "level": "undergraduate",
+      "country": "Brazil",
+      "interests": ["embedded systems", "internet of things"],
+      "completed_courses": ["EE 109", "CSCI 102", "MATH 125", "MATH 126"],
+      "housing_budget_usd": 950,
+      "job_interests": ["technical", "engineering", "student worker"]
+    }
+  ]
+}

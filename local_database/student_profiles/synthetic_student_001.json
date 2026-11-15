@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "title": "Synthetic student profile 001",
+    "summary": "Fictional incoming international MS Computer Science student used for the demo; not a real person.",
+    "source_name": "trojan_compass_synthetic",
+    "source_url": "https://www.usc.edu/",
+    "collected_by": "person_1",
+    "collected_date": "2026-11-14",
+    "last_verified_date": "2026-11-14",
+    "academic_year": "2026-2027",
+    "version": 1,
+    "status": "verified",
+    "data_origin": "synthetic",
+    "access_level": "synthetic_private",
+    "owner_student_id": "synthetic_student_001",
+    "audience": ["international", "graduate"],
+    "tags": ["synthetic", "student_profile", "demo"]
+  },
+  "records": [
+    {
+      "student_id": "synthetic_student_001",
+      "name": "Aarav Demo",
+      "program": "MS Computer Science",
+      "level": "graduate",
+      "country": "India",
+      "interests": ["machine learning", "algorithms"],
+      "completed_courses": ["CSCI 570"],
+      "housing_budget_usd": 1200,
+      "job_interests": ["software", "research", "machine learning"]
+    }
+  ]
+}

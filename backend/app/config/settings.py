@@ -33,6 +33,10 @@ class Settings(BaseSettings):
     freshness_days: int = 120
 
     academic_year: str = "2026-2027"
+    default_term: Literal["Fall 2026", "Spring 2027"] = "Spring 2027"  # next registration term on 2026-11-14
+    retrieval_backend: Literal["stub", "pinecone"] = "stub"
+    max_tool_calls_per_agent: int = 3
+    max_cards: int = 10
     data_root: Path = REPO_ROOT / "local_database"
     llm_cache_dir: Path = REPO_ROOT / "backend" / ".llm_cache"
 

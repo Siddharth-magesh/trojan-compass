@@ -1,9 +1,10 @@
-"""CLI to run one query through the backend, e.g. `python -m backend.scripts.run_query --mode mock "Find me CSCI 570 sections"`."""
+"""CLI to run one query through the full graph, e.g. `python -m backend.scripts.run_query --mode mock "Find CSCI 570 sections"`."""
 
 import argparse
 import json
 import os
 import sys
+import uuid
 
 
 def main() -> None:
@@ -17,14 +18,18 @@ def main() -> None:
 
     from backend.app.data_store.loader import get_store
     from backend.app.llm_gateway.budget import RequestBudget
-    from backend.app.orchestration.supervisor import plan_request
+    from backend.app.orchestration.graph import build_graph
+    from backend.app.tools.profile_tools import get_profile, profile_summary
 
     store = get_store()
-    print(f"data: { {c: len(v) for c, v in store.by_id.items()} } | documents: {len(store.documents)} | skipped files: {len(store.skipped)}",
-          file=sys.stderr)
+    profile = get_profile(args.student)
     budget = RequestBudget()
-    plan = plan_request(args.message, [], {}, budget)
-    print(json.dumps(plan.model_dump(), indent=2))
+    state = {"request_id": uuid.uuid4().hex, "session_id": "cli", "student_id": args.student,
+             "student_ctx": profile_summary(profile), "message": args.message, "history": []}
+    final = build_graph().invoke(state, config={"configurable": {"budget": budget, "store": store, "profile": profile}})
+    print(json.dumps(final["response"].model_dump(), indent=2, ensure_ascii=False))
+    for event in final.get("events", []):
+        print("event:", json.dumps(event), file=sys.stderr)
     print(f"llm calls: {budget.calls} | usage: {budget.usage}", file=sys.stderr)
 
 
