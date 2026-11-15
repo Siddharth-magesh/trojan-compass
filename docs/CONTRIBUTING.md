@@ -72,6 +72,7 @@ local_database/
 ```text
 video/
   WHAT_WE_NEED_FROM_YOU.md        team to-do before the final compile
+  DEMO_NOTES.md                   differences from the brief, open issues, app changes made for the demo
   asset_manifest.json             source of truth for every asset (A01-A18); missing_assets.md is generated from it
   claims.json                     every on-screen claim with evidence; checked by remotion/scripts/check_claims.mjs
   storyboard.md, voiceover_script.md, recording_checklist.md, render_instructions.md

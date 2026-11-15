@@ -21,6 +21,8 @@ After adding files, run `npm run sync && npm run check` in `video/remotion/`. Th
 - **A17 / A18**, voiceover and licensed music. This cut is silent. The narration is ready in [voiceover_script.md](voiceover_script.md).
 
 ## Decisions and fixes on your side
+The full details for each item below, plus the app changes, are in [DEMO_NOTES.md](DEMO_NOTES.md).
+
 1. **Gemini fallback returns 402 Payment Required** for every Gemini model, so when Groq rate-limits there is no fallback. Enable billing on the Gemini key, or accept Groq-only (the demo uses cached answers, so the recordings are unaffected).
 2. **Set `JWT_SECRET` in `.env`** (32+ characters) before any shared or deployed run. When it is empty, the backend generates a random secret per process, so every backend restart logs everyone out.
 3. **Session ownership returns 404, not 403** (the brief said 403). The video shows the real 404 "session not found". Tell us if you would rather the API return 403.
